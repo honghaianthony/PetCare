@@ -1,7 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useSelector } from "react-redux";
 
 function App() {
+  const user = useSelector((x) => x.user.currentUser);
   return (
     <div className="App">
       <header className="App-header">
@@ -15,7 +17,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React with {user}
         </a>
       </header>
     </div>
