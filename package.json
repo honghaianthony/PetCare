@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@fontsource/pangolin": "^4.5.8",
+    "@fontsource/roboto-flex": "^4.5.2",
     "@nextui-org/react": "^1.0.0-beta.10",
     "@reduxjs/toolkit": "^1.8.5",
     "@testing-library/jest-dom": "^5.16.5",

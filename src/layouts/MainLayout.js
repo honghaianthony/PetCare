@@ -1,7 +1,13 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 
-function MainLayout() {
-    return <div>MainLayout</div>;
+function MainLayout({ children }) {
+    return (
+        <>
+            <Navbar />
+            {children}
+        </>
+    );
 }
 
 export default MainLayout;
