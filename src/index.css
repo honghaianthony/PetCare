@@ -9,5 +9,6 @@ body {
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        "Roboto Flex", "Pangolin", cursive, sans-serif, monospace;
+        "Roboto Flex", "Pangolin", "Nunito", "Lato", "Nunito Sans", cursive,
+        sans-serif, monospace;
 }

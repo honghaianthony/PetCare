@@ -1,9 +1,16 @@
-import MainLayout from "../../layouts/MainLayout";
+import HomeLayout from "../../layouts/HomeLayout";
+import HomeBanner from "../../components/HomeBanner";
+import HomeService from "../../components/HomeService";
+import Introduction from "../../components/Introduction";
 
 function Home() {
     return (
         <>
-            <MainLayout></MainLayout>
+            <HomeLayout>
+                <HomeBanner />
+                <HomeService />
+                <Introduction />
+            </HomeLayout>
         </>
     );
 }
