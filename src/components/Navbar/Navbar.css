@@ -1,0 +1,67 @@
+.navbar-container {
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    color: black;
+    padding: 1.5rem 0;
+    z-index: 10;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.navbar-desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.navbar-logo {
+    font-family: Pangolin;
+}
+
+.navbar-items {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    --tw-space-x-reverse: 0;
+    margin-right: calc(3.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(3.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.navbar-list {
+    display: flex;
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1rem * var(--tw-space-x-reverse));
+    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.navbar-list-detail {
+    display: flex;
+    align-items: center;
+    padding: 0.35rem 2rem;
+    color: black;
+    cursor: pointer;
+    font-size: 0.85rem;
+    line-height: 1.25rem;
+    font-family: Roboto Flex;
+}
+
+.navbar-list li:hover {
+    color: #fff;
+    background-color: #428de5;
+    border-radius: 0.5rem;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.navbar-auth {
+    background-color: #de135c;
+    opacity: 0.8;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-family: Roboto Flex;
+}

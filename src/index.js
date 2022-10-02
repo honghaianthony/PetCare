@@ -6,6 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { store } from "./store";
 import { NextUIProvider } from "@nextui-org/react";
+import "@fontsource/roboto-flex";
+import "@fontsource/pangolin";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
