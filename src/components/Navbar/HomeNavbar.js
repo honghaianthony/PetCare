@@ -4,6 +4,22 @@ import { Icon } from "@iconify/react";
 import "./HomeNavbar.css";
 
 function HomeNavbar() {
+    const [navbar, setNavbar] = useState(false);
+
+    const changeBackground = () => {
+        if (window.scrollY >= 66) {
+            setNavbar(true);
+        } else {
+            setNavbar(false);
+        }
+    };
+
+    useEffect(() => {
+        changeBackground();
+        // adding the event when scroll change background
+        window.addEventListener("scroll", changeBackground);
+    });
+
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
@@ -24,7 +40,13 @@ function HomeNavbar() {
 
     return (
         <header>
-            <nav className="navbar-container">
+            <nav
+                className={
+                    navbar
+                        ? "navbar-container navbar-container-active"
+                        : "navbar-container"
+                }
+            >
                 <div className="navbar-desktop">
                     <div className="navbar-logo">
                         <Link to="/">PetCare</Link>

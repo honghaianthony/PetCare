@@ -1,5 +1,5 @@
 .navbar-container {
-    position: sticky;
+    position: fixed;
     top: 0px;
     width: 100%;
     color: black;
@@ -71,6 +71,14 @@
 
 .navbar-menu-icon {
     display: none;
+}
+
+.navbar-container-active {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    backdrop-filter: blur(10px);
+    box-shadow: rgb(2 1 1 / 10%) 0px 5px 20px -5px;
 }
 
 @media screen and (max-width: 960px) {
