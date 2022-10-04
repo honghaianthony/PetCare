@@ -5,6 +5,8 @@
 .introduction-container-detail {
     max-width: 1280px;
     margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .introduction-main {
@@ -99,4 +101,20 @@
 
 .introduction-right-image img {
     width: 80%;
+}
+
+@media screen and (max-width: 960px) {
+    .introduction-main {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        margin: 0 auto;
+        gap: 5rem;
+        justify-items: center;
+    }
+    .introduction-right {
+        margin: 0 auto;
+    }
+    .introduction-right-image {
+        margin: 0 auto;
+    }
 }

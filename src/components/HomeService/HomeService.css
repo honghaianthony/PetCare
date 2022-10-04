@@ -9,6 +9,8 @@
     --tw-space-y-reverse: 0;
     margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(3rem * var(--tw-space-y-reverse));
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .home-service-container-detail h2 {
@@ -74,4 +76,24 @@
 .home-service-overlay:hover .overlay {
     opacity: 0.5;
     height: 180px;
+}
+
+@media screen and (max-width: 960px) {
+    .home-service-main {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-items: center;
+        gap: 5rem;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home-service-main {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        justify-items: center;
+        gap: 5rem;
+        margin: 0 auto;
+    }
 }

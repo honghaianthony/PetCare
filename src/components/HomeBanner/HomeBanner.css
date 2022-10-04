@@ -13,6 +13,8 @@
 .home-banner-container-detail {
     max-width: 1280px;
     margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .home-banner-main {
@@ -63,4 +65,29 @@
     position: relative;
     width: 50%;
     margin-bottom: -5px;
+}
+
+@media screen and (max-width: 960px) {
+    .home-banner-right {
+        display: none;
+    }
+    .home-banner-left {
+        width: 100%;
+        text-align: center;
+        margin-top: 100px;
+    }
+    .home-banner-left-button {
+        margin: 0 auto;
+        margin-top: 2rem;
+        width: 50vw;
+    }
+    .home-banner-container {
+        padding-bottom: 4rem;
+    }
+}
+
+@media screen and (max-width: 368px) {
+    .home-banner-container {
+        margin-bottom: 4rem !important;
+    }
 }

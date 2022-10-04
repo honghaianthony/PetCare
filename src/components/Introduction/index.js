@@ -62,8 +62,7 @@ function Introduction() {
                         <div className="introduction-left-detail intro-active fade">
                             <h4>Nhân viên nhiệt tình</h4>
                             <p className="content-active">
-                                Nhân viên tại PetCare luôn đồng hành cùng khách
-                                hàng
+                                Nhân viên tại PetCare đồng hành cùng khách hàng
                             </p>
                         </div>
                         <div className="introduction-left-detail intro-active fade">

@@ -5,6 +5,8 @@
 .home-community-container-detail {
     max-width: 1280px;
     margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .home-community-title {

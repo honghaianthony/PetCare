@@ -6,6 +6,8 @@
 .home-reason-container-detail {
     max-width: 1280px;
     margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .home-reason-title {
@@ -70,4 +72,27 @@
 .home-reason-right-content p {
     font-family: Roboto Flex;
     letter-spacing: 0.75px;
+}
+
+@media screen and (max-width: 960px) {
+    .home-reason-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .home-reason-left {
+        margin: 0 auto;
+    }
+    .home-reason-right {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home-reason-left img {
+        display: none;
+    }
 }
