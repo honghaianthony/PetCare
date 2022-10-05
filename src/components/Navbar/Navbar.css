@@ -1,5 +1,5 @@
-.navbar-container {
-    position: sticky;
+.index-navbar-container {
+    position: fixed;
     top: 0px;
     width: 100%;
     color: black;
@@ -8,7 +8,7 @@
     background-color: white;
 }
 
-.navbar-desktop {
+.index-navbar-desktop {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,11 +18,18 @@
     padding-right: 10px;
 }
 
-.navbar-logo {
+.index-navbar-logo {
     font-family: Pangolin;
 }
 
-.navbar-items {
+.tab-active {
+    color: #fff !important;
+    background: #428de5;
+    border-radius: 0.5rem;
+    padding: 0.35rem 2rem;
+}
+
+.index-navbar-items {
     display: flex;
     text-decoration: none;
     align-items: center;
@@ -31,7 +38,7 @@
     margin-left: calc(3.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.navbar-list {
+.index-navbar-list {
     display: grid;
     grid-template-columns: repeat(5, auto);
     grid-gap: 10px;
@@ -40,7 +47,7 @@
     align-items: center;
 }
 
-.navbar-list-detail {
+.index-navbar-list-detail {
     display: flex;
     align-items: center;
     padding: 0.35rem 2rem;
@@ -51,7 +58,7 @@
     font-family: Roboto Flex;
 }
 
-.navbar-list-detail:hover {
+.index-navbar-list-detail:hover {
     color: #fff;
     background-color: #428de5;
     border-radius: 0.5rem;
@@ -60,7 +67,7 @@
     transition-duration: 150ms;
 }
 
-.navbar-auth {
+.index-navbar-auth {
     background-color: #de135c;
     opacity: 0.8;
     color: white;
@@ -69,12 +76,12 @@
     font-family: Roboto Flex;
 }
 
-.navbar-menu-icon {
+.index-navbar-menu-icon {
     display: none;
 }
 
 @media screen and (max-width: 960px) {
-    .navbar-list {
+    .index-navbar-list {
         display: flex;
         flex-direction: column;
         align-content: center;
@@ -86,7 +93,7 @@
         opacity: 1;
         transition: all 0.5s ease;
     }
-    .navbar-list.active {
+    .index-navbar-list.active {
         background: #fff;
         left: 0px;
         opacity: 1;
@@ -95,7 +102,7 @@
         margin: 0;
         margin-top: 2rem;
     }
-    .navbar-list-detail {
+    .index-navbar-list-detail {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -108,7 +115,7 @@
         line-height: 1.25rem;
         font-family: Roboto Flex;
     }
-    .navbar-list-detail:hover {
+    .index-navbar-list-detail:hover {
         color: #fff;
         background-color: #428de5;
         border-radius: 0.5rem;
@@ -116,10 +123,10 @@
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 150ms;
     }
-    .navbar-auth {
+    .index-navbar-auth {
         margin-right: 4rem;
     }
-    .navbar-menu-icon {
+    .index-navbar-menu-icon {
         display: block;
         position: absolute;
         top: 0;

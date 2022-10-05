@@ -51,6 +51,13 @@
     font-family: Roboto Flex;
 }
 
+.tab-active {
+    color: #fff !important;
+    background: #428de5;
+    border-radius: 0.5rem;
+    padding: 0.35rem 2rem;
+}
+
 .navbar-list-detail:hover {
     color: #fff;
     background-color: #428de5;

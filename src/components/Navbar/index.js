@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import "./Navbar.css";
 
@@ -24,49 +24,78 @@ function Navbar() {
 
     return (
         <header>
-            <nav className="navbar-container">
-                <div className="navbar-desktop">
-                    <div className="navbar-logo">
+            <nav className="index-navbar-container">
+                <div className="index-navbar-desktop">
+                    <div className="index-navbar-logo">
                         <Link to="/">PetCare</Link>
                     </div>
-                    <div className="navbar-menu-icon" onClick={handleClick}>
+                    <div
+                        className="index-navbar-menu-icon"
+                        onClick={handleClick}
+                    >
                         <Icon icon={click ? "fa:close" : "fa:bars"} />
                     </div>
-                    <div className="navbar-menu-main"></div>
-                    <div className="navbar-items">
+                    <div className="index-navbar-menu-main"></div>
+                    <div className="index-navbar-items">
                         <ul
                             className={
-                                click ? "navbar-list active" : "navbar-list"
+                                click
+                                    ? "index-navbar-list active"
+                                    : "index-navbar-list"
                             }
                         >
-                            <li className="navbar-list-detail">
+                            <li className="index-navbar-list-detail">
                                 <Link to="/" onClick={closeMobileMenu}>
                                     Trang chủ
                                 </Link>
                             </li>
-                            <li className="navbar-list-detail">
-                                <Link to="/product" onClick={closeMobileMenu}>
+                            <li className="index-navbar-list-detail">
+                                <NavLink
+                                    to="/product"
+                                    onClick={closeMobileMenu}
+                                    className={({ isActive }) =>
+                                        isActive ? "tab-active" : "tab-inactive"
+                                    }
+                                >
                                     Sản phẩm
-                                </Link>
+                                </NavLink>
                             </li>
-                            <li className="navbar-list-detail">
-                                <Link to="/service" onClick={closeMobileMenu}>
+                            <li className="index-navbar-list-detail">
+                                <NavLink
+                                    to="/service"
+                                    onClick={closeMobileMenu}
+                                    className={({ isActive }) =>
+                                        isActive ? "tab-active" : "tab-inactive"
+                                    }
+                                >
                                     Dịch vụ
-                                </Link>
+                                </NavLink>
                             </li>
-                            <li className="navbar-list-detail">
-                                <Link to="/blog" onClick={closeMobileMenu}>
+                            <li className="index-navbar-list-detail">
+                                <NavLink
+                                    to="/blog"
+                                    onClick={closeMobileMenu}
+                                    className={({ isActive }) =>
+                                        isActive ? "tab-active" : "tab-inactive"
+                                    }
+                                >
                                     Blog
-                                </Link>
+                                </NavLink>
                             </li>
-                            <li className="navbar-list-detail">
-                                <Link to="/" onClick={closeMobileMenu}>
+                            <li className="index-navbar-list-detail">
+                                <NavLink
+                                    to="/about"
+                                    onClick={closeMobileMenu}
+                                    className={({ isActive }) =>
+                                        isActive ? "tab-active" : "tab-inactive"
+                                    }
+                                >
                                     Về chúng tôi
-                                </Link>
+                                </NavLink>
                             </li>
                         </ul>
                     </div>
-                    <div className="navbar-auth">
+                    <div className="index-navbar-auth">
                         <Link to="/login">Đăng nhập</Link>
                     </div>
                 </div>

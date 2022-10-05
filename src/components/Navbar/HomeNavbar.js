@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import "./HomeNavbar.css";
 
@@ -62,29 +62,59 @@ function HomeNavbar() {
                             }
                         >
                             <li className="navbar-list-detail">
-                                <Link to="/" onClick={closeMobileMenu}>
+                                <NavLink
+                                    to="/"
+                                    onClick={closeMobileMenu}
+                                    className={({ isActive }) =>
+                                        isActive ? "tab-active" : "tab-inactive"
+                                    }
+                                >
                                     Trang chủ
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="navbar-list-detail">
-                                <Link to="/product" onClick={closeMobileMenu}>
+                                <NavLink
+                                    to="/product"
+                                    onClick={closeMobileMenu}
+                                    className={({ isActive }) =>
+                                        isActive ? "tab-active" : "tab-inactive"
+                                    }
+                                >
                                     Sản phẩm
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="navbar-list-detail">
-                                <Link to="/service" onClick={closeMobileMenu}>
+                                <NavLink
+                                    to="/service"
+                                    onClick={closeMobileMenu}
+                                    className={({ isActive }) =>
+                                        isActive ? "tab-active" : "tab-inactive"
+                                    }
+                                >
                                     Dịch vụ
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="navbar-list-detail">
-                                <Link to="/blog" onClick={closeMobileMenu}>
+                                <NavLink
+                                    to="/blog"
+                                    onClick={closeMobileMenu}
+                                    className={({ isActive }) =>
+                                        isActive ? "tab-active" : "tab-inactive"
+                                    }
+                                >
                                     Blog
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="navbar-list-detail">
-                                <Link to="/" onClick={closeMobileMenu}>
+                                <NavLink
+                                    to="/about"
+                                    onClick={closeMobileMenu}
+                                    className={({ isActive }) =>
+                                        isActive ? "tab-active" : "tab-inactive"
+                                    }
+                                >
                                     Về chúng tôi
-                                </Link>
+                                </NavLink>
                             </li>
                         </ul>
                     </div>
