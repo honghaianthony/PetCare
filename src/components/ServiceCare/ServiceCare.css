@@ -1,0 +1,30 @@
+.Service__Care__container{
+    padding:15px 0;
+}
+.Service__Care__container__detail{
+    max-width: 1280px;
+    margin: 0 auto;
+    border:1px solid #DE135C;
+    padding:20px;
+    border-radius: 5px;
+    font-family: "Nunito", sans-serif;
+}
+.Service__Care__container__detail{
+    display:flex;
+    width:100%;
+}
+.Service__Care__container__left{
+    width:70%;
+    margin-right: 20px;
+}
+.Service__Care__container__right{
+    width:30%;
+}
+.Care_service{
+    border-radius: 5px;
+}
+.underline__service__care{
+    border-bottom: 2px solid #DE135C;
+    width:100%;
+    margin-bottom: 10px;
+}
