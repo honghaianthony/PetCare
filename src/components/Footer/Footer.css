@@ -1,0 +1,172 @@
+.footer-container {
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+    background-color: #fff;
+}
+
+.footer-container-detail {
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.footer-container-items {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-gap: 2rem;
+}
+
+.footer-logo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo {
+    font-family: Pangolin;
+}
+
+.footer-slogan span {
+    font-family: Roboto Flex;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    color: #000;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.footer-social a {
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+.footer-social-icon {
+    color: #000;
+    font-size: 24px;
+}
+
+.footer-link {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-link h4 {
+    margin-bottom: 1rem;
+    font-family: Roboto Flex;
+    font-weight: 800;
+}
+
+.footer-link-detail {
+    font-family: Roboto Flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-link-detail a {
+    margin-bottom: 10px;
+}
+
+.footer-working-hour {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-working-hour h4 {
+    margin-bottom: 1rem;
+    font-weight: 800;
+    font-family: Roboto Flex;
+}
+
+.footer-working-hour-banner {
+    padding: 2rem;
+    border-radius: 20px;
+    background: #dd3c72;
+}
+
+.footer-working-time {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.footer-communication {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.footer-communication h4 {
+    margin-bottom: 1rem;
+    font-weight: 800;
+    font-family: Roboto Flex;
+}
+
+.footer-communication p {
+    margin-bottom: 1rem;
+    font-family: Roboto Flex;
+}
+
+.footer-communication-address {
+    display: flex;
+    align-items: center;
+}
+
+.footer-communication-phone {
+    display: flex;
+}
+
+.footer-communication-icon {
+    margin-right: 1rem;
+    font-size: 24px;
+    color: #000;
+}
+
+.footer-copyright {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    font-family: Nunito;
+}
+
+.footer-copyright-sub p {
+    font-family: Nunito;
+}
+
+@media screen and (max-width: 960px) {
+    .footer-container-items {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer-container-items {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        grid-gap: 2rem;
+    }
+    .footer-link {
+        margin: 0 auto;
+    }
+    .footer-working-hour {
+        margin: 0 auto;
+    }
+    .footer-working-hour h4 {
+        text-align: center !important;
+    }
+    .footer-communication h4 {
+        text-align: center !important;
+    }
+}

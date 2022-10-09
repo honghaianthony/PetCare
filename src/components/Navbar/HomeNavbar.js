@@ -1,9 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Icon } from "@iconify/react";
-import "./Navbar.css";
+import "./HomeNavbar.css";
 
-function Navbar() {
+function HomeNavbar() {
+    const [navbar, setNavbar] = useState(false);
+
+    const changeBackground = () => {
+        if (window.scrollY >= 66) {
+            setNavbar(true);
+        } else {
+            setNavbar(false);
+        }
+    };
+
+    useEffect(() => {
+        changeBackground();
+        // adding the event when scroll change background
+        window.addEventListener("scroll", changeBackground);
+    });
+
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
@@ -24,32 +40,39 @@ function Navbar() {
 
     return (
         <header>
-            <nav className="index-navbar-container">
-                <div className="index-navbar-desktop">
-                    <div className="index-navbar-logo">
+            <nav
+                className={
+                    navbar
+                        ? "navbar-container navbar-container-active"
+                        : "navbar-container"
+                }
+            >
+                <div className="navbar-desktop">
+                    <div className="navbar-logo">
                         <Link to="/">PetCare</Link>
                     </div>
-                    <div
-                        className="index-navbar-menu-icon"
-                        onClick={handleClick}
-                    >
+                    <div className="navbar-menu-icon" onClick={handleClick}>
                         <Icon icon={click ? "fa:close" : "fa:bars"} />
                     </div>
-                    <div className="index-navbar-menu-main"></div>
-                    <div className="index-navbar-items">
+                    <div className="navbar-menu-main"></div>
+                    <div className="navbar-items">
                         <ul
                             className={
-                                click
-                                    ? "index-navbar-list active"
-                                    : "index-navbar-list"
+                                click ? "navbar-list active" : "navbar-list"
                             }
                         >
-                            <li className="index-navbar-list-detail">
-                                <Link to="/" onClick={closeMobileMenu}>
+                            <li className="navbar-list-detail">
+                                <NavLink
+                                    to="/"
+                                    onClick={closeMobileMenu}
+                                    className={({ isActive }) =>
+                                        isActive ? "tab-active" : "tab-inactive"
+                                    }
+                                >
                                     Trang chủ
-                                </Link>
+                                </NavLink>
                             </li>
-                            <li className="index-navbar-list-detail">
+                            <li className="navbar-list-detail">
                                 <NavLink
                                     to="/product"
                                     onClick={closeMobileMenu}
@@ -60,7 +83,7 @@ function Navbar() {
                                     Sản phẩm
                                 </NavLink>
                             </li>
-                            <li className="index-navbar-list-detail">
+                            <li className="navbar-list-detail">
                                 <NavLink
                                     to="/service"
                                     onClick={closeMobileMenu}
@@ -71,7 +94,7 @@ function Navbar() {
                                     Dịch vụ
                                 </NavLink>
                             </li>
-                            <li className="index-navbar-list-detail">
+                            <li className="navbar-list-detail">
                                 <NavLink
                                     to="/blog"
                                     onClick={closeMobileMenu}
@@ -82,7 +105,7 @@ function Navbar() {
                                     Blog
                                 </NavLink>
                             </li>
-                            <li className="index-navbar-list-detail">
+                            <li className="navbar-list-detail">
                                 <NavLink
                                     to="/about"
                                     onClick={closeMobileMenu}
@@ -95,7 +118,7 @@ function Navbar() {
                             </li>
                         </ul>
                     </div>
-                    <div className="index-navbar-auth">
+                    <div className="navbar-auth">
                         <Link to="/login">Đăng nhập</Link>
                     </div>
                 </div>
@@ -104,4 +127,4 @@ function Navbar() {
     );
 }
 
-export default Navbar;
+export default HomeNavbar;

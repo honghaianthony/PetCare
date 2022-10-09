@@ -1,14 +1,14 @@
-.index-navbar-container {
+.navbar-container {
     position: fixed;
     top: 0px;
     width: 100%;
     color: black;
     padding: 1.5rem 0;
     z-index: 10;
-    background-color: white;
+    background-color: transparent;
 }
 
-.index-navbar-desktop {
+.navbar-desktop {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,18 +18,11 @@
     padding-right: 10px;
 }
 
-.index-navbar-logo {
+.navbar-logo {
     font-family: Pangolin;
 }
 
-.tab-active {
-    color: #fff !important;
-    background: #428de5;
-    border-radius: 0.5rem;
-    padding: 0.35rem 2rem;
-}
-
-.index-navbar-items {
+.navbar-items {
     display: flex;
     text-decoration: none;
     align-items: center;
@@ -38,7 +31,7 @@
     margin-left: calc(3.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.index-navbar-list {
+.navbar-list {
     display: grid;
     grid-template-columns: repeat(5, auto);
     grid-gap: 10px;
@@ -47,7 +40,7 @@
     align-items: center;
 }
 
-.index-navbar-list-detail {
+.navbar-list-detail {
     display: flex;
     align-items: center;
     padding: 0.35rem 2rem;
@@ -58,7 +51,14 @@
     font-family: Roboto Flex;
 }
 
-.index-navbar-list-detail:hover {
+.tab-active {
+    color: #fff !important;
+    background: #428de5;
+    border-radius: 0.5rem;
+    padding: 0.35rem 2rem;
+}
+
+.navbar-list-detail:hover {
     color: #fff;
     background-color: #428de5;
     border-radius: 0.5rem;
@@ -67,7 +67,7 @@
     transition-duration: 150ms;
 }
 
-.index-navbar-auth {
+.navbar-auth {
     background-color: #de135c;
     opacity: 0.8;
     color: white;
@@ -76,12 +76,20 @@
     font-family: Roboto Flex;
 }
 
-.index-navbar-menu-icon {
+.navbar-menu-icon {
     display: none;
 }
 
+.navbar-container-active {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    backdrop-filter: blur(10px);
+    box-shadow: rgb(2 1 1 / 10%) 0px 5px 20px -5px;
+}
+
 @media screen and (max-width: 960px) {
-    .index-navbar-list {
+    .navbar-list {
         display: flex;
         flex-direction: column;
         align-content: center;
@@ -93,7 +101,7 @@
         opacity: 1;
         transition: all 0.5s ease;
     }
-    .index-navbar-list.active {
+    .navbar-list.active {
         background: #fff;
         left: 0px;
         opacity: 1;
@@ -102,7 +110,7 @@
         margin: 0;
         margin-top: 2rem;
     }
-    .index-navbar-list-detail {
+    .navbar-list-detail {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -114,7 +122,7 @@
         line-height: 1.25rem;
         font-family: Roboto Flex;
     }
-    .index-navbar-list-detail:hover {
+    .navbar-list-detail:hover {
         color: #fff;
         background-color: #428de5;
         border-radius: 0.5rem;
@@ -122,10 +130,10 @@
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 150ms;
     }
-    .index-navbar-auth {
+    .navbar-auth {
         margin-right: 4rem;
     }
-    .index-navbar-menu-icon {
+    .navbar-menu-icon {
         display: block;
         position: absolute;
         top: 0;

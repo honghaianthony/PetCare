@@ -1,0 +1,120 @@
+.introduction-container {
+    padding: 4rem 0;
+}
+
+.introduction-container-detail {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.introduction-main {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 0 auto;
+    gap: 5rem;
+}
+
+.introduction-left {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    --tw-space-y-reverse: 0;
+    margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+    margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+}
+
+.introduction-left h2 {
+    font-weight: 800;
+    font-family: Nunito;
+    letter-spacing: 1px;
+}
+
+.introduction-left p {
+    font-family: Nunito Sans;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+}
+
+.introduction-left-detail {
+    color: black;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    --tw-space-y-reverse: 0;
+    margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+    margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+}
+
+.intro-active {
+    transition: all 300ms;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.active {
+    background: linear-gradient(
+        92.18deg,
+        rgba(45, 139, 201, 0.7) 11.78%,
+        rgba(248, 212, 27, 0.3) 118.78%
+    );
+    transition: all 0.5s ease-in-out;
+}
+
+.introduction-right {
+    position: relative;
+    width: 65%;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.introduction-right-image {
+    position: absolute;
+    top: 4rem;
+    left: 2rem;
+}
+
+.introduction-right-image img {
+    width: 80%;
+}
+
+@media screen and (max-width: 960px) {
+    .introduction-main {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        margin: 0 auto;
+        gap: 5rem;
+        justify-items: center;
+    }
+    .introduction-right {
+        margin: 0 auto;
+    }
+    .introduction-right-image {
+        margin: 0 auto;
+    }
+}

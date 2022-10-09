@@ -1,15 +1,15 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import HomeNavbar from "../components/Navbar/HomeNavbar";
 import Footer from "../components/Footer";
 
-function MainLayout({ children }) {
+function HomeLayout({ children }) {
     return (
         <>
-            <Navbar />
+            <HomeNavbar />
             {children}
             <Footer />
         </>
     );
 }
 
-export default MainLayout;
+export default HomeLayout;
