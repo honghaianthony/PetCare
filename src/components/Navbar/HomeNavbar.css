@@ -94,7 +94,7 @@
         flex-direction: column;
         align-content: center;
         width: 100%;
-        height: 100vh;
+        height: 90vh;
         position: absolute;
         top: 70px;
         left: calc(-100vw - 40px);
@@ -115,7 +115,6 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        padding: 0;
         height: 100%;
         color: black;
         cursor: pointer;
