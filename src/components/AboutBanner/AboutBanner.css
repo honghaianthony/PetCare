@@ -1,5 +1,6 @@
 .about-banner-container {
     padding: 4rem 0;
+    margin-top: 7rem;
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
         url("/public/assets/images/home/about.jpg");
     background-repeat: no-repeat;
