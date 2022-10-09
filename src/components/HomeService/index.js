@@ -11,6 +11,7 @@ function HomeService() {
     const control = useAnimation();
     const [ref, inView] = useInView();
 
+    
     useEffect(() => {
         if (inView) {
             control.start("visible");
