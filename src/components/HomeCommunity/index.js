@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./HomeCommunity.css";
 
 import { Navigation, Scrollbar, A11y } from "swiper";
@@ -7,8 +7,24 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 function HomeCommunity() {
+    const boxVariant = {
+        open: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+        closed: { opacity: 0, scale: 0 },
+    };
+
+    const control = useAnimation();
+    const [ref, inView] = useInView();
+    useEffect(() => {
+        if (inView) {
+            control.start("open");
+        } else {
+            control.start("closed");
+        }
+    }, [control, inView]);
     return (
         <section className="home-community-container">
             <div className="home-community-container-detail">
@@ -17,7 +33,13 @@ function HomeCommunity() {
                     <h5>Những đánh giá của khách hàng đối với PetCare</h5>
                 </div>
                 <div className="home-community-comment-container">
-                    <div className="home-community-comment-slider">
+                    <motion.div
+                        className="home-community-comment-slider"
+                        ref={ref}
+                        variants={boxVariant}
+                        animate={control}
+                        initial="closed"
+                    >
                         <Swiper
                             // install Swiper modules
                             modules={[Navigation, Scrollbar, A11y]}
@@ -345,7 +367,7 @@ function HomeCommunity() {
                                 </div>
                             </SwiperSlide>
                         </Swiper>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

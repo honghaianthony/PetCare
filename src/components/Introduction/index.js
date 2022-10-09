@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Introduction.css";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 function Introduction() {
+    const boxLeftVariant = {
+        visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+        hidden: { opacity: 0, x: -100 },
+    };
+
+    const boxRightVariant = {
+        visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+        hidden: { opacity: 0, x: 200 },
+    };
+
+    const control = useAnimation();
+    const [ref, inView] = useInView();
+
+    useEffect(() => {
+        if (inView) {
+            control.start("visible");
+        } else {
+            control.start("hidden");
+        }
+    }, [control, inView]);
     var imageIndex = 0;
     ImageSlider();
 
@@ -46,7 +68,13 @@ function Introduction() {
         <section className="introduction-container">
             <div className="introduction-container-detail">
                 <div className="introduction-main">
-                    <div className="introduction-left">
+                    <motion.div
+                        className="introduction-left"
+                        ref={ref}
+                        variants={boxLeftVariant}
+                        initial="hidden"
+                        animate={control}
+                    >
                         <h2>Giới thiệu về PetCare</h2>
                         <p>
                             PetCare là một dịch vụ chuyên về thú cưng. Mọi khó
@@ -71,8 +99,14 @@ function Introduction() {
                                 Bài viết về PetCare luôn được cập nhật liên tục
                             </p>
                         </div>
-                    </div>
-                    <div className="introduction-right">
+                    </motion.div>
+                    <motion.div
+                        className="introduction-right"
+                        ref={ref}
+                        variants={boxRightVariant}
+                        initial="hidden"
+                        animate={control}
+                    >
                         <img
                             src="/assets/images/home/Vector.png"
                             alt="Vector"
@@ -97,7 +131,7 @@ function Introduction() {
                                 />
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

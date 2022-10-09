@@ -1,8 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Icon } from "@iconify/react";
 import "./HomeReason.css";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 function HomeReason() {
+    const boxVariant = {
+        open: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                y: { stiffness: 1000, velocity: -100 },
+            },
+        },
+        closed: {
+            y: 50,
+            opacity: 0,
+            transition: {
+                y: { stiffness: 1000 },
+            },
+        },
+    };
+
+    const control = useAnimation();
+    const [ref, inView] = useInView();
+    useEffect(() => {
+        if (inView) {
+            control.start("open");
+        } else {
+            control.start("closed");
+        }
+    }, [control, inView]);
     return (
         <section className="home-reason-container">
             <div className="home-reason-container-detail">
@@ -13,7 +41,13 @@ function HomeReason() {
                     <div className="home-reason-left">
                         <img src="/assets/images/home/why.jpg" alt="Reason" />
                     </div>
-                    <div className="home-reason-right">
+                    <motion.div
+                        className="home-reason-right"
+                        ref={ref}
+                        variants={boxVariant}
+                        animate={control}
+                        initial="closed"
+                    >
                         <div className="home-reason-right-space">
                             <div className="home-reason-right-detail">
                                 <Icon
@@ -81,7 +115,7 @@ function HomeReason() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

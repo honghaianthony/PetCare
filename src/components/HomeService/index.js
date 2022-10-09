@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./HomeService.css";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 function HomeService() {
+    const boxVariant = {
+        visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+        hidden: { opacity: 0, scale: 0 },
+    };
+    const control = useAnimation();
+    const [ref, inView] = useInView();
+
+    useEffect(() => {
+        if (inView) {
+            control.start("visible");
+        } else {
+            control.start("hidden");
+        }
+    }, [control, inView]);
     return (
         <section className="home-service-container">
-            <div className="home-service-container-detail">
+            <motion.div
+                className="home-service-container-detail"
+                ref={ref}
+                variants={boxVariant}
+                initial="hidden"
+                animate={control}
+            >
                 <h2>DỊCH VỤ CỦA CHÚNG TÔI</h2>
                 <div className="home-service-main">
                     <div className="home-service-overlay">
@@ -98,7 +120,7 @@ function HomeService() {
                         <div className="overlay"></div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 }

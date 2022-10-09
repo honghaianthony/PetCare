@@ -1,12 +1,45 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Footer.css";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 function Footer() {
+    const boxVariant = {
+        open: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                y: { stiffness: 1000, velocity: -100 },
+            },
+        },
+        closed: {
+            y: 50,
+            opacity: 0,
+            transition: {
+                y: { stiffness: 1000 },
+            },
+        },
+    };
+    const control = useAnimation();
+    const [ref, inView] = useInView();
+    useEffect(() => {
+        if (inView) {
+            control.start("open");
+        } else {
+            control.start("closed");
+        }
+    }, [control, inView]);
     return (
         <section className="footer-container">
-            <div className="footer-container-detail">
+            <motion.div
+                className="footer-container-detail"
+                ref={ref}
+                variants={boxVariant}
+                animate={control}
+                initial="closed"
+            >
                 <div className="footer-container-items">
                     <div className="footer-logo-container">
                         <div className="footer-logo">Logo</div>
@@ -105,7 +138,7 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
             <hr />
             <div className="footer-copyright">
                 <div className="footer-copyright-main">
