@@ -1,0 +1,23 @@
+.auth-navbar-container {
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    color: black;
+    padding: 1.5rem 0;
+    z-index: 10;
+    background-color: transparent;
+}
+
+.auth-navbar-desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.auth-navbar-logo {
+    font-family: Pangolin;
+}
