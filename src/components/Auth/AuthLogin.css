@@ -1,0 +1,172 @@
+.auth-container {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+.auth-container-detail {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.auth-login-container {
+    width: 25%;
+    padding: 0 1rem;
+    border-radius: 0.25rem;
+    background-color: #e2e8f0;
+    z-index: 2;
+}
+
+.auth-login-up {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0px;
+    overflow-wrap: break-word;
+    border: none;
+}
+
+.auth-login-another {
+    padding: 1.5rem;
+}
+
+.auth-login-another-text {
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+.auth-login-another-text h6 {
+    color: #64748b;
+    font-weight: 800;
+}
+
+.auth-login-another-button {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.auth-login-another-button button {
+    background-color: white;
+    color: #475569;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 0.25rem;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.auth-login-input-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+}
+
+.auth-login-input-title {
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+.auth-login-input-title span {
+    color: #64748b;
+    font-weight: 800;
+}
+
+.auth-login-input {
+    position: relative;
+    width: 100%;
+    margin-bottom: 0.75rem;
+}
+
+.auth-login-input label {
+    display: block;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-family: Roboto Flex;
+    font-size: 12px;
+}
+
+.auth-login-input input {
+    border: none;
+    padding: 10px;
+    color: #475569;
+    background-color: white;
+    border-radius: 0.25rem;
+    font-size: 14px;
+    width: 100%;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.auth-login-input input :focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.auth-login-input input ::placeholder {
+    font-family: Nunito;
+    color: #d8d8d8;
+}
+
+.auth-login-form-button {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.auth-login-form-button button {
+    border: none;
+    padding: 10px;
+    color: #fff;
+    background-color: #1e293b;
+    border-radius: 0.25rem;
+    font-size: 14px;
+    width: 100%;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.auth-login-down {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    margin: 10px 0;
+}
+
+.auth-login-down small {
+    font-family: Roboto Flex;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+@media screen and (max-width: 1024px) {
+    .auth-login-container {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .auth-login-container {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .auth-login-container {
+        width: 100%;
+    }
+}
