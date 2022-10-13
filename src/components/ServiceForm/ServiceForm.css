@@ -1,5 +1,5 @@
 .Service_form_container{
-    padding: 15px 0;
+    padding:15px 10px;
 }
 .Service_form_container_detail{
     margin: 0 auto;
@@ -11,6 +11,8 @@
     background-image: url(/public/assets/images/Service/—Pngtree—cartoon\ pet\ food\ dog\ food_1047378.jpg);
     background-size: cover;
     background-position: center;
+    padding:20px;
+
 
 }
 .Service_form_container_header{
@@ -37,8 +39,10 @@
 }
 .form_service__{
     width:50%;
-    padding:3px;
+    padding:10px;
     margin-bottom: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
 }
 .label__serivce{
     width:50%;
@@ -61,4 +65,44 @@
     opacity: 0.8;
     background-color: #DE135C;
 
+}
+@media screen and (max-width: 960px){
+    .Service_form_header_text{
+        width: 80%;
+        font-size: 30px;
+    }
+    .label__serivce{
+        font-size: 24px;
+        width: 80%;
+
+    }
+    .form_service__{
+        font-size: 24px;
+        width: 80%;
+        padding: 14px;
+    }
+    .Submit__service_form{
+        width: 80%;
+        font-size: 24px;
+        padding:20px;
+    }
+}
+@media screen and (max-width: 600px){
+    .Service_form_header_text{
+        font-size: 24px;
+        padding: 5px;
+    }
+    .form_service__{
+        padding: 5px;
+        font-size: 16px;
+    }
+    .label__serivce{
+        font-size: 16px;
+
+    }
+    .Submit__service_form{
+        font-size: 16px;
+        padding: 10px;
+        
+    }
 }
