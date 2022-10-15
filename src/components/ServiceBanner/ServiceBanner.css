@@ -1,12 +1,13 @@
-.service__banner_container{
+.service__banner_container {
     background: url("../../../public/assets/images/Service/Banner_service.jpg");
     background-repeat: no-repeat;
     /* background-attachment: fixed;    */
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center;
+    padding: 0 10px;
 }
-.service__banner_container_detail{
-    height:640px;
+.service__banner_container_detail {
+    height: 100vh;
     max-width: 1280px;
     margin: 0 auto;
     overflow: hidden;
@@ -16,11 +17,31 @@
     flex-direction: column;
     font-family: "Nunito", sans-serif;
 }
-.service__banner_container h1{
+.service__banner_container h1 {
     margin: 0;
     font-size: 70px;
     margin-bottom: 10px;
-    color:#2132CE;
+    color: #2132ce;
     text-shadow: 0px 20px 8px #ccc;
-    
+}
+@media screen and (max-width: 1024px) {
+    .service__banner_container_detail {
+        height: 500px;
+    }
+    .service__banner_container h1 {
+        font-size: 50px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .service__banner_container h1 {
+        font-size: 40px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .service__banner_container_detail {
+        height: 400px;
+    }
+    .service__banner_container h1 {
+        font-size: 32px;
+    }
 }

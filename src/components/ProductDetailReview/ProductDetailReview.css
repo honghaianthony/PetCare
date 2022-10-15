@@ -1,0 +1,17 @@
+.ProductDetailReview {
+  display: flex;
+  padding: 15px 0px;
+  border-bottom: 1px dashed #de135c;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  text-align: justify;
+}
+.ProductDetailReview-img {
+  width: 100px;
+  height: 100px;
+  padding-top: 7px;
+  margin-right: 15px;
+}
+.ProductDetailReview-img img {
+  border-radius: 50px;
+}
