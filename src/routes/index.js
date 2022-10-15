@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home } from "../pages";
+import { Home, ProductDetail } from "../pages";
 import { Service } from "../pages";
 import { About } from "../pages";
 import { Login } from "../pages";
@@ -18,4 +18,9 @@ export default function App() {
             </Routes>
         </Router>
     );
+        <Route
+          exact
+          path={`/product/:productId`}
+          element={<ProductDetail />}
+        ></Route>
 }
