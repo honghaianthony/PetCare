@@ -1,5 +1,5 @@
 .service__choice__container{
-    padding: 15px 0;
+    padding:15px 10px;
 }
 .service__choice__container__detail{
     margin: 0 auto;
@@ -45,4 +45,49 @@
 }
 .text__choice__service{
     font-size: 18px;
+}
+@media screen and (max-width: 1024px){
+    
+    .service_choice_content_container{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        grid-row-gap: 20px;
+    }
+    .service_choice_content{
+        display:flex;
+        align-items: center;
+    }
+    .icon__service{
+        font-size: 50px;
+        width:15%;
+    }
+    .text__header__choice{
+        font-size: 26px;
+    }
+    p.text__choice__service{
+        /* width:80%; */
+        font-size: 24px;
+        text-align: left;
+    }
+}
+@media screen and (max-width: 600px){
+    .text__header__choice{
+        font-size: 20px;
+    }
+    .icon__service{
+        font-size: 40px;
+    }
+    p.text__choice__service{
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 480px){
+    .text__header__choice{
+        font-size: 16px;
+    }
+    .icon__service{
+        font-size: 30px;
+    }
+    p.text__choice__service{
+        font-size: 14px;
+    }
 }
