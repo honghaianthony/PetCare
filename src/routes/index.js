@@ -5,6 +5,7 @@ import { Service } from "../pages";
 import { About } from "../pages";
 import { Login } from "../pages";
 import { Register } from "../pages";
+import { Products } from "../pages";
 
 export default function App() {
     return (
@@ -15,12 +16,17 @@ export default function App() {
                 <Route exact path="/service" element={<Service />}></Route>
                 <Route exact path="/login" element={<Login />}></Route>
                 <Route exact path="/register" element={<Register />}></Route>
+                <Route
+                    exact
+                    path="/product"
+                    element={<Products />}
+                ></Route>{" "}
+                <Route
+                    exact
+                    path={`/product/:productId`}
+                    element={<ProductDetail />}
+                ></Route>
             </Routes>
         </Router>
     );
-        <Route
-          exact
-          path={`/product/:productId`}
-          element={<ProductDetail />}
-        ></Route>
 }

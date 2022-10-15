@@ -1,0 +1,7 @@
+.ProductsContent__container{
+    padding:15px 0;
+}
+.ProductsContent__container_detail{
+    max-width: 1280px;
+    margin: 0 auto;
+}
