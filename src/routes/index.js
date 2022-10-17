@@ -6,6 +6,7 @@ import { About } from "../pages";
 import { Login } from "../pages";
 import { Register } from "../pages";
 import { Products } from "../pages";
+import { BlogDetail } from "../pages";
 
 export default function App() {
     return (
@@ -25,6 +26,11 @@ export default function App() {
                     exact
                     path={`/product/:productId`}
                     element={<ProductDetail />}
+                ></Route>
+                <Route
+                    exact
+                    path={`/blog/:blog`}
+                    element={<BlogDetail />}
                 ></Route>
             </Routes>
         </Router>
