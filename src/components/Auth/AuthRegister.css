@@ -14,6 +14,12 @@
     padding-right: 10px;
 }
 
+.auth-register-input span {
+    color: red;
+    font-weight: 300;
+    font-family: Roboto Flex;
+}
+
 .auth-register-container {
     width: 25%;
     padding: 0 1rem;

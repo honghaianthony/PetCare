@@ -6,6 +6,8 @@ import { About } from "../pages";
 import { Login } from "../pages";
 import { Register } from "../pages";
 import { Products } from "../pages";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App() {
     return (
@@ -27,6 +29,18 @@ export default function App() {
                     element={<ProductDetail />}
                 ></Route>
             </Routes>
+            <ToastContainer
+                position="bottom-right"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
         </Router>
     );
 }
