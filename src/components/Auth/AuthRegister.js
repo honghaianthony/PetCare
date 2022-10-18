@@ -210,38 +210,43 @@ function AuthRegister() {
                                         />{" "}
                                         <span>{error.confirmPassword}</span>
                                     </div>
-                                    <div className="auth-register-input">
-                                        <label htmlFor="grid-password">
-                                            Tên của bạn
-                                        </label>
-                                        <input
-                                            type="text"
-                                            placeholder="Tên"
-                                            id="firstName"
-                                            onChange={(e) =>
-                                                setInput({
-                                                    ...input,
-                                                    firstName: e.target.value,
-                                                })
-                                            }
-                                        />{" "}
+                                    <div className="auth-register-input-name">
+                                        <div className="auth-register-input">
+                                            <label htmlFor="grid-password">
+                                                Tên của bạn
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder="Tên"
+                                                id="firstName"
+                                                onChange={(e) =>
+                                                    setInput({
+                                                        ...input,
+                                                        firstName:
+                                                            e.target.value,
+                                                    })
+                                                }
+                                            />{" "}
+                                        </div>
+                                        <div className="auth-register-input">
+                                            <label htmlFor="grid-password">
+                                                Họ
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder="Họ"
+                                                id="lastName"
+                                                onChange={(e) =>
+                                                    setInput({
+                                                        ...input,
+                                                        lastName:
+                                                            e.target.value,
+                                                    })
+                                                }
+                                            />
+                                        </div>
                                     </div>
-                                    <div className="auth-register-input">
-                                        <label htmlFor="grid-password">
-                                            Họ
-                                        </label>
-                                        <input
-                                            type="text"
-                                            placeholder="Họ"
-                                            id="lastName"
-                                            onChange={(e) =>
-                                                setInput({
-                                                    ...input,
-                                                    lastName: e.target.value,
-                                                })
-                                            }
-                                        />
-                                    </div>
+
                                     <div className="auth-register-input">
                                         <label htmlFor="grid-password">
                                             Email

@@ -159,6 +159,17 @@
     letter-spacing: 0.5px;
 }
 
+.auth-register-input-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.auth-register-input-name input {
+    width: 90%;
+}
+
 @media screen and (max-width: 1024px) {
     .auth-register-container {
         width: 40%;
