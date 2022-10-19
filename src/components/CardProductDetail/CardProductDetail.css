@@ -1,0 +1,99 @@
+
+.card__product__container__{
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 5px;
+    padding:10px;
+    display:flex;
+    flex-direction: column;
+    flex:1;
+    position: relative;
+}
+.CardProductDetail_img_container_top {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+
+.CardProductDetail_img_detail {
+    height: 250px;
+    width: 100%;
+    object-fit: object;
+    padding:5px 20px;
+}
+.CardProductDetail_img_container_bottom{
+    display: flex;
+    flex-direction: column;
+    /* flex-shrink: 0; */
+    width:100%;
+    /* flex: 1; */
+}
+.Name_of_card_product{
+    font-weight: 600;
+    margin-top: 5px;
+}
+.Price_of_card_product{
+    font-weight: 700;
+    line-height: 24px;
+    color: #FF0000;
+    font-size: 20px;
+
+}
+.Price_of_card_product_container{
+}
+.Rating__card_product_detail{
+    align-items: center;
+    margin-top: 5px;
+}
+.Solds__card{
+    font-size: 14px;
+}
+.Name_ProductsContent__detail_Item{
+    margin-bottom: 20px;
+
+}
+.Name_ProductsContent__detail_Item_header{
+    width:100%;
+    background-color: #DE135C;
+    color: #fff;
+    text-align: center;
+    padding:5px;
+    border-radius: 5px;
+}
+.discount_price_product{
+    display: flex;
+    align-items: center;
+}
+
+.discount_item_product_container{
+    position: absolute;
+    top:0;
+    right:0;
+    height: auto;
+    width:100px;
+}
+.discount_item_product_container{
+    position: absolute;
+    /* background-image: url(../../../public/assets/images/Products/302240086_531200318839590_2517707731116684581_n.png);
+    background-repeat: no-repeat;
+    background-position: cover; */
+    height:fit-content;
+    width:30%;
+
+}
+.discount_item_product{
+    position: absolute;
+    width: 60px;
+    height: 90px;
+    right: 0;
+    top: 0;
+}
+.Number_discount_sale_product{
+    position: absolute;
+    font-weight: 600;
+    top:20px;
+    color:#DE135C;
+    right: 8px;
+    font-size: 18px;
+}
