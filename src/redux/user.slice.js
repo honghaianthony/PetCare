@@ -23,13 +23,6 @@ const userSlice = createSlice({
                 state.userName = infoReload.userName;
                 state.role = infoReload.role;
                 state.fullName = infoReload.fullName;
-                // return {
-                //     isAuthenticated: true,
-                //     userId: infoReload.userId,
-                //     userName: infoReload.userName,
-                //     role: infoReload.role,
-                //     fullName: infoReload.fullName,
-                // };
             } else {
                 state.isAuthenticated = false;
                 state.userId = -1;
@@ -46,13 +39,6 @@ const userSlice = createSlice({
             state.userName = info.userName;
             state.role = info.role;
             state.fullName = info.fullName;
-            // return {
-            //     isAuthenticated: true,
-            //     userId: info.userId,
-            //     userName: info.userName,
-            //     role: info.role,
-            //     fullName: info.fullName,
-            // };
         },
         logout(state) {
             Cookies.remove("token");
@@ -65,6 +51,6 @@ const userSlice = createSlice({
     },
 });
 
-export const { login, logout } = userSlice.actions;
+export const { login, logout, reload } = userSlice.actions;
 export const selectUser = (state) => state.user.user;
 export default userSlice.reducer;

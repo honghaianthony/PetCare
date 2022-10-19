@@ -1,0 +1,33 @@
+.profile-container {
+    padding: 0.5rem 0;
+    position: absolute;
+}
+
+.profile-container-detail {
+    width: 150px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+}
+
+.profile-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-options span {
+    padding: 0.5rem 1rem;
+    font-family: Roboto Flex;
+    font-weight: 800;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.profile-options span:hover {
+    background-color: #f5f5f5;
+}

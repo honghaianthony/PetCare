@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home, ProductDetail } from "../pages";
 import { Service } from "../pages";
@@ -8,8 +8,16 @@ import { Register } from "../pages";
 import { Products } from "../pages";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useDispatch } from "react-redux";
+import { reload } from "../redux/user.slice";
 
 export default function App() {
+    const dispatch = useDispatch();
+    //dispatch action reload
+    useEffect(() => {
+        dispatch(reload());
+    }, [dispatch]);
+
     return (
         <Router>
             <Routes>

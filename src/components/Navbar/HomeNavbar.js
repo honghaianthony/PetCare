@@ -2,9 +2,22 @@ import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import "./HomeNavbar.css";
+import { useSelector } from "react-redux";
+import Profile from "./Profile";
+import { useDetectClickOutside } from "react-detect-click-outside";
 
 function HomeNavbar() {
+    const selector = useSelector((state) => state.user);
     const [navbar, setNavbar] = useState(false);
+    const [profile, setProfile] = useState(false);
+
+    const closeDropDownProfileSelected = () => {
+        setProfile(false);
+    };
+
+    const refProfileSelected = useDetectClickOutside({
+        onTriggered: closeDropDownProfileSelected,
+    });
 
     const changeBackground = () => {
         if (window.scrollY >= 66) {
@@ -118,9 +131,22 @@ function HomeNavbar() {
                             </li>
                         </ul>
                     </div>
-                    <div className="navbar-auth">
-                        <Link to="/login">Đăng nhập</Link>
-                    </div>
+                    {selector.isAuthenticated ? (
+                        <div
+                            className="navbar-authenticated"
+                            ref={refProfileSelected}
+                            onClick={() => {
+                                setProfile(!profile);
+                            }}
+                        >
+                            Xin chào {selector.fullName}
+                            {profile && <Profile />}
+                        </div>
+                    ) : (
+                        <div className="navbar-auth">
+                            <Link to="/login">Đăng nhập</Link>
+                        </div>
+                    )}
                 </div>
             </nav>
         </header>
