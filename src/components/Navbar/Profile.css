@@ -1,12 +1,14 @@
 .profile-container {
-    padding: 0.5rem 0;
-    position: absolute;
+    position: relative;
+    right: 245px;
 }
 
 .profile-container-detail {
-    width: 150px;
+    width: 300px;
+    position: absolute;
+    top: 10px;
     border: 1px solid rgba(0, 0, 0, 0.15);
-    border-radius: 4px;
+    border-radius: 15px;
     background-color: white;
     box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
 }
@@ -22,12 +24,75 @@
     font-weight: 800;
     height: 45px;
     line-height: 45px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     text-align: left;
     text-decoration: none;
     cursor: pointer;
 }
 
-.profile-options span:hover {
+.profile-info {
+    width: 280px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    box-shadow: rgb(2 1 1 / 10%) 0px 5px 20px -5px;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    margin: 1rem auto;
+    transition: all 0.2s ease-in-out;
+}
+
+.profile-info:hover {
     background-color: #f5f5f5;
+}
+
+.profile-info img {
+    border-radius: 50%;
+}
+
+.profile-info span {
+    font-size: 16px;
+    color: black;
+    font-weight: 600;
+    font-family: Roboto Flex;
+    margin-top: -15px;
+}
+
+.profile-option-detail {
+    width: 280px;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.profile-option-detail:hover {
+    background-color: #f5f5f5;
+    border-radius: 20px;
+}
+
+.profile-option-detail-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(201, 193, 193, 0.15);
+    color: black;
+    padding: 0.25rem 0.25rem;
+    font-size: 14px;
+}
+
+.profile-option-detail p {
+    font-size: 14px;
+    color: black;
+    font-weight: 600;
+    font-family: Roboto Flex;
+    padding-left: 0.5rem;
+}
+
+@media screen and (max-width: 460px) {
+    .profile-container {
+        position: relative;
+        right: 150px;
+    }
 }

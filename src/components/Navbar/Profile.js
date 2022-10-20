@@ -2,8 +2,9 @@ import React from "react";
 import "./Profile.css";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/user.slice";
+import { Icon } from "@iconify/react";
 
-function Profile() {
+function Profile(props) {
     const dispatch = useDispatch();
 
     const handleLogout = () => {
@@ -13,9 +14,20 @@ function Profile() {
         <div className="profile-container">
             <div className="profile-container-detail">
                 <div className="profile-options">
-                    <span onClick={handleLogout}>
+                    <div className="profile-info">
+                        <img src={props.image} alt={props.fullName} />
+                        <span>{props.fullName}</span>
+                    </div>
+                    <div
+                        className="profile-option-detail"
+                        onClick={handleLogout}
+                    >
+                        <Icon
+                            icon="fe:logout"
+                            className="profile-option-detail-icon"
+                        />
                         <p> Đăng xuất </p>
-                    </span>
+                    </div>
                 </div>
             </div>
         </div>

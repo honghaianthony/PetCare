@@ -116,8 +116,16 @@ function Navbar() {
                                 setProfile(!profile);
                             }}
                         >
-                            Xin chào {selector.fullName}
-                            {profile && <Profile />}
+                            <img
+                                src={selector.avatar}
+                                alt={selector.fullName}
+                            />
+                            {profile && (
+                                <Profile
+                                    image={selector.avatar}
+                                    fullName={selector.fullName}
+                                />
+                            )}
                         </div>
                     ) : (
                         <div className="index-navbar-auth">

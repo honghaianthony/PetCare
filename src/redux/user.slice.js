@@ -8,6 +8,7 @@ const initialState = {
     userName: null,
     role: -1,
     fullName: "",
+    avatar: "",
 };
 
 const userSlice = createSlice({
@@ -23,12 +24,14 @@ const userSlice = createSlice({
                 state.userName = infoReload.userName;
                 state.role = infoReload.role;
                 state.fullName = infoReload.fullName;
+                state.avatar = infoReload.avatar;
             } else {
                 state.isAuthenticated = false;
                 state.userId = -1;
                 state.userName = null;
                 state.role = -1;
                 state.fullName = "";
+                state.avatar = "";
             }
         },
         login(state, action) {
@@ -39,6 +42,7 @@ const userSlice = createSlice({
             state.userName = info.userName;
             state.role = info.role;
             state.fullName = info.fullName;
+            state.avatar = info.avatar;
         },
         logout(state) {
             Cookies.remove("token");
@@ -47,6 +51,7 @@ const userSlice = createSlice({
             state.userName = null;
             state.role = -1;
             state.fullName = "";
+            state.avatar = "";
         },
     },
 });
