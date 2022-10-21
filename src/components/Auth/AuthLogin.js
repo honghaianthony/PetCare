@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./AuthLogin.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { postLogin } from "../../apis/authApi";
+import { postLogin, postGoogleLogin } from "../../apis/authApi";
 import { toast } from "react-toastify";
 import { login } from "../../redux/user.slice.js";
+import GoogleLogin from "react-google-login";
+import { gapi } from "gapi-script";
 
 function AuthLogin() {
     const select = useSelector((x) => x.user.isAuthenticated);
@@ -29,6 +31,27 @@ function AuthLogin() {
         }
     };
 
+    useEffect(() => {
+        function start() {
+            gapi.client.init({
+                clientId: process.env.REACT_APP_GOOGLE_CLIENT_ID,
+                scope: "email",
+            });
+        }
+
+        gapi.load("client:auth2", start);
+    }, []);
+
+    const handleGoooleLogin = async (googleLogin) => {
+        const res = await postGoogleLogin(googleLogin);
+        if (res.success) {
+            toast.success("Đăng nhập thành công !");
+            dispatch(login(res.token));
+        } else {
+            toast.error("Đăng nhập thất bại !");
+        }
+    };
+
     return (
         <>
             {select ? (
@@ -43,15 +66,17 @@ function AuthLogin() {
                                         <h6>Đăng nhập bằng</h6>
                                     </div>
                                     <div className="auth-login-another-button">
-                                        <button type="button">
-                                            <img
-                                                alt="Google login"
-                                                src="/assets/images/google.svg"
-                                                width={50}
-                                                height={20}
-                                            />
-                                            Google
-                                        </button>
+                                        <GoogleLogin
+                                            clientId={
+                                                process.env
+                                                    .REACT_APP_GOOGLE_CLIENT_ID
+                                            }
+                                            buttonText="Đăng nhập với Google"
+                                            onSuccess={handleGoooleLogin}
+                                            onFailure={handleGoooleLogin}
+                                            cookiePolicy={"single_host_origin"}
+                                        />
+                                        ,
                                     </div>
                                     <hr />
                                 </div>

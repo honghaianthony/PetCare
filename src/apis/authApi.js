@@ -15,4 +15,8 @@ const register = async (data) => {
     return await axiosInstance.post("/register", data);
 };
 
-export { postLogin, register };
+const postGoogleLogin = async (data) => {
+    return await axiosInstance.post("/google", data);
+};
+
+export { postLogin, register, postGoogleLogin };

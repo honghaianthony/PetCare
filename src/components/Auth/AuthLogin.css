@@ -50,20 +50,6 @@
     margin-bottom: 10px;
 }
 
-.auth-login-another-button button {
-    background-color: white;
-    color: #475569;
-    font-size: 14px;
-    padding: 5px 10px;
-    border-radius: 0.25rem;
-    display: inline-flex;
-    align-items: center;
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
 .auth-login-input-container {
     display: flex;
     flex-direction: column;
