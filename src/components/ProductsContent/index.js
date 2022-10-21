@@ -45,7 +45,7 @@ const ProductsContent = () => {
       rate: 5,
       numOfProductsSold: "171",
       img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
-      categoryId:1
+      categoryId: 1,
     },
     {
       id: 2,
@@ -55,8 +55,7 @@ const ProductsContent = () => {
       rate: 5,
       numOfProductsSold: "171",
       img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
-      categoryId:1
-
+      categoryId: 1,
     },
     {
       id: 3,
@@ -66,8 +65,7 @@ const ProductsContent = () => {
       rate: 5,
       numOfProductsSold: "171",
       img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
-      categoryId:1
-
+      categoryId: 1,
     },
     {
       id: 4,
@@ -77,8 +75,8 @@ const ProductsContent = () => {
       rate: 5,
       numOfProductsSold: "171",
       img: "/assets/images/Products/f400153586950c6a6dea89764c6a664d.jpg",
-      categoryId:5
-
+      categoryId: 5,
+      category: "Thức ăn",
     },
     {
       id: 5,
@@ -88,17 +86,19 @@ const ProductsContent = () => {
       rate: 4,
       numOfProductsSold: "171",
       img: "/assets/images/Products/Sua-tam-sos-cho-cho-meo-768x768.jpg",
-      categoryId:6
-    }
+      categoryId: 6,
+    },
   ];
   const [activeFilter, setActiveFilter] = useState([]);
+  const [active, setActive] = useState(true);
+
   const onFilterChange = (filter) => {
     if (filter === "ALL") {
       if (activeFilter.length === productName.length) {
         return;
-      } 
-      else {
-        setActiveFilter(productName.map((filter) => filter.categoryId=productName.categoryId));
+      } else {
+        setActive(!active);
+        // setActiveFilter(productName.map((filter) => filter.categoryId=productName.categoryId));
       }
     } else {
       if (activeFilter.includes(filter)) {
@@ -107,20 +107,31 @@ const ProductsContent = () => {
         newFilter.splice(filterIndex, 1);
         setActiveFilter(newFilter);
       } else {
+        setActive(false);
         setActiveFilter([...activeFilter, filter]);
       }
     }
   };
-  console.log(activeFilter)
+  // console.log()
   let filteredList;
 
-  if (activeFilter.length === 0 || activeFilter.length === productName.length) {
+  if (
+    activeFilter.length === 0 ||
+    activeFilter.length === productName.length ||
+    active
+  ) {
     filteredList = product;
   } else {
     filteredList = product.filter((item) =>
       activeFilter.includes(item.categoryId)
     );
   }
+  const [sortRate, setSortRate] = useState("Đánh giá");
+  const [sortNumOfProductsSold, setSortNumOfProductsSold] =
+    useState("Lượng mua");
+  const [sortPrice, setSortPrice] = useState("Giá");
+  const changeRate = () => {};
+  // console.log(filteredList)
   return (
     <section className="ProductsContent__container">
       <div className="ProductsContent__container_detail">
@@ -133,8 +144,8 @@ const ProductsContent = () => {
               id="myInput_menu"
               defaultChecked
               className="checkbox__product_menu"
-              checked={activeFilter.length === productName.length}
-              onChange={() => onFilterChange('ALL')}
+              checked={active}
+              onChange={() => onFilterChange("ALL")}
             />
             <label htmlFor="myInput_menu" className="all_product_check">
               Tất cả sản phẩm
@@ -146,8 +157,8 @@ const ProductsContent = () => {
                 type="checkbox"
                 id={index}
                 className="checkbox__product_menu"
-                checked={activeFilter.includes(item.categoryId)}
-								onChange={() => onFilterChange(item.categoryId)}
+                checked={active || activeFilter.includes(item.categoryId)}
+                onChange={() => onFilterChange(item.categoryId)}
               />
               <label htmlFor={index} className="label_menu_product">
                 <Icon icon={item.icon} className="icon__menu__product" />
@@ -158,18 +169,55 @@ const ProductsContent = () => {
         </div>
 
         <div className="ProductsContent__detail_Item">
+          <div className="Sort_product_item_container">
+            <div className="Sort_product_item_container_">
+              <select name="rate" id="rate" defaultValue={"Đánh giá"} onChange={changeRate()}>
+                <option value="Đánh giá" disabled>
+                  Đánh giá
+                </option>
+                <option value="tăng" >
+                  tăng
+                </option>
+                <option value="giảm" >
+                  giảm
+                </option>
+              </select>
+            </div>
+            <div className="Sort_product_item_container_">
+              <select
+                name="numOfProductsSold"
+                id="numOfProductsSold"
+                defaultValue={"Lượng mua"}
+              >
+                <option value="Lượng mua" disabled>
+                  Lượng mua
+                </option>
+                <option value="tăng">tăng</option>
+                <option value="giảm">giảm</option>
+              </select>
+            </div>
+            <div className="Sort_product_item_container_">
+              <select name="price" id="price" defaultValue={"Giá"}>
+                <option value="Giá" disabled>
+                  Giá
+                </option>
+                <option value="tăng">tăng</option>
+                <option value="giảm">giảm</option>
+              </select>
+            </div>
+          </div>
           {/* <div className="Name_ProductsContent__detail_Item">
             <h3 className="Name_ProductsContent__detail_Item_header">
               Thức ăn
             </h3>
           </div> */}
-          <div className="Name_ProductsContent__detail_Item">
+          {/* <div className="Name_ProductsContent__detail_Item">
             {filteredList.map((item,index)=>{
               <h3 className="Name_ProductsContent__detail_Item_header">
               {item.name}
             </h3>
             })}
-          </div>
+          </div> */}
           <div className="CardProductDetail_display">
             {filteredList.map((item, index) => (
               <CardProductDetail

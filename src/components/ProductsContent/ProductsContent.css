@@ -57,3 +57,16 @@ input.checkbox__product_menu {
 
     grid-auto-rows: 1fr;
 }
+.ProductsContent__detail_Item{
+  display:flex;
+  flex-direction: column;
+}
+.Sort_product_item_container{
+  display:flex;
+  justify-content: end;
+}
+.Sort_product_item_container_{
+  margin-right: 5px;
+  margin-bottom: 10px;
+  padding:2px;
+}
