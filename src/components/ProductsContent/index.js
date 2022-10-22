@@ -112,7 +112,6 @@ const ProductsContent = () => {
       }
     }
   };
-  // console.log()
   let filteredList;
 
   if (
@@ -127,11 +126,24 @@ const ProductsContent = () => {
     );
   }
   const [sortRate, setSortRate] = useState("Đánh giá");
-  const [sortNumOfProductsSold, setSortNumOfProductsSold] =
-    useState("Lượng mua");
-  const [sortPrice, setSortPrice] = useState("Giá");
-  const changeRate = () => {};
+  // const [sortNumOfProductsSold, setSortNumOfProductsSold] =
+  //   useState("Lượng mua");
+  // const [sortPrice, setSortPrice] = useState("Giá");
+  // const changeRate = () => {};
   // console.log(filteredList)
+  // let sortRateProduct=filteredList;
+  // console.log(sortRateProduct)
+  // useEffect(() => {
+  //   if (sortRate === "Đánh giá") {
+  //     return;
+  //   } else {
+  //     if (sortRate === "Tăng") {
+        
+  //     } else {
+
+  //     }
+  //   }
+  // }, [sortRate]);
   return (
     <section className="ProductsContent__container">
       <div className="ProductsContent__container_detail">
@@ -171,16 +183,17 @@ const ProductsContent = () => {
         <div className="ProductsContent__detail_Item">
           <div className="Sort_product_item_container">
             <div className="Sort_product_item_container_">
-              <select name="rate" id="rate" defaultValue={"Đánh giá"} onChange={changeRate()}>
+              <select
+                name="rate"
+                id="rate"
+                defaultValue={"Đánh giá"}
+                value={sortRate}
+              >
                 <option value="Đánh giá" disabled>
                   Đánh giá
                 </option>
-                <option value="tăng" >
-                  tăng
-                </option>
-                <option value="giảm" >
-                  giảm
-                </option>
+                <option value="tăng">tăng</option>
+                <option value="giảm">giảm</option>
               </select>
             </div>
             <div className="Sort_product_item_container_">

@@ -30,22 +30,24 @@ const CardProductDetail = (props) => {
         ) : (
           <p className="discount_price_product">
             <span
-              style={{
-                textDecorationLine: "line-through",
-                color: "#ccc",
-                fontSize: "20px",
-              }}
+              // style={{
+              //   textDecorationLine: "line-through",
+              //   color: "#ccc",
+              //   fontSize: "20px",
+              // }}
+              className="price__before_discount"
             >
               {props.price}.000
               <sup>đ</sup>
             </span>
             <b
-              style={{
-                color: "red",
-                fontSize: "20px",
-                padding: "0px 0px 0px 20px",
-                fontWeight: 700,
-              }}
+              // style={{
+              //   color: "red",
+              //   fontSize: "20px",
+              //   padding: "0px 0px 0px 20px",
+              //   fontWeight: 700,
+              // }}
+              className="price_after_discount"
             >
               {props.price - (props.price * props.sale) / 100}
               .000

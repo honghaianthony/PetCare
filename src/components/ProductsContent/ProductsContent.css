@@ -70,3 +70,39 @@ input.checkbox__product_menu {
   margin-bottom: 10px;
   padding:2px;
 }
+@media screen and (max-width: 1024px){
+  .ProductsContent__container_detail{
+    flex-direction: column;
+  }
+  .ProductsContent_menu_container{
+    width:100%;
+    padding-right: 0;
+  }
+  .header_menu_product{
+    font-size: 30px;
+  }
+  .Menu_item_content_product{
+    padding:15px;
+  }
+  input.checkbox__product_menu{
+    width:30px;
+    height:30px;
+  }
+  .icon__menu__product {
+    font-size: 30px;
+  }
+  .ProductsContent__detail_Item{
+    width:100%;
+  }
+ 
+}
+@media screen and (max-width: 480px){
+  .Menu_item_content_product{
+    padding:10px;
+  }
+  .CardProductDetail_display{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+
+  }
+  
+}

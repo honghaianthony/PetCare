@@ -1,5 +1,5 @@
 .Products_banner_container{
-    background-image: url(../../../public/assets/images/Products/BannerProducts.png);
+    background-image: url(../../../public/assets/images/Products/BannerProducts2.png);
     background-size: 100% 100%;
     background-position: center;
     margin-top: 114px;
@@ -12,4 +12,23 @@
     overflow: hidden;
     margin: 0 auto;
     /* background-position: object; */
+}
+@media screen and (max-width: 1024px) {
+  .Products_banner_container_detail{
+    height:450px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .Products_banner_container{
+    margin-top: 90px;
+
+  }
+  .Products_banner_container_detail{
+    height:300px;
+  }
+}
+@media screen and (max-width: 480px){
+  .Products_banner_container_detail{
+    height:250px;
+  }
 }

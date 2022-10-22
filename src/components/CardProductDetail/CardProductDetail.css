@@ -97,3 +97,77 @@
     right: 8px;
     font-size: 18px;
 }
+span.price__before_discount{
+    text-Decoration: line-through;
+    color: #ccc;
+    font-size: 20px;
+}
+b.price_after_discount{
+    color: red;
+    font-size:  20px;
+    padding: 0px 0px 0px 20px;
+    font-weight: 700;
+}
+@media screen and (max-width: 600px){
+    .CardProductDetail_img_detail{
+        height:150px;
+    }
+    .discount_item_product {
+        width: 40px;
+        height: 80px;
+    }
+    .Number_discount_sale_product{
+        font-size: 14px;
+        right:3px;
+    }
+    .CardProductDetail_img_detail{
+        padding:0;
+    }
+    .Name_of_card_product{
+        font-size: 15px;
+        text-align: justify;
+    }
+    .Price_of_card_product{
+        font-size: 16px;
+
+    }
+    span.price__before_discount{
+        font-size: 16px;
+    }
+    b.price_after_discount{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 480px){
+    /* .header_menu_product{
+        font-size: 48px;
+    } */
+    .Name_of_card_product{
+        font-size: 20px;
+    }
+    .Price_of_card_product{
+        font-size: 20px;
+    }
+    span.price__before_discount{
+        font-size: 20px;
+    }
+    b.price_after_discount{
+        padding: 0px 0px 0px 10px;
+        font-size: 20px;
+
+    }
+    .CardProductDetail_img_detail{
+        height:300px;
+      }
+      .discount_item_product {
+        width: 70px;
+        height: 100px;
+    }
+    .Number_discount_sale_product {
+        font-size: 20px;
+        right: 8px;
+    }
+    .Solds__card{
+        font-size: 16px;
+    }
+}
