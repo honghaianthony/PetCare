@@ -5,4 +5,6 @@ export { default as ProductDetail } from "./ProductDetail";
 export { default as Login } from "./Auth/login";
 export { default as Register } from "./Auth/register";
 export { default as Products } from "./Products";
-
+export { default as ManagerUser } from "./Admin/ManagerUser";
+export { default as ManagerProduct } from "./Admin/ManagerProduct";
+export { default as ManagerService } from "./Admin/ManagerService";

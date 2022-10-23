@@ -1,0 +1,40 @@
+.service-dashboard {
+  margin-left: 280px;
+  margin-top: 20px;
+  width: calc(100% - 300px);
+}
+.service-list-container {
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+  margin-top: 20px;
+}
+.service-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.service-list-container .service-item {
+  padding: 10px;
+  flex-basis: calc(100% / 3);
+}
+.service-item-body {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.service-item .state-and-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.service-item .edit {
+  font-size: 28px;
+}
+@media only screen and (max-width: 1200px) {
+  .service-list-container .service-item {
+    flex-basis: calc(100% / 3);
+  }
+}
+@media only screen and (max-width: 768px) {
+}
