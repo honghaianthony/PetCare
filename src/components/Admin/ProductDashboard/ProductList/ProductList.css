@@ -1,0 +1,22 @@
+.product-list-container {
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+  margin-top: 20px;
+}
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.product-list-container .product-item {
+  padding: 10px;
+  flex-basis: calc(100% / 4);
+}
+
+@media only screen and (max-width: 1200px) {
+  .product-list-container .product-item {
+    flex-basis: calc(100% / 2);
+  }
+}
+@media only screen and (max-width: 768px) {
+}
