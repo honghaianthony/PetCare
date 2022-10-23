@@ -1,0 +1,80 @@
+.Product__list__container{
+    padding:15px 10px;
+}
+.Product__list__container__detail{
+    max-width: 1280px;
+    margin: 0 auto;
+    border:1px solid #DE135C;
+    padding:20px;
+    border-radius: 5px;
+    font-family: "Nunito", sans-serif;
+}
+.underline__service__Product__list{
+    border-bottom: 2px solid #DE135C;
+    width:100%;
+    margin-bottom: 10px;
+}
+/* .Product__list__number{
+    list-style-type: upper-greek;
+    list-style-position: inside;
+} */
+.text__content__Product__list{
+    padding:0 10px;
+}
+.Product__list__{
+    list-style-type: disc;
+    list-style-position: inside;
+}
+.Product__list_service__img__container{
+    text-align: center;
+}
+.Product__list_service__img{
+    width: 400px;
+    height:300px;
+    border-radius: 5px;
+}
+@media screen and (max-width: 1024px){
+    .text__header__Product__list{
+        font-size: 26px;
+    }
+    .Product__list__text p, .Product__list__text h5 {
+        font-size: 24px;
+    }
+    .text__content__Product__list h4{
+        font-size: 24px;
+    }
+    .Product__list__ li{
+        font-size: 24px;
+    }
+}
+@media screen and (max-width: 600px){
+    .text__header__Product__list{
+        font-size: 20px;
+    }
+    .text__content__Product__list h4{
+        font-size: 20px;
+    }
+    .Product__list__text h5{
+        font-size: 20px;
+
+    }
+    .Product__list__text p,.Product__list__text li{
+        font-size: 16px;
+    }
+    .Product__list_service__img{
+        width: 300px;
+        height: 250px;
+    }
+}
+@media screen and (max-width: 480px){
+    .text__header__Product__list,.Product__list__text h5,.text__content__Product__list h4{
+        font-size: 16px;
+    }
+    .Product__list__text p,.Product__list__text li{
+        font-size: 14px;
+    }
+    .Product__list_service__img{
+        width: 250px;
+     height: 200px;
+    }
+}

@@ -1,27 +1,35 @@
-.navbar-container {
-    position: sticky;
+.index-navbar-container {
+    position: fixed;
     top: 0px;
     width: 100%;
     color: black;
     padding: 1.5rem 0;
     z-index: 10;
-    --tw-bg-opacity: 1;
-    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    background-color: white;
 }
 
-.navbar-desktop {
+.index-navbar-desktop {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1280px;
     margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.navbar-logo {
+.index-navbar-logo {
     font-family: Pangolin;
 }
 
-.navbar-items {
+.tab-active {
+    color: #fff !important;
+    background: #428de5;
+    border-radius: 0.5rem;
+    padding: 0.35rem 2rem;
+}
+
+.index-navbar-items {
     display: flex;
     text-decoration: none;
     align-items: center;
@@ -30,14 +38,16 @@
     margin-left: calc(3.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.navbar-list {
-    display: flex;
-    --tw-space-x-reverse: 0;
-    margin-right: calc(1rem * var(--tw-space-x-reverse));
-    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+.index-navbar-list {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
-.navbar-list-detail {
+.index-navbar-list-detail {
     display: flex;
     align-items: center;
     padding: 0.35rem 2rem;
@@ -48,7 +58,7 @@
     font-family: Roboto Flex;
 }
 
-.navbar-list li:hover {
+.index-navbar-list-detail:hover {
     color: #fff;
     background-color: #428de5;
     border-radius: 0.5rem;
@@ -57,11 +67,71 @@
     transition-duration: 150ms;
 }
 
-.navbar-auth {
+.index-navbar-auth {
     background-color: #de135c;
     opacity: 0.8;
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 10px;
     font-family: Roboto Flex;
+}
+
+.index-navbar-menu-icon {
+    display: none;
+}
+
+@media screen and (max-width: 960px) {
+    .index-navbar-list {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        width: 100%;
+        height: 90vh;
+        position: absolute;
+        top: 70px;
+        left: calc(-100vw - 40px);
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+    .index-navbar-list.active {
+        background: #fff;
+        left: 0px;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+        margin: 0;
+        margin-top: 2rem;
+    }
+    .index-navbar-list-detail {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+        color: black;
+        cursor: pointer;
+        font-size: 0.85rem;
+        line-height: 1.25rem;
+        font-family: Roboto Flex;
+    }
+    .index-navbar-list-detail:hover {
+        color: #fff;
+        background-color: #428de5;
+        border-radius: 0.5rem;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+    }
+    .index-navbar-auth {
+        margin-right: 4rem;
+    }
+    .index-navbar-menu-icon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.6rem;
+        cursor: pointer;
+    }
 }

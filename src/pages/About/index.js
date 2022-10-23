@@ -1,11 +1,13 @@
-import React from "react";
-import { Icon } from "@iconify/react";
+import MainLayout from "../../layouts/MainLayout";
+import AboutBanner from "../../components/AboutBanner";
+import AboutEmployee from "../../components/AboutEmployee";
 
 function About() {
     return (
-        <div>
-            <Icon icon="akar-icons:facebook-fill" />
-        </div>
+        <MainLayout>
+            <AboutBanner />
+            <AboutEmployee />
+        </MainLayout>
     );
 }
 

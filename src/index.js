@@ -8,6 +8,9 @@ import { store } from "./store";
 import { NextUIProvider } from "@nextui-org/react";
 import "@fontsource/roboto-flex";
 import "@fontsource/pangolin";
+import "@fontsource/nunito";
+import "@fontsource/lato";
+import "@fontsource/nunito-sans";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

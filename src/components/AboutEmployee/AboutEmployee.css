@@ -1,0 +1,80 @@
+.about-employee-container {
+    padding: 2rem 0;
+}
+
+.about-employee-container-detail {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.about-employee-content-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    color: black;
+    font-family: Roboto Flex;
+}
+
+.about-employee-content-main h2 {
+    font-weight: 800;
+    padding-bottom: 2rem;
+}
+
+.about-employee-detail {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    justify-items: center;
+    gap: 5rem;
+    width: 100%;
+}
+
+.about-employee-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-employee-info img {
+    width: 300px;
+    height: 280px;
+    border-radius: 35px;
+    margin-bottom: 3px;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+
+.about-employee-info img:hover {
+    filter: none;
+    -webkit-filter: grayscale(0);
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.about-employee-info p {
+    font-size: 20px;
+    font-weight: 800;
+    font-family: Roboto Flex;
+}
+
+.about-employee-info span {
+    font-size: 15px;
+    font-weight: 800;
+    font-family: Roboto Flex;
+}
+
+@media screen and (max-width: 960px) {
+    .about-employee-detail {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-employee-detail {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
