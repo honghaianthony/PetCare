@@ -26,9 +26,6 @@
     display: flex;
     text-decoration: none;
     align-items: center;
-    --tw-space-x-reverse: 0;
-    margin-right: calc(3.5rem * var(--tw-space-x-reverse));
-    margin-left: calc(3.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .navbar-list {
@@ -67,6 +64,14 @@
     transition-duration: 150ms;
 }
 
+.navbar-authenticated {
+    color: black;
+    font-weight: 800;
+    padding: 0.5rem 1rem;
+    font-family: Roboto Flex;
+    cursor: pointer;
+}
+
 .navbar-auth {
     background-color: #de135c;
     opacity: 0.8;
@@ -86,6 +91,16 @@
     transition-duration: 150ms;
     backdrop-filter: blur(10px);
     box-shadow: rgb(2 1 1 / 10%) 0px 5px 20px -5px;
+}
+
+.navbar-authenticated img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.navbar-authenticated img:hover {
+    -webkit-filter: brightness(105%);
 }
 
 @media screen and (max-width: 960px) {
@@ -129,6 +144,9 @@
         transition-property: all;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 150ms;
+    }
+    .navbar-authenticated {
+        margin-right: 4rem;
     }
     .navbar-auth {
         margin-right: 4rem;
