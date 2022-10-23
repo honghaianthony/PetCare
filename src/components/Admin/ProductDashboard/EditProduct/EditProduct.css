@@ -1,0 +1,40 @@
+.edit-product-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10010;
+  width: 100vw;
+  height: 100vh;
+}
+.edit-product-container .layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.3;
+}
+.edit-product-container {
+  margin-top: 0;
+}
+
+.edit-product-form-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 10vh auto;
+  height: 80vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 5px;
+}
+.edit-product-form-container .button-group input {
+  width: fit-content;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.edit-product-form-container .button-group .cancel-edit {
+  background-color: gray;
+  color: white;
+  margin-left: 8px;
+}

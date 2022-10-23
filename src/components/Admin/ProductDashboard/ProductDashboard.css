@@ -1,0 +1,44 @@
+.product-dashboard {
+  margin-left: 280px;
+  margin-top: 20px;
+  width: calc(100% - 300px);
+}
+.product-dashboard .select-item {
+  width: fit-content;
+  margin: 0 0 0 auto;
+}
+
+.product-dashboard .select-item > button {
+  background-color: white;
+  border: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  font-size: 24px;
+  line-height: 48px;
+  margin-left: 10px;
+  padding: 0 16px;
+  border-bottom: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: all 0.4s;
+}
+.product-dashboard .select-item > button:hover {
+  color: blue;
+  border-bottom: 4px solid blue;
+}
+.product-dashboard .select-item > button.active {
+  color: blue;
+  border-bottom: 4px solid blue;
+}
+.button-group {
+  width: fit-content;
+  margin: 0 0 0 auto;
+}
+@media only screen and (max-width: 768px) {
+  .product-dashboard {
+    margin-left: 10px;
+    margin-top: 20px;
+    width: calc(100% - 20px);
+  }
+  .product-dashboard .select-item > button {
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,10 @@
+.user-list-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.user-list-container .user-item {
+  flex-basis: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+}
