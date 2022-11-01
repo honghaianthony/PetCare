@@ -1,7 +1,108 @@
-.ProductsContent__container{
-    padding:15px 0;
+.ProductsContent__container {
+  padding: 15px 10px;
 }
-.ProductsContent__container_detail{
-    max-width: 1280px;
-    margin: 0 auto;
+.ProductsContent__container_detail {
+  max-width: 1280px;
+  margin: 0 auto;
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  display: flex;
+  width: 100%;
+}
+.ProductsContent_menu_container {
+  width: 20%;
+  padding-right: 20px;
+}
+.ProductsContent__detail_Item {
+  width: 80%;
+}
+.header_menu_product {
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+}
+.divide {
+  border-bottom: 2px solid #de135c;
+}
+.Menu_item_content_product {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  font-size: 26px;
+  line-height: 26px;
+}
+input.checkbox__product_menu {
+  width: 16px;
+  height: 16px;
+  border: solid 1px #cb1c22;
+  background-color: #cb1c22;
+}
+.all_product_check {
+  margin-left: 10px;
+}
+.label_menu_product {
+  display: flex;
+  margin-left: 10px;
+  font-size: 20px;
+}
+.icon__menu__product {
+  font-size: 24px;
+  margin-right: 5px;
+}
+.CardProductDetail_display {
+  display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+
+    grid-auto-rows: 1fr;
+}
+.ProductsContent__detail_Item{
+  display:flex;
+  flex-direction: column;
+}
+.Sort_product_item_container{
+  display:flex;
+  justify-content: end;
+}
+.Sort_product_item_container_{
+  margin-right: 5px;
+  margin-bottom: 10px;
+  padding:2px;
+}
+@media screen and (max-width: 1024px){
+  .ProductsContent__container_detail{
+    flex-direction: column;
+  }
+  .ProductsContent_menu_container{
+    width:100%;
+    padding-right: 0;
+  }
+  .header_menu_product{
+    font-size: 30px;
+  }
+  .Menu_item_content_product{
+    padding:15px;
+  }
+  input.checkbox__product_menu{
+    width:30px;
+    height:30px;
+  }
+  .icon__menu__product {
+    font-size: 30px;
+  }
+  .ProductsContent__detail_Item{
+    width:100%;
+  }
+ 
+}
+@media screen and (max-width: 480px){
+  .Menu_item_content_product{
+    padding:10px;
+  }
+  .CardProductDetail_display{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+
+  }
+  
 }
