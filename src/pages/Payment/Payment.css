@@ -1,0 +1,183 @@
+.Payment {
+  width: 100%;
+  margin-top: 113px;
+}
+.Payment-Title {
+  background-image: linear-gradient(to right, #c0d6f0, #e0789d);
+}
+.Payment-Title > div {
+  width: 1280px;
+  height: 70px;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  color: #fff;
+  padding: 10px;
+  padding-top: 5px;
+}
+.Payment-Title-Icon {
+  padding-right: 20px;
+  font-size: 32px;
+}
+
+.Payment-Content {
+  width: 1280px;
+  display: flex;
+  background-color: #fff;
+  padding: 20px 50px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.Payment-Title-Content > h3 {
+  border-left: 1px solid #fff;
+  padding-left: 20px;
+  margin-bottom: 4px;
+}
+.Payment-Content-User {
+  width: 60%;
+  border-right: 1px solid #dd3c72;
+}
+.Payment-Content-User-Title {
+  display: flex;
+  align-items: center;
+}
+.Payment-Content-User-Title > h3 {
+  margin-bottom: 0;
+  padding-top: 7px;
+  padding-left: 5px;
+  color: #dd3c72;
+  font-weight: 400;
+}
+.Payment-Content-User-Content {
+  width: 100%;
+}
+.Payment-Content-User-Content form {
+  display: block;
+  padding: 10px;
+  padding-right: 50px;
+  width: 100%;
+  text-align: right;
+}
+.Payment-Content-User-Content input,
+.Payment-Content-User-Content textarea,
+.Payment-Content-User-Content select {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  margin: 15px 0px;
+  padding: 10px;
+  border: 1px solid #000;
+}
+.Payment-Content-User-Content p {
+  color: #dd3c72;
+  font-size: 18px;
+}
+.Payment-Content-User-Content button {
+  margin-top: 10px;
+  font-size: 24px;
+  color: #fff;
+  background-color: #dd3c72;
+  border: 1px solid #dd3c72;
+  border-radius: 10px;
+  padding: 3px 15px 7px 15px;
+  cursor: pointer;
+}
+.Payment-Content-User-Content button:hover {
+  color: #dd3c72;
+  background-color: #fff;
+}
+.Payment-Content-Product {
+  padding: 15px 10px 10px 50px;
+  width: 40%;
+}
+.Payment-Content-Product-Summary > p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.Payment-Content-Product-Summary > div {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #dd3c72;
+  padding-top: 10px;
+}
+.Payment-Content-Product-Summary-Price {
+  font-size: 20px;
+  color: #ff0000;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 900px) and (max-width: 1299px) {
+  .Payment-Title > div {
+    width: 98%;
+  }
+
+  .Payment-Content {
+    width: 98%;
+    padding: 20px;
+  }
+  .Payment-Content-User-Content form {
+    padding-right: 30px;
+  }
+  .Payment-Content-Product {
+    padding: 15px 10px 10px 30px;
+  }
+}
+@media screen and (min-width: 900px) and (max-width: 999px) {
+  .Payment {
+    margin-top: 88px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  .Payment {
+    margin-top: 88px;
+  }
+  .Payment-Title > div {
+    width: 98%;
+  }
+
+  .Payment-Content {
+    width: 98%;
+    padding: 20px;
+  }
+  .Payment-Content-User-Content form {
+    padding-right: 30px;
+  }
+  .Payment-Content-Product {
+    padding: 15px 10px 10px 30px;
+  }
+}
+@media screen and (max-width: 599px) {
+  .Payment {
+    margin-top: 88px;
+  }
+  .Payment-Title > div {
+    width: 98%;
+  }
+  .Payment-Content {
+    width: 98%;
+    padding: 5px;
+    display: block;
+  }
+  .Payment-Content-User {
+    width: 100%;
+    border-right: none;
+  }
+  .Payment-Content-User-Content form {
+    padding-right: 10px;
+  }
+  .Payment-Content-Product {
+    margin-top: 20px;
+    border-top: 1px solid #dd3c72;
+    width: 100%;
+    padding: 10px;
+    padding-top: 20px;
+  }
+}
+@media screen and (max-width: 299px) {
+  .Payment {
+    margin-top: 116px;
+  }
+}
