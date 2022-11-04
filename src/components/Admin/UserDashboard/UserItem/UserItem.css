@@ -16,6 +16,14 @@
   white-space: nowrap;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+.user-item .basic-info .id {
+  background: #2b3674;
+  width: fit-content;
+  color: #ffffff;
+  padding: 0px 5px;
+  border-radius: 15px;
+  font-size: 14px;
+}
 .user-item .more .see-detail,
 .user-item .more .edit {
   font-size: 28px;

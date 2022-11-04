@@ -1,16 +1,10 @@
 .user-dashboard {
-  background-color: white;
-  padding: 20px;
-  margin-left: 280px;
-  margin-top: 20px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  font-family: Roboto Flex;
-  overflow-x: auto;
-  width: calc(100% - 300px);
+  padding-top: 100px;
 }
-@media only screen and (max-width: 768px) {
-  .user-dashboard {
-    width: 90vw;
-    margin: 120px 5vw auto 5vw;
-  }
+.user-dashboard-container {
+  box-shadow: rgb(115 82 199 / 18%) 0px 0.5rem 1.25rem;
+  max-width: 1280px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 auto;
 }

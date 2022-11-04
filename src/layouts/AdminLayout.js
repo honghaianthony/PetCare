@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import NavbarAdmin from "../components/Admin/NavbarAdmin";
 import Sider from "../components/Sider";
 
 function AdminLayout({ children }) {
+  const [openSider, setOpenSider] = useState(false);
+
   return (
     <>
-      <Sider />
+      <Sider
+        toggleSider={openSider}
+        setToggleSider={() => setOpenSider(false)}
+      />
       <div>
-        <NavbarAdmin />
+        <NavbarAdmin
+          toggleSider={openSider}
+          openSider={() => setOpenSider(true)}
+        />
         {children}
       </div>
     </>

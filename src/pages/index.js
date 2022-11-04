@@ -10,3 +10,4 @@ export { default as ManagerUser } from "./Admin/ManagerUser";
 export { default as ManagerProduct } from "./Admin/ManagerProduct";
 export { default as ManagerService } from "./Admin/ManagerService";
 export { default as BlogDetail } from "./BlogDetail";
+export { default as Statistical } from "./Admin/Statistical";
