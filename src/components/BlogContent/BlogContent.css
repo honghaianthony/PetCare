@@ -18,6 +18,12 @@
     margin-bottom: 20px;
 }
 
+.blog-content-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
 .blog-content-social {
     display: flex;
     align-items: center;

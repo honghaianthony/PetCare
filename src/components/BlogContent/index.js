@@ -1,6 +1,7 @@
 import React from "react";
 import "./BlogContent.css";
 import { Icon } from "@iconify/react";
+import dayjs from "dayjs";
 
 function BlogContent(props) {
     return (
@@ -9,7 +10,11 @@ function BlogContent(props) {
                 <h2>{props.title}</h2>
             </div>
             <div className="blog-content-time">
-                {props.time} bởi {props.author}
+                {dayjs(props.time).format("DD/MM/YYYY") + " "}
+                bởi {props.author}
+            </div>
+            <div className="blog-content-image">
+                <img src={props.image} alt="blog" />
             </div>
             <div
                 className="blog-content-main"

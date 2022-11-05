@@ -68,7 +68,7 @@ export default function App() {
                 ></Route>
                 <Route
                     exact
-                    path={`/blog/:blog`}
+                    path={`/blog/:blogId`}
                     element={<BlogDetail />}
                 ></Route>
                 <Route exact path={`/payment`} element={<Payment />}></Route>
