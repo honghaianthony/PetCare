@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./ProductsContent.css";
 import { Icon } from "@iconify/react";
+import "@fontsource/nunito"
 import CardProductDetail from "../CardProductDetail";
 const ProductsContent = () => {
   const productName = [

@@ -7,6 +7,7 @@ import {
     ManagerProduct,
     ManagerService,
     ManagerUser,
+    Blog,
 } from "../pages";
 import { Service } from "../pages";
 import { About } from "../pages";
@@ -63,6 +64,11 @@ export default function App() {
                     exact
                     path="/admin/product"
                     element={<ManagerProduct />}
+                ></Route>
+                <Route
+                    exact
+                    path="blog"
+                    element={<Blog />}
                 ></Route>
                 <Route
                     exact
