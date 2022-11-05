@@ -6,16 +6,15 @@ import "./ShoppingCartItem.css";
 const ShoppingCartItem = (props) => {
   const [num, setNum] = useState(props.numOfProductsInCart);
   const [deleteItem, setDeleteItem] = useState(false);
-  const [c, setC] = useState(false);
 
   const deleteProduct = (e) => {
     e.preventDefault();
     setDeleteItem(true);
-    if (c === true) props.callPrice(-num * props.price);
+    props.handleChange(false, 0);
   };
+
   const setValue = (e) => {
-    if (e.target.checked === true) props.callPrice(num * props.price);
-    else props.callPrice(-num * props.price);
+    props.handleChange(e.target.checked, num);
   };
   return (
     <>
@@ -27,9 +26,9 @@ const ShoppingCartItem = (props) => {
             <input
               type="checkbox"
               id={props.productId}
+              checked={props.valueCheck}
               className="ShoppingCart-Checkbox"
-              onClick={(e) => {
-                setC(!c);
+              onChange={(e) => {
                 setValue(e);
               }}
             />
@@ -48,8 +47,9 @@ const ShoppingCartItem = (props) => {
                   className="ShoppingCartItem-amount-b1"
                   onClick={() => {
                     if (num > 1) {
-                      setNum(num - 1);
-                      if (c === true) props.callPrice(-props.price);
+                      let n = num - 1;
+                      setNum(n);
+                      props.handleChange(props.valueCheck, n);
                     }
                   }}
                 >
@@ -62,16 +62,22 @@ const ShoppingCartItem = (props) => {
                   max={props.numOfProductsInStock}
                   value={num}
                   onChange={(e) => {
-                    if ((e.target.value * 10) / 10 > props.numOfProductsInStock)
+                    if (
+                      (e.target.value * 10) / 10 >
+                      props.numOfProductsInStock
+                    ) {
                       setNum(props.numOfProductsInStock);
-                    else if ((e.target.value * 10) / 10 < 1) setNum(1);
-                    else {
-                      if (c === true) {
-                        props.callPrice(-num * props.price);
-                        props.callPrice(e.target.value * props.price);
-                      }
-
-                      setNum((e.target.value * 10) / 10);
+                      props.handleChange(
+                        props.valueCheck,
+                        props.numOfProductsInStock
+                      );
+                    } else if ((e.target.value * 10) / 10 < 1) {
+                      setNum(1);
+                      props.handleChange(props.valueCheck, 1);
+                    } else {
+                      let n = (e.target.value * 10) / 10;
+                      setNum(n);
+                      props.handleChange(props.valueCheck, n);
                     }
                   }}
                 />
@@ -79,8 +85,9 @@ const ShoppingCartItem = (props) => {
                   className="ShoppingCartItem-amount-b2"
                   onClick={() => {
                     if (num < props.numOfProductsInStock) {
-                      setNum(num + 1);
-                      if (c === true) props.callPrice(props.price);
+                      let n = num + 1;
+                      setNum(n);
+                      props.handleChange(props.valueCheck, n);
                     }
                   }}
                 >
