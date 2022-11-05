@@ -13,22 +13,30 @@
     margin: 0 auto;
     /* background-position: object; */
 }
-@media screen and (max-width: 1024px) {
-  .Products_banner_container_detail{
-    height:450px;
-  }
-}
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1024px) and (min-width: 601px) {
   .Products_banner_container{
-    margin-top: 90px;
+    margin-top: 88px;
 
   }
   .Products_banner_container_detail{
     height:300px;
   }
 }
+@media screen and (max-width: 600px) and (min-width:481px){
+  .Products_banner_container{
+    margin-top: 88px;
+
+  }
+  .Products_banner_container_detail{
+    height:250px;
+  }
+}
 @media screen and (max-width: 480px){
   .Products_banner_container_detail{
     height:250px;
+  }
+  .Products_banner_container{
+    margin-top: 88px;
+
   }
 }

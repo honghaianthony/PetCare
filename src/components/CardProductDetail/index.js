@@ -4,12 +4,9 @@ import { Link, NavLink } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import ProductDetailStar from "../ProductReviewStar/index";
 const CardProductDetail = (props) => {
-  // const rating = {
-  //   icon: "emojione:star",
-  // };
+
 
   return (
-    
     <Link className=" card__product__container__" id={props.id} to={`/product/${props.id}`}>
       <div className="CardProductDetail_img_container_top">
         <img
@@ -30,23 +27,13 @@ const CardProductDetail = (props) => {
         ) : (
           <p className="discount_price_product">
             <span
-              // style={{
-              //   textDecorationLine: "line-through",
-              //   color: "#ccc",
-              //   fontSize: "20px",
-              // }}
+
               className="price__before_discount"
             >
               {props.price}.000
               <sup>đ</sup>
             </span>
             <b
-              // style={{
-              //   color: "red",
-              //   fontSize: "20px",
-              //   padding: "0px 0px 0px 20px",
-              //   fontWeight: 700,
-              // }}
               className="price_after_discount"
             >
               {props.price - (props.price * props.sale) / 100}
@@ -58,16 +45,6 @@ const CardProductDetail = (props) => {
 
         <div className="Rating__card_product_container">
           <div className="Rating__card_product_detail">
-            {/* {Array(5)
-                .fill(rating)
-                .map((star, i) => {
-                  return (
-                    <label key={i}>
-                      <Icon icon={star.icon} />
-                    </label>
-                  );
-                })} */}
-            {/* <ProductDetailStar rate={props.rate} /> */}
             <ProductDetailStar rate={props.rate} />
           </div>
           <span className="Solds__card">Đã bán {props.numOfProductsSold}</span>
@@ -85,14 +62,20 @@ const CardProductDetail = (props) => {
           </div>
         </div>
       )}
-      {/* <img
-        src="/assets/images/Products/302240086_531200318839590_2517707731116684581_n.png"
-        alt="sale_discount"
-        className="discount_item_product"
-      />
-      <div className="Number_discount_sale_product">
-        <span>-{props.sale}%</span>
-      </div> */}
+      <div className="Review_Buy_Product_container">
+        <Link className="quick_view_button_" to={`/product/${props.id}`}>
+          {/* <button className="quick_view_button_"> */}
+            <span className="quick_view_text">Xem nhanh</span>
+            <Icon icon="emojione-monotone:eye" color="white" className="icon_quick_view" />
+          {/* </button> */}
+        </Link>
+        <Link className="add_to_cart_button" to={`/product/${props.id}`}>
+        {/* <button className="add_to_cart_button"> */}
+          <span className="add_to_cart_text" >Mua ngay</span>
+          <Icon icon="el:shopping-cart" color="white" className="add_to_cart_icon" />
+        {/* </button> */}
+        </Link>
+      </div>
     </Link>
   );
 };

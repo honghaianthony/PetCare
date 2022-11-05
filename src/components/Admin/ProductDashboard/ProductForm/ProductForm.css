@@ -1,11 +1,32 @@
 textarea {
   resize: none;
 }
-.product-form-container {
-  width: 100%;
+.add-product-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10010;
+  width: 100vw;
+  height: 100vh;
+}
+.add-product-container .layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.3;
+}
+.add-product-form-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 10vh auto;
+  height: 80vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 5px;
   padding: 20px;
-  background-color: white;
-  margin-top: 20px;
 }
 .product-form {
   display: flex;
@@ -21,6 +42,9 @@ textarea {
   border-radius: 12px;
   border: 1px solid rgb(201, 201, 201);
   padding: 8px 8px;
+}
+.product-form .button-group input {
+  border: none !important;
 }
 .product-form input:focus,
 .product-form textarea:focus {
@@ -46,13 +70,26 @@ textarea {
 .product-form label {
   display: block;
 }
-.product-form > .button-group > input {
-  background-color: #4318ff;
-  color: white;
-}
 .product-form label {
   color: #2b3674;
   font-weight: 500;
+}
+.product-form .button-group input {
+  width: fit-content;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  font-weight: 500;
+}
+.product-form .button-group input:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.product-form .button-group input.cancel {
+  margin-left: 8px;
+  color: #fff;
+  background-color: gray;
 }
 @media only screen and (max-width: 768px) {
   .product-form > .product-name,

@@ -1,30 +1,26 @@
 import { Icon } from "@iconify/react";
-import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Sider.css";
-function Sider() {
+function Sider({ toggleSider, setToggleSider }) {
   const location = useLocation();
-  const [toggleSider, setToggleSider] = useState(true);
   return (
     <>
       <div
-        className={
-          toggleSider
-            ? "sider-container mobile-hidden"
-            : "sider-container mobile-visible"
-        }
-      >
+        className={`sider-overlayer ${toggleSider ? "" : "hidden"}`}
+        onClick={setToggleSider}
+      ></div>
+      <div className={`sider-container ${toggleSider ? "" : "hidden"}`}>
         <div className="sider-header">
-          <img
-            className="sider-logo"
-            src="https://play-lh.googleusercontent.com/i5TNQBpmzRzHDJcQnEJBROlbJ8BMeilPx06FXMwO7Z2QXHNQiyHv061FRqxFtF4GEn8"
-            alt=""
-          />
-          <h2>Petcare</h2>
+          <div className="sider-logo">
+            <img
+              src="https://play-lh.googleusercontent.com/i5TNQBpmzRzHDJcQnEJBROlbJ8BMeilPx06FXMwO7Z2QXHNQiyHv061FRqxFtF4GEn8"
+              alt=""
+            />
+          </div>
           <Icon
             icon="akar-icons:circle-chevron-left-fill"
-            className="toggle-hidden-sider-mobile"
-            onClick={() => setToggleSider(true)}
+            className="toggle-hidden-sider"
+            onClick={setToggleSider}
           />
         </div>
         <ul className="sider-body">
@@ -72,18 +68,6 @@ function Sider() {
           </li>
         </ul>
       </div>
-      <div
-        className={
-          !toggleSider
-            ? "sider-overlayer-mobile"
-            : "sider-overlayer-mobile hidden"
-        }
-      ></div>
-      <Icon
-        icon="ant-design:menu-outlined"
-        className="toggle-sider-mobile-v2"
-        onClick={() => setToggleSider(false)}
-      />
     </>
   );
 }

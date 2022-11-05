@@ -1,0 +1,16 @@
+.blog_container{
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+.blog_container_detail{
+    padding: 0 10px;
+  font-family: "Nunito", sans-serif;
+}
+
+.blog_link_container a {
+    color: #428de5 !important;
+}
+.blog_link_container a:hover{
+    text-decoration: underline !important;
+}
