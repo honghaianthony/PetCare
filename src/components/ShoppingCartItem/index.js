@@ -10,7 +10,7 @@ const ShoppingCartItem = (props) => {
   const deleteProduct = (e) => {
     e.preventDefault();
     setDeleteItem(true);
-    props.handleChange(false, 0);
+    props.handleChange(true, 0);
   };
 
   const setValue = (e) => {
