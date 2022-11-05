@@ -1,12 +1,10 @@
 .service__banner_container {
     background: url("../../../public/assets/images/Service/Banner_service.jpg");
     background-repeat: no-repeat;
-    /* background-attachment: fixed;    */
     background-size: cover;
     background-position: center;
     padding: 0 10px;
     margin-top: 114px;
-
 }
 .service__banner_container_detail {
     height: 500px;
@@ -29,7 +27,6 @@
 @media screen and (max-width: 1024px) {
     .service__banner_container_detail {
         height: 500px;
-
     }
     .service__banner_container h1 {
         font-size: 50px;
