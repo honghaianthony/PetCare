@@ -10,17 +10,14 @@ const ProductItem = ({ data }) => {
     <>
       <div className="product-item">
         <div className="product-item-body">
-          <p className="product-id">#{productInfo.id}</p>
-          <Icon
-            className="edit"
-            icon="bxs:edit"
-            onClick={() => setEditOpen(true)}
-          />
-          <img
-            src="http://cdn-img-v2.webbnc.net/uploadv2/web/12/12107/product/2019/10/17/04/14/1571285687_thuc-an-meo-catsrang-400g-nhap-khau-han-quoc.jpg"
-            alt=""
-          />
+          <div className="product-item-image">
+            <img
+              src="https://pyxis.nymag.com/v1/imgs/54c/950/eff84c687e50d533f210c2582ffd570142-31-cat-food.jpg"
+              alt=""
+            />
+          </div>
           <div className="product-info">
+            <p className="product-id">#{productInfo.id}</p>
             <h4 className="product-title">{productInfo.title}</h4>
             <p className="product-price">
               đ{productInfo.origin_price * (1 - productInfo.discount)}
@@ -33,6 +30,13 @@ const ProductItem = ({ data }) => {
                 &nbsp;-{productInfo.discount * 100}%
               </span>
             </p>
+          </div>
+          <div className="product-icon-edit">
+            <Icon
+              className="edit"
+              icon="bxs:edit"
+              onClick={() => setEditOpen(true)}
+            />
           </div>
         </div>
       </div>

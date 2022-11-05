@@ -9,6 +9,7 @@ import {
     ManagerUser,
     Payment,
     Blog,
+    Statistical,
 } from "../pages";
 import { Service } from "../pages";
 import { About } from "../pages";
@@ -72,7 +73,12 @@ export default function App() {
                     element={<BlogDetail />}
                 ></Route>
                 <Route exact path={`/payment`} element={<Payment />}></Route>
-                <Route exact path="blog" element={<Blog />}></Route>
+                <Route exact path="blog" element={<Blog />}></Route>{" "}
+                <Route
+                    exact
+                    path="/admin/statistical"
+                    element={<Statistical />}
+                ></Route>
             </Routes>
             <ToastContainer
                 position="bottom-right"

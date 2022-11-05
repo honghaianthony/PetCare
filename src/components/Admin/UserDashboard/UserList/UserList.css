@@ -1,10 +1,24 @@
 .user-list-container {
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+}
+
+.user-list {
   display: flex;
   flex-wrap: wrap;
 }
-.user-list-container .user-item {
-  flex-basis: 50%;
+.user-list-container .title {
+  font-size: 36px;
+  color: #555;
 }
-
+.user-list .user-item {
+  padding: 10px;
+  flex-basis: calc(100% / 2);
+}
 @media only screen and (max-width: 768px) {
+  .user-list .user-item {
+    padding: 10px;
+    flex-basis: 100%;
+  }
 }

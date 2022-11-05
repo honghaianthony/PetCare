@@ -12,4 +12,5 @@ export { default as ManagerService } from "./Admin/ManagerService";
 export { default as BlogDetail } from "./BlogDetail";
 export { default as Payment } from "./Payment";
 export { default as Blog } from "./Blog";
+export { default as Statistical } from "./Admin/Statistical";
 

@@ -1,13 +1,22 @@
 .service-dashboard {
-  margin-left: 280px;
-  margin-top: 20px;
-  width: calc(100% - 300px);
+  padding-top: 100px;
 }
+.service-dashboard .service-dashboard-container {
+  box-shadow: rgb(115 82 199 / 18%) 0px 0.5rem 1.25rem;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.service-dashboard .title {
+  font-size: 36px;
+  color: #555;
+}
+/*service-list*/
 .service-list-container {
   width: 100%;
   padding: 20px;
   background-color: white;
-  margin-top: 20px;
 }
 .service-list {
   display: flex;
@@ -15,8 +24,10 @@
 }
 .service-list-container .service-item {
   padding: 10px;
-  flex-basis: calc(100% / 3);
+  flex-basis: calc(100% / 2);
 }
+
+/* service-item */
 .service-item-body {
   display: flex;
   justify-content: space-between;
@@ -31,10 +42,55 @@
 .service-item .edit {
   font-size: 28px;
 }
+.service-item li {
+  color: #555;
+  margin: 0;
+}
+.service-item .basic-info .service-req-id {
+  background-color: rgb(59, 210, 162);
+  display: inline;
+  padding: 0 10px;
+  text-align: center;
+  color: #fff;
+  border-radius: 15px;
+  font-size: 12px;
+}
+.service-item .basic-info .service-req-customer-service-type {
+  color: #000;
+  font-weight: 500;
+}
+.service-item .service-req-state {
+  display: inline-block;
+  padding: 0px 10px;
+  text-align: center;
+  border-radius: 15px;
+  font-weight: 500;
+  color: #fff;
+}
+.service-item .service-req-state.done-req {
+  background-color: rgb(2, 121, 28);
+}
+.service-item .service-req-state.cancel-req {
+  background-color: rgb(248, 11, 11);
+}
+.service-item .service-req-state.waiting-req {
+  background-color: rgb(243, 219, 6);
+}
+.service-item .edit {
+  color: #6978d1;
+  transition: all 0.2s;
+}
+.service-item .edit:hover {
+  cursor: pointer;
+  color: #090f31;
+}
 @media only screen and (max-width: 1200px) {
   .service-list-container .service-item {
-    flex-basis: calc(100% / 3);
+    flex-basis: calc(100% / 2);
   }
 }
 @media only screen and (max-width: 768px) {
+  .service-list-container .service-item {
+    flex-basis: 100%;
+  }
 }

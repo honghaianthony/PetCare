@@ -1,7 +1,7 @@
 import "./EditUser.css";
 import { useForm } from "react-hook-form";
 
-const EditUser = ({ data }) => {
+const EditUser = ({ data, close }) => {
   const {
     register,
     handleSubmit,
@@ -50,7 +50,7 @@ const EditUser = ({ data }) => {
               <input {...register("discount", { required: true })} />
             </div>
             <div className="user-depot">
-              <label>Kho hàng</label>
+              <label>Vai trò</label>
               <select
                 defaultValue="User"
                 {...register("examplen", { required: true })}
@@ -66,7 +66,7 @@ const EditUser = ({ data }) => {
                 type="submit"
                 value="Hủy"
                 className="cancel-edit"
-                // onClick={close}
+                onClick={close}
               />
             </div>
           </form>
