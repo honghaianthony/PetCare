@@ -1,17 +1,67 @@
+.ShoppingCartItem-Popup-Display {
+  display: block;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  padding-top: 180px;
+  text-align: center;
+  background-color: #cbcbcb93;
+  z-index: 999;
+}
+.ShoppingCartItem-Popup-NoDisplay {
+  display: none;
+}
+.ShoppingCartItem-Popup-Display > div {
+  max-width: 400px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 3px;
+}
+.ShoppingCartItem-Popup-Display h3 {
+  color: #fff;
+  background-color: #dd3c72;
+  text-align: left;
+  padding: 7px 15px;
+  border-radius: 3px 3px 0 0;
+}
+.ShoppingCartItem-Popup-Display p {
+  font-size: 18px;
+  padding: 3px 10px;
+}
+.ShoppingCartItem-Popup-Display button {
+  padding: 5px;
+  margin: 20px;
+  margin-bottom: 20px;
+  width: 80px;
+  border: 1px solid #dd3c72;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.ShoppingCartItem-Popup-B1 {
+  color: #fff;
+  background-color: #dd3c72;
+}
+.ShoppingCartItem-Popup-B2 {
+  color: #dd3c72;
+  background-color: #fff;
+}
 .ShoppingCartItem {
   display: flex;
   align-items: center;
-  width: 1177px;
   margin: 0;
 }
 .ShoppingCartItem-Img {
   align-items: center;
   width: 100px;
 }
+.ShoppingCart-Checkbox {
+  margin-right: 10px;
+}
 .ShoppingCartItem-Content {
   display: flex;
   justify-content: space-between;
-  width: 1217px;
   align-items: center;
 }
 .ShoppingCartItem-Name {
@@ -56,12 +106,35 @@
   padding: 0px;
   cursor: pointer;
 }
+@media screen and (min-width: 1300px) {
+  .first-layout.ShoppingCartItem-Content {
+    width: 1217px;
+  }
+  .second-layout .ShoppingCartItem-Content {
+    width: 100%;
+  }
+  .first-layout .ShoppingCartItem {
+    width: 1177px;
+  }
+  .second-layout .ShoppingCartItem {
+    width: 95%;
+  }
+}
 @media screen and (min-width: 900px) and (max-width: 1299px) {
-  .ShoppingCartItem {
+  .first-layout .ShoppingCartItem {
     width: 98%;
   }
-  .ShoppingCartItem-Content {
+  .second-layout .ShoppingCartItem {
+    width: 95%;
+  }
+  .first-layout .ShoppingCartItem-Content {
     width: 90%;
+  }
+  .second-layout .ShoppingCartItem-Content {
+    width: 100%;
+  }
+  .second-layout .ShoppingCart-Long120 {
+    width: 100px;
   }
 }
 @media screen and (min-width: 600px) and (max-width: 899px) {

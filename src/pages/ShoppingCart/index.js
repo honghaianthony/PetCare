@@ -112,6 +112,81 @@ const ShoppingCart = () => {
       img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
       categoryId: 1,
     },
+    {
+      id: 5,
+      name: "hạt thức ăn cho mèo",
+      price: 150,
+      sale: 10,
+      rate: 5,
+      numOfProductsSold: "171",
+      img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
+      categoryId: 1,
+    },
+    {
+      id: 6,
+      name: "hạt thức ăn cho mèo",
+      price: 150,
+      sale: 10,
+      rate: 5,
+      numOfProductsSold: "171",
+      img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
+      categoryId: 1,
+    },
+    {
+      id: 7,
+      name: "hạt thức ăn cho mèo",
+      price: 150,
+      sale: 10,
+      rate: 5,
+      numOfProductsSold: "171",
+      img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
+      categoryId: 1,
+    },
+    {
+      productId: "8",
+      name: "Hạt thức ăn dinh dưỡng cấp cao cho mèo.",
+      img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
+      price: 500,
+      sale: 10,
+      numOfProductsInStock: 427,
+      numOfProductsInCart: 1,
+    },
+    {
+      productId: "9",
+      name: "Hạt thức ăn dinh dưỡng cấp cao cho mèo.",
+      img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
+      price: 500,
+      sale: 10,
+      numOfProductsInStock: 427,
+      numOfProductsInCart: 1,
+    },
+    {
+      productId: "10",
+      name: "Hạt thức ăn dinh dưỡng cấp cao cho mèo.",
+      img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
+      price: 500,
+      sale: 10,
+      numOfProductsInStock: 427,
+      numOfProductsInCart: 1,
+    },
+    {
+      productId: "11",
+      name: "Hạt thức ăn dinh dưỡng cấp cao cho mèo.",
+      img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
+      price: 500,
+      sale: 10,
+      numOfProductsInStock: 427,
+      numOfProductsInCart: 1,
+    },
+    {
+      productId: "12",
+      name: "Hạt thức ăn dinh dưỡng cấp cao cho mèo.",
+      img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
+      price: 500,
+      sale: 10,
+      numOfProductsInStock: 427,
+      numOfProductsInCart: 1,
+    },
   ];
   const [chooseAll, setChooseAll] = useState(false);
   const [sumPrice, setSumPrice] = useState(0);
@@ -260,7 +335,7 @@ const ShoppingCart = () => {
           <h3>Sản phẩm khác</h3>
           <div className="ShoppingCart_display">
             {product.map((item, index) => {
-              if (index < 4)
+              if (index < 12)
                 return (
                   <CardProductDetail
                     key={item.id}
