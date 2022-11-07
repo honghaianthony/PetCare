@@ -1,116 +1,116 @@
 .home-banner-container {
-  top: 0px;
-  position: absolute;
-  width: 100%;
-  padding-top: 4rem;
-  background: linear-gradient(
-    95.76deg,
-    rgba(45, 139, 201, 0.3) 5.66%,
-    rgba(248, 212, 27, 0.2) 99.12%
-  );
+    top: 0px;
+    position: absolute;
+    width: 100%;
+    padding-top: 4rem;
+    background: linear-gradient(
+        95.76deg,
+        rgba(45, 139, 201, 0.3) 5.66%,
+        rgba(248, 212, 27, 0.2) 99.12%
+    );
 }
 
 .home-banner-container-detail {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding-left: 10px;
-  padding-right: 10px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.App.layout-first .home-banner-main {
-  display: flex;
-  align-items: center;
-  color: black;
+.App.first-layout .home-banner-main {
+    display: flex;
+    align-items: center;
+    color: black;
 }
 
-.App.layout-first .home-banner-left {
-  text-align: left;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  width: 50%;
+.App.first-layout .home-banner-left {
+    text-align: left;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
 }
 
 .home-banner-left-detail {
-  display: flex;
-  flex-direction: column;
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+    display: flex;
+    flex-direction: column;
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
 }
 
 .home-banner-left-title {
-  font-family: Pangolin;
+    font-family: Pangolin;
 }
 
 .home-banner-left-content {
-  font-family: Pangolin;
-  font-size: 18px;
+    font-family: Pangolin;
+    font-size: 18px;
 }
 
 .home-banner-left-button {
-  margin-top: 15px;
-  background-color: #de135c;
-  opacity: 0.8;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  font-family: Roboto Flex;
-  width: 15%;
-  text-align: center;
+    margin-top: 15px;
+    background-color: #de135c;
+    opacity: 0.8;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-family: Roboto Flex;
+    width: 15%;
+    text-align: center;
 }
 
-.App.layout-first .home-banner-right {
-  display: block;
-  position: relative;
-  width: 50%;
-  margin-bottom: -5px;
+.App.first-layout .home-banner-right {
+    display: block;
+    position: relative;
+    width: 50%;
+    margin-bottom: -5px;
 }
 /*layout 2*/
-.App.layout-second .home-banner-main {
-  display: flex;
-  align-items: center;
-  color: black;
+.App.second-layout .home-banner-main {
+    display: flex;
+    align-items: center;
+    color: black;
 }
 
-.App.App.layout-second .home-banner-left {
-  order: 2;
-  text-align: left;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  width: 50%;
+.App.App.second-layout .home-banner-left {
+    order: 2;
+    text-align: left;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
 }
 
-.App.App.layout-second .home-banner-right {
-  order: 1;
-  display: block;
-  position: relative;
-  width: 50%;
-  margin-bottom: -5px;
+.App.App.second-layout .home-banner-right {
+    order: 1;
+    display: block;
+    position: relative;
+    width: 50%;
+    margin-bottom: -5px;
 }
 
 @media screen and (max-width: 960px) {
-  .home-banner-right {
-    display: none;
-  }
-  .home-banner-left {
-    width: 100%;
-    text-align: center;
-    margin-top: 100px;
-  }
-  .home-banner-left-button {
-    margin: 0 auto;
-    margin-top: 2rem;
-    width: 50vw;
-  }
-  .home-banner-container {
-    padding-bottom: 4rem;
-  }
+    .home-banner-right {
+        display: none;
+    }
+    .home-banner-left {
+        width: 100%;
+        text-align: center;
+        margin-top: 100px;
+    }
+    .home-banner-left-button {
+        margin: 0 auto;
+        margin-top: 2rem;
+        width: 50vw;
+    }
+    .home-banner-container {
+        padding-bottom: 4rem;
+    }
 }
 
 @media screen and (max-width: 368px) {
-  .home-banner-container {
-    margin-bottom: 4rem !important;
-  }
+    .home-banner-container {
+        margin-bottom: 4rem !important;
+    }
 }
