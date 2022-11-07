@@ -1,16 +1,35 @@
-.home-reason-container {
+.App.first-layout .home-reason-container {
     padding: 4rem 0;
     background-color: #252525;
 }
 
-.home-reason-container-detail {
+.App.second-layout .home-reason-container {
+    padding: 4rem 0;
+}
+
+.App.first-layout .home-reason-container-detail {
     max-width: 1280px;
     margin: 0 auto;
     padding-left: 10px;
     padding-right: 10px;
 }
 
-.home-reason-title {
+.App.second-layout .home-reason-container-detail {
+    display: none;
+}
+
+.App.first-layout .home-reason-container-detail-second {
+    display: none;
+}
+
+.App.second-layout .home-reason-container-detail-second {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.App.first-layout .home-reason-title {
     margin-top: 14px;
     color: #17eda0;
     font-weight: 800;
@@ -20,79 +39,157 @@
     letter-spacing: 2px;
 }
 
-.home-reason-main {
+.App.first-layout .home-reason-main {
     display: flex;
     color: white;
     align-items: center;
     margin: 2rem 0;
 }
 
-.home-reason-left {
+.App.first-layout .home-reason-left {
     width: 50%;
     margin-right: 8rem;
 }
 
-.home-reason-left img {
+.App.first-layout .home-reason-left img {
     width: 100%;
     border-radius: 70px;
 }
 
-.home-reason-right {
+.App.first-layout .home-reason-right {
     width: 50%;
     margin-left: auto;
     margin-right: 0;
     position: relative;
 }
 
-.home-reason-right-space {
+.App.first-layout .home-reason-right-space {
     display: flex;
     flex-direction: column;
 }
 
-.home-reason-right-detail {
+.App.first-layout .home-reason-right-detail {
     display: flex;
     padding: 2rem 0;
 }
 
-.home-reason-icon-reason {
+.App.first-layout .home-reason-icon-reason {
     font-size: 45px;
 }
 
-.home-reason-right-content {
+.App.first-layout .home-reason-right-content {
     display: flex;
     flex-direction: column;
     margin-left: 2rem;
 }
 
-.home-reason-right-title {
+.App.first-layout .home-reason-right-title {
     font-family: Roboto Flex;
     letter-spacing: 0.75px;
 }
 
-.home-reason-right-content p {
+.App.first-layout .home-reason-right-content p {
     font-family: Roboto Flex;
     letter-spacing: 0.75px;
+}
+
+.App.second-layout .home-reason-title-second {
+    float: right;
+}
+
+.App.second-layout .home-reason-title-second h4 {
+    font-weight: 600;
+    font-family: Pangolin;
+    letter-spacing: 1px;
+}
+
+.App.second-layout .home-reason-title-second hr {
+    width: 117px;
+    height: 2px;
+    background-color: #3a8da8;
+    float: right;
+}
+
+.App.second-layout .home-reason-content-second {
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center;
+    gap: 8rem;
+    width: 100%;
+}
+
+.App.second-layout .home-reason-content-detail-second {
+    width: 437px;
+    height: 219px;
+    background-color: #193a6a;
+    border-radius: 5px;
+    padding: 30px;
+    color: white;
+    display: flex;
+}
+
+.App.second-layout .home-reason-icon-reason {
+    font-size: 50px;
+}
+
+.App.second-layout .home-reason-right-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    margin-top: 10px;
+}
+
+.App.second-layout .home-reason-right-title {
+    font-family: Roboto Flex;
+    letter-spacing: 0.75px;
+}
+
+.App.second-layout .home-reason-right-content p {
+    font-family: Roboto Flex;
+    letter-spacing: 0.75px;
+    font-size: 15px;
+}
+
+.App.second-layout .home-reason-content-detail-second:hover {
+    width: 437px;
+    height: 219px;
+    background-color: #41707f;
+    border-radius: 5px;
+    padding: 30px;
+    color: white;
+    display: flex;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 960px) {
-    .home-reason-main {
+    .App.first-layout .home-reason-main {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
-    .home-reason-left {
+    .App.first-layout .home-reason-left {
         margin: 0 auto;
     }
-    .home-reason-right {
+    .App.first-layout .home-reason-right {
         width: 100%;
         margin: 0 auto;
         position: relative;
     }
+
+    .App.second-layout .home-reason-content-second {
+        padding-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        justify-items: center;
+        gap: 8rem;
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 768px) {
-    .home-reason-left img {
+    .App.first-layout .home-reason-left img {
         display: none;
     }
 }

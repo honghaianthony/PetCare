@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./Introduction.css";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { Collapse, Text } from "@nextui-org/react";
 
 function Introduction() {
     const boxLeftVariant = {
@@ -46,7 +47,7 @@ function Introduction() {
 
         for (i = 0; i < introInfo.length; i++) {
             introInfo[i].className = introInfo[i].className.replace(
-                " active",
+                " active-intro",
                 ""
             );
         }
@@ -58,7 +59,7 @@ function Introduction() {
         }
 
         for (i = 0; i < introInfo.length; i++) {
-            introInfo[imageIndex - 1].className += " active";
+            introInfo[imageIndex - 1].className += " active-intro";
             break;
         }
 
@@ -132,6 +133,51 @@ function Introduction() {
                             </div>
                         </div>
                     </motion.div>
+                </div>
+                <div className="introduction-main-second">
+                    <div className="introduction-main-title-second">
+                        <h4>Giới thiệu</h4>
+                        <hr />
+                    </div>
+                    <div className="introduction-main-detail-second">
+                        <div className="introduction-main-left-second">
+                            <div className="introduction-main-content-second">
+                                <p>
+                                    PetCare là một dịch vụ chuyên về thú cưng.
+                                    Mọi khó khăn của bạn đối với thú cưng sẽ đáp
+                                    ứng một cách đầy đủ tại PetCare
+                                </p>
+                            </div>
+                            <div className="introduction-main-content-collapse">
+                                <Collapse.Group>
+                                    <Collapse title="Sản phẩm đa dạng">
+                                        <Text>
+                                            Thức ăn của thú cưng luôn có ở chúng
+                                            tôi
+                                        </Text>
+                                    </Collapse>
+                                    <Collapse title="Nhân viên nhiệt tình">
+                                        <Text>
+                                            Nhân viên tại PetCare đồng hành cùng
+                                            khách hàng
+                                        </Text>
+                                    </Collapse>
+                                    <Collapse title="Bài viết đầy đủ">
+                                        <Text>
+                                            Bài viết về PetCare luôn được cập
+                                            nhật liên tục
+                                        </Text>
+                                    </Collapse>
+                                </Collapse.Group>
+                            </div>
+                        </div>
+                        <div className="introduction-main-content-right">
+                            <img
+                                src="/assets/images/home/intro-pet.png"
+                                alt="Giới thiệu"
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

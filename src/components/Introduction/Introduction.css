@@ -9,14 +9,14 @@
     padding-right: 10px;
 }
 
-.introduction-main {
+.App.first-layout .introduction-main {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     margin: 0 auto;
     gap: 5rem;
 }
 
-.introduction-left {
+.App.first-layout .introduction-left {
     display: flex;
     flex-direction: column;
     width: 75%;
@@ -25,19 +25,19 @@
     margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
 }
 
-.introduction-left h2 {
+.App.first-layout .introduction-left h2 {
     font-weight: 800;
     font-family: Nunito;
     letter-spacing: 1px;
 }
 
-.introduction-left p {
+.App.first-layout .introduction-left p {
     font-family: Nunito Sans;
     letter-spacing: 0.5px;
     font-weight: 400;
 }
 
-.introduction-left-detail {
+.App.first-layout .introduction-left-detail {
     color: black;
     padding: 1.25rem;
     display: flex;
@@ -48,11 +48,11 @@
     margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
 }
 
-.intro-active {
+.App.first-layout .intro-active {
     transition: all 300ms;
 }
 
-.fade {
+.App.first-layout .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
     animation-name: fade;
@@ -77,7 +77,7 @@
     }
 }
 
-.active {
+.App.first-layout .active-intro {
     background: linear-gradient(
         92.18deg,
         rgba(45, 139, 201, 0.7) 11.78%,
@@ -86,35 +86,90 @@
     transition: all 0.5s ease-in-out;
 }
 
-.introduction-right {
+.App.first-layout .introduction-right {
     position: relative;
     width: 65%;
     margin-left: auto;
     margin-right: 0;
 }
 
-.introduction-right-image {
+.App.first-layout .introduction-right-image {
     position: absolute;
     top: 4rem;
     left: 2rem;
 }
 
-.introduction-right-image img {
+.App.first-layout .introduction-right-image img {
     width: 80%;
 }
 
+.App.first-layout .introduction-main-second {
+    display: none;
+}
+
+.App.second-layout .introduction-main {
+    display: none;
+}
+
+.App.second-layout .introduction-main {
+    display: none;
+}
+
+.App.second-layout .introduction-main-second h4 {
+    font-weight: 600;
+    font-family: Pangolin;
+    letter-spacing: 1px;
+}
+
+.App.second-layout .introduction-main-second hr {
+    width: 117px;
+    height: 2px;
+    background-color: #3a8da8;
+}
+
+.App.second-layout .introduction-main-left-second {
+    width: 50%;
+}
+
+.App.second-layout .introduction-main-content-second {
+    display: block;
+    margin-top: 20px;
+}
+
+.App.second-layout .introduction-main-content-second p {
+    font-family: Roboto Flex;
+    letter-spacing: 0.5px;
+}
+
+.App.second-layout .introduction-main-detail-second {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 @media screen and (max-width: 960px) {
-    .introduction-main {
+    .App.first-layout .introduction-main {
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
         margin: 0 auto;
         gap: 5rem;
         justify-items: center;
     }
-    .introduction-right {
+    .App.first-layout .introduction-right {
         margin: 0 auto;
     }
-    .introduction-right-image {
+    .App.first-layout .introduction-right-image {
         margin: 0 auto;
+    }
+
+    .App.second-layout .introduction-main-detail-second {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        margin: 0 auto;
+        gap: 5rem;
+        justify-items: center;
+    }
+    .App.second-layout .introduction-main-left-second {
+        width: 100%;
     }
 }
