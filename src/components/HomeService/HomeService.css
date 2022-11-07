@@ -3,7 +3,7 @@
     padding-bottom: 4rem;
 }
 
-.home-service-container-detail {
+.App.first-layout .home-service-container-detail {
     max-width: 1280px;
     margin: 0 auto;
     --tw-space-y-reverse: 0;
@@ -13,7 +13,7 @@
     padding-right: 10px;
 }
 
-.home-service-container-detail h2 {
+.App.first-layout .home-service-container-detail h2 {
     font-weight: 800;
     font-family: Nunito;
     text-align: center;
@@ -21,7 +21,7 @@
     padding-bottom: 20px;
 }
 
-.home-service-main {
+.App.first-layout .home-service-main {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     justify-items: center;
@@ -29,21 +29,21 @@
     margin: 0 auto;
 }
 
-.home-service-main img {
+.App.first-layout .home-service-main img {
     width: 270px;
     height: 180px;
     border-radius: 30px;
 }
 
-.home-service-overlay {
+.App.first-layout .home-service-overlay {
     position: relative;
 }
 
-.home-service-overlay-content {
+.App.first-layout .home-service-overlay-content {
     width: 100%;
 }
 
-.home-service-overlay .home-service-overlay-content {
+.App.first-layout .home-service-overlay .home-service-overlay-content {
     font-family: Nunito;
     position: absolute;
     font-size: 0.75rem;
@@ -56,13 +56,13 @@
     z-index: 1;
 }
 
-.home-service-overlay:hover .home-service-overlay-content {
+.App.first-layout .home-service-overlay:hover .home-service-overlay-content {
     transform: translate(-50%, -50%);
     top: 50%;
     opacity: 1;
 }
 
-.overlay {
+.App.first-layout .overlay {
     height: 0;
     width: 100%;
     background: #333;
@@ -73,27 +73,132 @@
     border-radius: 30px;
 }
 
-.home-service-overlay:hover .overlay {
+.App.first-layout .home-service-overlay:hover .overlay {
     opacity: 0.5;
     height: 180px;
 }
 
+.App.first-layout .home-service-container-detail-second {
+    display: none;
+}
+
+.App.second-layout .home-service-container-detail {
+    display: none;
+}
+
+.App.second-layout .home-service-container-detail-second {
+    max-width: 1280px;
+    margin: 0 auto;
+    --tw-space-y-reverse: 0;
+    margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(3rem * var(--tw-space-y-reverse));
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.App.second-layout .home-service-container-detail-second h4 {
+    font-weight: 600;
+    font-family: Pangolin;
+    letter-spacing: 1px;
+}
+
+.App.second-layout .home-service-container-detail-second hr {
+    width: 117px;
+    height: 2px;
+    background-color: #3a8da8;
+}
+
+.App.second-layout .home-service-main-second {
+    padding-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    justify-items: center;
+    gap: 5rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+.App.second-layout .home-service-main-second-detail {
+    border: 1px solid #98f2e1;
+    border-radius: 10px;
+    width: 200px;
+    height: 225px;
+    position: relative;
+}
+
+.App.second-layout .home-service-main-second-detail-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.App.second-layout .home-service-main-second-detail:hover {
+    cursor: pointer;
+    background-color: #6ce5ba;
+    color: white;
+}
+
 @media screen and (max-width: 960px) {
-    .home-service-main {
+    .App.first-layout .home-service-main {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         justify-items: center;
         gap: 5rem;
         margin: 0 auto;
     }
+
+    .App.second-layout .home-service-main-second {
+        padding-top: 4rem;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        justify-items: center;
+        gap: 5rem;
+        margin: 0 auto;
+        position: relative;
+    }
 }
 
 @media screen and (max-width: 768px) {
-    .home-service-main {
+    .App.first-layout .home-service-main {
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
         justify-items: center;
         gap: 5rem;
         margin: 0 auto;
+    }
+
+    .App.second-layout .home-service-main-second {
+        padding-top: 4rem;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-items: center;
+        gap: 5rem;
+        margin: 0 auto;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .App.first-layout .home-service-main {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        justify-items: center;
+        gap: 5rem;
+        margin: 0 auto;
+    }
+
+    .App.second-layout .home-service-main-second {
+        padding-top: 4rem;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        justify-items: center;
+        gap: 5rem;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .App.second-layout .home-service-container-detail-second {
+        padding-top: 4rem;
     }
 }

@@ -58,13 +58,24 @@
     font-family: Roboto Flex;
 }
 
-.index-navbar-list-detail:hover {
+.first-layout .index-navbar-list-detail:hover {
     color: #fff;
     background-color: #428de5;
     border-radius: 0.5rem;
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
+}
+
+.second-layout .index-navbar-list-detail:hover {
+    color: #fff;
+    background-color: #193a6a;
+    border-radius: 5px;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
 }
 
 .index-navbar-authenticated {
@@ -75,7 +86,16 @@
     cursor: pointer;
 }
 
-.index-navbar-auth {
+.second-layout .index-navbar-auth {
+    background-color: #124c5f;
+    opacity: 0.8;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-family: Roboto Flex;
+}
+
+.first-layout .index-navbar-auth {
     background-color: #de135c;
     opacity: 0.8;
     color: white;

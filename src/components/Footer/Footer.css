@@ -1,10 +1,23 @@
-.footer-container {
+.App.first-layout .footer-container {
     padding-top: 4rem;
     padding-bottom: 1rem;
     background-color: #fff;
 }
 
-.footer-container-detail {
+.App.second-layout .footer-container {
+    padding: 8rem;
+    background-color: #fafafa;
+}
+
+.App.first-layout .footer-container-second {
+    display: none;
+}
+
+.App.second-layout .footer-container-first {
+    display: none;
+}
+
+.App.first-layout .footer-container-detail {
     max-width: 1280px;
     margin: 0 auto;
     margin-bottom: 2rem;
@@ -12,85 +25,99 @@
     padding-right: 10px;
 }
 
-.footer-container-items {
+.App.second-layout .footer-container-second {
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.App.first-layout .footer-container-items {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-gap: 2rem;
 }
 
-.footer-logo-container {
+.App.second-layout .footer-container-items {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4rem;
+}
+
+.App.first-layout .footer-logo-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.footer-logo {
+.App.first-layout .footer-logo {
     font-family: Pangolin;
 }
 
-.footer-slogan span {
+.App.first-layout .footer-slogan span {
     font-family: Roboto Flex;
     font-size: 1rem;
     line-height: 1.25rem;
     color: #000;
 }
 
-.footer-social {
+.App.first-layout .footer-social {
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
 }
 
-.footer-social a {
+.App.first-layout .footer-social a {
     margin-right: 1rem;
     text-decoration: none;
 }
 
-.footer-social-icon {
+.App.first-layout .footer-social-icon {
     color: #000;
     font-size: 24px;
 }
 
-.footer-link {
+.App.first-layout .footer-link {
     display: flex;
     flex-direction: column;
 }
 
-.footer-link h4 {
+.App.first-layout .footer-link h4 {
     margin-bottom: 1rem;
     font-family: Roboto Flex;
     font-weight: 800;
 }
 
-.footer-link-detail {
+.App.first-layout .footer-link-detail {
     font-family: Roboto Flex;
     display: flex;
     flex-direction: column;
 }
 
-.footer-link-detail a {
+.App.first-layout .footer-link-detail a {
     margin-bottom: 10px;
 }
 
-.footer-working-hour {
+.App.first-layout .footer-working-hour {
     display: flex;
     flex-direction: column;
 }
 
-.footer-working-hour h4 {
+.App.first-layout .footer-working-hour h4 {
     margin-bottom: 1rem;
     font-weight: 800;
     font-family: Roboto Flex;
 }
 
-.footer-working-hour-banner {
+.App.first-layout .footer-working-hour-banner {
     padding: 2rem;
     border-radius: 20px;
     background: #dd3c72;
 }
 
-.footer-working-time {
+.App.first-layout .footer-working-time {
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -98,39 +125,39 @@
     margin-bottom: 10px;
 }
 
-.footer-communication {
+.App.first-layout .footer-communication {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
 }
 
-.footer-communication h4 {
+.App.first-layout .footer-communication h4 {
     margin-bottom: 1rem;
     font-weight: 800;
     font-family: Roboto Flex;
 }
 
-.footer-communication p {
+.App.first-layout .footer-communication p {
     margin-bottom: 1rem;
     font-family: Roboto Flex;
 }
 
-.footer-communication-address {
+.App.first-layout .footer-communication-address {
     display: flex;
     align-items: center;
 }
 
-.footer-communication-phone {
+.App.first-layout .footer-communication-phone {
     display: flex;
 }
 
-.footer-communication-icon {
+.App.first-layout .footer-communication-icon {
     margin-right: 1rem;
     font-size: 24px;
     color: #000;
 }
 
-.footer-copyright {
+.App.first-layout .footer-copyright {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -139,12 +166,106 @@
     font-family: Nunito;
 }
 
-.footer-copyright-sub p {
+.App.first-layout .footer-copyright-sub p {
     font-family: Nunito;
 }
 
+/* Second layout */
+.App.second-layout .footer-link {
+    display: flex;
+    flex-direction: column;
+}
+
+.App.second-layout .footer-link h4 {
+    margin-bottom: 1rem;
+    font-family: Roboto Flex;
+    font-weight: 800;
+}
+
+.App.second-layout .footer-link-detail {
+    font-family: Roboto Flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.App.second-layout .footer-link-detail a {
+    margin-bottom: 10px;
+}
+
+.App.second-layout .footer-working-hour {
+    display: flex;
+    flex-direction: column;
+}
+
+.App.second-layout .footer-working-hour h4 {
+    margin-bottom: 1rem;
+    font-weight: 800;
+    font-family: Roboto Flex;
+}
+
+.App.second-layout .footer-working-hour-banner {
+    padding: 2rem;
+    border-radius: 5px;
+    background: #41707f;
+}
+
+.App.second-layout .footer-working-time {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.App.second-layout .footer-communication {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.App.second-layout .footer-communication h4 {
+    margin-bottom: 1rem;
+    font-weight: 800;
+    font-family: Roboto Flex;
+}
+
+.App.second-layout .footer-communication p {
+    margin-bottom: 1rem;
+    font-family: Roboto Flex;
+}
+
+.App.second-layout .footer-communication-address {
+    display: flex;
+    align-items: center;
+}
+
+.App.second-layout .footer-communication-phone {
+    display: flex;
+}
+
+.App.second-layout .footer-communication-icon {
+    margin-right: 1rem;
+    font-size: 24px;
+    color: #000;
+}
+
+.App.second-layout .footer-logo-second {
+    margin-top: 4rem;
+}
+
+.App.second-layout .footer-logo {
+    font-size: 30px;
+    font-family: Pangolin;
+}
+
 @media screen and (max-width: 960px) {
-    .footer-container-items {
+    .App.first-layout .footer-container-items {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-gap: 2rem;
+    }
+
+    .App.second-layout .footer-container-items {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-gap: 2rem;
@@ -152,21 +273,39 @@
 }
 
 @media screen and (max-width: 768px) {
-    .footer-container-items {
+    .App.first-layout .footer-container-items {
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
         grid-gap: 2rem;
     }
-    .footer-link {
+    .App.first-layout .footer-link {
         margin: 0 auto;
     }
-    .footer-working-hour {
+    .App.first-layout .footer-working-hour {
         margin: 0 auto;
     }
-    .footer-working-hour h4 {
+    .App.first-layout .footer-working-hour h4 {
         text-align: center !important;
     }
-    .footer-communication h4 {
+    .App.first-layout .footer-communication h4 {
+        text-align: center !important;
+    }
+
+    .App.second-layout .footer-container-items {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        grid-gap: 2rem;
+    }
+    .App.second-layout .footer-link {
+        margin: 0 auto;
+    }
+    .App.second-layout .footer-working-hour {
+        margin: 0 auto;
+    }
+    .App.second-layout .footer-working-hour h4 {
+        text-align: center !important;
+    }
+    .App.second-layout .footer-communication h4 {
         text-align: center !important;
     }
 }
