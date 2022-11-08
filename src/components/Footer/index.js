@@ -97,9 +97,10 @@ function Footer() {
                             <h4>Liên kết</h4>
                             <div class="footer-link-detail">
                                 <Link to="/">Trang chủ</Link>
-                                <Link to="/">Cơ cấu tổ chức</Link>
-                                <Link to="/">Tin tức</Link>
-                                <Link to="/">Về tôi</Link>
+                                <Link to="/product">Sản phẩm</Link>
+                                <Link to="/service">Dịch vụ</Link>
+                                <Link to="/blog">Blog</Link>
+                                <Link to="/about">Về chúng tôi</Link>
                             </div>
                         </div>
                         <div className="footer-working-hour">
@@ -127,8 +128,8 @@ function Footer() {
                                     className="footer-communication-icon"
                                 />
                                 <p>
-                                    Địa chỉ: Khu phố 6, phường Linh Trung, Tp.
-                                    Thủ Đức, Tp.HCM
+                                    Khu phố 6, phường Linh Trung, Tp. Thủ Đức,
+                                    Tp.HCM
                                 </p>
                             </div>
                             <div className="footer-communication-phone">
@@ -137,6 +138,14 @@ function Footer() {
                                     className="footer-communication-icon"
                                 />
                                 <p>Số điện thoại: 0123456789</p>
+                            </div>
+                        </div>
+                        <div className="footer-link">
+                            <h4>Hơn nữa</h4>
+                            <div class="footer-link-detail">
+                                <Link to="/">Điều khoản & Chính sách</Link>
+                                <Link to="/">Tuyển dụng</Link>
+                                <Link to="/">Hình ảnh & Video</Link>
                             </div>
                         </div>
                     </div>
@@ -160,9 +169,10 @@ function Footer() {
                         <h4>Liên kết</h4>
                         <div class="footer-link-detail">
                             <Link to="/">Trang chủ</Link>
-                            <Link to="/">Cơ cấu tổ chức</Link>
-                            <Link to="/">Tin tức</Link>
-                            <Link to="/">Về tôi</Link>
+                            <Link to="/product">Sản phẩm</Link>
+                            <Link to="/service">Dịch vụ</Link>
+                            <Link to="/blog">Blog</Link>
+                            <Link to="/about">Về chúng tôi</Link>
                         </div>
                     </div>
                     <div className="footer-working-hour">
