@@ -1,4 +1,4 @@
-.about-banner-container {
+.App.first-layout .about-banner-container {
     padding: 4rem 0;
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
         url("/public/assets/images/home/about.jpg");
@@ -9,14 +9,45 @@
     margin-top: 7rem;
 }
 
-.about-banner-container-detail {
+.App.second-layout .about-banner-container {
+    padding: 8rem 0;
+}
+
+.App.first-layout .about-banner-container-detail-second {
+    display: none;
+}
+
+.App.second-layout .about-banner-container-detail {
+    display: none;
+}
+
+.App.first-layout .about-banner-container-detail {
     max-width: 1280px;
     margin: 0 auto;
     padding-left: 10px;
     padding-right: 10px;
 }
 
-.about-banner-content-main {
+.App.second-layout .about-banner-container-detail-second {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.App.second-layout .about-title-second h4 {
+    font-weight: 600;
+    font-family: Pangolin;
+    letter-spacing: 1px;
+}
+
+.App.second-layout .about-title-second hr {
+    width: 117px;
+    height: 2px;
+    background-color: #3a8da8;
+}
+
+.App.first-layout .about-banner-content-main {
     display: flex;
     flex-direction: column;
     color: white;
@@ -24,20 +55,76 @@
     justify-content: center;
 }
 
-.about-banner-content-main h2 {
+.App.first-layout .about-banner-content-main h2 {
     font-weight: 800;
     text-align: center;
     padding-bottom: 1rem;
 }
 
-.about-banner-content {
+.App.first-layout .about-banner-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.about-banner-content p {
+.App.first-layout .about-banner-content p {
     padding: 0.5rem 0;
     font-size: 20px;
     font-weight: 500;
+}
+
+.App.second-layout .about-content-second {
+    margin-top: 20px;
+}
+
+.App.second-layout .about-content-detail-second {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+
+.App.second-layout .about-content-detail-second p {
+    display: block;
+    width: 50%;
+    font-family: Roboto Flex;
+    letter-spacing: 0.75px;
+}
+
+.App.second-layout .about-content-detail-second-middle {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+
+.App.second-layout .about-content-detail-second-middle p {
+    text-align: right;
+    font-family: Roboto Flex;
+    letter-spacing: 0.75px;
+    width: 50%;
+    display: block;
+}
+
+@media screen and (max-width: 960px) {
+    .App.second-layout .about-content-detail-second {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .App.second-layout .about-content-detail-second-middle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .App.second-layout .about-content-detail-second p {
+        text-align: center;
+        width: 100%;
+        margin: 1rem 0;
+    }
+    .App.second-layout .about-content-detail-second-middle p {
+        text-align: center;
+        width: 100%;
+        margin: 1rem 0;
+    }
 }

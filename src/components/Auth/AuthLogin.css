@@ -1,10 +1,18 @@
-.auth-container {
+.auth-container-login {
     margin: 0 auto;
     width: 100%;
     height: 100%;
 }
 
-.auth-container-detail {
+.App.first-layout .auth-container-detail-second {
+    display: none;
+}
+
+.App.second-layout .auth-container-detail-login {
+    display: none;
+}
+
+.App.first-layout .auth-container-detail-login {
     display: flex;
     align-content: center;
     align-items: center;
@@ -14,7 +22,17 @@
     padding-right: 10px;
 }
 
-.auth-login-container {
+.App.second-layout .auth-container-detail-second {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.App.first-layout .auth-login-container {
     width: 25%;
     padding: 0 1rem;
     border-radius: 0.25rem;
@@ -22,7 +40,14 @@
     z-index: 2;
 }
 
-.auth-login-up {
+.App.second-layout .auth-login-container {
+    width: 60%;
+    border-radius: 3px;
+    background-color: #41707f;
+    z-index: 2;
+}
+
+.App.first-layout .auth-login-up {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -31,48 +56,68 @@
     border: none;
 }
 
-.auth-login-another {
+.App.second-layout .auth-login-title {
+    padding-top: 1rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    padding-bottom: 10px;
+}
+
+.App.second-layout .auth-login-title p {
+    font-family: Nunito;
+    font-weight: 600;
+    font-size: 24px;
+    color: #fff;
+    line-height: 35px;
+    letter-spacing: 0.5px;
+}
+
+.App.second-layout .auth-login-container hr {
+    background-color: #c4c4c4;
+}
+
+.App.first-layout .auth-login-another {
     padding: 1.5rem;
 }
 
-.auth-login-another-text {
+.App.first-layout .auth-login-another-text {
     text-align: center;
     margin-bottom: 0.75rem;
 }
 
-.auth-login-another-text h6 {
+.App.first-layout .auth-login-another-text h6 {
     color: #64748b;
     font-weight: 800;
 }
 
-.auth-login-another-button {
+.App.first-layout .auth-login-another-button {
     text-align: center;
     margin-bottom: 10px;
 }
 
-.auth-login-input-container {
+.App.first-layout .auth-login-input-container {
     display: flex;
     flex-direction: column;
     padding: 0 1rem;
 }
 
-.auth-login-input-title {
+.App.first-layout .auth-login-input-title {
     text-align: center;
     margin-bottom: 0.75rem;
 }
 
-.auth-login-input-title span {
+.App.first-layout .auth-login-input-title span {
     color: #64748b;
     font-weight: 800;
 }
 
-.auth-login-input {
+.App.first-layout .auth-login-input {
     position: relative;
     width: 100%;
     margin-bottom: 0.75rem;
 }
 
-.auth-login-input label {
+.App.first-layout .auth-login-input label {
     display: block;
     text-transform: uppercase;
     color: #64748b;
@@ -82,7 +127,7 @@
     font-size: 12px;
 }
 
-.auth-login-input input {
+.App.first-layout .auth-login-input input {
     border: none;
     padding: 10px;
     color: #475569;
@@ -95,22 +140,22 @@
     transition-duration: 150ms;
 }
 
-.auth-login-input input :focus {
+.App.first-layout .auth-login-input input :focus {
     outline: 2px solid transparent;
     outline-offset: 2px;
 }
 
-.auth-login-input input ::placeholder {
+.App.first-layout .auth-login-input input ::placeholder {
     font-family: Nunito;
     color: #d8d8d8;
 }
 
-.auth-login-form-button {
+.App.first-layout .auth-login-form-button {
     text-align: center;
     margin-top: 1.5rem;
 }
 
-.auth-login-form-button button {
+.App.first-layout .auth-login-form-button button {
     border: none;
     padding: 10px;
     color: #fff;
@@ -126,33 +171,150 @@
     cursor: pointer;
 }
 
-.auth-login-down {
+.App.first-layout .auth-login-down {
     display: flex;
     justify-content: space-between;
     padding: 0 1rem;
     margin: 10px 0;
 }
 
-.auth-login-down small {
+.App.first-layout .auth-login-down small {
+    font-family: Roboto Flex;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.App.second-layout .auth-login-content {
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: space-between;
+    width: 100%;
+}
+
+.App.second-layout .auth-login-input {
+    position: relative;
+    width: 100%;
+    margin-bottom: 0.75rem;
+}
+
+.App.second-layout .auth-login-input label {
+    display: block;
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-family: Roboto Flex;
+    font-size: 12px;
+}
+
+.App.second-layout .auth-login-input input {
+    border: none;
+    padding: 10px;
+    color: #475569;
+    background-color: white;
+    border-radius: 0.25rem;
+    font-size: 14px;
+    width: 100%;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.App.second-layout .auth-login-input input :focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.App.second-layout .auth-login-input input ::placeholder {
+    font-family: Nunito;
+    color: #d8d8d8;
+}
+
+.App.second-layout .auth-login-form-button {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.App.second-layout .auth-login-form-button button {
+    border: none;
+    padding: 10px;
+    color: #fff;
+    background-color: #1e293b;
+    border-radius: 0.25rem;
+    font-size: 14px;
+    width: 100%;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.App.second-layout .auth-login-content-right {
+    padding-left: 20px;
+    margin: auto;
+}
+
+.App.second-layout .auth-login-content-left {
+    padding-right: 20px;
+    border-right: 1px solid #c4c4c4;
+}
+
+.App.second-layout .auth-login-down {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    color: #29c797;
+}
+
+.App.second-layout .auth-login-down small {
     font-family: Roboto Flex;
     font-weight: 700;
     letter-spacing: 0.5px;
 }
 
 @media screen and (max-width: 1024px) {
-    .auth-login-container {
+    .App.first-layout .auth-login-container {
+        width: 40%;
+    }
+
+    .App.second-layout .auth-login-container {
         width: 40%;
     }
 }
 
 @media screen and (max-width: 960px) {
-    .auth-login-container {
+    .App.first-layout .auth-login-container {
+        width: 50%;
+    }
+
+    .App.second-layout .auth-login-container {
         width: 50%;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .auth-login-container {
+    .App.first-layout .auth-login-container {
         width: 100%;
+    }
+
+    .App.second-layout .auth-login-content {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .App.second-layout .auth-login-content-left {
+        border-right: none;
+        border-bottom: 1px solid #c4c4c4;
+        padding: 2rem 0;
+    }
+
+    .App.second-layout .auth-login-container {
+        width: 100%;
+    }
+
+    .App.second-layout .auth-login-content-right {
+        padding-top: 20px;
     }
 }
