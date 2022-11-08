@@ -42,7 +42,7 @@ function AuthLogin() {
         gapi.load("client:auth2", start);
     }, []);
 
-    const handleGoooleLogin = async (googleLogin) => {
+    const handleGoogleLogin = async (googleLogin) => {
         const res = await postGoogleLogin(googleLogin);
         if (res.success) {
             toast.success("Đăng nhập thành công !");
@@ -57,8 +57,8 @@ function AuthLogin() {
             {select ? (
                 navigate("/")
             ) : (
-                <div className="auth-container">
-                    <div className="auth-container-detail">
+                <div className="auth-container-login">
+                    <div className="auth-container-detail-login">
                         <div className="auth-login-container">
                             <div className="auth-login-up">
                                 <div className="auth-login-another">
@@ -72,11 +72,10 @@ function AuthLogin() {
                                                     .REACT_APP_GOOGLE_CLIENT_ID
                                             }
                                             buttonText="Đăng nhập với Google"
-                                            onSuccess={handleGoooleLogin}
-                                            onFailure={handleGoooleLogin}
+                                            onSuccess={handleGoogleLogin}
+                                            onFailure={handleGoogleLogin}
                                             cookiePolicy={"single_host_origin"}
                                         />
-                                        ,
                                     </div>
                                     <hr />
                                 </div>
@@ -136,6 +135,84 @@ function AuthLogin() {
                                     <Link to="/register">
                                         <small>Tạo tài khoản mới</small>
                                     </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="auth-container-detail-second">
+                        <div className="auth-login-container">
+                            <div className="auth-login-title">
+                                <p>Đăng nhập</p>
+                            </div>
+                            <hr />
+                            <div className="auth-login-content">
+                                <div className="auth-login-content-left">
+                                    <form
+                                        method="POST"
+                                        className="login-form"
+                                        onSubmit={async (e) => {
+                                            await handleLogin(e);
+                                        }}
+                                    >
+                                        <div className="auth-login-input">
+                                            <label htmlFor="grid-password">
+                                                Tên người dùng
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder="Tên người dùng"
+                                                id="grid-username"
+                                                name="userName"
+                                                required
+                                            />
+                                        </div>
+                                        <div className="auth-login-input">
+                                            <label htmlFor="grid-password">
+                                                Mật khẩu
+                                            </label>
+                                            <input
+                                                type="password"
+                                                placeholder="Mật khẩu"
+                                                id="grid-password"
+                                                name="password"
+                                                required
+                                            />
+                                        </div>
+                                        <div className="auth-login-form-button">
+                                            <button type="submit">
+                                                Đăng nhập
+                                            </button>
+                                        </div>
+                                    </form>
+                                    <div className="auth-login-down">
+                                        <div className="auth-login-forgot-password">
+                                            <a
+                                                href="/"
+                                                onClick={(e) =>
+                                                    e.preventDefault()
+                                                }
+                                            >
+                                                <small>Quên mật khẩu?</small>
+                                            </a>
+                                        </div>
+                                        <div className="auth-login-create-account">
+                                            <Link to="/register">
+                                                <small>Tạo tài khoản mới</small>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="auth-login-content-right">
+                                    <GoogleLogin
+                                        clientId={
+                                            process.env
+                                                .REACT_APP_GOOGLE_CLIENT_ID
+                                        }
+                                        buttonText="Đăng nhập với Google"
+                                        onSuccess={handleGoogleLogin}
+                                        onFailure={handleGoogleLogin}
+                                        cookiePolicy={"single_host_origin"}
+                                    />
                                 </div>
                             </div>
                         </div>

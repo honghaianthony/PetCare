@@ -42,7 +42,7 @@
 .App.second-layout .footer-container-items {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 4rem;
+    grid-gap: 2rem;
 }
 
 .App.first-layout .footer-logo-container {
@@ -278,34 +278,14 @@
         grid-template-columns: repeat(1, minmax(0, 1fr));
         grid-gap: 2rem;
     }
-    .App.first-layout .footer-link {
-        margin: 0 auto;
-    }
-    .App.first-layout .footer-working-hour {
-        margin: 0 auto;
-    }
-    .App.first-layout .footer-working-hour h4 {
-        text-align: center !important;
-    }
-    .App.first-layout .footer-communication h4 {
-        text-align: center !important;
-    }
-
     .App.second-layout .footer-container-items {
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
         grid-gap: 2rem;
     }
-    .App.second-layout .footer-link {
-        margin: 0 auto;
-    }
-    .App.second-layout .footer-working-hour {
-        margin: 0 auto;
-    }
-    .App.second-layout .footer-working-hour h4 {
-        text-align: center !important;
-    }
-    .App.second-layout .footer-communication h4 {
-        text-align: center !important;
+
+    .App.second-layout .footer-working-hour-banner {
+        width: 200px;
+        transform: translate(-25%, 5%);
     }
 }
