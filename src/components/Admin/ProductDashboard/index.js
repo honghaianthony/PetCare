@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./ProductDashboard.css";
 import ProductList from "./ProductList";
 import ProductReqList from "./ProductReqList";
+import { Icon } from "@iconify/react";
 
 const ProductDashBoard = () => {
   const [method, setMethod] = useState(2);
@@ -9,24 +10,40 @@ const ProductDashBoard = () => {
     <div className="product-dashboard">
       <div className="card-group">
         <div className="card-item sold-product">
-          <h3>Sản phẩm đã bán</h3>
-          <h2>9999</h2>
-          <span>+99</span>
+          <div className="card-icon">
+            <Icon icon="dashicons:money-alt" />
+          </div>
+          <div className="card-content">
+            <h2>9,999,999</h2>
+            <h4>Doanh số</h4>
+          </div>
         </div>
         <div className="card-item out-stock-product">
-          <h3>Sản phẩm hết hàng</h3>
-          <h2>9999</h2>
-          <span>+99</span>
+          <div className="card-icon">
+            <Icon icon="ic:outline-cloud-done" />
+          </div>
+          <div className="card-content">
+            <h2>9,999</h2>
+            <h4>Bán thành công</h4>
+          </div>
         </div>
         <div className="card-item order-complete">
-          <h3>Đơn hàng hoàn thành</h3>
-          <h2>9999</h2>
-          <span>+99</span>
+          <div className="card-icon">
+            <Icon icon="medical-icon:i-waiting-area" />
+          </div>
+          <div className="card-content">
+            <h2>99</h2>
+            <h4>Đơn đang chờ</h4>
+          </div>
         </div>
         <div className="card-item order-waiting">
-          <h3>Đơn hàng chờ</h3>
-          <h2>9999</h2>
-          <span>+99</span>
+          <div className="card-icon">
+            <Icon icon="icons8:cancel" />
+          </div>
+          <div className="card-content">
+            <h2>9</h2>
+            <h4>Đơn bị hủy</h4>
+          </div>
         </div>
       </div>
       <div className="product-dashboard-container">

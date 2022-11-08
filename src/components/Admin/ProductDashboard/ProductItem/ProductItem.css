@@ -1,4 +1,5 @@
 .product-item-body {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   background-color: white;
@@ -18,31 +19,47 @@
 .product-item-body .product-info {
   flex-grow: 1;
   padding: 8px;
+  color: gray;
 }
 .product-item-body .product-info > * {
   font-family: "Nunito Sans", sans-serif;
+  letter-spacing: 0.5px;
   margin: 0 0;
 }
+.product-item-body .product-info .product-title {
+  color: black;
+  line-height: 24px;
+  height: 24px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 .product-item-body .product-info .product-id {
-  background-color: rgb(59, 210, 162);
+  background-color: hsla(208, 7%, 46%, 0.75);
   display: inline;
   padding: 0 10px;
   text-align: center;
   color: #fff;
   border-radius: 15px;
   font-size: 12px;
+  font-weight: 700;
 }
 .product-info .product-origin-price {
   font-size: 0.8rem;
   text-decoration: line-through;
 }
-.product-icon-edit {
-  flex-basis: content;
-  font-size: 28px;
-}
 .product-item .product-icon-edit {
+  font-size: 28px;
+  position: absolute;
+  right: 0;
+  top: 0;
   color: #6978d1;
   transition: all 0.2s;
+}
+.product-item .product-icon-edit svg {
+  display: block;
 }
 .product-item .product-icon-edit:hover {
   cursor: pointer;
@@ -50,6 +67,7 @@
 }
 @media only screen and (max-width: 768px) {
   .product-item-body .product-item-image {
+    margin-top: 22px;
     flex-basis: 100%;
   }
 }
