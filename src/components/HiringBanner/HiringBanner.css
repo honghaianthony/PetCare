@@ -1,0 +1,40 @@
+.hiring-banner-container {
+    padding: 8rem 0;
+    background: url("/public/assets/images/home/petbanner.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.hiring-banner-container-detail {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.hiring-banner-content-main {
+    padding: 4rem 0;
+    position: relative;
+}
+
+.hiring-banner-title-first {
+    color: #2b3f7e;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.hiring-banner-title-second {
+    color: #2b3f7e;
+    font-weight: 1000;
+    letter-spacing: 0.5px;
+    margin: 0 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .hiring-banner-content-main h1 {
+        margin: 0 auto;
+        text-align: center;
+    }
+}

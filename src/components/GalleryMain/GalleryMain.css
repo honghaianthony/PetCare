@@ -1,0 +1,183 @@
+.gallery-main-container {
+    padding: 2rem 0;
+}
+
+.App.first-layout .gallery-main-container-first {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.App.second-layout .gallery-main-container-first {
+    display: none;
+}
+
+.App.first-layout .gallery-main-container-second {
+    display: none;
+}
+
+.App.second-layout .gallery-main-container-second {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.App.first-layout .gallery-main-up {
+    display: flex;
+    justify-content: space-between;
+}
+
+.App.first-layout .gallery-main-up-left {
+    display: block;
+}
+
+.App.first-layout .gallery-main-up-left h3 {
+    font-weight: 700;
+}
+
+.App.first-layout .gallery-main-up-left p {
+    width: 80%;
+    font-family: Roboto Flex;
+    letter-spacing: 0.25px;
+}
+
+.App.first-layout .gallery-main-up-right {
+    position: relative;
+    width: 50%;
+    padding-top: 18%;
+}
+
+.App.first-layout .react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.App.first-layout .gallery-main-down {
+    margin-top: 4rem;
+}
+
+.App.first-layout .gallery-main-down-title {
+    text-align: center;
+}
+
+.App.first-layout .gallery-main-down-title h3 {
+    font-weight: 700;
+}
+
+.App.first-layout .gallery-main-down-title p {
+    font-family: Roboto Flex;
+    letter-spacing: 0.25px;
+}
+
+.App.first-layout .gallery-main-down-content {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.App.second-layout .gallery-main-up {
+    padding: 2rem 0;
+}
+
+.App.second-layout .gallery-main-up-top {
+    text-align: center;
+}
+
+.App.second-layout .gallery-main-up-top-title-second {
+    margin-bottom: 1rem;
+}
+
+.App.second-layout .gallery-main-up-top-title-second h3 {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.App.second-layout .gallery-main-up-top-title-second span {
+    font-weight: 700;
+    color: #193a6a;
+    letter-spacing: 1px;
+}
+
+.App.second-layout .gallery-main-up-top-title-second hr {
+    width: 117px;
+    height: 2px;
+    background-color: #3a8da8;
+    margin: 0 auto;
+}
+
+.App.second-layout .gallery-main-up-top p {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    letter-spacing: 0.25px;
+    padding-bottom: 2rem;
+}
+
+.App.second-layout .gallery-main-up-down {
+    position: relative;
+    width: 50%;
+    padding-top: 25%;
+    margin: 0 auto;
+}
+
+.App.second-layout .react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.App.second-layout .gallery-main-down {
+    padding: 2rem 0;
+}
+
+.App.second-layout .gallery-main-down h4 {
+    font-weight: 600;
+    font-family: Pangolin;
+    letter-spacing: 1px;
+}
+
+.App.second-layout .gallery-main-down-title-second span {
+    color: #193a6a;
+}
+
+.App.second-layout .gallery-main-down hr {
+    width: 117px;
+    height: 2px;
+    background-color: #3a8da8;
+}
+
+.App.second-layout .gallery-main-down p {
+    display: block;
+    letter-spacing: 0.25px;
+    padding: 1rem 0;
+}
+
+@media screen and (max-width: 768px) {
+    .App.first-layout .gallery-main-up {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .App.first-layout .gallery-main-up-left p {
+        width: 100%;
+    }
+    .App.first-layout .gallery-main-up-right {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%;
+    }
+
+    .App.second-layout .gallery-main-up-top p {
+        width: 100%;
+    }
+
+    .App.second-layout .gallery-main-up-down {
+        width: 100%;
+        padding-top: 56.25%;
+        position: relative;
+    }
+}

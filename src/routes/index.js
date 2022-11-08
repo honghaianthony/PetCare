@@ -10,6 +10,8 @@ import {
     Payment,
     Blog,
     Statistical,
+    Hiring,
+    PhotoAndVideo,
 } from "../pages";
 import { Service } from "../pages";
 import { About } from "../pages";
@@ -78,6 +80,12 @@ export default function App() {
                     exact
                     path="/admin/statistical"
                     element={<Statistical />}
+                ></Route>
+                <Route exact path="/hiring" element={<Hiring />}></Route>
+                <Route
+                    exact
+                    path="/gallery"
+                    element={<PhotoAndVideo />}
                 ></Route>
             </Routes>
             <ToastContainer

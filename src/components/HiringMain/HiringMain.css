@@ -1,0 +1,185 @@
+.hiring-container {
+    padding: 4rem 0;
+}
+
+.App.first-layout .hiring-container-first {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.App.second-layout .hiring-container-second {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.App.second-layout .hiring-container-first {
+    display: none;
+}
+
+.App.first-layout .hiring-container-second {
+    display: none;
+}
+
+.App.first-layout .hiring-content {
+    background: #fff;
+    border-radius: 5px;
+    padding: 2rem 1rem;
+}
+
+.App.first-layout .hiring-content-up {
+    padding: 0 2rem;
+}
+
+.App.first-layout .hiring-content-down {
+    padding: 0 2rem;
+}
+
+.App.first-layout .hiring-content-up h3 {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.25px;
+}
+
+.App.first-layout .hiring-content-up span {
+    color: #de135c;
+    font-weight: 600;
+}
+
+.App.first-layout .hiring-content-up p {
+    font-family: Roboto Flex;
+    font-size: 1rem;
+    letter-spacing: 0.25px;
+}
+
+.App.first-layout .hiring-content-up ul {
+    list-style-type: circle;
+}
+
+.App.first-layout .hiring-content-down h3 {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.25px;
+}
+
+.App.first-layout .hiring-content-down span {
+    color: #de135c;
+}
+
+.App.first-layout .hiring-content-down table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.App.first-layout .hiring-content-down td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.App.first-layout .hiring-content-down th {
+    background-color: #de135c;
+    color: #fff;
+}
+
+.App.second-layout .hiring-content-up-title-second h4 {
+    font-weight: 600;
+    font-family: Pangolin;
+    letter-spacing: 1px;
+}
+
+.App.second-layout .hiring-content-up-title-second hr {
+    width: 117px;
+    height: 2px;
+    background-color: #3a8da8;
+}
+
+.App.second-layout .hiring-content-up span {
+    color: #193a6a;
+    font-weight: 600;
+}
+
+.App.second-layout .hiring-content-up p {
+    font-family: Roboto Flex;
+    font-size: 1rem;
+    letter-spacing: 0.25px;
+}
+
+.App.second-layout .hiring-content-up ul {
+    list-style-type: circle;
+}
+
+.App.second-layout .hiring-content-up-detail-second {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.App.second-layout .hiring-content-up-detail-second-left {
+    display: block;
+    width: 50%;
+}
+
+.App.second-layout .hiring-content-down-title-second {
+    float: right;
+}
+
+.App.second-layout .hiring-content-down-title-second h4 {
+    font-weight: 600;
+    font-family: Pangolin;
+    letter-spacing: 1px;
+}
+
+.App.second-layout .hiring-content-down-title-second hr {
+    width: 117px;
+    height: 2px;
+    background-color: #3a8da8;
+    float: right;
+    margin-bottom: 50px;
+}
+
+.App.second-layout .hiring-content-down table {
+    margin: 0 auto;
+}
+
+.App.second-layout .hiring-content-down table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.App.second-layout .hiring-content-down td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.App.second-layout .hiring-content-down th {
+    background-color: #193a6a;
+    color: #fff;
+}
+
+.App.second-layout .hiring-content-down span {
+    color: #193a6a;
+}
+
+@media screen and (max-width: 768px) {
+    .App.second-layout .hiring-content-up-detail-second {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .App.second-layout .hiring-content-up-detail-second-left {
+        display: block;
+        width: 100%;
+    }
+}
