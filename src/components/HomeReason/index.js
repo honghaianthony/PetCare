@@ -118,6 +118,77 @@ function HomeReason() {
                     </motion.div>
                 </div>
             </div>
+            <div className="home-reason-container-detail-second">
+                <div className="home-reason-title-second">
+                    <h4>Tại sao lại lựa chọn chúng tôi?</h4>
+                    <hr />
+                </div>
+                <div className="home-reason-content-second">
+                    <div className="home-reason-content-detail-second">
+                        <Icon
+                            icon="ant-design:customer-service-filled"
+                            className="home-reason-icon-reason"
+                        />
+                        <div className="home-reason-right-content">
+                            <h4 className="home-reason-right-title">
+                                Dịch vụ chất lượng
+                            </h4>
+                            <p>
+                                Ở PetCare, chúng tôi luôn hướng đến sự hài lòng
+                                của khách hàng cho nên mọi dịch vụ ở đây đều
+                                phải được chỉnh chu
+                            </p>
+                        </div>
+                    </div>
+                    <div className="home-reason-content-detail-second">
+                        <Icon
+                            icon="bi:file-earmark-post"
+                            className="home-reason-icon-reason"
+                        />
+                        <div className="home-reason-right-content">
+                            <h4 className="home-reason-right-title">
+                                Bài viết được cập nhật liên tục
+                            </h4>
+                            <p>
+                                Những bài viết về chăm sóc thú cưng sẽ liên tục
+                                cập nhật để khách hàng có những kinh nghiệm khi
+                                chăm sóc thú cưng
+                            </p>
+                        </div>
+                    </div>
+                    <div className="home-reason-content-detail-second">
+                        <Icon
+                            icon="entypo:price-tag"
+                            className="home-reason-icon-reason"
+                        />
+                        <div className="home-reason-right-content">
+                            <h4 className="home-reason-right-title">
+                                Giá cả phải chăng
+                            </h4>
+                            <p>
+                                Thức ăn và dịch vụ ở PetCare cam kết giá cả hợp
+                                lý để khách hàng có thể lựa chọn chúng tôi
+                            </p>
+                        </div>
+                    </div>
+                    <div className="home-reason-content-detail-second">
+                        <Icon
+                            icon="uiw:global"
+                            className="home-reason-icon-reason"
+                        />
+                        <div className="home-reason-right-content">
+                            <h4 className="home-reason-right-title">
+                                Môi trường xanh - sạch - đẹp
+                            </h4>
+                            <p>
+                                Môi trường chăm sóc, huấn luyện ở PetCare đều
+                                được kiểm định chặt chẽ với sứ mệnh tạo ra một
+                                không khí trong lành cho thú cưng
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     );
 }

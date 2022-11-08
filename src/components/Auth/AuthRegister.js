@@ -148,8 +148,8 @@ function AuthRegister() {
     };
     return (
         <>
-            <div className="auth-container">
-                <div className="auth-container-detail">
+            <div className="auth-container-register">
+                <div className="auth-container-detail-register">
                     <div className="auth-register-container">
                         <div className="auth-register-up">
                             <div className="auth-register-another">
@@ -306,6 +306,172 @@ function AuthRegister() {
                                 </form>
                             </div>
                         </div>
+                        <div className="auth-register-down">
+                            <div className="auth-register-create-account">
+                                <Link to="/login">
+                                    <small>Đã có tài khoản? Đăng nhập</small>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="auth-container-detail-register-second">
+                    <div className="auth-register-container">
+                        <div className="auth-register-title">
+                            <p>Đăng ký</p>
+                        </div>
+                        <hr />
+
+                        <form>
+                            <div className="auth-register-content">
+                                <div className="auth-register-content-left">
+                                    <div className="auth-register-input">
+                                        <label htmlFor="grid-password">
+                                            Tên tài khoản
+                                        </label>
+                                        <input
+                                            type="text"
+                                            placeholder="Tên tài khoản"
+                                            id="userName"
+                                            value={input.userName}
+                                            onChange={(e) =>
+                                                handleChangeUserName(e)
+                                            }
+                                            required
+                                        />{" "}
+                                        <span>{error.userName}</span>
+                                    </div>
+                                    <div className="auth-register-input">
+                                        <label htmlFor="grid-password">
+                                            Mật khẩu
+                                        </label>
+                                        <input
+                                            type="password"
+                                            placeholder="Mật khẩu"
+                                            id="password"
+                                            required
+                                            pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                                            value={input.password}
+                                            onChange={(e) =>
+                                                handleChangePassword(e)
+                                            }
+                                        />{" "}
+                                        <span>{error.password}</span>
+                                    </div>
+                                    <div className="auth-register-input">
+                                        <label htmlFor="grid-password">
+                                            Xác nhận mật khẩu
+                                        </label>
+                                        <input
+                                            type="password"
+                                            placeholder="Xác nhận mật khẩu"
+                                            id="confirmPassword"
+                                            required
+                                            pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                                            value={input.confirmPassword}
+                                            onChange={(e) =>
+                                                handleChangeConfirmPassword(e)
+                                            }
+                                        />{" "}
+                                        <span>{error.confirmPassword}</span>
+                                    </div>
+                                    <div className="auth-register-input">
+                                        <label htmlFor="grid-password">
+                                            Email
+                                        </label>
+                                        <input
+                                            type="email"
+                                            placeholder="Email"
+                                            id="email"
+                                            required
+                                            value={input.email}
+                                            onChange={(e) =>
+                                                handleChangeEmail(e)
+                                            }
+                                        />
+                                        <span>{error.email}</span>
+                                    </div>
+                                </div>
+                                <div className="auth-register-content-right">
+                                    <div className="auth-register-input-name">
+                                        <div className="auth-register-input">
+                                            <label htmlFor="grid-password">
+                                                Tên của bạn
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder="Tên"
+                                                id="firstName"
+                                                onChange={(e) =>
+                                                    setInput({
+                                                        ...input,
+                                                        firstName:
+                                                            e.target.value,
+                                                    })
+                                                }
+                                            />{" "}
+                                        </div>
+
+                                        <div className="auth-register-input">
+                                            <label htmlFor="grid-password">
+                                                Họ
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder="Họ"
+                                                id="lastName"
+                                                onChange={(e) =>
+                                                    setInput({
+                                                        ...input,
+                                                        lastName:
+                                                            e.target.value,
+                                                    })
+                                                }
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="auth-register-input">
+                                        <label htmlFor="grid-password">
+                                            Địa chỉ
+                                        </label>
+                                        <input
+                                            type="address"
+                                            placeholder="Địa chỉ"
+                                            id="address"
+                                            onChange={(e) =>
+                                                setInput({
+                                                    ...input,
+                                                    address: e.target.value,
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                    <div className="auth-register-input">
+                                        <label htmlFor="grid-password">
+                                            Số điện thoại
+                                        </label>
+                                        <input
+                                            type="tel"
+                                            placeholder="Số điện thoại"
+                                            id="phone"
+                                            onChange={(e) =>
+                                                setInput({
+                                                    ...input,
+                                                    phone: e.target.value,
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="auth-register-form-button">
+                                <button type="submit" onClick={handleRegister}>
+                                    Tạo tài khoản
+                                </button>
+                            </div>
+                        </form>
+
                         <div className="auth-register-down">
                             <div className="auth-register-create-account">
                                 <Link to="/login">

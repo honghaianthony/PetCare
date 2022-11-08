@@ -11,7 +11,6 @@ function HomeService() {
     const control = useAnimation();
     const [ref, inView] = useInView();
 
-    
     useEffect(() => {
         if (inView) {
             control.start("visible");
@@ -122,6 +121,59 @@ function HomeService() {
                     </div>
                 </div>
             </motion.div>
+            <div className="home-service-container-detail-second">
+                <div className="home-service-title-second">
+                    <h4>Các loại dịch vụ</h4>
+                    <hr />
+                </div>
+                <div className="home-service-main-second">
+                    <div className="home-service-main-second-detail">
+                        <div className="home-service-main-second-detail-content">
+                            <img
+                                src="/assets/images/home/cattialong.png"
+                                alt="Cắt tỉa lông"
+                            />
+                            <h5>Cắt tỉa lông</h5>
+                        </div>
+                    </div>
+                    <div className="home-service-main-second-detail">
+                        <div className="home-service-main-second-detail-content">
+                            <img
+                                src="/assets/images/home/chamsocsuckhoe.png"
+                                alt="Chăm sóc sức khỏe"
+                            />
+                            <h5>Chăm sóc sức khỏe</h5>
+                        </div>
+                    </div>
+                    <div className="home-service-main-second-detail">
+                        <div className="home-service-main-second-detail-content">
+                            <img
+                                src="/assets/images/home/thucandinhduong.png"
+                                alt="Thức ăn dinh dưỡng"
+                            />
+                            <h5>Thức ăn dinh dưỡng</h5>
+                        </div>
+                    </div>
+                    <div className="home-service-main-second-detail">
+                        <div className="home-service-main-second-detail-content">
+                            <img
+                                src="/assets/images/home/huanluyen.png"
+                                alt="Huấn luyện"
+                            />
+                            <h5>Huấn luyện</h5>
+                        </div>
+                    </div>
+                    <div className="home-service-main-second-detail">
+                        <div className="home-service-main-second-detail-content">
+                            <img
+                                src="/assets/images/home/tamrua.png"
+                                alt="Tắm rửa"
+                            />
+                            <h5>Tắm rửa</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     );
 }

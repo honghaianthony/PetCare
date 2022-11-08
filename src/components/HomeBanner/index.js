@@ -27,6 +27,31 @@ function HomeBanner() {
                         />
                     </div>
                 </div>
+                <div className="home-banner-main-second">
+                    <div className="home-banner-left">
+                        <img
+                            src="/assets/images/home/corgi-bg.png"
+                            alt="PetCare banner"
+                        />
+                    </div>
+                    <div className="home-banner-center">
+                        <div className="home-banner-center-detail">
+                            <h1 className="home-banner-center-title">
+                                Chăm sóc thú cưng là sứ mệnh của chúng tôi
+                            </h1>
+                            <p className="home-banner-center-content">
+                                PetCare luôn đồng hành cùng bạn
+                            </p>
+                            <Link to="/">Bắt đầu</Link>
+                        </div>
+                    </div>
+                    <div className="home-banner-right">
+                        <img
+                            src="/assets/images/home/cat-bg-new.png"
+                            alt="PetCare banner"
+                        />
+                    </div>
+                </div>
             </div>
         </section>
     );

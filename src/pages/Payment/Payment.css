@@ -37,6 +37,12 @@
 .Payment-Content-User {
   width: 60%;
   border-right: 1px solid #dd3c72;
+  padding-left: 20px;
+}
+.second-layout .Payment-Content-User {
+  border-right: none;
+  width: 60%;
+  order: 2;
 }
 .Payment-Content-User-Title {
   display: flex;
@@ -90,6 +96,10 @@
 .Payment-Content-Product {
   padding: 15px 10px 10px 50px;
   width: 40%;
+}
+.second-layout .Payment-Content-Product {
+  padding: 15px 50px 10px 10px;
+  border-right: 1px solid #dd3c72;
 }
 .Payment-Content-Product-Summary > p {
   display: flex;
@@ -159,21 +169,30 @@
   .Payment-Content {
     width: 98%;
     padding: 5px;
-    display: block;
+    flex-direction: column;
   }
   .Payment-Content-User {
-    width: 100%;
-    border-right: none;
+    width: 100% !important;
+    border: none !important;
+    padding: 0px;
   }
   .Payment-Content-User-Content form {
     padding-right: 10px;
   }
   .Payment-Content-Product {
     margin-top: 20px;
-    border-top: 1px solid #dd3c72;
-    width: 100%;
+    border: none !important;
+    width: 100% !important;
     padding: 10px;
     padding-top: 20px;
+  }
+  .first-layout .Payment-Content-Product {
+    border-top: 1px solid #dd3c72;
+  }
+  .second-layout .Payment-Content-Product {
+    border-bottom: 1px solid #dd3c72;
+    margin-bottom: 20px;
+    padding: 0px;
   }
 }
 @media screen and (max-width: 299px) {

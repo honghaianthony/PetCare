@@ -13,4 +13,5 @@ export { default as BlogDetail } from "./BlogDetail";
 export { default as Payment } from "./Payment";
 export { default as Blog } from "./Blog";
 export { default as Statistical } from "./Admin/Statistical";
-
+export { default as Hiring } from "./Hiring";
+export { default as PhotoAndVideo } from "./PhotoAndVideo";

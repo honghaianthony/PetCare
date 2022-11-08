@@ -1,4 +1,4 @@
-.home-banner-container {
+.App.first-layout .home-banner-container {
     top: 0px;
     position: absolute;
     width: 100%;
@@ -10,6 +10,16 @@
     );
 }
 
+.App.second-layout .home-banner-container {
+    top: 0px;
+    position: absolute;
+    width: 100%;
+    padding: 6rem 0;
+    background-image: url("/public/assets/images/home/bg-path.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
 .home-banner-container-detail {
     max-width: 1280px;
     margin: 0 auto;
@@ -17,13 +27,76 @@
     padding-right: 10px;
 }
 
-.home-banner-main {
+.App.first-layout .home-banner-main {
     display: flex;
     align-items: center;
     color: black;
 }
 
-.home-banner-left {
+.App.first-layout .home-banner-main-second {
+    display: none;
+}
+
+.App.second-layout .home-banner-main {
+    display: none;
+}
+
+.App.second-layout .home-banner-main-second {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.App.second-layout .home-banner-left {
+    display: block;
+    position: relative;
+}
+
+.App.second-layout .home-banner-right {
+    display: block;
+    position: relative;
+}
+
+/*Text*/
+.App.second-layout .home-banner-center {
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    font-family: Nunito;
+    color: #193a6a;
+}
+
+.App.second-layout .home-banner-center-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.App.second-layout .home-banner-center-title {
+    font-weight: 800;
+}
+
+.App.second-layout .home-banner-center-content {
+    font-size: 18px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.App.second-layout .home-banner-center a {
+    margin-top: 15px;
+    background-color: #124c5f;
+    opacity: 0.8;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-family: Roboto Flex;
+    width: 15%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.App.first-layout .home-banner-left {
     text-align: left;
     margin: 0 auto;
     display: flex;
@@ -31,7 +104,7 @@
     width: 50%;
 }
 
-.home-banner-left-detail {
+.App.first-layout .home-banner-left-detail {
     display: flex;
     flex-direction: column;
     --tw-space-y-reverse: 0;
@@ -39,16 +112,16 @@
     margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
 }
 
-.home-banner-left-title {
+.App.first-layout .home-banner-left-title {
     font-family: Pangolin;
 }
 
-.home-banner-left-content {
+.App.first-layout .home-banner-left-content {
     font-family: Pangolin;
     font-size: 18px;
 }
 
-.home-banner-left-button {
+.App.first-layout .home-banner-left-button {
     margin-top: 15px;
     background-color: #de135c;
     opacity: 0.8;
@@ -60,7 +133,7 @@
     text-align: center;
 }
 
-.home-banner-right {
+.App.first-layout .home-banner-right {
     display: block;
     position: relative;
     width: 50%;
@@ -68,26 +141,47 @@
 }
 
 @media screen and (max-width: 960px) {
-    .home-banner-right {
+    .App.first-layout .home-banner-right {
         display: none;
     }
-    .home-banner-left {
+    .App.first-layout .home-banner-left {
         width: 100%;
         text-align: center;
         margin-top: 100px;
     }
-    .home-banner-left-button {
+    .App.first-layout .home-banner-left-button {
         margin: 0 auto;
         margin-top: 2rem;
         width: 50vw;
     }
-    .home-banner-container {
+    .App.first-layout .home-banner-container {
+        padding-bottom: 4rem;
+    }
+
+    .App.second-layout .home-banner-right {
+        display: none;
+    }
+    .App.second-layout .home-banner-left {
+        display: none;
+    }
+
+    .App.second-layout .home-banner-center {
+        width: 100%;
+        text-align: center;
+        margin-top: 100px;
+    }
+    .App.second-layout .home-banner-center a {
+        margin: 0 auto;
+        margin-top: 2rem;
+        width: 50vw;
+    }
+    .App.second-layout .home-banner-container-second {
         padding-bottom: 4rem;
     }
 }
 
 @media screen and (max-width: 368px) {
-    .home-banner-container {
+    .App.first-layout .home-banner-container {
         margin-bottom: 4rem !important;
     }
 }

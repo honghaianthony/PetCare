@@ -46,14 +46,14 @@ function Payment() {
     }
   };
   const handleSubmit = (e) => {
-    const info = {
-      orderId: order.orderId,
-      name: e.target.name.value,
-      city: e.target.city.value,
-      address: e.target.address.value,
-      email: e.target.email.value,
-      phone: e.target.phone.value,
-    };
+    // const info = {
+    //   orderId: order.orderId,
+    //   name: e.target.name.value,
+    //   city: e.target.city.value,
+    //   address: e.target.address.value,
+    //   email: e.target.email.value,
+    //   phone: e.target.phone.value,
+    // };
     navigate("/product");
   };
   return (
