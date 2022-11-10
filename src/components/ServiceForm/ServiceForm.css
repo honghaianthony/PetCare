@@ -1,7 +1,7 @@
-.Service_form_container{
+.App.first-layout .Service_form_container{
     padding:15px 10px;
 }
-.Service_form_container_detail{
+.App.first-layout .Service_form_container_detail{
     margin: 0 auto;
     max-width: 1280px;
     border:1px solid #DE135C;
@@ -15,6 +15,30 @@
 
 
 }
+.App.second-layout .Service_form_container_second{
+    padding:15px 10px;
+}
+.App.second-layout .Service_form_container_detail_second{
+    margin: 0 auto;
+    max-width: 1280px;
+    /* border:1px solid #DE135C; */
+    /* padding:20px; */
+    border-radius: 5px;
+    font-family: "Nunito", sans-serif;
+    /* background-image: url(/public/assets/images/Service/—Pngtree—cartoon\ pet\ food\ dog\ food_1047378.jpg); */
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    /* padding:20px; */
+}
+.App.first-layout .Service_form_container_second,.App.first-layout .Service_form_container_detail_second{
+    display:none;
+}
+.App.second-layout .Service_form_container,.App.second-layout .Service_form_container_detail{
+    display:none;
+
+}
+
 .Service_form_container_header{
     text-align: center;
     width:100%;
@@ -66,6 +90,46 @@
     background-color: #DE135C;
 
 }
+.App.second-layout .Service_form_container_detail_second_left{
+    width:50%;
+    height: 560px;
+
+}
+.App.second-layout .Service_form_container_detail_second_right{
+    width:50%;
+    padding:0 10px 10px 10px;
+    background-color: rgba(25, 58, 106, 0.8);
+    height: 560px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+.App.second-layout .Service_form_container_detail_second_right h2{
+    color: #fff;
+    text-align: center;
+}
+.App.second-layout .Service_form_container_detail_second_left img{
+    height:100%;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.App.second-layout .label__serivce{
+    width: 100%;
+    color: #fff;
+}
+.App.second-layout .form_service__{
+    padding:5px 5px;
+    width:100%;
+}
+.App.second-layout .Submit__service_form{
+    width:100%;
+    background-color: rgba(18, 76, 95, 0.8)
+    ;
+}
+.App.second-layout .list_form_service_{
+    margin: 0;
+}
 @media screen and (max-width: 960px){
     .Service_form_header_text{
         width: 80%;
@@ -85,6 +149,18 @@
         width: 80%;
         font-size: 24px;
         padding:20px;
+    }
+    .App.second-layout .Service_form_container_detail_second_left{
+        display: none;
+    }
+    .App.second-layout .Service_form_container_detail_second_right{
+        width: 100%;
+        height: fit-content;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .App.second-layout .Service_form_container_detail_second_left img{
+        display: none;
     }
 }
 @media screen and (max-width: 600px){
