@@ -15,3 +15,6 @@
 .ProductDetailReview-img img {
   border-radius: 50px;
 }
+.second-layout .ProductDetailReview {
+  border-bottom: 1px dashed #41707f;
+}
