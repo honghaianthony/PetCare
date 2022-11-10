@@ -1,4 +1,5 @@
 .edit-product-container {
+  font-family: Roboto Flex;
   position: fixed;
   top: 0;
   left: 0;
@@ -18,7 +19,31 @@
 .edit-product-container {
   margin-top: 0;
 }
-
+.edit-product-form-container .heading {
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  margin-bottom: 14px;
+  color: #000;
+  background-color: #fff;
+}
+.edit-product-form-container .heading h4 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.edit-product-form-container .heading svg {
+  font-size: 2em;
+}
+.edit-product-form-container .heading svg:hover {
+  color: red;
+  cursor: pointer;
+}
 .edit-product-form-container {
   position: relative;
   max-width: 1200px;
@@ -27,7 +52,11 @@
   overflow-y: auto;
   background: white;
   border-radius: 5px;
-  padding: 20px;
+  transform: scale(0);
+  transition: all 0.5s;
+}
+.edit-product-form-container.show {
+  transform: scale(1);
 }
 .edit-product-form-container .button-group input {
   width: fit-content;
@@ -35,13 +64,12 @@
   padding-right: 16px;
 }
 .edit-product-form-container .button-group .cancel-edit {
-  background-color: gray;
-  color: white;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid gray !important;
   margin-left: 8px;
 }
 .edit-product-form-container .button-group input {
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   font-weight: 500;
 }
 .edit-product-form-container .button-group input:hover {

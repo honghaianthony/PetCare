@@ -1,4 +1,5 @@
 import ProductReqItem from "../ProductReqItem";
+import { useState } from "react";
 
 const ProductReqList = () => {
   const list = [
@@ -38,9 +39,31 @@ const ProductReqList = () => {
       state_id: 1,
     },
   ];
+  const [filter, setFilter] = useState(1);
+
   return (
     <>
       <div className="product-req-list-container">
+        <div className="filter">
+          <span
+            className={`req-complete ${filter === 1 ? "active" : ""}`}
+            onClick={() => setFilter(1)}
+          >
+            Hoàn thành
+          </span>
+          <span
+            className={`req-waiting ${filter === 2 ? "active" : ""}`}
+            onClick={() => setFilter(2)}
+          >
+            Chờ
+          </span>
+          <span
+            className={`req-cancel ${filter === 3 ? "active" : ""}`}
+            onClick={() => setFilter(3)}
+          >
+            Hủy
+          </span>
+        </div>
         <div className="product-req-list">
           {list.map((item, idx) => (
             <ProductReqItem key={idx} data={item} />
