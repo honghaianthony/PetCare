@@ -199,7 +199,7 @@ const ShoppingCart = () => {
       <div className="ShoppingCartHead">
         <div>
           <div className="ShoppingCartHead-Icon">
-            <Icon icon="bi:bag-heart-fill" color="#ec87c0" fontSize="32px" />
+            <Icon icon="bi:bag-heart-fill" fontSize="32px" />
           </div>
           <div className="ShoppingCartHead-Content">
             <h3>Giỏ hàng</h3>
