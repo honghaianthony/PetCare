@@ -71,7 +71,7 @@ const ProductList = () => {
     <>
       <div className="product-list-container">
         <div className="heading">
-          <h3>99 sản phẩm</h3>
+          <h3>{data.length} sản phẩm</h3>
           <button onClick={() => setShowAdd(true)}>Thêm sản phẩm mới</button>
         </div>
         <div className="product-list">
