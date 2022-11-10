@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import EditProduct from "../../EditProduct";
+import { useDispatch } from "react-redux";
+import { removeProduct } from "../../../../../redux/product.slice";
 
 const ProductItem = ({ data }) => {
+  const dispatch = useDispatch();
   const [productDetail, setProductDetail] = useState(data);
   const [showEdit, setShowEidt] = useState(false);
   useEffect(() => setProductDetail(data), [data]);
@@ -30,7 +33,11 @@ const ProductItem = ({ data }) => {
               className="edit-product"
               onClick={() => setShowEidt(true)}
             />
-            <Icon icon="fluent:delete-24-regular" className="delete-product" />
+            <Icon
+              icon="fluent:delete-24-regular"
+              className="delete-product"
+              onClick={() => dispatch(removeProduct(productDetail.product_id))}
+            />
           </div>
         </td>
       </tr>

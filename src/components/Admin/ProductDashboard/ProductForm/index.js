@@ -2,8 +2,12 @@ import "./ProductForm.css";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
+import { useDispatch } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
+import { addProduct } from "../../../../redux/product.slice";
 
-const ProductForm = ({ closeForm, addProduct }) => {
+const ProductForm = ({ closeForm }) => {
+  const dispatch = useDispatch();
   const [selectedFile, setSelectedFile] = useState();
   const [preview, setPreview] = useState();
   const [show, setShow] = useState(false);
@@ -35,7 +39,7 @@ const ProductForm = ({ closeForm, addProduct }) => {
     // formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    addProduct(data);
+    dispatch(addProduct({ ...data, product_id: uuidv4() }));
     setShow(false);
     setTimeout(() => closeForm(), 500);
   };
