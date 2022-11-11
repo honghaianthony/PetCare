@@ -254,7 +254,7 @@ const ServiceForm = () => {
               </label>
               <input
                 type="text"
-                placeholder="Số điện thoại"
+                placeholder="123456789"
                 className="form_service__"
                 value={phone2}
                 onChange={changeValuePhone2}
@@ -264,7 +264,7 @@ const ServiceForm = () => {
               </label>
               <input
                 type="text"
-                placeholder="Địa chỉ"
+                placeholder="Việt Nam, Trái Đất"
                 className="form_service__"
                 value={address2}
                 onChange={changeValueAddress2}
