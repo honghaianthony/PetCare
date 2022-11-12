@@ -15,3 +15,4 @@ export { default as Blog } from "./Blog";
 export { default as Statistical } from "./Admin/Statistical";
 export { default as Hiring } from "./Hiring";
 export { default as PhotoAndVideo } from "./PhotoAndVideo";
+export { default as Policy } from "./Policy";
