@@ -20,7 +20,6 @@ function BlogDetail() {
         }
         getBlogDetail();
     }, [blogId]);
-    console.log(blogData);
 
     return (
         <MainLayout>
@@ -50,6 +49,29 @@ function BlogDetail() {
                                 />
                                 <HighlightBlog />
                             </div>
+                        </div>
+                        <div className="blog-detail-trending">
+                            <BlogTrending />
+                        </div>
+                    </div>
+                    <div className="blog-detail-container-detail-second">
+                        <div className="blog-detail-link">
+                            <p>
+                                <Link to="/">Trang chủ</Link>
+                                &nbsp; &#62; &nbsp;
+                                <Link to="/">Blog</Link>
+                                &nbsp; &#62; &nbsp; {blogData.title}
+                            </p>
+                        </div>
+                        <div className="blog-detail-main">
+                            <BlogContent
+                                title={blogData.title}
+                                time={blogData.updatedAt}
+                                content={blogData.content}
+                                author={`${blogData.user.firstName} ${blogData.user.lastName}`}
+                                image={blogData.blogImage}
+                                authorImage={blogData.user.avatar}
+                            />
                         </div>
                         <div className="blog-detail-trending">
                             <BlogTrending />
