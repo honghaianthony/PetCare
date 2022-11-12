@@ -12,8 +12,13 @@
     padding-right: 10px;
 }
 
-.auth-footer-copyright hr {
+.App.first-layout .auth-footer-copyright hr {
     margin-bottom: 1.5rem;
+}
+
+.App.second-layout .auth-footer-copyright hr {
+    margin-bottom: 1.5rem;
+    background-color: #ffffff;
 }
 
 .auth-footer-copyright-main {
@@ -26,9 +31,16 @@
     padding: 0 1rem;
 }
 
-.auth-footer-copyright-content {
+.App.first-layout .auth-footer-copyright-content {
     font-size: 14px;
     color: #000000;
+    font-weight: 600;
+    text-align: left;
+}
+
+.App.second-layout .auth-footer-copyright-content {
+    font-size: 14px;
+    color: #ffffff;
     font-weight: 600;
     text-align: left;
 }

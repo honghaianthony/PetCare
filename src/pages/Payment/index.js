@@ -46,14 +46,14 @@ function Payment() {
     }
   };
   const handleSubmit = (e) => {
-    const info = {
-      orderId: order.orderId,
-      name: e.target.name.value,
-      city: e.target.city.value,
-      address: e.target.address.value,
-      email: e.target.email.value,
-      phone: e.target.phone.value,
-    };
+    // const info = {
+    //   orderId: order.orderId,
+    //   name: e.target.name.value,
+    //   city: e.target.city.value,
+    //   address: e.target.address.value,
+    //   email: e.target.email.value,
+    //   phone: e.target.phone.value,
+    // };
     navigate("/product");
   };
   return (
@@ -62,7 +62,7 @@ function Payment() {
         <div className="Payment-Title">
           <div>
             <div className="Payment-Title-Icon">
-              <Icon icon="bi:bag-heart-fill" color="#ec87c0" fontSize="32px" />
+              <Icon icon="bi:bag-heart-fill" fontSize="32px" />
             </div>
             <div className="Payment-Title-Content">
               <h3>Thanh toán</h3>
@@ -72,11 +72,7 @@ function Payment() {
         <div className="Payment-Content">
           <div className="Payment-Content-User">
             <div className="Payment-Content-User-Title">
-              <Icon
-                icon="carbon:location-heart-filled"
-                color="red"
-                fontSize="36px"
-              />
+              <Icon icon="carbon:location-heart-filled" fontSize="36px" />
               <h3>Thông tin người nhận hàng</h3>
             </div>
             <div className="Payment-Content-User-Content">

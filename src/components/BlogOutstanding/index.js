@@ -2,7 +2,7 @@ import React from "react";
 import "./BlogOutstanding.css";
 import { Link } from "react-router-dom";
 const BlogOutstanding = (props) => {
-    const { blogId, blogTitle, blogImage, blogContent, blogTime, blogAuthor } = props
+    const { blogId, blogTitle, blogImage, blogContent, blogTime, blogAuthorFirstName, blogAuthorLastName} = props
     return (
         <div className="BlogOutstanding_container">
             <div className="Header_Blog_Outstanding_container">
@@ -27,7 +27,7 @@ const BlogOutstanding = (props) => {
                     <div className="BlogOutstanding_About_Detail_divide"></div>
                     <div className="BlogOutstanding_About_Detail_bottom">
                         <div className="BlogOutstanding_About_Detail_bottom_author">
-                            <p>Tác giả: <b>{blogAuthor}</b></p>
+                            <p>Tác giả: <b>{blogAuthorFirstName} {blogAuthorLastName} </b></p>
                             
                         </div>
                         <div className="BlogOutstanding_About_Detail_bottom_date">

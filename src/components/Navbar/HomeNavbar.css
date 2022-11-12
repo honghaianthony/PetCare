@@ -48,20 +48,38 @@
     font-family: Roboto Flex;
 }
 
-.tab-active {
+.first-layout .tab-active {
     color: #fff !important;
     background: #428de5;
     border-radius: 0.5rem;
     padding: 0.35rem 2rem;
 }
 
-.navbar-list-detail:hover {
+.second-layout .tab-active {
+    color: #fff !important;
+    background: #193a6a;
+    border-radius: 5px;
+    padding: 0.5rem 2rem;
+}
+
+.first-layout .navbar-list-detail:hover {
     color: #fff;
     background-color: #428de5;
     border-radius: 0.5rem;
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
+}
+
+.second-layout .navbar-list-detail:hover {
+    color: #fff;
+    background-color: #193a6a;
+    border-radius: 0.5rem;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
 }
 
 .navbar-authenticated {
@@ -72,12 +90,21 @@
     cursor: pointer;
 }
 
-.navbar-auth {
+.first-layout .navbar-auth {
     background-color: #de135c;
     opacity: 0.8;
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 10px;
+    font-family: Roboto Flex;
+}
+
+.second-layout .navbar-auth {
+    background-color: #124c5f;
+    opacity: 0.8;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
     font-family: Roboto Flex;
 }
 
