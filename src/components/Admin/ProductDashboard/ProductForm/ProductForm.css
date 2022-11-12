@@ -2,6 +2,7 @@ textarea {
   resize: none;
 }
 .add-product-container {
+  font-family: Roboto Flex;
   position: fixed;
   top: 0;
   left: 0;
@@ -26,7 +27,35 @@ textarea {
   overflow-y: auto;
   background: white;
   border-radius: 5px;
-  padding: 20px;
+  transform: scale(0);
+  transition: all 0.5s;
+}
+.add-product-form-container.show {
+  transform: scale(1);
+}
+.add-product-form-container .heading {
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  margin-bottom: 14px;
+  color: #000;
+  background-color: #fff;
+}
+.add-product-form-container .heading h4 {
+  margin: 0;
+  letter-spacing: 1px;
+}
+.add-product-form-container .heading svg {
+  font-size: 2em;
+}
+.add-product-form-container .heading svg:hover {
+  color: red;
+  cursor: pointer;
 }
 .product-form {
   display: flex;
@@ -39,9 +68,27 @@ textarea {
 .product-form input,
 .product-form textarea {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 5px;
   border: 1px solid rgb(201, 201, 201);
   padding: 8px 8px;
+}
+.product-form .product-img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.product-form .product-img input {
+  border: none;
+  width: 110px;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-form .product-img img {
+  margin-left: 10px;
+  width: 100px;
+  object-fit: cover;
+  border: 1px solid gray;
 }
 .product-form .button-group input {
   border: none !important;
@@ -78,9 +125,9 @@ textarea {
   width: fit-content;
   padding-left: 16px;
   padding-right: 16px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  background-color: #de135c;
   font-weight: 500;
+  color: #fff;
 }
 .product-form .button-group input:hover {
   cursor: pointer;
@@ -88,8 +135,9 @@ textarea {
 }
 .product-form .button-group input.cancel {
   margin-left: 8px;
-  color: #fff;
-  background-color: gray;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid gray !important;
 }
 @media only screen and (max-width: 768px) {
   .product-form > .product-name,

@@ -1,12 +1,12 @@
 .introduction-container {
-    padding: 4rem 0;
+  padding: 4rem 0;
 }
 
 .introduction-container-detail {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding-left: 10px;
-    padding-right: 10px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .App.first-layout .introduction-main {
@@ -60,21 +60,21 @@
 }
 
 @-webkit-keyframes fade {
-    from {
-        opacity: 0.4;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fade {
-    from {
-        opacity: 0.4;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .App.first-layout .active-intro {
@@ -84,7 +84,7 @@
         rgba(248, 212, 27, 0.3) 118.78%
     );
     transition: all 0.5s ease-in-out;
-}
+} */
 
 .App.first-layout .introduction-right {
     position: relative;

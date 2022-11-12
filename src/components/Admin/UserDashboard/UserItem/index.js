@@ -10,27 +10,30 @@ const UserItem = () => {
     <>
       <div className="user-item">
         <div className="user-item-body">
-          <ul className="basic-info">
-            <li className="id">#19521292</li>
-            <li className="fullname">Tran Binh Chuong</li>
-            <li className="gender">Nam</li>
-          </ul>
+          <div className="basic-info">
+            <div className="avt">
+              <img
+                src="https://jumbo.g-axon.work/images/logos/project-logo-3.png"
+                alt=""
+              />
+            </div>
+            <ul>
+              <li className="id">#19521292</li>
+              <li className="fullname">Tran Binh Chuongxxxxxxx</li>
+              <li className="gender">Nam</li>
+            </ul>
+          </div>
           <ul className="account-info">
             <li className="username">chuongtb</li>
             <li className="password">pass*****</li>
             <li className="phonenumber">099999999</li>
           </ul>
-          <ul className="more">
-            <li className="role">Admin</li>
-            <li className="method">
-              <Icon className="see-detail" icon="akar-icons:eye" />
-              <Icon
-                className="edit"
-                icon="bxs:edit"
-                onClick={() => setEditOpen(true)}
-              />
-            </li>
-          </ul>
+
+          <Icon
+            className="edit"
+            icon="bxs:edit"
+            onClick={() => setEditOpen(true)}
+          />
         </div>
       </div>
 
