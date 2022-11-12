@@ -5,6 +5,15 @@
 .Payment-Title {
   background-image: linear-gradient(to right, #c0d6f0, #e0789d);
 }
+.Payment-Title-Icon {
+  color: #ec87c0;
+}
+.second-layout .Payment-Title-Icon {
+  color: #124c5f;
+}
+.second-layout .Payment-Title {
+  background-image: linear-gradient(to right, #0775b454, #1c7b7b);
+}
 .Payment-Title > div {
   width: 1280px;
   height: 70px;
@@ -40,6 +49,9 @@
   padding-left: 20px;
 }
 .second-layout .Payment-Content-User {
+  border-right: 1px solid #124c5f;
+}
+.second-layout .Payment-Content-User {
   border-right: none;
   width: 60%;
   order: 2;
@@ -47,6 +59,10 @@
 .Payment-Content-User-Title {
   display: flex;
   align-items: center;
+  color: #ff0000;
+}
+.second-layout .Payment-Content-User-Title {
+  color: #0a3b4b;
 }
 .Payment-Content-User-Title > h3 {
   margin-bottom: 0;
@@ -54,6 +70,9 @@
   padding-left: 5px;
   color: #dd3c72;
   font-weight: 400;
+}
+.second-layout .Payment-Content-User-Title > h3 {
+  color: #124c5f;
 }
 .Payment-Content-User-Content {
   width: 100%;
@@ -79,6 +98,9 @@
   color: #dd3c72;
   font-size: 18px;
 }
+.second-layout .Payment-Content-User-Content p {
+  color: #124c5f;
+}
 .Payment-Content-User-Content button {
   margin-top: 10px;
   font-size: 24px;
@@ -89,9 +111,16 @@
   padding: 3px 15px 7px 15px;
   cursor: pointer;
 }
+.second-layout .Payment-Content-User-Content button {
+  background-color: #124c5f;
+  border: 1px solid #124c5f;
+}
 .Payment-Content-User-Content button:hover {
   color: #dd3c72;
   background-color: #fff;
+}
+.second-layout .Payment-Content-User-Content button:hover {
+  color: #124c5f;
 }
 .Payment-Content-Product {
   padding: 15px 10px 10px 50px;
@@ -99,7 +128,7 @@
 }
 .second-layout .Payment-Content-Product {
   padding: 15px 50px 10px 10px;
-  border-right: 1px solid #dd3c72;
+  border-right: 1px solid #124c5f;
 }
 .Payment-Content-Product-Summary > p {
   display: flex;
@@ -112,12 +141,17 @@
   border-top: 1px solid #dd3c72;
   padding-top: 10px;
 }
+.second-layout .Payment-Content-Product-Summary > div {
+  border-top: 1px solid #124c5f;
+}
 .Payment-Content-Product-Summary-Price {
   font-size: 20px;
   color: #ff0000;
   font-weight: 500;
 }
-
+.second-layout .Payment-Content-Product-Summary-Price {
+  color: #124c5f;
+}
 @media screen and (min-width: 900px) and (max-width: 1299px) {
   .Payment-Title > div {
     width: 98%;
@@ -190,7 +224,7 @@
     border-top: 1px solid #dd3c72;
   }
   .second-layout .Payment-Content-Product {
-    border-bottom: 1px solid #dd3c72;
+    border-bottom: 1px solid #124c5f;
     margin-bottom: 20px;
     padding: 0px;
   }
