@@ -6,6 +6,9 @@
   padding-bottom: 20px;
   border-bottom: 1px dashed #dd3c72;
 }
+.second-layout .PaymentItem {
+  border-bottom: 1px dashed #124c5f;
+}
 .PaymentItem-Image {
   width: 25%;
 }

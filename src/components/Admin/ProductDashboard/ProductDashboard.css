@@ -1,185 +1,195 @@
-.product-dashboard {
+.product-dashboard-container {
   padding-top: 100px;
-}
-.product-dashboard .title {
-  font-size: 36px;
-  color: #555;
-}
-.product-dashboard .product-dashboard-container {
-  box-shadow: rgb(115 82 199 / 18%) 0px 0.5rem 1.25rem;
-  border-radius: 8px;
-  overflow: hidden;
   max-width: 1280px;
   margin: 0 auto;
+  font-family: Nunito Sans;
 }
-.product-dashboard .product-dashboard-container .select-item > button {
-  width: 50%;
-  background-color: white;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 48px;
-  transition: all 0.4s;
-  border: none;
-  border-bottom: 1px solid rgb(207, 207, 207);
+.product-dashboard-container button {
+  position: relative;
 }
-.product-dashboard .product-dashboard-container .select-item > button:hover {
+.product-dashboard-container button::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.product-dashboard-container button:hover:before {
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.04);
 }
-.product-dashboard .product-dashboard-container .select-item > button.active {
-  color: rgb(0, 89, 255);
-  border-bottom: 2px solid rgb(0, 89, 255);
+.product-dashboard-container .filter {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: #fff;
+  padding: 16px 8px;
 }
-.button-group {
-  width: fit-content;
-  margin: 0 0 0 auto;
-}
-/*product-req-list*/
-.product-req-list-container {
+.product-dashboard-container .filter form {
   width: 100%;
-  padding: 20px;
-  background-color: white;
-}
-.product-req-list {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
-.product-req-list-container .product-req-item {
-  padding: 10px;
-  flex-basis: calc(100% / 2);
-}
-
-/* product-req-item */
-.product-req-item-body {
-  display: flex;
-  justify-content: space-between;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 4px;
-}
-.product-req-item-body.done-req {
-  border: 2px solid rgb(70, 188, 170);
-}
-.product-req-item-body.cancel-req {
-  border: 2px solid rgb(243, 84, 33);
-}
-.product-req-item-body.waiting-req {
-  border: 2px solid rgb(255, 207, 82);
-}
-.product-req-item .state-and-edit {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-.product-req-item .edit {
-  font-size: 28px;
-}
-.product-req-item li {
-  color: hsla(208, 7%, 46%, 0.75);
-  margin: 0;
-  font-size: 14px;
-}
-.product-req-item .basic-info .product-req-id {
-  background-color: hsla(208, 7%, 46%, 0.75);
-  display: inline;
-  padding: 0 10px;
-  text-align: center;
-  color: #fff;
-  border-radius: 15px;
-  font-size: 12px;
-  font-weight: 700;
-}
-.product-req-item .basic-info .product-req-customer-address {
-  color: #000;
-  font-weight: 500;
-}
-.product-req-item .product-req-state {
-  white-space: nowrap;
+.product-dashboard-container .filter form label {
   display: inline-block;
-  padding: 0px 10px;
-  text-align: center;
-  border-radius: 15px;
-  font-weight: 700;
-  color: #fff;
   width: 110px;
 }
-.product-req-item .product-req-state.done-req {
-  background-color: rgb(237, 248, 247);
-  color: rgb(70, 188, 170);
+.product-dashboard-container .filter form input {
+  width: calc(100% - 120px);
 }
-.product-req-item .product-req-state.cancel-req {
-  background-color: rgb(254, 238, 233);
-  color: rgb(243, 84, 33);
+.product-dashboard-container .filter form .product-price input {
+  width: 100px;
+  margin-right: 10px;
 }
-.product-req-item .product-req-state.waiting-req {
-  background-color: rgb(255, 250, 238);
-  color: rgb(255, 207, 82);
+.product-dashboard-container .filter form div {
+  flex-basis: 50%;
+  margin-bottom: 10px;
 }
-.product-req-item .edit {
-  color: #6978d1;
-  transition: all 0.2s;
+.product-dashboard-container .filter form button {
+  background-color: #de135c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 0 auto;
 }
-.product-req-item .edit:hover {
-  cursor: pointer;
-  color: #090f31;
+.product-dashboard-container .product-list-container {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: #fff;
+  margin-top: 24px;
+  padding: 12px;
 }
-/*card*/
-.product-dashboard .card-group {
+.product-dashboard-container .product-list-container .heading {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 1280px;
-  margin: 15px auto;
+  align-items: center;
 }
-.product-dashboard .card-item h3 {
-  color: rgba(0, 0, 0, 0.85);
-  font-size: 1.17em;
+.product-dashboard-container .product-list-container .heading button {
+  background-color: #de135c;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 1.2em;
 }
-.product-dashboard .card-item h2 {
-  font-size: 1.6em;
+.product-dashboard-container .product-list-container .product-list {
+  padding: 10px;
 }
-.product-dashboard .card-item span {
-  font-size: 1.17em;
+.product-dashboard-container
+  .product-list-container
+  .product-list
+  .product-list-table-container {
+  border: 1px solid gray;
+  border-radius: 4px;
+  min-height: 500px;
 }
-.product-dashboard .card-item.sold-product {
-  color: #12ca5b;
+.product-dashboard-container .product-list-container .product-list table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: auto;
 }
-.product-dashboard .card-item.order-complete {
-  color: #12ca5b;
+.product-dashboard-container .product-list-container .product-list table thead {
+  background-color: rgb(240, 240, 240);
+  color: #000;
+  text-align: left;
 }
-.product-dashboard .card-item.out-stock-product {
-  color: #ea5569;
+.product-dashboard-container
+  .product-list-container
+  .product-list
+  table
+  thead
+  th,
+.product-dashboard-container
+  .product-list-container
+  .product-list
+  table
+  tbody
+  td {
+  padding: 8px 4px;
 }
-.product-dashboard .card-item.order-waiting {
-  color: #fa8c16;
+.product-dashboard-container
+  .product-list-container
+  .product-list
+  table
+  tbody
+  span {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
-.product-dashboard .card-group .card-item {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 5px;
-  background: #fff;
-  text-align: center;
-  padding: 16px 32px;
-  font-weight: 500;
-  flex-basis: calc(90% / 4);
+.product-dashboard-container
+  .product-list-container
+  .product-list
+  table
+  span.product-title {
+  word-break: break-all;
 }
-.product-dashboard .card-group .card-item > * {
-  margin: 0;
+.product-dashboard-container
+  .product-list-container
+  .product-list
+  table
+  tbody
+  svg {
+  font-size: 36px;
+  border: 1px solid rgb(211, 211, 211);
+  margin: 0 4px;
+  padding: 6px;
+  border-radius: 4px;
+}
+.product-dashboard-container
+  .product-list-container
+  .product-list
+  table
+  svg.delete-product {
+  color: rgb(255, 75, 75);
+}
+.product-dashboard-container
+  .product-list-container
+  .product-list
+  table
+  svg.edit-product {
+  color: rgb(75, 195, 255);
+}
+.product-dashboard-container
+  .product-list-container
+  .product-list
+  table
+  svg:hover {
+  cursor: pointer;
+}
+/*layout 2*/
+.App.second-layout .product-dashboard-container {
+  display: flex;
+  justify-content: space-between;
+}
+.App.second-layout .product-dashboard-container .filter {
+  flex-basis: 400px;
+  height: fit-content;
+}
+.App.second-layout .product-dashboard-container .filter form {
+  flex-direction: column;
+}
+.App.second-layout .product-dashboard-container .product-list-container {
+  margin-top: 0;
+  flex-basis: calc(100% - 420px);
 }
 @media only screen and (max-width: 1280px) {
-  .product-req-list-container .product-req-item {
-    flex-basis: calc(100% / 2);
+  .App.second-layout .product-dashboard-container {
+    display: block;
   }
-  .product-dashboard .card-group .card-item {
-    margin-bottom: 14px;
-    flex-basis: calc(98% / 2);
+  .App.second-layout .product-dashboard-container .product-list-container {
+    margin-top: 24px;
+  }
+  .App.second-layout .product-dashboard-container .filter form {
+    flex-direction: row;
   }
 }
 @media only screen and (max-width: 768px) {
-  .product-req-list-container .product-req-item {
-    flex-basis: 100%;
+  .product-dashboard-container .filter form {
+    flex-direction: column;
   }
-
-  .product-dashboard .card-group .card-item {
-    margin: 14px;
-    flex-basis: 100%;
+  .App.second-layout .product-dashboard-container .filter form {
+    flex-direction: column;
   }
 }

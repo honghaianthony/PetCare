@@ -143,9 +143,11 @@ function Footer() {
                         <div className="footer-link">
                             <h4>Hơn nữa</h4>
                             <div class="footer-link-detail">
-                                <Link to="/">Điều khoản & Chính sách</Link>
-                                <Link to="/">Tuyển dụng</Link>
-                                <Link to="/">Hình ảnh & Video</Link>
+                                <Link to="/policy">
+                                    Điều khoản & Chính sách
+                                </Link>
+                                <Link to="/hiring">Tuyển dụng</Link>
+                                <Link to="/gallery">Hình ảnh & Video</Link>
                             </div>
                         </div>
                     </div>
@@ -215,9 +217,9 @@ function Footer() {
                     <div className="footer-link">
                         <h4>Hơn nữa</h4>
                         <div class="footer-link-detail">
-                            <Link to="/">Điều khoản & Chính sách</Link>
-                            <Link to="/">Tuyển dụng</Link>
-                            <Link to="/">Hình ảnh & Video</Link>
+                            <Link to="/policy">Điều khoản & Chính sách</Link>
+                            <Link to="/hiring">Tuyển dụng</Link>
+                            <Link to="/gallery">Hình ảnh & Video</Link>
                         </div>
                     </div>
                 </div>

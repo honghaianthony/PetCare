@@ -26,6 +26,9 @@
   padding: 7px 15px;
   border-radius: 3px 3px 0 0;
 }
+.second-layout .ShoppingCartItem-Popup-Display h3 {
+  background-color: #41707f;
+}
 .ShoppingCartItem-Popup-Display p {
   font-size: 18px;
   padding: 3px 10px;
@@ -39,6 +42,9 @@
   cursor: pointer;
   border-radius: 3px;
 }
+.second-layout .ShoppingCartItem-Popup-Display button {
+  border: 1px solid #41707f;
+}
 .ShoppingCartItem-Popup-B1 {
   color: #fff;
   background-color: #dd3c72;
@@ -46,6 +52,12 @@
 .ShoppingCartItem-Popup-B2 {
   color: #dd3c72;
   background-color: #fff;
+}
+.second-layout .ShoppingCartItem-Popup-B1 {
+  background-color: #41707f;
+}
+.second-layout .ShoppingCartItem-Popup-B2 {
+  color: #41707f;
 }
 .ShoppingCartItem {
   display: flex;
@@ -63,6 +75,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.first-layout .ShoppingCartItem-Content {
+  width: 1170px;
 }
 .ShoppingCartItem-Name {
   align-items: center;

@@ -5,7 +5,8 @@ import "./BlogNews.css";
 import "@fontsource/nunito"
 import { Icon } from "@iconify/react";
 const BlogNews = (props) => {
-  const { newsBlog } = props;
+
+  const { newsBlog,newRef } = props;
   const [searchTerm, setSearchTerm] = React.useState("");
   const handleChange = (value) => {
     setSearchTerm(value);
@@ -51,6 +52,7 @@ const BlogNews = (props) => {
     const newOffset = (event.selected * itemsPerPage) % data.length;
 
     setItemOffset(newOffset);
+    newRef.scrollIntoView({ behavior: 'smooth',block:'start' });
   };
 
   const [show, setShow] = useState(true);
@@ -110,31 +112,31 @@ const BlogNews = (props) => {
       ) : (
         currentItems.map((item, index) => (
           <Link
-            to={`/blog/${item.blogId}`}
+            to={`/blog/${item._id}`}
             id={item.blogId}
             key={index}
             className="BlogNews_Content_container"
           >
             <div className="BlogNews_img_container">
-              <img src={item.blogImage} alt={item.blogTitle} />
+              <img src={item.blogImage} alt={item.title} />
             </div>
             <div className="BlogNews_About_Detail_container">
               <div className="BlogNews_About_Detail_top">
                 <div className="BlogNews_About_Detail_top_header">
-                  <h3>{item.blogTitle}</h3>
+                  <h3>{item.title}</h3>
                 </div>
                 <div className="BlogNews_About_Detail_top_desc">
-                  <p>{item.blogContent}</p>
+                  <p>{item.content}</p>
                 </div>
               </div>
               <div className="BlogNews_About_Detail_divide"></div>
               <div className="BlogNews_About_Detail_bottom">
                 <div className="BlogNews_About_Detail_bottom_author">
-                  <p>Tác giả: <b>{item.blogAuthor}</b></p>
+                  <p>Tác giả: <b>{item.user.firstName} {item.user.lastName}</b></p>
                   
                 </div>
                 <div className="BlogNews_About_Detail_bottom_date">
-                  <p>{item.blogTime}</p>
+                  <p>{item.createdAt.slice(0,10)}</p>
                 </div>
               </div>
             </div>
@@ -146,7 +148,7 @@ const BlogNews = (props) => {
         <ReactPaginate
           breakLabel="..."
           nextLabel="Next >"
-          onPageChange={handlePageClick}
+          // onPageChange={handlePageClick}
           pageRangeDisplayed={3}
           pageCount={pageCount}
           previousLabel="< Previous"
@@ -156,6 +158,7 @@ const BlogNews = (props) => {
           previousClassName="page-previousClassName"
           nextLinkClassName="page-nextClassName"
           activeLinkClassName="active__"
+          onClick={handlePageClick}
           // className='pagination__'
         />
       </div>
