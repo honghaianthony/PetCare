@@ -1,11 +1,156 @@
 import "./ServiceDashboard.css";
-import ServiceReqList from "./ServiceReqList";
+import { Icon } from "@iconify/react";
+import { Pagination } from "@nextui-org/react";
 
 const ServiceDashboard = () => {
+  const data = [1, 2, 1, 2];
+
   return (
-    <div className="service-dashboard">
-      <div className="service-dashboard-container">
-        <ServiceReqList />
+    <div className="service-dashboard-container">
+      <div className="service-list-container">
+        <div className="heading">
+          <h3>120 yêu cầu dịch vụ</h3>
+        </div>
+        <div className="service-list">
+          <div className="service-list-table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tên người yêu cầu</th>
+                  <th>Loại dịch vụ yêu cầu</th>
+                  <th>Ngày tạo</th>
+                  <th>
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                      <span>Ngày hẹn</span>
+                      <Icon
+                        icon="bxs:sort-alt"
+                        style={{ color: "gray", display: "block" }}
+                      />
+                    </div>
+                  </th>
+                  <th>Thời gian </th>
+
+                  <th>
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                      <span>Trạng thái</span>
+                      <Icon
+                        icon="bxs:sort-alt"
+                        style={{ color: "gray", display: "block" }}
+                      />
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.map((item, index) =>
+                  item === 1 ? (
+                    // index >= (page - 1) * 6 && index < page * 6
+                    // <ProductItem data={item} key={index} />
+                    <tr>
+                      <td>
+                        <div>
+                          <span>Trần Bình Chương</span>
+                          <span>09xxxxxxxx</span>
+                        </div>
+                      </td>
+                      <td>
+                        <span>Triệt sản thú cưng</span>
+                      </td>
+                      <td>
+                        <span>17-11-2022</span>
+                      </td>
+                      <td>
+                        <span>19-11-2022</span>
+                      </td>
+                      <td>
+                        <span>Ca 3 _ 13h - 15h</span>
+                      </td>
+                      <td>
+                        <select
+                          defaultValue={"Đã tiếp nhận"}
+                          style={{
+                            borderColor: "#008000",
+                            color: "#008000",
+                            fontWeight: "700",
+                          }}
+                        >
+                          <option
+                            value="Đã tiếp nhận"
+                            style={{
+                              color: "#008000",
+                            }}
+                          >
+                            Đã tiếp nhận
+                          </option>
+                          <option
+                            value="Chờ xử lý"
+                            style={{
+                              color: "#eb7222",
+                            }}
+                          >
+                            Chờ xử lý
+                          </option>
+                          <option
+                            value="Đã hủy"
+                            style={{
+                              color: "#ff0000",
+                            }}
+                          >
+                            Đã hủy
+                          </option>
+                        </select>
+                      </td>
+                    </tr>
+                  ) : (
+                    <tr>
+                      <td>
+                        <div>
+                          <span>Trần Bình Trọng</span>
+                          <span>09xxxxxxxx</span>
+                        </div>
+                      </td>
+                      <td>
+                        <span>Chích ngừa thú cưng</span>
+                      </td>
+                      <td>
+                        <span>17-11-2022</span>
+                      </td>
+                      <td>
+                        <span>18-11-2022</span>
+                      </td>
+                      <td>
+                        <span>Ca 1 _ 7h - 9h</span>
+                      </td>
+                      <td>
+                        <select
+                          defaultValue={"Chờ xử lý"}
+                          style={{
+                            borderColor: "#eb7222",
+                            color: "#eb7222",
+                            fontWeight: "700",
+                          }}
+                        >
+                          <option value="Đã tiếp nhận">Đã tiếp nhận</option>
+                          <option value="Chờ xử lý">Chờ xử lý</option>
+                          <option value="Đã hủy">Đã hủy</option>
+                        </select>
+                      </td>
+                    </tr>
+                  )
+                )}
+              </tbody>
+            </table>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              margin: "8px 0px",
+            }}
+          >
+            <Pagination total={6} initialPage={1} />
+          </div>
+        </div>
       </div>
     </div>
   );
