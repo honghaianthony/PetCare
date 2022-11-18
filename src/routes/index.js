@@ -13,6 +13,7 @@ import {
   Hiring,
   PhotoAndVideo,
   Policy,
+  ManagerBlog,
 } from "../pages";
 import { Service } from "../pages";
 import { About } from "../pages";
@@ -52,7 +53,8 @@ export default function App() {
         <Route exact path="/admin/product" element={<ManagerProduct />}></Route>
         <Route exact path={`/blog/:blogId`} element={<BlogDetail />}></Route>
         <Route exact path={`/payment`} element={<Payment />}></Route>
-        <Route exact path="blog" element={<Blog />}></Route>{" "}
+        <Route exact path="blog" element={<Blog />}></Route>
+        <Route exact path="/admin/blog" element={<ManagerBlog />}></Route>
         <Route
           exact
           path="/admin/statistical"

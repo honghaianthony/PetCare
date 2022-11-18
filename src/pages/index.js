@@ -16,3 +16,4 @@ export { default as Statistical } from "./Admin/Statistical";
 export { default as Hiring } from "./Hiring";
 export { default as PhotoAndVideo } from "./PhotoAndVideo";
 export { default as Policy } from "./Policy";
+export { default as ManagerBlog } from "./Admin/ManagerBlog";
