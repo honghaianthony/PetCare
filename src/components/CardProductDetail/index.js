@@ -7,7 +7,7 @@ const CardProductDetail = (props) => {
 
 
   return (
-    <Link className=" card__product__container__" id={props.id} to={`/product/${props.id}`}>
+    <NavLink className=" card__product__container__"  to={`/product/${props.id}`}>
       <div className="CardProductDetail_img_container_top">
         <img
           src={props.img}
@@ -63,20 +63,20 @@ const CardProductDetail = (props) => {
         </div>
       )}
       <div className="Review_Buy_Product_container">
-        <Link className="quick_view_button_" to={`/product/${props.id}`}>
+        <NavLink className="quick_view_button_" to={`/product/${props.id}`}>
           {/* <button className="quick_view_button_"> */}
             <span className="quick_view_text">Xem nhanh</span>
             <Icon icon="emojione-monotone:eye" color="white" className="icon_quick_view" />
           {/* </button> */}
-        </Link>
-        <Link className="add_to_cart_button" to={`/product/${props.id}`}>
+        </NavLink>
+        <NavLink className="add_to_cart_button" to={`/product/${props.id}`}>
         {/* <button className="add_to_cart_button"> */}
           <span className="add_to_cart_text" >Mua ngay</span>
           <Icon icon="el:shopping-cart" color="white" className="add_to_cart_icon" />
         {/* </button> */}
-        </Link>
+        </NavLink>
       </div>
-    </Link>
+    </NavLink>
   );
 };
 

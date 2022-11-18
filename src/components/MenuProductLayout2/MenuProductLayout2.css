@@ -1,0 +1,31 @@
+.MenuProductLayout2_container{
+    display: flex;
+    /* align-items: center;
+     */
+    flex-direction: column;
+    background-color: transparent;
+}
+.Menu_item_content_product_second{
+    
+    /* padding: 5px; */
+    /* font-size: 26px; */
+    /* line-height: 26px; */
+    width:100%;
+    border:none;
+    transition: all 0.5s;
+    text-align: start;
+    align-items: center;
+    display: flex;
+    background-color: transparent;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+.Menu_item_content_product_second:hover{
+    font-weight: bold;
+}
+.active_menu_product2{
+    font-weight: bold;
+}
+.active_MenuContentTab{
+    display:block;
+}
