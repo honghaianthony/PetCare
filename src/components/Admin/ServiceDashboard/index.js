@@ -7,10 +7,42 @@ const ServiceDashboard = () => {
 
   return (
     <div className="service-dashboard-container">
-      <div className="service-list-container">
+      <div className="service-dashboard-card-group">
         <div className="heading">
-          <h3>120 yêu cầu dịch vụ</h3>
+          <h3>Thống kê</h3>
+          <span>Cập nhật trong vòng 24h</span>
         </div>
+        <div className="body">
+          <div className="card-item">
+            <span className="card-item-icon done-req">
+              <Icon icon="material-symbols:done-rounded" />
+            </span>
+            <div>
+              <h3>400</h3>
+              <span>Đã tiếp nhận</span>
+            </div>
+          </div>
+          <div className="card-item">
+            <span className="card-item-icon pending-req">
+              <Icon icon="material-symbols:pending-actions" />
+            </span>
+            <div>
+              <h3>400</h3>
+              <span>Chờ xử lý</span>
+            </div>
+          </div>
+          <div className="card-item">
+            <span className="card-item-icon new-req">
+              <Icon icon="material-symbols:fiber-new-outline" />
+            </span>
+            <div>
+              <h3>400</h3>
+              <span>Yêu cầu mới</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="service-list-container">
         <div className="service-list">
           <div className="service-list-table-container">
             <table>
@@ -50,7 +82,11 @@ const ServiceDashboard = () => {
                       <td>
                         <div>
                           <span>Trần Bình Chương</span>
-                          <span>09xxxxxxxx</span>
+                          <span
+                            style={{ color: "#00000080", fontSize: "0.8em" }}
+                          >
+                            09xxxxxxxx
+                          </span>
                         </div>
                       </td>
                       <td>
@@ -106,7 +142,11 @@ const ServiceDashboard = () => {
                       <td>
                         <div>
                           <span>Trần Bình Trọng</span>
-                          <span>09xxxxxxxx</span>
+                          <span
+                            style={{ color: "#00000080", fontSize: "0.8em" }}
+                          >
+                            09xxxxxxxx
+                          </span>
                         </div>
                       </td>
                       <td>

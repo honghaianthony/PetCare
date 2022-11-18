@@ -1,5 +1,5 @@
 .test {
-  color: #eb7222;
+  color: #00000027;
 }
 .service-dashboard-container {
   padding-top: 100px;
@@ -220,6 +220,54 @@
   cursor: pointer;
 }
 
+.service-dashboard-card-group {
+  color: #fff;
+  background-color: #de135e;
+  padding: 12px 8px;
+  border-radius: 4px;
+}
+.service-dashboard-card-group h3 {
+  padding: 0;
+  margin: 0;
+}
+.service-dashboard-card-group .heading {
+  display: flex;
+  justify-content: space-between;
+}
+.service-dashboard-card-group .body {
+  margin: 16px 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+.service-dashboard-card-group .card-item {
+  display: flex;
+  align-items: center;
+}
+.service-dashboard-card-group .card-item .card-item-icon svg {
+  display: block;
+}
+.service-dashboard-card-group .card-item .card-item-icon {
+  font-size: 42px;
+  margin-right: 14px;
+}
+.service-dashboard-card-group .card-item .card-item-icon.done-req {
+  padding: 8px;
+  background-color: #00ff0025;
+  color: #00ff00;
+  border-radius: 50%;
+}
+.service-dashboard-card-group .card-item .card-item-icon.pending-req {
+  padding: 8px;
+  background-color: #ff950025;
+  color: #ff9500;
+  border-radius: 50%;
+}
+.service-dashboard-card-group .card-item .card-item-icon.new-req {
+  padding: 8px;
+  background-color: #00c8ff25;
+  color: #00c8ff;
+  border-radius: 50%;
+}
 @media only screen and (max-width: 768px) {
   .service-dashboard-container .filter form {
     flex-direction: column;
@@ -233,5 +281,62 @@
     select {
     width: 50px;
     text-overflow: ellipsis;
+  }
+}
+
+/*layout 2*/
+.App.second-layout .service-dashboard-container {
+  display: flex;
+  justify-content: space-between;
+}
+.App.second-layout .service-dashboard-container .service-dashboard-card-group {
+  flex-basis: 320px;
+}
+.App.second-layout
+  .service-dashboard-container
+  .service-dashboard-card-group
+  .body {
+  height: calc(100% - 36px);
+  width: fit-content;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.App.second-layout .service-dashboard-container .service-list-container {
+  margin-top: 0;
+  flex-basis: calc(100% - 350px);
+}
+@media only screen and (max-width: 1280px) {
+  .App.second-layout .service-dashboard-container {
+    display: block;
+  }
+  .App.second-layout
+    .service-dashboard-container
+    .service-dashboard-card-group
+    .body {
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    margin: 0;
+    justify-content: space-evenly;
+  }
+  .App.second-layout .service-dashboard-container .service-list-container {
+    margin-top: 24px;
+  }
+  .App.second-layout .service-dashboard-container .filter form {
+    flex-direction: row;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .App.second-layout .service-dashboard-container {
+    display: block;
+  }
+
+  .service-dashboard-container .service-dashboard-card-group .body {
+    flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  .service-dashboard-container .service-dashboard-card-group .body .card-item {
+    margin: 12px 0;
   }
 }
