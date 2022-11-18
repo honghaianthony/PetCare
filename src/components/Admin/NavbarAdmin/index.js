@@ -18,6 +18,7 @@ const NavbarAdmin = ({ openSider }) => {
           {location.pathname === "/admin/service" && "Quản lý dịch vụ"}
           {location.pathname === "/admin/blog" && "Quản lý Blog"}
           {location.pathname === "/admin/statistical" && "Thống kê"}
+          {location.pathname === "/admin/order" && "Quản lý đơn hàng"}
         </h1>
         <Icon icon="bx:user-circle" />
       </div>

@@ -9,23 +9,23 @@ const BlogDashboard = () => {
         <div className="filter">
           <form>
             <div className="blog-id">
-              <label>Mã người dùng</label>
+              <label>ID blog</label>
               <input type="text" />
             </div>
             <div className="blog-name">
-              <label>Tên người dùng</label>
+              <label>Tiêu đề</label>
               <input type="text" />
             </div>
             <div className="blog-number">
-              <label>Số điện thoại</label>
+              <label>Tác giả</label>
               <input type="text" />
             </div>
             <div className="blog-role">
-              <label>Vai trò</label>
+              <label>Trạng thái</label>
               <select>
                 <option value="all">Tất cả</option>
-                <option value="stock">Admin</option>
-                <option value="out-stock">User</option>
+                <option value="stock">Đang hiển thị</option>
+                <option value="out-stock">Đã ẩn</option>
               </select>
             </div>
             <button
@@ -142,7 +142,7 @@ const BlogDashboard = () => {
                               fontWeight: "700",
                             }}
                           >
-                            Đang hiển thị
+                            Hiển thị
                           </span>
                         </td>
                         <td>
