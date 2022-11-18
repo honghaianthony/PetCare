@@ -59,6 +59,8 @@ const ProductsContent = () => {
       rate: 1,
       numOfProductsSold: "151",
       img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
+      categoryId: 1,
+
       category: "Thức ăn",
     },
     {
@@ -69,6 +71,8 @@ const ProductsContent = () => {
       rate: 2,
       numOfProductsSold: "11",
       img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
+      categoryId: 1,
+
       category: "Thức ăn",
     },
     {
@@ -105,14 +109,7 @@ const ProductsContent = () => {
   };
   const [renderedProducts, setRenderedProducts] = React.useState(productList);
   const [filterList, setfilterList] = React.useState([1, 2, 3, 4, 5, 6]);
-  // const [filterList, setfilterList] = React.useState([
-  //   "Thức ăn", 
-  //   "Quần áo - phụ kiện", 
-  //   "Đồ chơi", 
-  //   "Nhà - lồng", 
-  //   "Dụng cụ ăn uống", 
-  //   "Dụng cụ vệ sinh"
-  // ]);
+
 
   const [sort, setSort] = React.useState("default");
   const handleSort = (e) => {
@@ -165,8 +162,8 @@ const ProductsContent = () => {
 
     const sorted = filtered.sort(sortFunctions[sort]);
     setRenderedProducts(sorted);
+    console.log(sorted)
   }, [filterList, sort]);
-
   // layout2
   // const filterResult=(e)=>{
   //   switch (e.target.value){
@@ -335,7 +332,7 @@ const ProductsContent = () => {
         <div className="ProductsContent__detail_Item_second">
           <div className="Sort_product_item_container">
             <div className="Sort_product_item_container_">
-              <select name="rate" id="rate" onChange={handleSort}>
+              <select name="rate" id="rate2" onChange={handleSort}>
                 <option value="Đánh giá" className="option_sort">Đánh giá</option>
                 <option value="tăng" className="option_sort">Đánh giá tăng</option>
                 <option value="giảm" className="option_sort">Đánh giá giảm</option>
@@ -344,7 +341,7 @@ const ProductsContent = () => {
             <div className="Sort_product_item_container_">
               <select
                 name="numOfProductsSold"
-                id="numOfProductsSold"
+                id="numOfProductsSold2"
                 onChange={handleSort}
                 className="option_sort"
               >
@@ -356,7 +353,7 @@ const ProductsContent = () => {
               </select>
             </div>
             <div className="Sort_product_item_container_">
-              <select name="price" id="price" onChange={handleSort}>
+              <select name="price" id="price2" onChange={handleSort}>
                 <option value="Giá" className="option_sort">
                   Giá
                 </option>
@@ -365,19 +362,9 @@ const ProductsContent = () => {
               </select>
             </div>
           </div>
-          {/* {filterList.length === productName.length ? (
-            <div className="Sort_product_item_left">
-              <span className="Sort_product_item_left_text">Tất cả sản phẩm</span>
-            </div>
-          ) :
-            (<div className="Sort_product_item_left">
-              <span className="Sort_product_item_left_text">Sản phẩm</span>
-            </div>)} */}
-          {/* <div className="Sort_product_item_left"> */}
-            <MenuContentTab activeProduct2={activeProduct2}/>
-          {/* </div> */}
-
-          <div className="CardProductDetail_display">
+          <MenuContentTab activeProduct2={activeProduct2}/>
+          {product2.length>0?(
+            <div className="CardProductDetail_display">
             {product2?.map((item, index) => {
               return (
                 <CardProductDetail
@@ -393,6 +380,8 @@ const ProductsContent = () => {
               );
             })}
           </div>
+          ):(<h2 className="no_products">Tạm hết hàng</h2>)}
+          
         </div>
       </div>
       {showTopBtn && <Icon icon="bi:arrow-up-circle" className="icon-position icon-style" onClick={goToTop} />}
