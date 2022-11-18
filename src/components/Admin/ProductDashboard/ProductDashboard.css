@@ -43,15 +43,15 @@
 }
 .product-dashboard-container .filter form div {
   flex-basis: 50%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .product-dashboard-container .filter form button {
   background-color: #de135c;
   color: white;
   border: none;
   border-radius: 4px;
-  padding: 4px 8px;
-  margin: 0 auto;
+  padding: 4px 20px;
+  margin: 0 0 0 auto;
 }
 .product-dashboard-container .product-list-container {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;

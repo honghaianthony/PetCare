@@ -1,31 +1,31 @@
-import "./UserDashboard.css";
+import "./BlogDashboard.css";
 import { Icon } from "@iconify/react";
 import { Pagination } from "@nextui-org/react";
-const UserDashboard = () => {
+const BlogDashboard = () => {
   const data = [1, 2, 1, 2];
   return (
     <>
-      <div className="user-dashboard-container">
+      <div className="blog-dashboard-container">
         <div className="filter">
           <form>
-            <div className="user-id">
-              <label>Mã người dùng</label>
+            <div className="blog-id">
+              <label>ID blog</label>
               <input type="text" />
             </div>
-            <div className="user-name">
-              <label>Tên người dùng</label>
+            <div className="blog-name">
+              <label>Tiêu đề</label>
               <input type="text" />
             </div>
-            <div className="user-number">
-              <label>Số điện thoại</label>
+            <div className="blog-number">
+              <label>Tác giả</label>
               <input type="text" />
             </div>
-            <div className="user-role">
-              <label>Vai trò</label>
+            <div className="blog-role">
+              <label>Trạng thái</label>
               <select>
                 <option value="all">Tất cả</option>
-                <option value="stock">Admin</option>
-                <option value="out-stock">User</option>
+                <option value="stock">Đang hiển thị</option>
+                <option value="out-stock">Đã ẩn</option>
               </select>
             </div>
             <button
@@ -37,29 +37,29 @@ const UserDashboard = () => {
             </button>
           </form>
         </div>
-        <div className="user-list-container">
+        <div className="blog-list-container">
           <div className="heading">
-            <h3>99 sản phẩm</h3>
+            <h3>12 bài Blog</h3>
           </div>
-          <div className="user-list">
-            <div className="user-list-table-container">
+          <div className="blog-list">
+            <div className="blog-list-table-container">
               <table>
                 <thead>
                   <tr>
-                    <th>Tên</th>
+                    <th>Tiêu đề</th>
                     <th>
                       <div style={{ display: "flex", alignItems: "center" }}>
-                        <span> Vai trò </span>
-                      </div>
-                    </th>
-                    <th>
-                      <div style={{ display: "flex", alignItems: "center" }}>
-                        <span>Số điện thoại</span>
+                        <span> Trạng thái</span>
                       </div>
                     </th>
                     <th>
                       <div style={{ display: "flex", alignItems: "center" }}>
                         <span>Ngày tạo</span>
+                      </div>
+                    </th>
+                    <th>
+                      <div style={{ display: "flex", alignItems: "center" }}>
+                        <span>Lần chỉnh sửa gần nhất</span>
                       </div>
                     </th>
 
@@ -74,8 +74,12 @@ const UserDashboard = () => {
                       <tr>
                         <td>
                           <div>
-                            <div>Trần Bình Chương</div>
-                            <div>chuongbinhtran2001@gmail.com</div>
+                            <span>Sử dụng loại thức ăn nào cho phù hợp?</span>
+                            <span
+                              style={{ color: "#00000080", fontSize: "0.8em" }}
+                            >
+                              Đặng Ngô Hồng Hải
+                            </span>
                           </div>
                         </td>
                         <td>
@@ -86,16 +90,17 @@ const UserDashboard = () => {
                               padding: "2px 8px",
                               color: "#ff4b4b",
                               fontWeight: "700",
+                              background: "#ff4b4b10",
                             }}
                           >
-                            Admin
+                            Đã ẩn
                           </span>
                         </td>
                         <td>
-                          <span>09xxxxxxxxx</span>
+                          <span>17-11-2022</span>
                         </td>
                         <td>
-                          <span>17-11-2022</span>
+                          <span>23:07 17-11-2022</span>
                         </td>
                         <td>
                           <div className="method">
@@ -105,11 +110,11 @@ const UserDashboard = () => {
                             />
                             <Icon
                               icon="akar-icons:edit"
-                              className="edit-user"
+                              className="edit-blog"
                             />
                             <Icon
                               icon="fluent:delete-24-regular"
-                              className="delete-user"
+                              className="delete-blog"
                             />
                           </div>
                         </td>
@@ -118,28 +123,33 @@ const UserDashboard = () => {
                       <tr>
                         <td>
                           <div>
-                            <div>Trần Bình Trọng</div>
-                            <div>tranbinhtrong@gmail.com</div>
+                            <span>Nuôi MÈO có mệt không?</span>
+                            <span
+                              style={{ color: "#00000080", fontSize: "0.8em" }}
+                            >
+                              Trần Bình Chương
+                            </span>
                           </div>
                         </td>
                         <td>
                           <span
                             style={{
-                              border: "1px solid #4bc3ff",
+                              border: "1px solid #048918",
                               width: "fit-content",
                               padding: "2px 8px",
-                              color: "#4bc3ff",
+                              color: "#048918",
+                              background: "#04891810",
                               fontWeight: "700",
                             }}
                           >
-                            User
+                            Hiển thị
                           </span>
                         </td>
                         <td>
-                          <span>09xxxxxxxxx</span>
+                          <span>17-11-2022</span>
                         </td>
                         <td>
-                          <span>17-11-2022</span>
+                          <span>19:10 17-11-2022</span>
                         </td>
                         <td>
                           <div className="method">
@@ -149,11 +159,11 @@ const UserDashboard = () => {
                             />
                             <Icon
                               icon="akar-icons:edit"
-                              className="edit-user"
+                              className="edit-blog"
                             />
                             <Icon
                               icon="fluent:delete-24-regular"
-                              className="delete-user"
+                              className="delete-blog"
                             />
                           </div>
                         </td>
@@ -178,4 +188,4 @@ const UserDashboard = () => {
     </>
   );
 };
-export default UserDashboard;
+export default BlogDashboard;

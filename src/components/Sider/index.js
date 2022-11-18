@@ -46,6 +46,16 @@ function Sider({ toggleSider, setToggleSider }) {
           </li>
           <li
             className={
+              location.pathname === "/admin/order" ? "active" : undefined
+            }
+          >
+            <Link to="/admin/order">
+              <Icon icon="ep:service" />
+              <span>Đơn hàng</span>
+            </Link>
+          </li>
+          <li
+            className={
               location.pathname === "/admin/service" ? "active" : undefined
             }
           >
