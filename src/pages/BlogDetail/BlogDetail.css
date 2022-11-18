@@ -1,34 +1,68 @@
-.blog-detail-container {
+.App.first-layout .blog-detail-container {
     max-width: 1280px;
     margin: 0 auto;
     margin-top: 150px;
 }
 
-.blog-detail-container-detail {
+.App.second-layout .blog-detail-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+
+.App.first-layout .blog-detail-container-detail-second {
+    display: none;
+}
+
+.App.second-layout .blog-detail-container-detail {
+    display: none;
+}
+
+.App.first-layout .blog-detail-container-detail {
     padding: 0 10px;
 }
 
-.blog-detail-link a {
+.App.second-layout .blog-detail-container-detail-second {
+    padding: 0 10px;
+}
+
+.App.first-layout .blog-detail-link a {
     color: #428de5 !important;
 }
 
-.blog-detail-link a:hover {
+.App.second-layout .blog-detail-link a {
+    color: #428de5 !important;
+}
+
+.App.first-layout .blog-detail-link a:hover {
     text-decoration: underline;
 }
 
-.blog-detail-main {
+.App.second-layout .blog-detail-link a:hover {
+    text-decoration: underline;
+}
+
+.App.first-layout .blog-detail-main {
     margin: 30px 0;
     display: flex;
     justify-content: space-between;
 }
 
-.blog-detail-main-right {
+.App.second-layout .blog-detail-main {
+    margin: 30px 0;
+}
+
+.App.first-layout .blog-detail-main-right {
     display: flex;
     flex-direction: column;
 }
 
 @media screen and (max-width: 960px) {
-    .blog-detail-main {
+    .App.first-layout .blog-detail-main {
+        flex-direction: column;
+    }
+
+    .App.second-layout .blog-detail-main {
         flex-direction: column;
     }
 }

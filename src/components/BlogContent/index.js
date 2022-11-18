@@ -13,6 +13,15 @@ function BlogContent(props) {
                 {dayjs(props.time).format("DD/MM/YYYY") + " "}
                 bởi {props.author}
             </div>
+            <div className="blog-author-detail-second">
+                <div className="blog-author-detail-second-left">
+                    <img src={props.authorImage} alt="Author Avatar" />
+                </div>
+                <div className="blog-author-detail-second-right">
+                    <p>{props.author}</p>
+                    <span>{dayjs(props.time).format("DD/MM/YYYY") + " "}</span>
+                </div>
+            </div>
             <div className="blog-content-image">
                 <img src={props.image} alt="blog" />
             </div>
