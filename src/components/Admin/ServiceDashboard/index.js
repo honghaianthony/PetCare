@@ -165,14 +165,35 @@ const ServiceDashboard = () => {
                         <select
                           defaultValue={"Chờ xử lý"}
                           style={{
-                            borderColor: "#eb7222",
-                            color: "#eb7222",
+                            borderColor: "#008000",
+                            color: "#008000",
                             fontWeight: "700",
                           }}
                         >
-                          <option value="Đã tiếp nhận">Đã tiếp nhận</option>
-                          <option value="Chờ xử lý">Chờ xử lý</option>
-                          <option value="Đã hủy">Đã hủy</option>
+                          <option
+                            value="Đã tiếp nhận"
+                            style={{
+                              color: "#008000",
+                            }}
+                          >
+                            Đã tiếp nhận
+                          </option>
+                          <option
+                            value="Chờ xử lý"
+                            style={{
+                              color: "#eb7222",
+                            }}
+                          >
+                            Chờ xử lý
+                          </option>
+                          <option
+                            value="Đã hủy"
+                            style={{
+                              color: "#ff0000",
+                            }}
+                          >
+                            Đã hủy
+                          </option>
                         </select>
                       </td>
                     </tr>
