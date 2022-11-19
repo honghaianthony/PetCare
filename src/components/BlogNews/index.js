@@ -7,13 +7,14 @@ import { Icon } from "@iconify/react";
 const BlogNews = (props) => {
 
   const { newsBlog,newRef } = props;
+  console.log(newsBlog)
   const [searchTerm, setSearchTerm] = React.useState("");
   const handleChange = (value) => {
     setSearchTerm(value);
     filterData(value);
   };
   const [data, setData] = useState(newsBlog);
-  const excludeColumns = ["blogAuthor", "blogTitle"];
+  const excludeColumns = ["title"];
 
   const filterData = (value) => {
     const lowerCaseValue = value.toLowerCase().trim();
@@ -84,7 +85,7 @@ const BlogNews = (props) => {
           </div>
           <input
             type="text"
-            placeholder="Tìm kiếm tiêu đề, tác giả "
+            placeholder="Tìm kiếm tiêu đề "
             className={
               show
                 ? "Header_Blog_News_container_right_input"
