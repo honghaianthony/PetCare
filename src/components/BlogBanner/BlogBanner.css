@@ -54,10 +54,13 @@
         font-size: 30px;
         width: 70%;
     }
+    .BlogBanner_container{
+        margin-top: 90px;
+    }
 }
 @media screen and (max-width: 600px){
     .BlogBanner_container_detail{
-        height:200px;
+        height:400px;
     }
     .BlogBanner_container_detail h2{
         font-size: 24px;

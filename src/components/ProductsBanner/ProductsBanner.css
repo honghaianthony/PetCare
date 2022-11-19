@@ -1,10 +1,9 @@
-.Products_banner_container{
+.App.first-layout .Products_banner_container{
     background-image: url(../../../public/assets/images/Products/BannerProducts2.png);
     background-size: 100% 100%;
     background-position: center;
     margin-top: 114px;
     padding:0 10px;
-
 }
 .Products_banner_container_detail{
     height:500px;
@@ -13,16 +12,88 @@
     margin: 0 auto;
     /* background-position: object; */
 }
-@media screen and (max-width: 1024px) and (min-width: 601px) {
+.App.first-layout .Products_banner_container_second{
+  display:none;
+}
+.App.second-layout .Products_banner_container{
+  display:none;
+}
+.App.second-layout .Products_banner_container_second{
+  background: url("../../../public/assets/images/Products/—Pngtree—cute dog tiled background blue_1349649.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 0 10px;
+  margin-top: 90px;
+  position: relative;
+}
+.App.second-layout .Products_banner_container_detail_second{
+    height: 500px;
+    max-width: 1280px;
+    margin: 0 auto;
+    font-family: "Nunito", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    width: 100%;
+    /* margin-top: 129px; */
+
+}
+.App.second-layout .product-banner-img-item{
+  height:250px;
+  width:400px;
+  position: absolute;
+  bottom:-10px;
+  /* left:65%; */
+  right:135px;
+}
+.Products_banner_container_detail_second h2{
+  font-size: 80px;
+  color:#193A6A;
+  font-weight: 900;
+  margin: 0;
+}
+.Products_banner_container_detail_second_h3{
+  
+  width:fit-content;
+  display:flex;
+  /* justify-content: center; */
+  align-items: center;
+  background-color: #193A6A;
+  border-radius: 40px;
+
+  padding:0 12px;
+}
+.Products_banner_container_detail_second_h3 h3{
+  margin: 0;
+  color:#fff;
+  font-weight: 900;
+  font-size: 35px;
+}
+@media screen and (max-width: 1024px) {
   .Products_banner_container{
     margin-top: 88px;
-
   }
   .Products_banner_container_detail{
     height:300px;
   }
+  .App.second-layout .Products_banner_container_detail_second{
+    height:400px;
+  }
+  .Products_banner_container_detail_second h2{
+    font-size: 50px;
+  }
+  .Products_banner_container_detail_second h3{
+    font-size: 25px;
+  }
+  .App.second-layout .product-banner-img-item{
+    height:200px;
+    /* left:0%; */
+    right:8px;
+  }
 }
-@media screen and (max-width: 600px) and (min-width:481px){
+@media screen and (max-width: 600px) {
   .Products_banner_container{
     margin-top: 88px;
 
@@ -30,10 +101,34 @@
   .Products_banner_container_detail{
     height:250px;
   }
+  .Products_banner_container_detail_second{
+    justify-content: center;
+  }
+  .Products_banner_container_detail_second h2{
+    text-align: center;
+    font-size: 40px;
+  }
+  .Products_banner_container_detail_second h3{
+    font-size: 20px;
+
+  }
+  .Products_banner_container_detail_second_h3{
+    width:100%;
+    justify-content: center;
+    padding:8px;
+  }
+  .App.second-layout .product-banner-img-item{
+    height:120px;
+    width:200px;
+
+  }
 }
 @media screen and (max-width: 480px){
+  .App.first-layout .Products_banner_container{
+    margin-top: 90px;
+  }
   .Products_banner_container_detail{
-    height:250px;
+    height:200px;
   }
   .Products_banner_container{
     margin-top: 88px;
