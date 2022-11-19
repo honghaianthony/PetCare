@@ -50,7 +50,7 @@ function Sider({ toggleSider, setToggleSider }) {
             }
           >
             <Link to="/admin/order">
-              <Icon icon="ep:service" />
+              <Icon icon="material-symbols:pending-actions" />
               <span>Đơn hàng</span>
             </Link>
           </li>
@@ -64,13 +64,21 @@ function Sider({ toggleSider, setToggleSider }) {
               <span>Dịch vụ</span>
             </Link>
           </li>
-          <li>
+          <li
+            className={
+              location.pathname === "/admin/blog" ? "active" : undefined
+            }
+          >
             <Link to="/admin/blog">
               <Icon icon="clarity:note-edit-solid" />
               <span>Blog</span>
             </Link>
           </li>
-          <li>
+          <li
+            className={
+              location.pathname === "/admin/statistical" ? "active" : undefined
+            }
+          >
             <Link to="/admin/statistical">
               <Icon icon="bxs:pie-chart-alt-2" />
               <span>Thống kê</span>
