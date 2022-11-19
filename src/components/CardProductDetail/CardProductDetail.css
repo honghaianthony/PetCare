@@ -18,6 +18,15 @@
     flex: 1;
     position: relative;
 }
+.App.first-layout .card__product__container__second____{
+  display:none;
+}
+.App.first-layout .card__product__container__second{
+  display:none;
+}
+.App.second-layout .card__product__container__{
+  display:none;
+}
 .CardProductDetail_img_container_top {
   width: 100%;
   display: flex;

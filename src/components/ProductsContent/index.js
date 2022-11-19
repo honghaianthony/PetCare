@@ -6,6 +6,7 @@ import "@fontsource/nunito"
 import MenuProductLayout2 from "../MenuProductLayout2";
 import CardProductDetail from "../CardProductDetail";
 import MenuContentTab from "../MenuContentTab";
+import {motion, AnimatePresence} from "framer-motion"
 const ProductsContent = () => {
   const productName = [
     {
@@ -210,6 +211,7 @@ const ProductsContent = () => {
     });
   };
   return (
+    <>
     <section className="ProductsContent__container">
       <div className="ProductsContent__container_detail">
         <div className="ProductsContent_menu_container">
@@ -319,7 +321,13 @@ const ProductsContent = () => {
             })}
           </div>
         </div>
-        <div className="ProductsContent_menu_container_second">
+        
+      </div>
+      {showTopBtn && <Icon icon="bi:arrow-up-circle" className="icon-position icon-style" onClick={goToTop} />}
+    </section>
+    <section className="ProductsContent__container_second">
+      <div className="ProductsContent__container_detail_second">
+      <div className="ProductsContent_menu_container_second">
           <div className="ProductsContent_menu_second">
             <h3 className="header_menu_product_second">Danh mục sản phẩm</h3>
             <div className="divide_second"></div>
@@ -364,7 +372,8 @@ const ProductsContent = () => {
           </div>
           <MenuContentTab activeProduct2={activeProduct2}/>
           {product2.length>0?(
-            <div className="CardProductDetail_display">
+            <motion.div layout className="CardProductDetail_display">
+            <AnimatePresence>
             {product2?.map((item, index) => {
               return (
                 <CardProductDetail
@@ -379,13 +388,16 @@ const ProductsContent = () => {
                 />
               );
             })}
-          </div>
+            </AnimatePresence>
+          </motion.div>
           ):(<h2 className="no_products">Tạm hết hàng</h2>)}
           
         </div>
       </div>
       {showTopBtn && <Icon icon="bi:arrow-up-circle" className="icon-position icon-style" onClick={goToTop} />}
     </section>
+
+    </>
   );
 };
 

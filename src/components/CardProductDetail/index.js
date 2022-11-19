@@ -3,6 +3,8 @@ import "./CardProductDetail.css";
 import { Link, NavLink } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import ProductDetailStar from "../ProductReviewStar/index";
+import {motion} from "framer-motion"
+
 const CardProductDetail = (props) => {
 
 
@@ -79,6 +81,13 @@ const CardProductDetail = (props) => {
           </NavLink>
         </div>
       </Link>
+      <motion.div 
+      layout
+      animate={{opacity:1,scale:1}}
+      initial={{opacity:0,scale:0}}
+      exit={{opacity:0, scale:0}}
+      transition={{duration:0.3}}
+       className="card__product__container__second">
       <Link className=" card__product__container__second" to={`/product/${props.id}`}>
         <div className="CardProductDetail_img_container_top">
           <img
@@ -145,6 +154,7 @@ const CardProductDetail = (props) => {
           </NavLink>
         </div>
       </Link>
+      </motion.div>
     </>
   );
 };
