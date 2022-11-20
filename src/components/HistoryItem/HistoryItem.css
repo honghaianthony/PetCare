@@ -1,0 +1,91 @@
+.HistoryItem {
+  padding: 15px 30px;
+  margin: 10px 0 30px 0;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px #c0c0c0;
+}
+.HistoryItem-Status {
+  border-bottom: 2px solid #dd3c72;
+}
+.second-layout .HistoryItem-Status {
+  border-bottom: 2px solid #124c5f;
+}
+.HistoryItem-Status span {
+  display: inline-block;
+  padding: 5px 20px;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+.HistoryItem-Status1 {
+  background-color: #ffc700;
+}
+.HistoryItem-Status2 {
+  background-color: #ff7a00;
+}
+.HistoryItem-Status3 {
+  background-color: #198f17;
+}
+.HistoryItem-Status4 {
+  background-color: #ff0000;
+}
+.HistoryItem-Product-Detail {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 30px;
+  border-bottom: 1px solid #cdcdcd;
+}
+.HistoryItem-Product-Detail-Img img {
+  width: 120px;
+}
+.HistoryItem-Product-Detail-Infor {
+  width: 660px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.second-layout .HistoryItem-Product-Detail-Infor {
+  width: 1030px;
+}
+.HistoryItem-Product-Detail-Infor-p {
+  display: flex;
+  justify-content: space-between;
+}
+.HistoryItem-Product-Detail-Infor-p span:nth-child(2) {
+  color: #ff0000;
+  font-size: 20px;
+}
+.HistoryItem-Price {
+  padding: 5px 30px;
+  text-align: right;
+}
+.HistoryItem-Price span:nth-child(2) {
+  color: #ff0000;
+  font-size: 20px;
+  font-weight: 500;
+}
+@media screen and (min-width: 600px) and (max-width: 1299px) {
+  .HistoryItem-Product-Detail-Infor {
+    width: 80%;
+  }
+  .second-layout .HistoryItem-Product-Detail-Infor {
+    width: 88%;
+  }
+}
+@media screen and (max-width: 599px) {
+  .HistoryItem {
+    padding: 10px 3px;
+  }
+  .HistoryItem-Product-Detail-Infor,
+  .second-layout .HistoryItem-Product-Detail-Infor {
+    width: 62%;
+  }
+  .HistoryItem-Product-Detail {
+    margin: 10px 0px;
+  }
+  .HistoryItem-Price {
+    padding: 3px;
+  }
+}

@@ -15,6 +15,7 @@ import {
   Policy,
   ManagerBlog,
   ManagerHistoryOrder,
+  History,
 } from "../pages";
 import { Service } from "../pages";
 import { About } from "../pages";
@@ -69,6 +70,7 @@ export default function App() {
         <Route exact path="/hiring" element={<Hiring />}></Route>
         <Route exact path="/gallery" element={<PhotoAndVideo />}></Route>
         <Route exact path="/policy" element={<Policy />}></Route>
+        <Route exact path="/history" element={<History />}></Route>
       </Routes>
       <ToastContainer
         position="bottom-right"
