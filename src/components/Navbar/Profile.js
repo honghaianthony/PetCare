@@ -3,6 +3,7 @@ import "./Profile.css";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/user.slice";
 import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
 
 function Profile(props) {
     const dispatch = useDispatch();
@@ -27,6 +28,13 @@ function Profile(props) {
                             className="profile-option-detail-icon"
                         />
                         <p> Đăng xuất </p>
+                    </div>
+                    <div className="profile-option-detail">
+                        <Icon
+                            icon="fe:logout"
+                            className="profile-option-detail-icon"
+                        />
+                        <Link to="/admin/product"> Sản phẩm </Link>
                     </div>
                 </div>
             </div>
