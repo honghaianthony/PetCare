@@ -59,16 +59,6 @@ export default function App() {
                     path={`/shopping-cart`}
                     element={<ShoppingCart />}
                 ></Route>
-                <Route
-                    exact
-                    path="/admin/service"
-                    element={<ManagerService />}
-                ></Route>
-                <Route
-                    exact
-                    path="/admin/user"
-                    element={<ManagerUser />}
-                ></Route>
                 {/* <Route
                     exact
                     path="/admin/product"
@@ -81,16 +71,6 @@ export default function App() {
                 ></Route>
                 <Route exact path={`/payment`} element={<Payment />}></Route>
                 <Route exact path="blog" element={<Blog />}></Route>
-                <Route
-                    exact
-                    path="/admin/blog"
-                    element={<ManagerBlog />}
-                ></Route>
-                <Route
-                    exact
-                    path="/admin/order"
-                    element={<ManagerHistoryOrder />}
-                ></Route>
                 <Route
                     exact
                     path="/admin/statistical"
@@ -110,6 +90,34 @@ export default function App() {
                         path="/admin/product"
                         element={<ManagerProduct />}
                     />
+                </Route>
+                <Route exact path="/admin/service" element={<PrivateRoute />}>
+                    <Route
+                        exact
+                        path="/admin/service"
+                        element={<ManagerService />}
+                    ></Route>
+                </Route>
+                <Route exact path="/admin/user" element={<PrivateRoute />}>
+                    <Route
+                        exact
+                        path="/admin/user"
+                        element={<ManagerUser />}
+                    ></Route>
+                </Route>
+                <Route exact path="/admin/blog" element={<PrivateRoute />}>
+                    <Route
+                        exact
+                        path="/admin/blog"
+                        element={<ManagerBlog />}
+                    ></Route>
+                </Route>
+                <Route exact path="/admin/order" element={<PrivateRoute />}>
+                    <Route
+                        exact
+                        path="/admin/order"
+                        element={<ManagerHistoryOrder />}
+                    ></Route>
                 </Route>
             </Routes>
             <ToastContainer
