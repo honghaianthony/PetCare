@@ -19,3 +19,4 @@ export { default as Policy } from "./Policy";
 export { default as ManagerBlog } from "./Admin/ManagerBlog";
 export { default as ManagerHistoryOrder } from "./Admin/ManagerHistoryOrder";
 export { default as History } from "./History";
+export { default as UploadTest } from "./UploadTest";
