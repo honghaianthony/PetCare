@@ -90,6 +90,18 @@
     padding-left: 0.5rem;
 }
 
+.user-admin-dropdown {
+    margin-top: 20px;
+}
+
+.profile-option-detail a {
+    font-size: 14px;
+    color: black;
+    font-weight: 600;
+    font-family: Roboto Flex;
+    padding-left: 0.5rem;
+}
+
 @media screen and (max-width: 460px) {
     .profile-container {
         position: relative;
