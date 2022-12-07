@@ -3,9 +3,12 @@ import "./Profile.css";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/user.slice";
 import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Profile(props) {
     const dispatch = useDispatch();
+    const selector = useSelector((state) => state.user);
 
     const handleLogout = () => {
         dispatch(logout());
@@ -18,6 +21,39 @@ function Profile(props) {
                         <img src={props.image} alt={props.fullName} />
                         <span>{props.fullName}</span>
                     </div>
+                    {(selector.role === 1 || selector.role === 2) && (
+                        <>
+                            <div className="profile-option-detail">
+                                <Icon
+                                    icon="material-symbols:add-shopping-cart"
+                                    className="profile-option-detail-icon"
+                                />
+                                <Link to="/shopping-cart"> Giỏ hàng </Link>
+                            </div>
+                        </>
+                    )}
+                    {(selector.role === 1 || selector.role === 2) && (
+                        <>
+                            <div className="profile-option-detail">
+                                <Icon
+                                    icon="material-symbols:history-rounded"
+                                    className="profile-option-detail-icon"
+                                />
+                                <Link to="/history">Lịch sử mua hàng</Link>
+                            </div>
+                        </>
+                    )}
+                    {selector.role === 2 && (
+                        <>
+                            <div className="profile-option-detail">
+                                <Icon
+                                    icon="material-symbols:admin-panel-settings"
+                                    className="profile-option-detail-icon"
+                                />
+                                <Link to="/admin/product">Trang quản trị</Link>
+                            </div>
+                        </>
+                    )}
                     <div
                         className="profile-option-detail"
                         onClick={handleLogout}

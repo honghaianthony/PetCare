@@ -1,0 +1,180 @@
+.History {
+    width: 100%;
+    margin-top: 113px;
+}
+.History-Title {
+    background-image: linear-gradient(to right, #c0d6f0, #e0789d);
+}
+.History-Title-Icon {
+    color: #ec87c0;
+}
+.second-layout .History-Title-Icon {
+    color: #124c5f;
+}
+.second-layout .History-Title {
+    background-image: linear-gradient(to right, #0775b454, #1c7b7b);
+}
+.History-Title > div {
+    width: 1280px;
+    height: 70px;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    color: #fff;
+    padding: 10px;
+    padding-top: 5px;
+}
+.History-Title-Icon {
+    padding-right: 20px;
+    font-size: 32px;
+}
+
+.History-Content {
+    width: 1280px;
+    display: flex;
+    background-color: #fff;
+    padding: 20px 50px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.History-Title-Content > h3 {
+    border-left: 1px solid #fff;
+    padding-left: 20px;
+    margin-bottom: 4px;
+}
+
+.History-Container {
+    display: flex;
+    width: 1280px;
+    margin: 20px auto;
+}
+.second-layout .History-Container {
+    display: block;
+}
+.History-Container-Info {
+    width: 300px;
+}
+.second-layout .History-Container-Info {
+    display: flex;
+    width: fit-content;
+}
+.History-Container-Info img {
+    width: 300px;
+    border-radius: 3px;
+}
+.second-layout .History-Container-Info img {
+    width: 225px;
+    margin-right: 20px;
+}
+.History-Container-Info p {
+    text-align: justify;
+    padding: 5px 0;
+    font-size: 18px;
+}
+.History-Container-Content {
+    width: 980px;
+    padding: 0px 30px;
+}
+.second-layout .History-Container-Content {
+    width: 1280px;
+    padding: 30px 0;
+}
+.History-Container-Content-Choose {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #dd3c72;
+}
+.second-layout .History-Container-Content-Choose {
+    border-bottom: 3px solid #124c5f;
+}
+.History-Container-Content-Choose button {
+    width: 160px;
+}
+.second-layout .History-Container-Content-Choose button {
+    width: 240px;
+}
+.History-Container-Content-Order {
+    padding: 10px 0;
+}
+@media screen and (min-width: 600px) and (max-width: 1299px) {
+    .History-Container {
+        width: 98%;
+    }
+    .History-Container-Info {
+        display: block;
+        width: 20%;
+        padding: 0px 5px;
+    }
+    .History-Container-Info p {
+        text-align: left;
+    }
+    .History-Container-Info img {
+        width: 100%;
+        border-radius: 50%;
+    }
+    .second-layout .History-Container-Info-Img {
+        width: 26%;
+        padding-right: 20px;
+    }
+
+    .History-Container-Content {
+        display: block;
+        width: 80%;
+        margin-left: 50px;
+        padding: 0px 10px;
+    }
+    .History-Container-Content-Choose button,
+    .second-layout .History-Container-Content-Choose button {
+        width: fit-content;
+        padding: 5px 25px;
+    }
+    .second-layout .History-Container-Content {
+        width: 98%;
+        padding: 10px 0;
+        margin: auto;
+    }
+}
+@media screen and (max-width: 599px) {
+    .History {
+        margin-top: 88px;
+    }
+    .History-Container {
+        display: block;
+        width: 98%;
+    }
+    .History-Container-Info {
+        display: flex;
+        width: 100%;
+        padding: 0px 5px;
+    }
+    .History-Container-Info p {
+        text-align: left;
+    }
+    .History-Container-Info img {
+        width: 100%;
+        border-radius: 50%;
+    }
+    .History-Container-Info-Img,
+    .second-layout .History-Container-Info-Img {
+        width: 50%;
+        padding-right: 20px;
+    }
+
+    .History-Container-Content {
+        width: 98%;
+        margin: auto;
+        padding: 0px;
+    }
+    .History-Container-Content-Choose button,
+    .second-layout .History-Container-Content-Choose button {
+        width: fit-content;
+        padding: 5px;
+    }
+    .second-layout .History-Container-Content {
+        width: 98%;
+        padding: 10px 0;
+        margin: auto;
+    }
+}

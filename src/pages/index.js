@@ -18,3 +18,4 @@ export { default as PhotoAndVideo } from "./PhotoAndVideo";
 export { default as Policy } from "./Policy";
 export { default as ManagerBlog } from "./Admin/ManagerBlog";
 export { default as ManagerHistoryOrder } from "./Admin/ManagerHistoryOrder";
+export { default as History } from "./History";
