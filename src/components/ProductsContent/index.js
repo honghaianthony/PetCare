@@ -6,8 +6,10 @@ import "@fontsource/nunito"
 import MenuProductLayout2 from "../MenuProductLayout2";
 import CardProductDetail from "../CardProductDetail";
 import MenuContentTab from "../MenuContentTab";
+
 import {motion, AnimatePresence} from "framer-motion"
 const ProductsContent = () => {
+
   const productName = [
     {
       categoryId: 1,

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./BlogTrending.css";
 import { Navigation, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -6,6 +6,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { getAllBlogs } from "../../apis/blogApi";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const trendingBlog = [
     {
@@ -64,8 +67,25 @@ const trendingBlog = [
     },
 ];
 
+
 function BlogTrending() {
-    return (
+const [dataBlog, setDataBlog] = useState([]);
+useEffect(() => {
+    async function getBlogDetail() {
+        const blog = await getAllBlogs();
+        setDataBlog(blog);
+    }
+    getBlogDetail();
+}, []);
+const navigate = useNavigate();
+const handleGoTo=(id)=>{
+    console.log("hello",id)
+    // if(id===dataBlog._id)
+    navigate(`/blog/${id}`);
+}
+let takeSixBlog = [1, 2, 3,4 ,5 ,6 ]
+    return (<>
+        {dataBlog.length > 0 ? (
         <div className="blog-trending-container">
             <div className="blog-trending-title">
                 <h2>Xu hướng</h2>
@@ -93,30 +113,38 @@ function BlogTrending() {
                             },
                         }}
                     >
-                        {trendingBlog.map((item, index) => {
+                        {takeSixBlog.map((item, index) => {
                             return (
+                                dataBlog[item]&&(
                                 <SwiperSlide key={index}>
-                                    <div className="blog-trending-article-detail">
+                                    <div
+                                     className="blog-trending-article-detail"
+                                    //  to={`/blog/${dataBlog[item]._id}`}
+                                    onClick={()=>handleGoTo(dataBlog[item]._id)}
+                                    >
                                         <img
-                                            src={item.blogImage}
+                                            src={dataBlog[item].coverImage}
                                             alt="Article banner"
                                         />
-                                        <h5>{item.blogTitle}</h5>
-                                        <p>{item.blogContent}</p>
+                                        <h5>{dataBlog[item].title}</h5>
+                                        <p>{dataBlog[item].content}</p>
                                         <hr />
                                         <div className="blog-trending-article-detail-author">
-                                            <p>Tác giả: {item.blogAuthor}</p>
-                                            <span>{item.blogTime}</span>
+                                            <p>
+                                                Tác giả: 
+                                                {dataBlog[item].user.firstName} {dataBlog[item].user.lastName}
+                                            </p>
+                                            <span>{dataBlog[item].createdAt.slice(0,10)}</span>
                                         </div>
                                     </div>
-                                </SwiperSlide>
+                                </SwiperSlide>)
                             );
                         })}
                     </Swiper>
                 </div>
             </div>
-        </div>
-    );
+        </div>):(<h2>loading</h2>)}
+        </>);
 }
 
 export default BlogTrending;
