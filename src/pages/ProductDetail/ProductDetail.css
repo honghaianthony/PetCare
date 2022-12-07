@@ -258,6 +258,7 @@
 }
 .second-layout .productDetail-Container2 .productDetail-description-two {
   width: 450px;
+  padding-left: 10px;
 }
 .second-layout .productDetail-Container2 .productDetail-description-two h2 {
   font-size: 24px;

@@ -12,14 +12,14 @@ import { getAllProducts } from "../../apis/productApi";
 const ProductsContent = () => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
-
+  const [renderedProducts, setRenderedProducts] = useState([]);
   useEffect(() => {
     async function getProducts() {
       const resCategories = await getAllCategories();
       setCategories(resCategories);
       const resProducts = await getAllProducts();
       setProducts(resProducts);
-      console.log(resProducts);
+      setRenderedProducts(resProducts);
     }
     getProducts();
   }, []);
@@ -86,7 +86,7 @@ const ProductsContent = () => {
     ascNumberOfSold: (a, b) => a.numOfProductsSold - b.numOfProductsSold,
     default: (a, b) => a.id - b.id,
   };
-  const [renderedProducts, setRenderedProducts] = React.useState(products);
+
   const [filterList, setfilterList] = React.useState([
     "638d7edc9505100828e91935",
     "638d7ef19505100828e91937",
