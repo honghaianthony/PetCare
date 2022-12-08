@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import { uploadFile, deleteFile } from "../../../../../firebase/util";
 import { CKEditor } from "ckeditor4-react";
+import { createBlog } from "../../../../../apis/blogApi";
 export default function FormAddBlog({ onClose, submitSuccess }) {
   const {
     register,
@@ -10,9 +11,12 @@ export default function FormAddBlog({ onClose, submitSuccess }) {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log({ content, coverImage: url, title: data.title });
-    onClose();
-    submitSuccess();
+    async function createNewBlog() {
+      await createBlog({ content, coverImage: url, title: data.title });
+      onClose();
+      submitSuccess();
+    }
+    createNewBlog();
   };
   const [selectedFile, setSelectedFile] = useState(null);
   const [url, setUrl] = useState(null);
@@ -95,7 +99,7 @@ export default function FormAddBlog({ onClose, submitSuccess }) {
                   type="file"
                   accept="image/*"
                   name="coverImage"
-                  value={url ? "" : url}
+                  value={url === null ? "" : url}
                   onChangeCapture={onSelectFile}
                   {...register("coverImage")}
                 />
@@ -124,7 +128,7 @@ export default function FormAddBlog({ onClose, submitSuccess }) {
             />
           </div>
           <div className="button-group">
-            <input type="submit" value="Thêm sản phẩm" />
+            <input type="submit" value="Thêm blog" />
             <input
               type="submit"
               value="Hủy"

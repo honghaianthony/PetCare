@@ -138,7 +138,13 @@
   display: flex;
   justify-content: center;
 }
-.blog-dashboard-container .blog-list-container .blog-list table tbody svg {
+.blog-dashboard-container
+  .blog-list-container
+  .blog-list
+  table
+  tbody
+  .method
+  > svg {
   font-size: 36px;
   border: 1px solid rgb(211, 211, 211);
   margin: 0 4px;
@@ -155,7 +161,12 @@
 .blog-dashboard-container .blog-list-container .blog-list table svg.edit-blog {
   color: #4bc3ff;
 }
-.blog-dashboard-container .blog-list-container .blog-list table svg:hover {
+.blog-dashboard-container
+  .blog-list-container
+  .blog-list
+  table
+  .method
+  > svg:hover {
   cursor: pointer;
   transform: scale(1.2);
   background: #fff;

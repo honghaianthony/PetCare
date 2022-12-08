@@ -42,9 +42,7 @@ export default function BlogList({ data, needUpdateData }) {
                    <ProductItem data={item} key={index} /> */}
                     <td>
                       <div>
-                        <span className="blog-title">
-                          Sử dụng loại thức ăn nào cho phù hợp?
-                        </span>
+                        <span className="blog-title">{item.title}</span>
                         <span
                           className="blog-author"
                           style={{
@@ -52,16 +50,16 @@ export default function BlogList({ data, needUpdateData }) {
                             fontSize: "0.8em",
                           }}
                         >
-                          Đặng Ngô Hồng Hải
+                          {`${item.user.firstName} ${item.user.lastName}`}
                         </span>
                       </div>
                     </td>
 
                     <td>
-                      <span className="blog-date-create">17-11-2022</span>
+                      <span className="blog-date-create">{item.createdAt}</span>
                     </td>
                     <td>
-                      <span className="blog-date-update">23:07 17-11-2022</span>
+                      <span className="blog-date-update">{item.updatedAt}</span>
                     </td>
                     <td>
                       <div className="method">
@@ -71,7 +69,7 @@ export default function BlogList({ data, needUpdateData }) {
                         />
                         <EditBlog
                           needUpdate={() => needUpdateData()}
-                          idBlog={item.id}
+                          idBlog={item._id}
                         />
                         <Icon
                           icon="fluent:delete-24-regular"

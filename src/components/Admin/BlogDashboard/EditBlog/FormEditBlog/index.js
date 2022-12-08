@@ -3,34 +3,35 @@ import { useEffect, useState, useMemo } from "react";
 import { Icon } from "@iconify/react";
 import { uploadFile, deleteFile } from "../../../../../firebase/util";
 import { CKEditor } from "ckeditor4-react";
-export default function FormEditBlog({ onClose, submitSuccess }) {
+import { getBlogById, updateBlog } from "../../../../../apis/blogApi";
+export default function FormEditBlog({ onClose, submitSuccess, idBlog }) {
   const [selectedFile, setSelectedFile] = useState(null);
   const [url, setUrl] = useState(null);
-  const [content, setContent] = useState("");
+  const [content, setContent] = useState(null);
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
-  } = useForm({
-    defaultValues: useMemo(() => {
-      return { title: "test" };
-    }, [url]),
-  });
+  } = useForm();
   const onSubmit = (data) => {
-    console.log({ content, coverImage: url, title: data.title });
-    onClose();
-    submitSuccess();
+    async function updateDataBlog() {
+      await updateBlog({ content, coverImage: url, title: data.title }, idBlog);
+      submitSuccess();
+      onClose();
+    }
+    updateDataBlog();
   };
   useEffect(() => {
     //call API
-    const res = {
-      selectedFile: "",
-      url: "https://upload.wikimedia.org/wikipedia/commons/4/45/Nagoya_Castle%28Larger%29.jpg",
-      content: "123121311231312",
-    };
+    async function fetchData() {
+      const res = await getBlogById(idBlog);
+      reset({ title: res.title });
+      setUrl(res.coverImage);
+      setContent(res.content);
+    }
     //
-    setUrl(res.url);
-    setContent(res.content);
+    fetchData();
   }, []);
   useEffect(() => {
     if (selectedFile !== null)
@@ -83,10 +84,14 @@ export default function FormEditBlog({ onClose, submitSuccess }) {
                   }}
                   icon="mdi:close-circle"
                   onClick={() => {
-                    deleteFile(url, () => {
-                      setUrl(null);
-                      setSelectedFile(null);
-                    });
+                    deleteFile(
+                      url,
+                      () => {
+                        setUrl(null);
+                        setSelectedFile(null);
+                      },
+                      () => {}
+                    );
                   }}
                 />
               </div>
@@ -109,7 +114,7 @@ export default function FormEditBlog({ onClose, submitSuccess }) {
                   type="file"
                   accept="image/*"
                   name="coverImage"
-                  value={url ? "" : url}
+                  value={url === null ? "" : url}
                   onChangeCapture={onSelectFile}
                   {...register("coverImage")}
                 />
@@ -128,15 +133,18 @@ export default function FormEditBlog({ onClose, submitSuccess }) {
           </div>
           <div className="blog-content">
             <label>Nội dung</label>
-            <CKEditor
-              initData={content}
-              config={{
-                extraPlugins: `justify`,
-              }}
-              onChange={({ editor }) => {
-                setContent(editor.getData());
-              }}
-            />
+            {content !== null && (
+              <CKEditor
+                config={{
+                  extraPlugins: `justify`,
+                }}
+                onChange={({ editor }) => {
+                  setContent(editor.getData());
+                }}
+                status="ready"
+                initData={content}
+              />
+            )}
           </div>
           <div className="button-group">
             <input type="submit" value="Cập nhật" />
