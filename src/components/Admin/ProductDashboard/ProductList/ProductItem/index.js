@@ -2,16 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import EditProduct from "../../EditProduct";
 import { useDispatch } from "react-redux";
-import { removeProduct } from "../../../../../redux/product.slice";
-import {
-  deleteProduct,
-  deleteProductDetail,
-} from "../../../../../apis/productApi";
+import { deleteProduct } from "../../../../../apis/productApi";
 
 const ProductItem = ({ data, needUpdate }) => {
   const dispatch = useDispatch();
-  const [showEdit, setShowEidt] = useState(false);
-  // useEffect(() => setProductDetail(data), [data]);
   return (
     <>
       <tr>
@@ -39,7 +33,6 @@ const ProductItem = ({ data, needUpdate }) => {
               icon="fluent:delete-24-regular"
               className="delete-product"
               onClick={async () => {
-                await deleteProductDetail(data.product._id);
                 await deleteProduct(data.product._id);
                 needUpdate();
               }}
@@ -47,13 +40,6 @@ const ProductItem = ({ data, needUpdate }) => {
           </div>
         </td>
       </tr>
-      {showEdit && (
-        <EditProduct
-          data={data}
-          closeForm={() => setShowEidt(false)}
-          // updateData={(a) => setProductDetail(a)}
-        />
-      )}
     </>
   );
 };

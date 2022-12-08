@@ -8,7 +8,6 @@ import AddProduct from "../AddProduct";
 
 const ProductList = ({ data, needUpdateData }) => {
   const dispatch = useDispatch();
-  const [showAdd, setShowAdd] = useState(false);
   const [page, setPage] = useState(1);
   const [sort, setSort] = useState("");
   return (

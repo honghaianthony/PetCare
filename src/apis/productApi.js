@@ -38,11 +38,6 @@ const updateProductDetail = async (data, id) => {
 const deleteProduct = async (id) => {
   return await axiosInstance.delete(`/product/delete-product?id=${id}`);
 };
-const deleteProductDetail = async (id) => {
-  return await axiosInstance.delete(
-    `/product-detail/delete-product-detail?id=${id}`
-  );
-};
 
 export {
   getAllProducts,
@@ -54,5 +49,4 @@ export {
   updateProduct,
   updateProductDetail,
   deleteProduct,
-  deleteProductDetail,
 };
