@@ -2,8 +2,12 @@ import AddBlog from "../AddBlog";
 import EditBlog from "../EditBlog";
 import { Icon } from "@iconify/react";
 import { Pagination } from "@nextui-org/react";
-
+import { deleteBlog } from "../../../../apis/blogApi";
 export default function BlogList({ data, needUpdateData }) {
+  async function handleDeleteBlog(id) {
+    await deleteBlog(id);
+    needUpdateData();
+  }
   return (
     <div className="blog-list-container">
       <div className="heading">
@@ -74,6 +78,7 @@ export default function BlogList({ data, needUpdateData }) {
                         <Icon
                           icon="fluent:delete-24-regular"
                           className="delete-blog"
+                          onClick={() => handleDeleteBlog(item._id)}
                         />
                       </div>
                     </td>
