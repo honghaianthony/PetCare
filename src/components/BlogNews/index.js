@@ -4,12 +4,12 @@ import ReactPaginate from "react-paginate";
 import "./BlogNews.css";
 import "@fontsource/nunito"
 import { Icon } from "@iconify/react";
-import { useRef } from "react";
+// import { useRef } from "react";
 
 const BlogNews = (props) => {
 
-  const { newsBlog,newRef } = props;
-  console.log(newRef)
+  const { newsBlog } = props;
+  // console.log(newRef)
 
   const [searchTerm, setSearchTerm] = React.useState("");
   const handleChange = (value) => {
@@ -56,10 +56,10 @@ const BlogNews = (props) => {
     const newOffset = (event.selected * itemsPerPage) % data.length;
 
     setItemOffset(newOffset);
-    if(newRef!==null){
+    // if(newRef!==null){
 
-      newRef.scrollIntoView({ behavior: 'smooth',block:'start' });
-    }
+    //   newRef.scrollIntoView({ behavior: 'smooth',block:'start' });
+    // }
   };
   
   const [show, setShow] = useState(true);
@@ -155,7 +155,7 @@ const BlogNews = (props) => {
         <ReactPaginate
           breakLabel="..."
           nextLabel="Next >"
-          // onPageChange={handlePageClick}
+          onPageChange={handlePageClick}
           pageRangeDisplayed={3}
           pageCount={pageCount}
           previousLabel="< Previous"
@@ -165,7 +165,7 @@ const BlogNews = (props) => {
           previousClassName="page-previousClassName"
           nextLinkClassName="page-nextClassName"
           activeLinkClassName="active__"
-          onClick={handlePageClick}
+          // onClick={handlePageClick}
           // className='pagination__'
         />
       </div>
