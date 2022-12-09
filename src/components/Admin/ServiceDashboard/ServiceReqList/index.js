@@ -1,51 +1,83 @@
-import ServiceReqItem from "../ServiceReqItem";
+import { Icon } from "@iconify/react";
+import { Pagination } from "@nextui-org/react";
+import moment from "moment";
+import { delteteService } from "../../../../apis/serviceApi";
 
-const ServiceReqList = () => {
-  const list = [
-    {
-      id: 10001,
-      customer_name: "Trần Bình Chương",
-      phone_number: "0123456789",
-      service_type: "Tiêm chủng",
-      state_id: 1,
-    },
-    {
-      id: 10002,
-      customer_name: "Trần Bình Chương",
-      phone_number: "0123456789",
-      service_type: "Tiêm chủng",
-      state_id: 1,
-    },
-    {
-      id: 10003,
-      customer_name: "Trần Bình Chương",
-      phone_number: "0123456789",
-      service_type: "Tiêm chủng",
-      state_id: 3,
-    },
-    {
-      id: 10004,
-      customer_name: "Trần Bình Chương",
-      phone_number: "0123456789",
-      service_type: "Tiêm chủng",
-      state_id: 2,
-    },
-    {
-      id: 10005,
-      customer_name: "Trần Bình Chương",
-      phone_number: "0123456789",
-      service_type: "Tiêm chủng",
-      state_id: 1,
-    },
-  ];
+const ServiceReqList = ({ data, needUpdateData }) => {
   return (
     <>
       <div className="service-list-container">
-        <h1 className="title">Danh sách yêu cầu dịch vụ</h1>
         <div className="service-list">
-          {list.map((item, idx) => (
-            <ServiceReqItem key={idx} data={item} />
-          ))}
+          <div className="service-list-table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tên người yêu cầu</th>
+                  <th>Loại dịch vụ yêu cầu</th>
+                  <th>Ngày tạo</th>
+                  <th>
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                      <span>Ngày hẹn</span>
+                      <Icon
+                        icon="bxs:sort-alt"
+                        style={{ color: "gray", display: "block" }}
+                      />
+                    </div>
+                  </th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {data &&
+                  data.map((item, index) => (
+                    <tr key={item._id}>
+                      <td>
+                        <div>
+                          <span>{item.fullName}</span>
+                          <span
+                            style={{ color: "#00000080", fontSize: "0.8em" }}
+                          >
+                            {item.phoneNumber}
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <span>{item.serviceType}</span>
+                      </td>
+                      <td>
+                        <span>
+                          {moment(item.createdAt).format("DD/MM/YYYY")}
+                        </span>
+                      </td>
+                      <td>
+                        <span>{moment(item.date).format("DD/MM/YYYY")}</span>
+                      </td>
+                      <td>
+                        <button
+                          className="btn-delete-service-req"
+                          onClick={async () => {
+                            await delteteService(item._id);
+                            needUpdateData();
+                          }}
+                        >
+                          Xóa
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              margin: "8px 0px",
+            }}
+          >
+            <Pagination total={6} initialPage={1} />
+          </div>
         </div>
       </div>
     </>
