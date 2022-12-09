@@ -142,7 +142,7 @@
   tbody
   td {
   padding: 16px 4px;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.25);
+  border-bottom: 1px solid #80808040;
 }
 .history-order-dashboard-container
   .history-order-list-container
@@ -233,9 +233,8 @@
 }
 
 .history-order-dashboard-card-group {
-  color: #5a5a5a;
-  background-color: #fff;
-  border: 1px solid #de135e95;
+  color: #fff;
+  background-color: #de135ec2;
   padding: 12px 8px;
   border-radius: 4px;
 }
@@ -312,6 +311,9 @@
   .history-order-dashboard-container
   .history-order-dashboard-card-group {
   flex-basis: 320px;
+}
+.App.second-layout .history-order-dashboard-card-group {
+  background-color: #193a6a;
 }
 .App.second-layout
   .history-order-dashboard-container

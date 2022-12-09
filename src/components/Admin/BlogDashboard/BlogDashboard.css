@@ -187,6 +187,23 @@
   margin-top: 0;
   flex-basis: calc(100% - 420px);
 }
+.App.second-layout
+  .blog-dashboard-container
+  .blog-list-container
+  .blog-list
+  table
+  thead {
+  background-color: #19396ade;
+  color: #fff;
+  text-align: left;
+}
+.blog-dashboard-container .filter form button {
+  background: #193a6a;
+}
+
+.blog-dashboard-container .blog-list-container .heading button {
+  background: #193a6a;
+}
 @media only screen and (max-width: 1280px) {
   .App.second-layout .blog-dashboard-container {
     display: block;

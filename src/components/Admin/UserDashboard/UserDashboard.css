@@ -1,7 +1,10 @@
 p.invalid {
-  color: #ff0000da;
+  color: #ff0000da !important;
 }
 input.invalid {
+  border: 1px solid #ff0000da !important;
+}
+textarea.invalid {
   border: 1px solid #ff0000da !important;
 }
 p.invalid::before {
