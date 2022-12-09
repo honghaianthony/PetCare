@@ -3,6 +3,7 @@ import EditBlog from "../EditBlog";
 import { Icon } from "@iconify/react";
 import { Pagination } from "@nextui-org/react";
 import { deleteBlog } from "../../../../apis/blogApi";
+import moment from "moment/moment";
 export default function BlogList({ data, needUpdateData }) {
   async function handleDeleteBlog(id) {
     await deleteBlog(id);
@@ -60,10 +61,14 @@ export default function BlogList({ data, needUpdateData }) {
                     </td>
 
                     <td>
-                      <span className="blog-date-create">{item.createdAt}</span>
+                      <span className="blog-date-create">
+                        {moment(item.createdAt).format("DD/MM/YYYY - hh:mm")}
+                      </span>
                     </td>
                     <td>
-                      <span className="blog-date-update">{item.updatedAt}</span>
+                      <span className="blog-date-update">
+                        {moment(item.updatedAt).format("DD/MM/YYYY - hh:mm")}
+                      </span>
                     </td>
                     <td>
                       <div className="method">

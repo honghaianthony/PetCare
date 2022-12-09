@@ -197,11 +197,15 @@
   color: #fff;
   text-align: left;
 }
-.blog-dashboard-container .filter form button {
+.App.second-layout .blog-dashboard-container .filter form button {
   background: #193a6a;
 }
 
-.blog-dashboard-container .blog-list-container .heading button {
+.App.second-layout
+  .blog-dashboard-container
+  .blog-list-container
+  .heading
+  button {
   background: #193a6a;
 }
 @media only screen and (max-width: 1280px) {
