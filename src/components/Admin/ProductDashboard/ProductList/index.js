@@ -2,12 +2,9 @@ import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 
 import ProductItem from "./ProductItem";
-import { useDispatch } from "react-redux";
-import { filterSort } from "../../../../redux/product.slice";
 import AddProduct from "../AddProduct";
 
 const ProductList = ({ data, needUpdateData }) => {
-  const dispatch = useDispatch();
   const [page, setPage] = useState(1);
   const [sort, setSort] = useState("");
   return (
@@ -35,7 +32,6 @@ const ProductList = ({ data, needUpdateData }) => {
                           icon="ant-design:caret-up-filled"
                           onClick={() => {
                             setSort("price-down");
-                            dispatch(filterSort("price-down"));
                           }}
                         />
                       ) : sort === "price-down" ? (
@@ -43,7 +39,6 @@ const ProductList = ({ data, needUpdateData }) => {
                           icon="ant-design:caret-down-outlined"
                           onClick={() => {
                             setSort("");
-                            dispatch(filterSort(""));
                           }}
                         />
                       ) : (
@@ -52,7 +47,6 @@ const ProductList = ({ data, needUpdateData }) => {
                           style={{ color: "gray" }}
                           onClick={() => {
                             setSort("price-up");
-                            dispatch(filterSort("price-up"));
                           }}
                         />
                       )}
@@ -66,7 +60,6 @@ const ProductList = ({ data, needUpdateData }) => {
                           icon="ant-design:caret-up-filled"
                           onClick={() => {
                             setSort("stock-down");
-                            dispatch(filterSort("stock-down"));
                           }}
                         />
                       ) : sort === "stock-down" ? (
@@ -74,7 +67,6 @@ const ProductList = ({ data, needUpdateData }) => {
                           icon="ant-design:caret-down-outlined"
                           onClick={() => {
                             setSort("");
-                            dispatch(filterSort(""));
                           }}
                         />
                       ) : (
@@ -83,7 +75,6 @@ const ProductList = ({ data, needUpdateData }) => {
                           style={{ color: "gray" }}
                           onClick={() => {
                             setSort("stock-up");
-                            dispatch(filterSort("stock-up"));
                           }}
                         />
                       )}

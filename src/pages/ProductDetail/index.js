@@ -6,6 +6,7 @@ import ProductDetailReview from "../../components/ProductDetailReview";
 import ProductDetailStar from "../../components/ProductReviewStar";
 import { getProductDetailById } from "../../apis/productDetailApi";
 import "./ProductDetail.css";
+import { useDispatch, useSelector } from "react-redux";
 
 function ProductDetail() {
   const { productId } = useParams();

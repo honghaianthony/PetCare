@@ -140,7 +140,6 @@ export default function AddProductForm({ onClose, submitSuccess }) {
             {errors.name && (
               <p className="invalid">Trường dữ liệu không được để trống</p>
             )}
-            <p></p>
           </div>
           <div className="product-tag">
             <label>Danh mục</label>

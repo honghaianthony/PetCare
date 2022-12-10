@@ -1,130 +1,93 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MainLayout from "../../layouts/MainLayout";
-import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Icon } from "@iconify/react";
 import PaymentItem from "../../components/PaymentItem";
 import "./Payment.css";
+import { createOrder } from "../../apis/orderApi";
+import Modal from "../../components/Modal";
+import { useForm } from "react-hook-form";
 
 function Payment() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ mode: "all" });
   const navigate = useNavigate();
-  const [shippingFee, setShippingFee] = useState(0);
-
-  const order = {
-    orderId: 1,
-    sum: 840,
-    product: [
-      {
-        productId: "1",
-        name: "Hạt thức ăn dinh dưỡng cấp cao cho mèo.",
-        img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
-        price: 450,
-        numOfProductsInCart: 1,
-      },
-      {
-        productId: "2",
-        name: "Banh bảy màu cho chó mèo.",
-        img: "https://i.postimg.cc/Gt71bY3B/d60738f3301cf7bdf574daedcccd26b5.jpg",
-        price: 240,
-        numOfProductsInCart: 2,
-      },
-      {
-        productId: "3",
-        name: "Chuột và cầu lông bằng bông cho mèo.",
-        img: "https://i.postimg.cc/C5DjgCs7/do-choi-cho-meo-ma-dccm176.jpg",
-        price: 150,
-        numOfProductsInCart: 3,
-      },
-    ],
-  };
-
+  const [shippingFee, setShippingFee] = useState(32000);
+  const [productList, setProductList] = useState(() =>
+    JSON.parse(sessionStorage.getItem("productList"))
+  );
+  const [sum, setSum] = useState(0);
+  const [confirm, setConfirm] = useState(false);
+  const [info, setInfo] = useState({});
+  useEffect(() => {
+    let res = 0;
+    if (productList === null) return;
+    for (let i = 0; i < productList.length; ++i) {
+      res += productList[i].amount * productList[i].price;
+    }
+    setSum(res);
+  }, []);
   const handleShippingFee = (e) => {
     if (e.target.name === "city") {
-      if (e.target.value === "Hồ Chí Minh") setShippingFee(32);
-      else setShippingFee(32);
-      console.log(shippingFee);
+      if (e.target.value === "Hồ Chí Minh") {
+        setShippingFee(0);
+      } else {
+        setShippingFee(32000);
+      }
     }
-  };
-  const handleSubmit = (e) => {
-    // const info = {
-    //   orderId: order.orderId,
-    //   name: e.target.name.value,
-    //   city: e.target.city.value,
-    //   address: e.target.address.value,
-    //   email: e.target.email.value,
-    //   phone: e.target.phone.value,
-    // };
-    navigate("/product");
   };
   return (
     <MainLayout>
-      <div className="Payment">
-        <div className="Payment-Title">
-          <div>
-            <div className="Payment-Title-Icon">
-              <Icon icon="bi:bag-heart-fill" fontSize="32px" />
+      {productList ? (
+        <>
+          <div className="Payment">
+            <div className="Payment-Title">
+              <div>
+                <div className="Payment-Title-Icon">
+                  <Icon icon="bi:bag-heart-fill" fontSize="32px" />
+                </div>
+                <div className="Payment-Title-Content">
+                  <h3>Thanh toán</h3>
+                </div>
+              </div>
             </div>
-            <div className="Payment-Title-Content">
-              <h3>Thanh toán</h3>
-            </div>
-          </div>
-        </div>
-        <div className="Payment-Content">
-          <div className="Payment-Content-User">
-            <div className="Payment-Content-User-Title">
-              <Icon icon="carbon:location-heart-filled" fontSize="36px" />
-              <h3>Thông tin người nhận hàng</h3>
-            </div>
-            <div className="Payment-Content-User-Content">
-              <Formik
-                initialValues={{
-                  name: "",
-                  city: "An Giang",
-                  address: "",
-                  email: "",
-                  phone: "",
-                }}
-                validate={(values) => {
-                  const errors = {};
-                  if (values.name === "") {
-                    errors.name = "Bạn chưa điền họ tên!";
-                  }
-                  if (values.email === "") {
-                    errors.email = "Bạn chưa điền email!";
-                  } else if (
-                    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
-                      values.email
-                    )
-                  ) {
-                    errors.email = "Email không hợp lệ!";
-                  }
-
-                  if (values.phone !== "") {
-                    if (
-                      /((09|03|07|08|05)+([0-9]{8})\b)/g.test(values.phone) ===
-                      false
-                    ) {
-                      errors.phone = "Số điện thoại không đúng định dạng!";
-                    }
-                  } else {
-                    errors.phone = "Bạn chưa điền số điện thoại!";
-                  }
-                  return errors;
-                }}
-              >
-                {() => (
-                  <Form
-                    onChange={(e) => {
-                      handleShippingFee(e);
-                    }}
-                    onSubmit={(e) => {
-                      e.preventDefault();
-                      handleSubmit(e);
-                    }}
+            <div className="Payment-Content">
+              <div className="Payment-Content-User">
+                <div className="Payment-Content-User-Title">
+                  <Icon icon="carbon:location-heart-filled" fontSize="36px" />
+                  <h3>Thông tin người nhận hàng</h3>
+                </div>
+                <div className="Payment-Content-User-Content">
+                  <form
+                    onSubmit={handleSubmit((data) => {
+                      setInfo({
+                        ...data,
+                        productList,
+                        sumPrice: sum,
+                        status: 0,
+                      });
+                      setConfirm(true);
+                    })}
                   >
-                    <Field name="name" placeholder="Họ và tên" />
-                    <ErrorMessage name="name" component="div" />
-                    <Field name="city" as="select">
+                    <input
+                      placeholder="Họ và tên"
+                      {...register("fullName", {
+                        required: true,
+                      })}
+                      className={errors.fullName ? "invalid" : ""}
+                    />
+                    {errors.fullName && (
+                      <p className="invalid">
+                        Trường dữ liệu không được để trống
+                      </p>
+                    )}
+                    <select
+                      {...register("city")}
+                      onChange={(e) => handleShippingFee(e)}
+                    >
                       <option value="An Giang">An Giang</option>
                       <option value="Bà Rịa-Vũng Tàu">Bà Rịa-Vũng Tàu</option>
                       <option value="Bạc Liêu">Bạc Liêu</option>
@@ -188,52 +151,106 @@ function Payment() {
                       <option value="Vĩnh Long">Vĩnh Long</option>
                       <option value="Vĩnh Phúc">Vĩnh Phúc</option>
                       <option value="Yên Bái">Yên Bái</option>
-                    </Field>
-                    <Field name="address" as="textarea" placeholder="Địa chỉ" />
-                    <Field type="email" name="email" placeholder="Email" />
-                    <ErrorMessage name="email" component="div" />
-                    <Field name="phone" placeholder="Số điện thoại" />
-                    <ErrorMessage name="phone" component="div" />
-                    <p>Vui lòng thanh toán khi nhận được hàng!</p>
-                    <button type="submit">Đặt hàng</button>
-                  </Form>
-                )}
-              </Formik>
-            </div>
-          </div>
-          <div className="Payment-Content-Product">
-            <h4>Đơn hàng ({order.product.length} sản phẩm)</h4>
-            {order.product.map((item, index) => {
-              return (
-                <PaymentItem
-                  productId={item.productId}
-                  name={item.name}
-                  img={item.img}
-                  price={item.price}
-                  numOfProductsInCart={item.numOfProductsInCart}
-                  key={index}
-                />
-              );
-            })}
-            <div className="Payment-Content-Product-Summary">
-              <p>
-                <span>Tổng tiền sản phẩm:</span>
-                <span>{order.sum}.000đ</span>
-              </p>
-              <p>
-                <span>Phí vận chuyển:</span>
-                <span>{shippingFee === 0 ? <>0đ</> : <>32.000đ</>}</span>
-              </p>
-              <div>
-                <span>Tổng thanh toán:</span>
-                <span className="Payment-Content-Product-Summary-Price">
-                  {shippingFee + order.sum}.000đ
-                </span>
+                    </select>
+                    <textarea
+                      placeholder="Địa chỉ"
+                      {...register("address", {
+                        required: true,
+                      })}
+                    />
+                    {errors.address && (
+                      <p className="invalid">
+                        Trường dữ liệu không được để trống
+                      </p>
+                    )}
+                    <input
+                      placeholder="Email"
+                      {...register("email", {
+                        required: true,
+                        pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+                      })}
+                      className={errors.email ? "invalid" : ""}
+                    />
+                    {errors.email && errors.email.type === "required" && (
+                      <p className="invalid">
+                        Trường dữ liệu không được để trống
+                      </p>
+                    )}
+                    {errors.email && errors.email.type === "pattern" && (
+                      <p className="invalid">Email không đúng định dạng</p>
+                    )}
+                    <input
+                      placeholder="Số điện thoại"
+                      {...register("phoneNumber", {
+                        required: true,
+                        pattern: /((09|03|07|08|05)+([0-9]{8})\b)/g,
+                      })}
+                      className={errors.phoneNumber ? "invalid" : ""}
+                    />
+                    {errors.phoneNumber &&
+                      errors.phoneNumber.type === "required" && (
+                        <p className="invalid">
+                          Trường dữ liệu không được để trống
+                        </p>
+                      )}
+                    {errors.phoneNumber &&
+                      errors.phoneNumber.type === "pattern" && (
+                        <p className="invalid">Số điện thoại không hợp lệ</p>
+                      )}
+                    <button>Đặt hàng</button>
+                  </form>
+                </div>
+              </div>
+              <div className="Payment-Content-Product">
+                <h4>Đơn hàng ({productList.length} sản phẩm)</h4>
+                {productList.map((item, index) => {
+                  return (
+                    <PaymentItem
+                      productId={item.productId}
+                      name={item.name}
+                      img={item.img}
+                      price={item.price}
+                      numOfProductsInCart={item.amount}
+                      key={index}
+                    />
+                  );
+                })}
+                <div className="Payment-Content-Product-Summary">
+                  <p>
+                    <span>Tổng tiền sản phẩm:</span>
+                    <span>{sum}</span>
+                  </p>
+                  <p>
+                    <span>Phí vận chuyển:</span>
+                    <span>{shippingFee === 0 ? <>Free</> : <>32.000đ</>}</span>
+                  </p>
+                  <div>
+                    <span>Tổng thanh toán:</span>
+                    <span className="Payment-Content-Product-Summary-Price">
+                      {sum + shippingFee}
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+          {confirm && (
+            <Modal
+              onHandle={async () => {
+                return await createOrder(info);
+              }}
+              onConfirm={async () => {
+                navigate("/history");
+              }}
+              onCancel={() => {
+                setConfirm(false);
+              }}
+            />
+          )}
+        </>
+      ) : (
+        <div>Thao tác không thể thực hiện</div>
+      )}
     </MainLayout>
   );
 }
