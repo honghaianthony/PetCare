@@ -1,291 +1,292 @@
 .App.first-layout .footer-container {
-    padding-top: 4rem;
-    padding-bottom: 1rem;
-    background-color: #fff;
+  margin: auto 0;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+  background-color: #fff;
 }
 
 .App.second-layout .footer-container {
-    padding: 8rem;
-    background-color: #fafafa;
+  padding: 8rem;
+  background-color: #fafafa;
 }
 
 .App.first-layout .footer-container-second {
-    display: none;
+  display: none;
 }
 
 .App.second-layout .footer-container-first {
-    display: none;
+  display: none;
 }
 
 .App.first-layout .footer-container-detail {
-    max-width: 1280px;
-    margin: 0 auto;
-    margin-bottom: 2rem;
-    padding-left: 10px;
-    padding-right: 10px;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .App.second-layout .footer-container-second {
-    max-width: 1280px;
-    margin: 0 auto;
-    margin-bottom: 2rem;
-    padding-left: 10px;
-    padding-right: 10px;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .App.first-layout .footer-container-items {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    grid-gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-gap: 2rem;
 }
 
 .App.second-layout .footer-container-items {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-gap: 2rem;
 }
 
 .App.first-layout .footer-logo-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .App.first-layout .footer-logo {
-    font-family: Pangolin;
+  font-family: Pangolin;
 }
 
 .App.first-layout .footer-slogan span {
-    font-family: Roboto Flex;
-    font-size: 1rem;
-    line-height: 1.25rem;
-    color: #000;
+  font-family: Roboto Flex;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: #000;
 }
 
 .App.first-layout .footer-social {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
 }
 
 .App.first-layout .footer-social a {
-    margin-right: 1rem;
-    text-decoration: none;
+  margin-right: 1rem;
+  text-decoration: none;
 }
 
 .App.first-layout .footer-social-icon {
-    color: #000;
-    font-size: 24px;
+  color: #000;
+  font-size: 24px;
 }
 
 .App.first-layout .footer-link {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .App.first-layout .footer-link h4 {
-    margin-bottom: 1rem;
-    font-family: Roboto Flex;
-    font-weight: 800;
+  margin-bottom: 1rem;
+  font-family: Roboto Flex;
+  font-weight: 800;
 }
 
 .App.first-layout .footer-link-detail {
-    font-family: Roboto Flex;
-    display: flex;
-    flex-direction: column;
+  font-family: Roboto Flex;
+  display: flex;
+  flex-direction: column;
 }
 
 .App.first-layout .footer-link-detail a {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .App.first-layout .footer-working-hour {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .App.first-layout .footer-working-hour h4 {
-    margin-bottom: 1rem;
-    font-weight: 800;
-    font-family: Roboto Flex;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  font-family: Roboto Flex;
 }
 
 .App.first-layout .footer-working-hour-banner {
-    padding: 2rem;
-    border-radius: 20px;
-    background: #dd3c72;
+  padding: 2rem;
+  border-radius: 20px;
+  background: #dd3c72;
 }
 
 .App.first-layout .footer-working-time {
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    font-weight: 500;
-    margin-bottom: 10px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .App.first-layout .footer-communication {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 .App.first-layout .footer-communication h4 {
-    margin-bottom: 1rem;
-    font-weight: 800;
-    font-family: Roboto Flex;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  font-family: Roboto Flex;
 }
 
 .App.first-layout .footer-communication p {
-    margin-bottom: 1rem;
-    font-family: Roboto Flex;
+  margin-bottom: 1rem;
+  font-family: Roboto Flex;
 }
 
 .App.first-layout .footer-communication-address {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .App.first-layout .footer-communication-phone {
-    display: flex;
+  display: flex;
 }
 
 .App.first-layout .footer-communication-icon {
-    margin-right: 1rem;
-    font-size: 24px;
-    color: #000;
+  margin-right: 1rem;
+  font-size: 24px;
+  color: #000;
 }
 
 .App.first-layout .footer-copyright {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-    font-family: Nunito;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  font-family: Nunito;
 }
 
 .App.first-layout .footer-copyright-sub p {
-    font-family: Nunito;
+  font-family: Nunito;
 }
 
 /* Second layout */
 .App.second-layout .footer-link {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .App.second-layout .footer-link h4 {
-    margin-bottom: 1rem;
-    font-family: Roboto Flex;
-    font-weight: 800;
+  margin-bottom: 1rem;
+  font-family: Roboto Flex;
+  font-weight: 800;
 }
 
 .App.second-layout .footer-link-detail {
-    font-family: Roboto Flex;
-    display: flex;
-    flex-direction: column;
+  font-family: Roboto Flex;
+  display: flex;
+  flex-direction: column;
 }
 
 .App.second-layout .footer-link-detail a {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .App.second-layout .footer-working-hour {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .App.second-layout .footer-working-hour h4 {
-    margin-bottom: 1rem;
-    font-weight: 800;
-    font-family: Roboto Flex;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  font-family: Roboto Flex;
 }
 
 .App.second-layout .footer-working-hour-banner {
-    padding: 2rem;
-    border-radius: 5px;
-    background: #41707f;
+  padding: 2rem;
+  border-radius: 5px;
+  background: #41707f;
 }
 
 .App.second-layout .footer-working-time {
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    font-weight: 500;
-    margin-bottom: 10px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .App.second-layout .footer-communication {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 .App.second-layout .footer-communication h4 {
-    margin-bottom: 1rem;
-    font-weight: 800;
-    font-family: Roboto Flex;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  font-family: Roboto Flex;
 }
 
 .App.second-layout .footer-communication p {
-    margin-bottom: 1rem;
-    font-family: Roboto Flex;
+  margin-bottom: 1rem;
+  font-family: Roboto Flex;
 }
 
 .App.second-layout .footer-communication-address {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .App.second-layout .footer-communication-phone {
-    display: flex;
+  display: flex;
 }
 
 .App.second-layout .footer-communication-icon {
-    margin-right: 1rem;
-    font-size: 24px;
-    color: #000;
+  margin-right: 1rem;
+  font-size: 24px;
+  color: #000;
 }
 
 .App.second-layout .footer-logo-second {
-    margin-top: 4rem;
+  margin-top: 4rem;
 }
 
 .App.second-layout .footer-logo {
-    font-size: 30px;
-    font-family: Pangolin;
+  font-size: 30px;
+  font-family: Pangolin;
 }
 
 @media screen and (max-width: 960px) {
-    .App.first-layout .footer-container-items {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-gap: 2rem;
-    }
+  .App.first-layout .footer-container-items {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 2rem;
+  }
 
-    .App.second-layout .footer-container-items {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-gap: 2rem;
-    }
+  .App.second-layout .footer-container-items {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 2rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .App.first-layout .footer-container-items {
-        display: grid;
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-        grid-gap: 2rem;
-    }
-    .App.second-layout .footer-container-items {
-        display: grid;
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-        grid-gap: 2rem;
-    }
+  .App.first-layout .footer-container-items {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-gap: 2rem;
+  }
+  .App.second-layout .footer-container-items {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-gap: 2rem;
+  }
 
-    .App.second-layout .footer-working-hour-banner {
-        width: 200px;
-        transform: translate(-25%, 5%);
-    }
+  .App.second-layout .footer-working-hour-banner {
+    width: 200px;
+    transform: translate(-25%, 5%);
+  }
 }

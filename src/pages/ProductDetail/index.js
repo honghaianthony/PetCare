@@ -1,14 +1,26 @@
 import MainLayout from "../../layouts/MainLayout";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import ProductDetailReview from "../../components/ProductDetailReview";
 import ProductDetailStar from "../../components/ProductReviewStar";
 import "./ProductDetail.css";
+import { useDispatch, useSelector } from "react-redux";
 
 function ProductDetail() {
   const [status, setStatus] = useState(0);
   const [num, setNum] = useState(1);
+  //test
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const user = useSelector((state) => state.user);
+  const productId = "638d80259505100828e91949";
+  const amount = 2;
+  const name = "test";
+  const img = "https://i.postimg.cc/g0VFn1kb/p1.jpg";
+  const price = 100000;
+  //
   const product = {
     productId: "p1",
     name: "Hạt thức ăn dinh dưỡng cấp cao cho mèo.",
@@ -254,7 +266,16 @@ function ProductDetail() {
                   <Icon icon="clarity:shopping-cart-line" width="42" />
                   &nbsp; Thêm vào giỏ hàng
                 </button>
-                <button className="productDetail-description-two-buy-b2">
+                <button
+                  className="productDetail-description-two-buy-b2"
+                  onClick={() => {
+                    sessionStorage.setItem(
+                      "productList",
+                      JSON.stringify([{ productId, amount, name, img, price }])
+                    );
+                    navigate("/payment");
+                  }}
+                >
                   Mua ngay
                 </button>
               </div>
