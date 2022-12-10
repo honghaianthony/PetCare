@@ -2,52 +2,44 @@ import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import EditProduct from "../../EditProduct";
 import { useDispatch } from "react-redux";
-import { removeProduct } from "../../../../../redux/product.slice";
+import { deleteProduct } from "../../../../../apis/productApi";
 
-const ProductItem = ({ data }) => {
+const ProductItem = ({ data, needUpdate }) => {
   const dispatch = useDispatch();
-  const [productDetail, setProductDetail] = useState(data);
-  const [showEdit, setShowEidt] = useState(false);
-  useEffect(() => setProductDetail(data), [data]);
   return (
     <>
       <tr>
         <td>
-          <span className="product-title">{productDetail.product_name}</span>
+          <span className="product-title">{data.product.name}</span>
         </td>
         <td>
-          <span>đ{productDetail.product_price}</span>
+          <span>đ{data.product.price}</span>
         </td>
         <td>
-          {productDetail.product_stock === 0 ? (
+          {Number(data.numOfProductsInStock) === 0 ? (
             <span style={{ color: "#de135c" }}>Hết hàng</span>
           ) : (
-            <span>{productDetail.product_stock}</span>
+            <span>{data.numOfProductsInStock}</span>
           )}
         </td>
         <td>
-          <div>
+          <div className="method">
             <Icon icon="akar-icons:eye-open" className="see-detail" />
-            <Icon
-              icon="akar-icons:edit"
-              className="edit-product"
-              onClick={() => setShowEidt(true)}
+            <EditProduct
+              needUpdate={() => needUpdate()}
+              idProduct={data.product._id}
             />
             <Icon
               icon="fluent:delete-24-regular"
               className="delete-product"
-              onClick={() => dispatch(removeProduct(productDetail.product_id))}
+              onClick={async () => {
+                await deleteProduct(data.product._id);
+                needUpdate();
+              }}
             />
           </div>
         </td>
       </tr>
-      {showEdit && (
-        <EditProduct
-          data={productDetail}
-          closeForm={() => setShowEidt(false)}
-          updateData={(a) => setProductDetail(a)}
-        />
-      )}
     </>
   );
 };

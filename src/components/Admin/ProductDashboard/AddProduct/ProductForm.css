@@ -27,12 +27,8 @@ textarea {
   overflow-y: auto;
   background: white;
   border-radius: 5px;
-  transform: scale(0);
-  transition: all 0.5s;
 }
-.add-product-form-container.show {
-  transform: scale(1);
-}
+
 .add-product-form-container .heading {
   position: sticky;
   top: 0;
@@ -66,7 +62,8 @@ textarea {
   margin-bottom: 20px;
 }
 .product-form input,
-.product-form textarea {
+.product-form textarea,
+.product-form select {
   width: 100%;
   border-radius: 5px;
   border: 1px solid rgb(201, 201, 201);
@@ -74,21 +71,6 @@ textarea {
 }
 .product-form .product-img {
   width: 100%;
-  display: flex;
-  align-items: center;
-}
-.product-form .product-img input {
-  border: none;
-  width: 110px;
-  overflow: hidden;
-  position: relative;
-}
-
-.product-form .product-img img {
-  margin-left: 10px;
-  width: 100px;
-  object-fit: cover;
-  border: 1px solid gray;
 }
 .product-form .button-group input {
   border: none !important;
@@ -138,6 +120,12 @@ textarea {
   color: #000;
   background-color: #fff;
   border: 1px solid gray !important;
+}
+.product-form .button-group {
+  position: sticky;
+  bottom: 0;
+  background-color: #fff;
+  width: 100%;
 }
 @media only screen and (max-width: 768px) {
   .product-form > .product-name,

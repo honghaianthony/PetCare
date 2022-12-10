@@ -1,23 +1,25 @@
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
-import { Pagination } from "@nextui-org/react";
-import ProductItem from "./ProductItem";
-import ProductForm from "../ProductForm";
-import { useDispatch, useSelector } from "react-redux";
-import { filterSort } from "../../../../redux/product.slice";
 
-const ProductList = () => {
+import ProductItem from "./ProductItem";
+import { useDispatch } from "react-redux";
+import { filterSort } from "../../../../redux/product.slice";
+import AddProduct from "../AddProduct";
+
+const ProductList = ({ data, needUpdateData }) => {
   const dispatch = useDispatch();
-  const [showAdd, setShowAdd] = useState(false);
   const [page, setPage] = useState(1);
   const [sort, setSort] = useState("");
-  const data = useSelector((state) => state.product.listProductTemp);
   return (
     <>
       <div className="product-list-container">
         <div className="heading">
-          <h3>{data.length} sản phẩm</h3>
-          <button onClick={() => setShowAdd(true)}>Thêm sản phẩm mới</button>
+          {data && (
+            <>
+              <h3>{data.length} sản phẩm</h3>
+              <AddProduct needUpdate={() => needUpdateData()} />
+            </>
+          )}
         </div>
         <div className="product-list">
           <div className="product-list-table-container">
@@ -87,17 +89,22 @@ const ProductList = () => {
                       )}
                     </div>
                   </th>
-                  <th>Thao tác</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
-                {data.map((item, index) =>
-                  index >= (page - 1) * 6 && index < page * 6 ? (
-                    <ProductItem data={item} key={index} />
-                  ) : (
-                    ""
-                  )
-                )}
+                {data &&
+                  data.map((item, index) =>
+                    index >= (page - 1) * 6 && index < page * 6 ? (
+                      <ProductItem
+                        data={item}
+                        key={item.product._id}
+                        needUpdate={() => needUpdateData()}
+                      />
+                    ) : (
+                      ""
+                    )
+                  )}
               </tbody>
             </table>
           </div>
@@ -108,15 +115,14 @@ const ProductList = () => {
               margin: "8px 0px",
             }}
           >
-            <Pagination
+            {/* <Pagination
               total={(data.length + 5) / 6}
               initialPage={1}
               onChange={(number) => setPage(number)}
-            />
+            /> */}
           </div>
         </div>
       </div>
-      {showAdd && <ProductForm closeForm={() => setShowAdd(false)} />}
     </>
   );
 };

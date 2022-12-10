@@ -1,24 +1,22 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Icon } from "@iconify/react";
-import EditProductForm from "./EditProductForm";
-
-const EditProduct = ({ needUpdate, idProduct }) => {
+import FormEditBlog from "./FormEditBlog";
+export default function EditBlog({ needUpdate, idBlog }) {
   const [visible, setVisible] = useState(false);
   return (
     <>
       <Icon
         icon="akar-icons:edit"
-        className="edit-product"
+        className="edit-blog"
         onClick={() => setVisible(true)}
       />
       {visible && (
-        <EditProductForm
-          idProduct={idProduct}
+        <FormEditBlog
+          idBlog={idBlog}
           onClose={() => setVisible(false)}
           submitSuccess={() => needUpdate()}
         />
       )}
     </>
   );
-};
-export default EditProduct;
+}

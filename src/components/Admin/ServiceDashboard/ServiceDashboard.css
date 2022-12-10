@@ -60,6 +60,19 @@
 .service-dashboard-container .service-list-container .service-list {
   padding: 10px;
 }
+.service-dashboard-container button.btn-delete-service-req {
+  position: relative;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 700;
+  background: #ff0000dc;
+  padding: 4px 8px;
+}
+.service-dashboard-container button.btn-delete-service-req:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
 .service-dashboard-container
   .service-list-container
   .service-list
@@ -73,8 +86,8 @@
   table-layout: auto;
 }
 .service-dashboard-container .service-list-container .service-list table thead {
-  background-color: rgb(240, 240, 240);
-  color: #000;
+  background-color: #de135eb6;
+  color: #fff;
   text-align: left;
 }
 .service-dashboard-container
@@ -121,7 +134,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(171, 171, 171, 0.122);
+  background-color: #ababab1f;
 }
 .service-dashboard-container
   .service-list-container
@@ -130,7 +143,7 @@
   tbody
   td {
   padding: 16px 4px;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.25);
+  border-bottom: 1px solid #80808040;
 }
 .service-dashboard-container
   .service-list-container
@@ -289,6 +302,9 @@
   display: flex;
   justify-content: space-between;
 }
+.App.second-layout .service-dashboard-card-group {
+  background-color: #193a6a;
+}
 .App.second-layout .service-dashboard-container .service-dashboard-card-group {
   flex-basis: 320px;
 }
@@ -304,6 +320,16 @@
 .App.second-layout .service-dashboard-container .service-list-container {
   margin-top: 0;
   flex-basis: calc(100% - 350px);
+}
+.App.second-layout
+  .service-dashboard-container
+  .service-list-container
+  .service-list
+  table
+  thead {
+  background-color: #19396ade;
+  color: #fff;
+  text-align: left;
 }
 @media only screen and (max-width: 1280px) {
   .App.second-layout .service-dashboard-container {
