@@ -1,0 +1,89 @@
+.card-stats-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    min-width: 0;
+    overflow-wrap: break-word;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-stats-container-detail {
+    flex: 1 1 auto;
+    padding: 1rem;
+}
+
+.card-stats-top {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-stats-top-title {
+    position: relative;
+    width: 250px;
+    flex-grow: 1;
+    flex: 1 1 0%;
+}
+
+.card-stats-top-title h5 {
+    color: rgba(148, 163, 184);
+    font-weight: 700;
+}
+
+.card-stats-top-title span {
+    color: rgba(51, 65, 85);
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+.card-stats-top-icon {
+    position: relative;
+    flex: 0 1 auto;
+    padding: 0.75rem;
+    color: #fff;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-stats-top-icon-background {
+    background-color: rgba(239, 68, 68);
+}
+
+.card-stats-top-icon-background1 {
+    background-color: rgba(249, 115, 22);
+}
+
+.card-stats-top-icon-background2 {
+    background-color: rgba(236, 72, 153);
+}
+
+.card-stats-top-icon-background3 {
+    background-color: rgba(14, 165, 233);
+}
+
+.card-stats-percent-color {
+    color: rgba(239, 68, 68);
+}
+
+.card-stats-percent-color1 {
+    color: rgba(16, 185, 129);
+}
+
+.card-stats-bottom {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: rgba(148, 163, 184);
+    margin-top: 1rem;
+}
+
+.card-stats-description {
+    white-space: nowrap;
+}

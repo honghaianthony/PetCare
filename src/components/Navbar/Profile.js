@@ -50,7 +50,9 @@ function Profile(props) {
                                     icon="material-symbols:admin-panel-settings"
                                     className="profile-option-detail-icon"
                                 />
-                                <Link to="/admin/product">Trang quản trị</Link>
+                                <Link to="/admin/statistical">
+                                    Trang quản trị
+                                </Link>
                             </div>
                         </>
                     )}
