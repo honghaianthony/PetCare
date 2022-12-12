@@ -15,13 +15,6 @@ function ProductDetail() {
     const [product, setProduct] = useState("");
 
     const navigate = useNavigate();
-    const dispatch = useDispatch();
-
-    const user = useSelector((state) => state.user);
-    const amount = 2;
-    const name = "test";
-    const img = "https://i.postimg.cc/g0VFn1kb/p1.jpg";
-    const price = 100000;
 
     useEffect(() => {
         async function getProduct() {
@@ -124,6 +117,8 @@ function ProductDetail() {
             if (userReview[i].rate === status) reviewFilter.push(userReview[i]);
         }
     } else reviewFilter = userReview;
+
+    console.log(product);
 
     return (
         <MainLayout>
@@ -307,15 +302,20 @@ function ProductDetail() {
                                     <button
                                         className="productDetail-description-two-buy-b2"
                                         onClick={() => {
+                                            sessionStorage.clear();
                                             sessionStorage.setItem(
                                                 "productList",
                                                 JSON.stringify([
                                                     {
-                                                        productId,
-                                                        amount,
-                                                        name,
-                                                        img,
-                                                        price,
+                                                        productId:
+                                                            product.product._id,
+                                                        amount: num,
+                                                        name: product.product
+                                                            .name,
+                                                        img: product.product
+                                                            .img,
+                                                        price: product.product
+                                                            .price,
                                                     },
                                                 ])
                                             );
