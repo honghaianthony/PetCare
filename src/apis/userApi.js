@@ -17,7 +17,7 @@ const updateUser = async (data, id) => {
 };
 
 const deleteUser = async (id) => {
-    return await axiosInstance.delete(`/service/delete-user?userId=${id}`);
+    return await axiosInstance.delete(`/user/delete-user?userId=${id}`);
 };
 
 export { getUserById, getAllUsers, updateUserRole, updateUser, deleteUser };

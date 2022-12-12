@@ -1,7 +1,7 @@
 import "./UserDashboard.css";
 import { Icon } from "@iconify/react";
 import { Pagination } from "@nextui-org/react";
-import { getAllUsers } from "../../../apis/userApi";
+import { getAllUsers, deleteUser } from "../../../apis/userApi";
 import { useEffect, useState } from "react";
 import EditUserForm from "../UserDashboard/EditUser/EditUserForm";
 
@@ -20,6 +20,11 @@ const UserDashboard = () => {
             setNeedUpdate(false);
         }
     }, [needUpdate]);
+
+    async function handleDeleteUser(id) {
+        await deleteUser(id);
+        setNeedUpdate(true);
+    }
 
     return (
         <>
@@ -185,6 +190,11 @@ const UserDashboard = () => {
                                                             <Icon
                                                                 icon="fluent:delete-24-regular"
                                                                 className="delete-user"
+                                                                onClick={() =>
+                                                                    handleDeleteUser(
+                                                                        item._id
+                                                                    )
+                                                                }
                                                             />
                                                         </div>
                                                     </td>
