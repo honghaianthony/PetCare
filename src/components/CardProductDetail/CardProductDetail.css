@@ -240,7 +240,7 @@ b.price_after_discount {
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
   height: 35px;
   border-bottom-left-radius: 5px;
   background-color: #de135c;
@@ -262,16 +262,17 @@ b.price_after_discount {
 .quick_view_button_:hover,
 .add_to_cart_button:hover {
   /* background: #fff; */
-  color: #000;
+  color: #fff;
   transition: all 0.25s ease-in-out;
-  background: #fff;
+  background: #ccc;
 }
 .quick_view_button_second:hover,
 .add_to_cart_button_second:hover {
   /* background: #fff; */
-  color: #000;
+  color: #fff;
   transition: all 0.25s ease-in-out;
-  background: #fff;
+  background: #ccc;
+
 }
 
 .add_to_cart_button:hover svg.add_to_cart_icon.iconify.iconify--el {
@@ -300,7 +301,7 @@ b.price_after_discount {
 .add_to_cart_button_second:hover .add_to_cart_text {
   color: #000;
 }
-.Review_Buy_Product_container::before {
+/* .Review_Buy_Product_container::before {
   content: "";
   position: absolute;
   top: 0;
@@ -311,8 +312,8 @@ b.price_after_discount {
   height: 40%;
   background: #fff;
   margin: auto;
-}
-.Review_Buy_Product_container_second::before {
+} */
+/* .Review_Buy_Product_container_second::before {
   content: "";
   position: absolute;
   top: 0;
@@ -323,9 +324,9 @@ b.price_after_discount {
   height: 40%;
   background: #fff;
   margin: auto;
-}
+} */
 .add_to_cart_button {
-  width: 50%;
+  width: 100%;
   cursor: pointer;
   background: #000;
   border: #000;
@@ -333,13 +334,13 @@ b.price_after_discount {
   justify-content: center;
   align-items: center;
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
   height: 35px;
   border-bottom-right-radius: 5px;
   background: #de135c;
 }
 .add_to_cart_button_second {
-  width: 50%;
+  width: 100%;
   cursor: pointer;
   background: #000;
   border: #000;
@@ -347,7 +348,7 @@ b.price_after_discount {
   justify-content: center;
   align-items: center;
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
   height: 35px;
   border-bottom-right-radius: 5px;
   background: rgba(65, 109, 123, 1);

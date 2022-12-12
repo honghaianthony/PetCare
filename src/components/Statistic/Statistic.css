@@ -1,0 +1,113 @@
+.admin-statistic-container {
+    padding-top: 100px;
+    max-width: 1280px;
+    margin: 0 auto;
+    font-family: Nunito Sans;
+}
+
+.App.first-layout .admin-statistic-container-detail {
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.App.second-layout .admin-statistic-container-detail {
+    padding: 0 10px;
+    display: flex;
+}
+
+.App.first-layout .admin-statistic-card-stats-container {
+    background-color: #de135c;
+    position: relative;
+    border-radius: 5px;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+}
+
+.App.second-layout .admin-statistic-card-stats-container {
+    background-color: #de135c;
+    width: 30%;
+}
+
+.App.first-layout .admin-statistic-card-stats-detail {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-items: center;
+    gap: 5rem;
+}
+
+.App.second-layout .admin-statistic-card-stats-detail {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    justify-items: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 5rem;
+}
+
+.App.first-layout .admin-statistic-card-line-chart-container {
+    margin-top: 50px;
+}
+
+.App.second-layout .admin-statistic-card-line-chart-container {
+    width: 70%;
+    margin-left: 10px;
+}
+
+.admin-statistic-card-bar-chart-detail {
+    width: 100%;
+}
+
+.admin-statistic-card-line-chart-detail {
+    width: 70%;
+}
+
+.admin-statistic-card-doughnut-detail {
+    width: 30%;
+}
+
+.admin-statistic-card-line-doughnut-container {
+    display: flex;
+}
+
+@media screen and (max-width: 960px) {
+    .App.first-layout .admin-statistic-card-stats-detail {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .admin-statistic-card-line-doughnut-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .admin-statistic-card-line-chart-detail {
+        width: 100%;
+    }
+
+    .admin-statistic-card-doughnut-detail {
+        width: 100%;
+    }
+
+    .App.second-layout .admin-statistic-container-detail {
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .App.second-layout .admin-statistic-card-stats-container {
+        width: 100%;
+    }
+
+    .App.second-layout .admin-statistic-card-line-chart-container {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .App.first-layout .admin-statistic-card-stats-detail {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}

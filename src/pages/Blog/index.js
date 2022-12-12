@@ -26,7 +26,8 @@ const Blog = () => {
     console.log(dataBlog);
     const ref = useRef(null);
     const a = document.querySelector(".blog_container_second_common");
-    const b = document.querySelector(".blog-detail-trending");
+    const b = document.querySelector(".blog_news_container");
+    console.log(b)
     const OutstandingBlog = {
         blogId: 1,
         blogTitle: "Những lưu ý quan trọng khi nuôi chó Husky",
@@ -347,63 +348,63 @@ const Blog = () => {
         },
     ];
 
-    let firstItem = 0;
-    let trendBlogs = [1, 2, 3];
+  let firstItem = 0;
+  let trendBlogs = [1, 2, 3];
 
-    return (
-        <MainLayout>
-            <div className="blog_container">
-                {dataBlog.length > 0 ? (
-                    <div className="blog_container_detail">
-                        <div className="blog_link_container">
-                            <p>
-                                <Link to="/" className="blog_link_">
-                                    Pet Care
-                                </Link>
-                                &nbsp; &#62; &nbsp;
-                                <Link to="/blog" className="blog_link_">
-                                    Blog
-                                </Link>
-                            </p>
-                        </div>
-
-                        <div className="blog_outstanding_container">
-                            <BlogOutstanding
-                                blogId={dataBlog[firstItem]._id}
-                                blogTitle={dataBlog[firstItem].title}
-                                blogImage={dataBlog[firstItem].blogImage}
-                                blogContent={dataBlog[firstItem].content}
-                                blogTime={dataBlog[firstItem].createdAt.slice(0, 10)}
-                                blogAuthorFirstName={dataBlog[firstItem].user.firstName}
-                                blogAuthorLastName={dataBlog[firstItem].user.lastName}
-                            />
-                        </div>
-                        <div className="blog-detail-trending">
-                            <BlogTrending />
-                        </div>
-
-                        <div className="blog_news_container">
-                            <BlogNews newsBlog={dataBlog} newRef={b} />
-                        </div>
-                    </div>
-                ) : (
-                    <div className="loading__">
-                        <div class="loading-container">
-                            <div class="loading"></div>
-                            <div id="loading-text">loading</div>
-                        </div>
-                    </div>
-                )}
+  return (
+    <MainLayout>
+      <div className="blog_container">
+        {dataBlog.length > 0 ? (
+          <div className="blog_container_detail">
+            <div className="blog_link_container">
+              <p>
+                <Link to="/" className="blog_link_">
+                  Pet Care
+                </Link>
+                &nbsp; &#62; &nbsp;
+                <Link to="/blog" className="blog_link_">
+                  Blog
+                </Link>
+              </p>
             </div>
-            <div className="blog_container_second">
-                <BlogBanner />
-                <div className="blog_container_second_common" ref={ref}>
-                    <BlogCommon />
-                </div>
-                <BlogNews2 newsBlog={newsBlog} trendingBlog={trendingBlog} newRef={a} />
+
+            <div className="blog_outstanding_container">
+              <BlogOutstanding
+                blogId={dataBlog[firstItem]._id}
+                blogTitle={dataBlog[firstItem].title}
+                blogImage={dataBlog[firstItem].blogImage}
+                blogContent={dataBlog[firstItem].content}
+                blogTime={dataBlog[firstItem].createdAt.slice(0, 10)}
+                blogAuthorFirstName={dataBlog[firstItem].user.firstName}
+                blogAuthorLastName={dataBlog[firstItem].user.lastName}
+              />
             </div>
-        </MainLayout>
-    );
+            <div className="blog-detail-trending">
+              <BlogTrending />
+            </div>
+
+            <div className="blog_news_container">
+              <BlogNews newsBlog={dataBlog} newRef={b} />
+            </div>
+          </div>
+        ) : (
+          <div className="loading__">
+            <div className="loading-container">
+              <div className="loading"></div>
+              <div id="loading-text">loading</div>
+            </div>
+          </div>
+        )}
+      </div>
+      <div className="blog_container_second">
+        <BlogBanner />
+        <div className="blog_container_second_common" ref={ref}>
+          <BlogCommon />
+        </div>
+        <BlogNews2 newsBlog={newsBlog} trendingBlog={trendingBlog} newRef={a} />
+      </div>
+    </MainLayout>
+  );
 };
 
 export default Blog;

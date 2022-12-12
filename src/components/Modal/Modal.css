@@ -1,0 +1,87 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99999;
+  width: 100vw;
+  height: 100vh;
+}
+.modal .modal-layer {
+  width: 100%;
+  height: 100%;
+  background: #00000023;
+}
+.modal .modal-container {
+  position: relative;
+  text-align: center;
+  max-width: 400px;
+  padding: 24px;
+  height: fit-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background: #fff;
+  border-radius: 8px;
+}
+.modal .modal-container .loading-delay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background-color: #dd3c72;
+  animation: mymove 4s linear;
+}
+@keyframes mymove {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes iconAnimate {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.modal .modal-container button {
+  border: none;
+  margin: 0 8px;
+  padding: 4px 8px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.modal .modal-container button:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.modal .modal-container button.confirm {
+  background: #dd3c72;
+  color: #fff;
+}
+.modal .modal-container button.cancel {
+  background: #dadada;
+  color: #000;
+}
+.modal .icon-modal > svg {
+  display: block;
+  margin: 0 auto;
+  animation: iconAnimate 0.5s ease-in;
+}
+.modal .icon-modal > svg.icon-modal-success {
+  color: #24d101;
+}
+.modal .icon-modal > svg.icon-modal-failure {
+  color: #ee3737;
+}
+.modal .icon-modal {
+  font-size: 6em;
+}

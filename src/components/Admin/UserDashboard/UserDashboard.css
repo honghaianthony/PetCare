@@ -1,3 +1,16 @@
+p.invalid {
+  color: #ff0000da !important;
+}
+input.invalid {
+  border: 1px solid #ff0000da !important;
+}
+textarea.invalid {
+  border: 1px solid #ff0000da !important;
+}
+p.invalid::before {
+  content: "";
+}
+
 .user-dashboard-container {
   padding-top: 100px;
   max-width: 1280px;
@@ -107,7 +120,7 @@
 }
 .user-dashboard-container .user-list-container .user-list table tbody td {
   padding: 16px 4px;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.25);
+  border-bottom: 1px solid #80808040;
 }
 .user-dashboard-container .user-list-container .user-list table tbody tr {
   position: relative;

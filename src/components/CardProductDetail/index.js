@@ -4,9 +4,15 @@ import { Link, NavLink } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import ProductDetailStar from "../ProductReviewStar/index";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const CardProductDetail = (props) => {
+  const navigate = useNavigate();
+    const handleGoTo=()=>{
+        navigate(`/product/${props.id}`);
+    }
     return (
+
         <>
             <Link
                 className=" card__product__container__"
@@ -65,22 +71,24 @@ const CardProductDetail = (props) => {
                 )}
                 <div className="Review_Buy_Product_container">
                     {/*button onClick navigate tới cái */}
-                    <NavLink
+                    {/* <div
                         className="quick_view_button_"
-                        to={`/product/${props.id}`}
+
                     >
-                        {/* <button className="quick_view_button_"> */}
+                        
                         <span className="quick_view_text">Xem nhanh</span>
                         <Icon
                             icon="emojione-monotone:eye"
                             color="white"
                             className="icon_quick_view"
                         />
-                        {/* </button> */}
-                    </NavLink>
-                    <NavLink
+                      
+                    </div> */}
+                    <div
                         className="add_to_cart_button"
-                        to={`/product/${props.id}`}
+                        // to={`/product/${props.id}`}
+                        onClick={handleGoTo}
+
                     >
                         {/* <button className="add_to_cart_button"> */}
                         <span className="add_to_cart_text">Mua ngay</span>
@@ -90,7 +98,7 @@ const CardProductDetail = (props) => {
                             className="add_to_cart_icon"
                         />
                         {/* </button> */}
-                    </NavLink>
+                    </div>
                 </div>
             </Link>
             <motion.div
@@ -155,22 +163,23 @@ const CardProductDetail = (props) => {
                         </div>
                     )}
                     <div className="Review_Buy_Product_container_second">
-                        <NavLink
+                        {/* <div
                             className="quick_view_button_second"
-                            to={`/product/${props.id}`}
+                            
                         >
-                            {/* <button className="quick_view_button_"> */}
+                            
                             <span className="quick_view_text">Xem nhanh</span>
                             <Icon
                                 icon="emojione-monotone:eye"
                                 color="white"
                                 className="icon_quick_view"
                             />
-                            {/* </button> */}
-                        </NavLink>
-                        <NavLink
+                            
+                        </div> */}
+                        <div
                             className="add_to_cart_button_second"
-                            to={`/product/${props.id}`}
+                            onClick={handleGoTo}
+                            // to={`/product/${props.id}`}
                         >
                             {/* <button className="add_to_cart_button"> */}
                             <span className="add_to_cart_text">Mua ngay</span>
@@ -180,7 +189,7 @@ const CardProductDetail = (props) => {
                                 className="add_to_cart_icon"
                             />
                             {/* </button> */}
-                        </NavLink>
+                        </div>
                     </div>
                 </Link>
             </motion.div>

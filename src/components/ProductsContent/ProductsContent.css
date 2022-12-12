@@ -315,6 +315,9 @@ input.checkbox__product_menu_checked {
   .ProductsContent__container_detail{
     flex-direction: column;
   }
+  .App.second-layout .ProductsContent__container_detail_second{
+    flex-direction: column;
+  }
   .App.first-layout .ProductsContent_menu_container{
     width:100%;
     padding-right: 0;
