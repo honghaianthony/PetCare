@@ -5,17 +5,21 @@ import { getAllUsers } from "../../../apis/userApi";
 import { useEffect, useState } from "react";
 import EditUserForm from "../UserDashboard/EditUser/EditUserForm";
 
-const UserDashboard = ({ needUpdate }) => {
+const UserDashboard = () => {
     const [users, setUsers] = useState([]);
+
+    const [visible, setVisible] = useState("");
+    const [needUpdate, setNeedUpdate] = useState(true);
     useEffect(() => {
         async function fetchData() {
             const response = await getAllUsers();
             setUsers(response.users);
         }
-        fetchData();
-    }, []);
-    console.log("user", users);
-    const [visible, setVisible] = useState("");
+        if (needUpdate) {
+            fetchData();
+            setNeedUpdate(false);
+        }
+    }, [needUpdate]);
 
     return (
         <>
@@ -172,7 +176,7 @@ const UserDashboard = ({ needUpdate }) => {
                                                                         )
                                                                     }
                                                                     submitSuccess={() =>
-                                                                        needUpdate(
+                                                                        setNeedUpdate(
                                                                             true
                                                                         )
                                                                     }

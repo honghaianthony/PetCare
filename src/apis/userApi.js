@@ -12,8 +12,8 @@ const updateUserRole = async (data) => {
     return await axiosInstance.put(`user/update-users-role`, data);
 };
 
-const updateUser = async (data) => {
-    return await axiosInstance.put(`user/update-user`, data);
+const updateUser = async (data, id) => {
+    return await axiosInstance.put(`user/update-user?id=${id}`, data);
 };
 
 const deleteUser = async (id) => {

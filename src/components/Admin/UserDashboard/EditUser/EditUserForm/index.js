@@ -19,7 +19,7 @@ export default function EditUserForm({ onClose, submitSuccess, idUser }) {
             setDataUser(resUser);
         }
         fetchData();
-    }, [idUser]);
+    }, []);
     console.log("dataUser", dataUser);
     const {
         register,
@@ -37,7 +37,7 @@ export default function EditUserForm({ onClose, submitSuccess, idUser }) {
                 },
                 dataUser.user._id
             );
-            // submitSuccess();
+            submitSuccess();
             onClose();
         }
         updateData();
