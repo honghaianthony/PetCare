@@ -1,0 +1,44 @@
+.image-not-found {
+    padding-top: 150px;
+    padding-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.App.first-layout .not-found-button {
+    background-color: #de135c;
+    opacity: 0.8;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-family: Roboto Flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.App.second-layout .not-found-button {
+    background-color: #193a6a;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-family: Roboto Flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.not-found-button a {
+    display: block;
+    text-align: center;
+}
+
+@media screen and (max-width: 960px) {
+    .image-not-found {
+        width: 100%;
+    }
+}
