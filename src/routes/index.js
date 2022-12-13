@@ -16,6 +16,7 @@ import {
     ManagerBlog,
     ManagerHistoryOrder,
     History,
+    Page404,
 } from "../pages";
 import { Service } from "../pages";
 import { About } from "../pages";
@@ -119,6 +120,7 @@ export default function App() {
                         element={<ManagerHistoryOrder />}
                     ></Route>
                 </Route>
+                <Route path="*" element={<Page404 />} />
             </Routes>
             <ToastContainer
                 position="bottom-right"
