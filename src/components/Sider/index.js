@@ -14,8 +14,9 @@ function Sider({ toggleSider, setToggleSider }) {
                     <div className="sider-logo">
                         <Link to="/">
                             <img
-                                src="https://play-lh.googleusercontent.com/i5TNQBpmzRzHDJcQnEJBROlbJ8BMeilPx06FXMwO7Z2QXHNQiyHv061FRqxFtF4GEn8"
-                                alt=""
+                                src="/assets/images/logo_new.png"
+                                alt="logo"
+                                className="navbar-logo-main"
                             />
                         </Link>
                     </div>

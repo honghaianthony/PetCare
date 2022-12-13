@@ -1,141 +1,139 @@
 .navbar-admin {
-  width: 100%;
-  position: fixed;
-  top: 0px;
-  font-size: 36px;
-  background-color: #ffffff;
-  z-index: 1;
-  color: #555;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    font-size: 36px;
+    background-color: #ffffff;
+    z-index: 1;
+    color: #555;
 }
 .navbar-admin-container {
-  height: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 16px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 16px;
 }
 .navbar-admin h1 {
-  margin: 0;
-  font-size: 24px;
+    margin: 0;
+    font-size: 24px;
 }
 .sider-container {
-  position: fixed;
-  z-index: 2;
-  width: 250px;
-  background-color: #fff;
-  min-height: 100vh;
-  left: 0px;
-  transition: all 0.2s;
+    position: fixed;
+    z-index: 2;
+    width: 250px;
+    background-color: #fff;
+    min-height: 100vh;
+    left: 0px;
+    transition: all 0.2s;
 }
 .sider-header {
-  position: relative;
+    position: relative;
 }
 .sider-header .sider-logo {
-  margin: 0 auto;
-  padding-top: 10px;
-  width: 70px;
+    padding-top: 10px;
 }
 .sider-header .sider-logo img {
-  border-radius: 5px;
+    border-radius: 5px;
 }
 
 .sider-header .toggle-hidden-sider {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 10px;
-  font-size: 32px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    font-size: 32px;
 }
 .sider-body {
-  width: 250px;
-  margin: 0;
-  top: 100px;
-  bottom: 0;
-  position: fixed;
-  overflow-y: auto;
-  overflow-x: hidden;
+    width: 250px;
+    margin: 0;
+    top: 100px;
+    bottom: 0;
+    position: fixed;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 .sider-body li {
-  margin-right: 20px;
-  margin-bottom: 0;
-  border-radius: 0 30px 30px 0;
-  color: #535252;
-  border-left: 5px solid #ffffff;
+    margin-right: 20px;
+    margin-bottom: 0;
+    border-radius: 0 30px 30px 0;
+    color: #535252;
+    border-left: 5px solid #ffffff;
 }
 .sider-body a {
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 10px 20px;
-  transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    transition: all 0.5s;
 }
 .sider-body li:hover {
-  color: #0d31ff;
-  border-left: 5px solid #0d31ff;
-  background-color: #dbdce7;
+    color: #0d31ff;
+    border-left: 5px solid #0d31ff;
+    background-color: #dbdce7;
 }
 .sider-body span {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 .sider-container .sider-body li.active {
-  color: #0d31ff;
-  border-left: 5px solid #0d31ff;
-  background-color: #dbdce7;
+    color: #0d31ff;
+    border-left: 5px solid #0d31ff;
+    background-color: #dbdce7;
 }
 ::-webkit-scrollbar {
-  width: 5px;
+    width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+    background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgb(209, 209, 209);
+    background: rgb(209, 209, 209);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+    background: #555;
 }
 .sider-container.hidden {
-  left: -250px;
+    left: -250px;
 }
 .sider-overlayer {
-  position: fixed;
-  z-index: 2;
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  opacity: 0.7;
-  top: 0;
-  transition: all 0.2s;
+    position: fixed;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.7;
+    top: 0;
+    transition: all 0.2s;
 }
 .sider-overlayer.hidden {
-  left: -100vw;
+    left: -100vw;
 }
 @media only screen and (max-width: 768px) {
-  .sider-container {
-    width: 200px;
-    left: 0px;
-    transition: all 0.2s;
-  }
-  .sider-header h2 {
-    font-size: 24px;
-  }
+    .sider-container {
+        width: 200px;
+        left: 0px;
+        transition: all 0.2s;
+    }
+    .sider-header h2 {
+        font-size: 24px;
+    }
 
-  .sider-body {
-    margin: 0;
-    text-align: center;
-    width: 200px;
-  }
-  .sider-body a {
-    flex-direction: column;
-    font-size: 14px;
-  }
-  .sider-body span {
-    margin-left: 0px;
-  }
-  .sider-container.hidden {
-    left: -200px;
-  }
+    .sider-body {
+        margin: 0;
+        text-align: center;
+        width: 200px;
+    }
+    .sider-body a {
+        flex-direction: column;
+        font-size: 14px;
+    }
+    .sider-body span {
+        margin-left: 0px;
+    }
+    .sider-container.hidden {
+        left: -200px;
+    }
 }
