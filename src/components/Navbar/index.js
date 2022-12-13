@@ -40,7 +40,13 @@ function Navbar() {
             <nav className="index-navbar-container">
                 <div className="index-navbar-desktop">
                     <div className="index-navbar-logo">
-                        <Link to="/">PetCare</Link>
+                        <Link to="/">
+                            <img
+                                src="/assets/images/logo_new.png"
+                                alt="logo"
+                                className="navbar-logo-main"
+                            />
+                        </Link>
                     </div>
                     <div
                         className="index-navbar-menu-icon"
