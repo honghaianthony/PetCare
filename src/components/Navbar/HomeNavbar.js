@@ -62,7 +62,13 @@ function HomeNavbar() {
             >
                 <div className="navbar-desktop">
                     <div className="navbar-logo">
-                        <Link to="/">PetCare</Link>
+                        <Link to="/">
+                            <img
+                                src="/assets/images/logo_new.png"
+                                alt="logo"
+                                className="navbar-logo-main"
+                            />
+                        </Link>
                     </div>
                     <div className="navbar-menu-icon" onClick={handleClick}>
                         <Icon icon={click ? "fa:close" : "fa:bars"} />

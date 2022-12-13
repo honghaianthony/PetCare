@@ -181,7 +181,7 @@
     .navbar-menu-icon {
         display: block;
         position: absolute;
-        top: 0;
+        margin-top: -45px;
         right: 0;
         transform: translate(-100%, 60%);
         font-size: 1.6rem;
