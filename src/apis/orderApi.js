@@ -1,19 +1,19 @@
 import axiosInstance from "./axiosInstance";
 
-const getAllBlogs = async () => {
-  return await axiosInstance.get("/blog/get-all-blogs");
+const getAllOrders = async () => {
+    return await axiosInstance.get("/order/get-all-orders");
+};
+
+const getOrderById = async (id) => {
+    return await axiosInstance.get(`/order/get-order-by-id?id=${id}`);
 };
 
 const createOrder = async (data) => {
-  return await axiosInstance.post("/order/create-order", data);
+    return await axiosInstance.post("/order/create-order", data);
 };
 
-const updateBlog = async (data, id) => {
-  return await axiosInstance.put(`/blog/update-blog?id=${id}`, data);
+const updateOrder = async (data) => {
+    return await axiosInstance.put(`/order/update-order`, data);
 };
 
-const deleteBlog = async (id) => {
-  return await axiosInstance.delete(`/blog/delete-blog?id=${id}`);
-};
-
-export { createOrder };
+export { createOrder, getAllOrders, getOrderById, updateOrder };
