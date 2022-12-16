@@ -16,6 +16,22 @@
   color: inherit;
 }
 
+.btn-switch-theme {
+  position: fixed;
+  z-index: 9999;
+  font-size: 3em;
+  animation: 3s infinite App-logo-spin;
+}
+
+.btn-switch-theme:hover {
+  cursor: pointer;
+}
+.App.first-layout .btn-switch-theme {
+  color: #de135c;
+}
+.App.second-layout .btn-switch-theme {
+  color: #124c5f;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
