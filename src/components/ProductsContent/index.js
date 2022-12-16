@@ -9,6 +9,7 @@ import MenuContentTab from "../MenuContentTab";
 import { motion, AnimatePresence } from "framer-motion";
 import { getAllCategories } from "../../apis/categoryApi";
 import { getAllProducts } from "../../apis/productApi";
+import CardProductDetail2 from "../CardProductDetail/index2";
 const ProductsContent = () => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
@@ -23,7 +24,6 @@ const ProductsContent = () => {
     }
     getProducts();
   }, []);
-  console.log("render", renderedProducts);
   const productList = [
     {
       id: 1,
@@ -98,7 +98,6 @@ const ProductsContent = () => {
 
   const [sort, setSort] = React.useState("default");
   const handleSort = (e) => {
-    console.log(e.target.value);
     switch (e.target.value) {
       case "tăng":
         setSort("ascRate");
@@ -315,7 +314,6 @@ const ProductsContent = () => {
 
               <div className="CardProductDetail_display">
                 {renderedProducts?.map((item, index) => {
-                  console.log("item", index);
                   return (
                     <CardProductDetail
                       key={index}
@@ -407,7 +405,7 @@ const ProductsContent = () => {
                 <AnimatePresence>
                   {product2?.map((item, index) => {
                     return (
-                      <CardProductDetail
+                      <CardProductDetail2
                         key={item.id}
                         id={item.id}
                         name={item.name}
