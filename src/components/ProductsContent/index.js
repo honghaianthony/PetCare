@@ -21,6 +21,7 @@ const ProductsContent = () => {
       const resProducts = await getAllProducts();
       setProducts(resProducts);
       setRenderedProducts(resProducts);
+      setProduct2(resProducts);
     }
     getProducts();
   }, []);
@@ -138,14 +139,14 @@ const ProductsContent = () => {
         : [...filterList, e]
     );
   };
-  React.useEffect(() => {
-    const filtered = products.filter((item) =>
-      filterList.includes(item.category._id)
-    );
+  // React.useEffect(() => {
+  //   const filtered = products.filter((item) =>
+  //     filterList.includes(item.category._id)
+  //   );
 
-    const sorted = filtered.sort(sortFunctions[sort]);
-    setRenderedProducts(sorted);
-  }, [filterList, sort]);
+  //   const sorted = filtered.sort(sortFunctions[sort]);
+  //   setRenderedProducts(sorted);
+  // }, [filterList, sort]);
   // layout2
   // const filterResult=(e)=>{
   //   switch (e.target.value){
@@ -153,24 +154,24 @@ const ProductsContent = () => {
   //   }
   // }
 
-  const [product2, setProduct2] = useState(productList);
+  const [product2, setProduct2] = useState([]);
   const [activeProduct2, setActiveProduct2] = useState("Tất cả sản phẩm");
   const handleClickTab = (idtab) => {
     setActiveProduct2(idtab);
   };
-  React.useEffect(() => {
-    if (activeProduct2 === "Tất cả sản phẩm") {
-      const filteredData = productList;
-      const sorted = filteredData.sort(sortFunctions[sort]);
-      setProduct2(sorted);
-    } else {
-      const filteredData = productList.filter((item) =>
-        activeProduct2.includes(item.category)
-      );
-      const sorted = filteredData.sort(sortFunctions[sort]);
-      setProduct2(sorted);
-    }
-  }, [activeProduct2, sort]);
+  // React.useEffect(() => {
+  //   if (activeProduct2 === "Tất cả sản phẩm") {
+  //     const filteredData = productList;
+  //     const sorted = filteredData.sort(sortFunctions[sort]);
+  //     setProduct2(sorted);
+  //   } else {
+  //     const filteredData = productList.filter((item) =>
+  //       activeProduct2.includes(item.category)
+  //     );
+  //     const sorted = filteredData.sort(sortFunctions[sort]);
+  //     setProduct2(sorted);
+  //   }
+  // }, [activeProduct2, sort]);
 
   // srollToTop
   const [showTopBtn, setShowTopBtn] = useState(false);
@@ -403,16 +404,16 @@ const ProductsContent = () => {
             {product2.length > 0 ? (
               <motion.div layout className="CardProductDetail_display">
                 <AnimatePresence>
-                  {product2?.map((item, index) => {
+                  {product2.map((item, index) => {
                     return (
                       <CardProductDetail2
-                        key={item.id}
-                        id={item.id}
-                        name={item.name}
-                        price={item.price}
-                        sale={item.sale}
-                        rate={item.rate}
-                        img={item.img}
+                        key={index}
+                        id={item.product._id}
+                        name={item.product.name}
+                        price={item.product.price}
+                        sale={item.product.sale}
+                        rate={item.product.rate}
+                        img={item.product.img}
                         numOfProductsSold={item.numOfProductsSold}
                       />
                     );

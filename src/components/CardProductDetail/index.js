@@ -99,7 +99,6 @@ const CardProductDetail = (props) => {
           </div>
         </div>
       </Link>
-      
     </>
   );
 };
