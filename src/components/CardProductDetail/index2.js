@@ -13,7 +13,6 @@ const CardProductDetail2 = (props) => {
   };
   return (
     <>
-      
       <motion.div
         layout
         animate={{ opacity: 1, scale: 1 }}

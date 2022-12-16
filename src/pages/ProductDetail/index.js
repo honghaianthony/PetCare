@@ -17,7 +17,6 @@ function ProductDetail() {
   useEffect(() => {
     async function getProduct() {
       const resProduct = await getProductDetailById(productId);
-      console.log(resProduct);
       setProduct(resProduct);
     }
     getProduct();
@@ -180,7 +179,7 @@ function ProductDetail() {
                           fontSize: "38px",
                         }}
                       >
-                        {product.product.price}đ
+                        {(product.product.price * 1).toLocaleString()}đ
                       </b>
                     </p>
                   ) : (
@@ -192,7 +191,7 @@ function ProductDetail() {
                             fontSize: "20px",
                           }}
                         >
-                          {product.product.price}đ
+                          {(product.product.price * 1).toLocaleString()}đ
                         </span>
                         <b
                           style={{
@@ -201,10 +200,11 @@ function ProductDetail() {
                             padding: "0px 20px",
                           }}
                         >
-                          {product.product.price -
-                            (product.product.price * product.product.sale) /
-                              100}
-                          .000đ
+                          {(
+                            product.product.price -
+                            (product.product.price * product.product.sale) / 100
+                          ).toLocaleString()}
+                          đ
                         </b>
                       </p>
                       <span
@@ -240,14 +240,15 @@ function ProductDetail() {
                       name="amount"
                       type="number"
                       min="1"
-                      max={product.product.numOfProductsInStock}
+                      max={product.numOfProductsInStock}
                       value={num}
+                      disabled
                       onChange={(e) => {
                         if (
                           (e.target.value * 10) / 10 >
-                          product.product.numOfProductsInStock
+                          product.numOfProductsInStock
                         )
-                          setNum(product.product.numOfProductsInStock);
+                          setNum(product.numOfProductsInStock);
                         else if ((e.target.value * 10) / 10 < 1) setNum(1);
                         else setNum((e.target.value * 10) / 10);
                       }}
@@ -255,8 +256,7 @@ function ProductDetail() {
                     <button
                       className="productDetail-description-two-amount-b2"
                       onClick={() => {
-                        if (num < product.product.numOfProductsInStock)
-                          setNum(num + 1);
+                        if (num < product.numOfProductsInStock) setNum(num + 1);
                       }}
                     >
                       +
@@ -324,7 +324,7 @@ function ProductDetail() {
                     </tr>
                     <tr>
                       <td>Kho hàng</td>
-                      <td>{product.product.numOfProductsInStock}</td>
+                      <td>{product.numOfProductsInStock}</td>
                     </tr>
                     <tr>
                       <td>Gửi từ</td>
@@ -394,8 +394,8 @@ function ProductDetail() {
               <div className="productDetail-description-two">
                 <h2>{product.product.name}</h2>
                 <p>
-                  <b>{product.product.numOfProductsReview}</b>{" "}
-                  <span>đánh giá</span> | <b>{product.numOfProductsSold}</b>{" "}
+                  <b>{product.numOfProductsReview}</b> <span>đánh giá</span> |{" "}
+                  <b>{product.product.numOfProductsSold}</b>{" "}
                   <span>sản phẩm đã bán</span>
                 </p>
                 <div className="productDetail-description-two-price">
@@ -407,7 +407,7 @@ function ProductDetail() {
                           fontSize: "38px",
                         }}
                       >
-                        {product.product.price}.000đ
+                        {(product.product.price * 1).toLocaleString()}đ
                       </b>
                     </p>
                   ) : (
@@ -419,7 +419,7 @@ function ProductDetail() {
                             fontSize: "20px",
                           }}
                         >
-                          {product.product.price}.000đ
+                          {(product.product.price * 1).toLocaleString()}đ
                         </span>
                         <b
                           style={{
@@ -428,10 +428,11 @@ function ProductDetail() {
                             padding: "0px 20px",
                           }}
                         >
-                          {product.product.price -
-                            (product.product.price * product.product.sale) /
-                              100}
-                          .000đ
+                          {(
+                            product.product.price -
+                            (product.product.price * product.product.sale) / 100
+                          ).toLocaleString()}
+                          đ
                         </b>
                       </p>
                       <span
@@ -467,14 +468,15 @@ function ProductDetail() {
                       name="amount"
                       type="number"
                       min="1"
-                      max={product.product.numOfProductsInStock}
+                      max={product.numOfProductsInStock}
                       value={num}
+                      disabled
                       onChange={(e) => {
                         if (
                           (e.target.value * 10) / 10 >
-                          product.product.numOfProductsInStock
+                          product.numOfProductsInStock
                         )
-                          setNum(product.product.numOfProductsInStock);
+                          setNum(product.numOfProductsInStock);
                         else if ((e.target.value * 10) / 10 < 1) setNum(1);
                         else setNum((e.target.value * 10) / 10);
                       }}
@@ -482,8 +484,7 @@ function ProductDetail() {
                     <button
                       className="productDetail-description-two-amount-b2"
                       onClick={() => {
-                        if (num < product.product.numOfProductsInStock)
-                          setNum(num + 1);
+                        if (num < product.numOfProductsInStock) setNum(num + 1);
                       }}
                     >
                       +
@@ -495,7 +496,27 @@ function ProductDetail() {
                     <Icon icon="clarity:shopping-cart-line" width="42" />
                     &nbsp; Thêm vào giỏ hàng
                   </button>
-                  <button className="productDetail-description-two-buy-b2">
+                  <button
+                    className="productDetail-description-two-buy-b2"
+                    onClick={() => {
+                      sessionStorage.setItem(
+                        "productList",
+                        JSON.stringify([
+                          {
+                            productId,
+                            amount: num,
+                            name: product.product.name,
+                            img: product.product.img,
+                            price:
+                              product.product.price *
+                              (1 - product.product.sale) *
+                              num,
+                          },
+                        ])
+                      );
+                      navigate("/payment");
+                    }}
+                  >
                     Mua ngay
                   </button>
                 </div>
@@ -531,7 +552,7 @@ function ProductDetail() {
                     </tr>
                     <tr>
                       <td>Kho hàng</td>
-                      <td>{product.product.numOfProductsInStock}</td>
+                      <td>{product.numOfProductsInStock}</td>
                     </tr>
                     <tr>
                       <td>Gửi từ</td>
