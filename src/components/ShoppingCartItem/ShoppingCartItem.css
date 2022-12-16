@@ -115,11 +115,16 @@
   border-left: none;
 }
 .ShoppingCartItem-Delete {
+  color: #ff0000;
   background-color: transparent;
   border: none;
-  font-size: 27px;
+  font-size: 24px;
   padding: 0px;
   cursor: pointer;
+}
+.ShoppingCartItem-Delete:hover {
+  color: #ff0000b0;
+  transform: scale(1.1);
 }
 @media screen and (min-width: 1300px) {
   .first-layout.ShoppingCartItem-Content {
