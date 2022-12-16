@@ -193,42 +193,47 @@ const ShoppingCart = () => {
             <span>Xóa</span>
           </div>
           <div className="ShoppingCart-Body">
-            {data.map((item, index) => {
-              return (
-                <ShoppingCartItem
-                  key={index}
-                  id={item._id}
-                  name={item.name}
-                  img={item.img}
-                  price={item.price - (item.price * item.sale) / 100}
-                  numOfProductsInStock={999999999999}
-                  numOfProductsInCart={item.amount}
-                  valueCheck={stateSelect[index]}
-                  onSelect={() => {
-                    const temp = [...stateSelect];
-                    temp[index] = !temp[index];
-                    setStateSelect(temp);
-                  }}
-                  onAmountChange={(value) => {
-                    const temp = [...data];
-                    temp[index].amount = value;
-                    setData(temp);
-                  }}
-                  onDelete={(id) => {
-                    let tempData = [],
-                      tempStateSelect = [];
-                    for (let i = 0; i < stateSelect.length; ++i) {
-                      if (data[i]._id !== id) {
-                        tempData.push(data[i]);
-                        tempStateSelect.push(stateSelect[i]);
+            {data.length === 0 ? (
+              <h2 style={{ textAlign: "center" }}>Giỏ hàng của bạn trống</h2>
+            ) : (
+              data.map((item, index) => {
+                return (
+                  <ShoppingCartItem
+                    key={index}
+                    id={item._id}
+                    name={item.name}
+                    img={item.img}
+                    price={item.price - (item.price * item.sale) / 100}
+                    numOfProductsInStock={999999999999}
+                    numOfProductsInCart={item.amount}
+                    valueCheck={stateSelect[index]}
+                    onSelect={() => {
+                      const temp = [...stateSelect];
+                      temp[index] = !temp[index];
+                      setStateSelect(temp);
+                    }}
+                    onAmountChange={(value) => {
+                      const temp = [...data];
+                      temp[index].amount = value;
+                      setData(temp);
+                    }}
+                    onDelete={(id) => {
+                      let tempData = [],
+                        tempStateSelect = [];
+                      for (let i = 0; i < stateSelect.length; ++i) {
+                        if (data[i]._id !== id) {
+                          tempData.push(data[i]);
+                          tempStateSelect.push(stateSelect[i]);
+                        }
                       }
-                    }
-                    setData(tempData);
-                    setStateSelect(tempStateSelect);
-                  }}
-                />
-              );
-            })}
+                      setData(tempData);
+                      setStateSelect(tempStateSelect);
+                    }}
+                  />
+                );
+              })
+            )}
+            {}
           </div>
           <div className="ShoppingCart-SumContainer">
             <div className="ShoppingCart-Sum">
@@ -262,22 +267,21 @@ const ShoppingCart = () => {
                     for (let i = 0; i < stateSelect.length; ++i) {
                       if (stateSelect[i])
                         productList.push({
+                          _id: data[i]._id,
                           productId: data[i].productId,
                           amount: data[i].amount,
                           name: data[i].name,
                           img: data[i].img,
-                          price:
-                            (data[i].price *
-                              (100 - data[i].sale) *
-                              data[i].amount) /
-                            100,
+                          price: (data[i].price * (100 - data[i].sale)) / 100,
                         });
                     }
-                    sessionStorage.setItem(
-                      "productList",
-                      JSON.stringify(productList)
-                    );
-                    navigate("/payment");
+                    if (productList.length !== 0) {
+                      sessionStorage.setItem(
+                        "productList",
+                        JSON.stringify(productList)
+                      );
+                      navigate("/payment");
+                    }
                   }}
                 >
                   Mua ngay
