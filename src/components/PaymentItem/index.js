@@ -12,7 +12,7 @@ const PaymentItem = (props) => {
         <p>{props.name}</p>
         <div>
           <span>x{props.numOfProductsInCart}</span>
-          <b>{props.price}đ</b>
+          <b>{props.price.toLocaleString()}đ</b>
         </div>
       </div>
     </div>

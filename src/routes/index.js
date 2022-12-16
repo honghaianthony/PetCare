@@ -29,38 +29,32 @@ import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { reload } from "../redux/user.slice";
 import PrivateRoute from "./PrivateRoute";
+import Modal from "../components/Modal";
 
 export default function App() {
-    const dispatch = useDispatch();
-    //dispatch action reload
-    useEffect(() => {
-        dispatch(reload());
-    }, [dispatch]);
+  const dispatch = useDispatch();
+  //dispatch action reload
+  useEffect(() => {
+    dispatch(reload());
+  }, [dispatch]);
 
-    return (
-        <Router>
-            <Routes>
-                <Route exact path="/" element={<Home />}></Route>
-                <Route exact path="/about" element={<About />}></Route>
-                <Route exact path="/service" element={<Service />}></Route>
-                <Route exact path="/login" element={<Login />}></Route>
-                <Route exact path="/register" element={<Register />}></Route>
-                <Route
-                    exact
-                    path="/product"
-                    element={<Products />}
-                ></Route>{" "}
-                <Route
-                    exact
-                    path={`/product/:productId`}
-                    element={<ProductDetail />}
-                ></Route>
-                <Route
-                    exact
-                    path={`/shopping-cart`}
-                    element={<ShoppingCart />}
-                ></Route>
-                {/* <Route
+  return (
+    <Router>
+      <Routes>
+        <Route exact path="/test-modal" element={<Modal />}></Route>
+        <Route exact path="/" element={<Home />}></Route>
+        <Route exact path="/about" element={<About />}></Route>
+        <Route exact path="/service" element={<Service />}></Route>
+        <Route exact path="/login" element={<Login />}></Route>
+        <Route exact path="/register" element={<Register />}></Route>
+        <Route exact path="/product" element={<Products />}></Route>{" "}
+        <Route
+          exact
+          path={`/product/:productId`}
+          element={<ProductDetail />}
+        ></Route>
+        <Route exact path={`/shopping-cart`} element={<ShoppingCart />}></Route>
+        {/* <Route
                     exact
                     path="/admin/product"
                     element={<ManagerProduct />}

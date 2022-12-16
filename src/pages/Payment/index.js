@@ -218,11 +218,11 @@ function Payment() {
                 <div className="Payment-Content-Product-Summary">
                   <p>
                     <span>Tổng tiền sản phẩm:</span>
-                    <span>{sum}</span>
+                    <span>{sum.toLocaleString()}</span>
                   </p>
                   <p>
                     <span>Phí vận chuyển:</span>
-                    <span>{shippingFee === 0 ? <>Free</> : <>32.000đ</>}</span>
+                    <span>{shippingFee === 0 ? <>Free</> : <>32,000đ</>}</span>
                   </p>
                   <div>
                     <span>Tổng thanh toán:</span>

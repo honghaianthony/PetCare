@@ -1,76 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import MainLayout from "../../layouts/MainLayout";
 import "./ShoppingCart.css";
 import ShoppingCartItem from "../../components/ShoppingCartItem";
 import { Icon } from "@iconify/react";
 import CardProductDetail from "../../components/CardProductDetail";
+import { getMyCart } from "../../apis/cartApi";
 
 const ShoppingCart = () => {
-  const item = [
-    {
-      productId: "1",
-      name: "Hạt thức ăn dinh dưỡng cấp cao cho mèo.",
-      img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
-      price: 500,
-      sale: 10,
-      numOfProductsInStock: 427,
-      numOfProductsInCart: 1,
-    },
-    {
-      productId: "2",
-      name: "Hạt thức ăn dinh dưỡng cấp cao cho mèo.",
-      img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
-      price: 500,
-      sale: 10,
-      numOfProductsInStock: 427,
-      numOfProductsInCart: 1,
-    },
-    {
-      productId: "3",
-      name: "Hạt thức ăn dinh dưỡng cấp cao cho mèo.",
-      img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
-      price: 500,
-      sale: 10,
-      numOfProductsInStock: 427,
-      numOfProductsInCart: 1,
-    },
-    {
-      productId: "4",
-      name: "Hạt thức ăn dinh dưỡng cấp cao cho mèo.",
-      img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
-      price: 500,
-      sale: 10,
-      numOfProductsInStock: 427,
-      numOfProductsInCart: 1,
-    },
-    {
-      productId: "5",
-      name: "Hạt thức ăn dinh dưỡng cấp cao cho mèo.",
-      img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
-      price: 500,
-      sale: 10,
-      numOfProductsInStock: 427,
-      numOfProductsInCart: 1,
-    },
-    {
-      productId: "6",
-      name: "Hạt thức ăn dinh dưỡng cấp cao cho mèo.",
-      img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
-      price: 500,
-      sale: 10,
-      numOfProductsInStock: 427,
-      numOfProductsInCart: 1,
-    },
-    {
-      productId: "7",
-      name: "Hạt thức ăn dinh dưỡng cấp cao cho mèo.",
-      img: "https://i.postimg.cc/g0VFn1kb/p1.jpg",
-      price: 500,
-      sale: 10,
-      numOfProductsInStock: 427,
-      numOfProductsInCart: 1,
-    },
-  ];
+  const navigate = useNavigate();
   const product = [
     {
       id: 1,
@@ -188,11 +126,35 @@ const ShoppingCart = () => {
       numOfProductsInCart: 1,
     },
   ];
+  useEffect(() => {
+    async function fetchData() {
+      const res = await getMyCart();
+      setData(res);
+      setStateSelect(Array(res.length).fill(false));
+    }
+    fetchData();
+  }, []);
+
   const [chooseAll, setChooseAll] = useState(false);
   const [sumPrice, setSumPrice] = useState(0);
-  const arr1 = Array(item.length).fill(false);
-  const [listC, setListC] = useState([...arr1]);
-  const [manageItem, setManageItem] = useState([...item]);
+  const [stateSelect, setStateSelect] = useState([]);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    let sumTemp = 0;
+    for (let i = 0; i < stateSelect.length; ++i)
+      if (stateSelect[i])
+        sumTemp +=
+          (data[i].price * (100 - data[i].sale) * data[i].amount) / 100;
+    setSumPrice(sumTemp);
+
+    for (let i = 0; i < stateSelect.length; ++i)
+      if (!stateSelect[i]) {
+        setChooseAll(false);
+        return;
+      }
+    setChooseAll(true);
+  }, [stateSelect, data]);
 
   return (
     <MainLayout>
@@ -215,24 +177,12 @@ const ShoppingCart = () => {
                 id="ShoppingCart-CheckboxAll"
                 className="ShoppingCart-Checkbox"
                 checked={chooseAll}
-                onChange={() => {
-                  let temp = !chooseAll;
-                  if (temp === false) {
-                    setChooseAll(temp);
-                    setSumPrice(0);
-                  } else {
-                    setChooseAll(temp);
-                    let s = 0;
-                    for (let i = 0; i < manageItem.length; ++i) {
-                      s +=
-                        manageItem[i].numOfProductsInCart *
-                        (1 - manageItem[i].sale / 100) *
-                        manageItem[i].price;
-                    }
-                    setSumPrice(s);
-                  }
-                  let arrTemp = Array(item.length).fill(temp);
-                  setListC([...arrTemp]);
+                onClick={() => {
+                  let temp = [];
+                  for (let i = 0; i < stateSelect.length; ++i)
+                    if (chooseAll) temp.push(false);
+                    else temp.push(true);
+                  setStateSelect(temp);
                 }}
               />
               <span>Sản phẩm</span>
@@ -243,50 +193,39 @@ const ShoppingCart = () => {
             <span>Xóa</span>
           </div>
           <div className="ShoppingCart-Body">
-            {manageItem.map((item, index) => {
+            {data.map((item, index) => {
               return (
                 <ShoppingCartItem
                   key={index}
+                  id={item._id}
                   name={item.name}
                   img={item.img}
                   price={item.price - (item.price * item.sale) / 100}
-                  numOfProductsInStock={item.numOfProductsInStock}
-                  numOfProductsInCart={item.numOfProductsInCart}
-                  handleChange={(checked, num) => {
-                    const arrTemp1 = [...listC];
-                    arrTemp1[index] = checked;
-
-                    const arrTemp2 = [...manageItem];
-                    arrTemp2[index].numOfProductsInCart = num;
-                    setManageItem([...arrTemp2]);
-
-                    setListC(arrTemp1);
-                    let i = 0;
-                    for (; i < arrTemp1.length; i++) {
-                      if (arrTemp1[i] === false) {
-                        setChooseAll(false);
-                        console.log("ok sai");
-                        break;
-                      }
-                    }
-                    console.log(i);
-                    if (i === arrTemp1.length) {
-                      setChooseAll(true);
-                      console.log("ok đúng");
-                    }
-
-                    let s = 0;
-                    for (let i = 0; i < arrTemp1.length; ++i) {
-                      if (arrTemp1[i] === true) {
-                        s +=
-                          manageItem[i].numOfProductsInCart *
-                          (manageItem[i].price -
-                            (manageItem[i].price * manageItem[i].sale) / 100);
-                      }
-                    }
-                    setSumPrice(s);
+                  numOfProductsInStock={999999999999}
+                  numOfProductsInCart={item.amount}
+                  valueCheck={stateSelect[index]}
+                  onSelect={() => {
+                    const temp = [...stateSelect];
+                    temp[index] = !temp[index];
+                    setStateSelect(temp);
                   }}
-                  valueCheck={listC[index]}
+                  onAmountChange={(value) => {
+                    const temp = [...data];
+                    temp[index].amount = value;
+                    setData(temp);
+                  }}
+                  onDelete={(id) => {
+                    let tempData = [],
+                      tempStateSelect = [];
+                    for (let i = 0; i < stateSelect.length; ++i) {
+                      if (data[i]._id !== id) {
+                        tempData.push(data[i]);
+                        tempStateSelect.push(stateSelect[i]);
+                      }
+                    }
+                    setData(tempData);
+                    setStateSelect(tempStateSelect);
+                  }}
                 />
               );
             })}
@@ -299,24 +238,12 @@ const ShoppingCart = () => {
                   id="ShoppingCart-CheckboxAll2"
                   className="ShoppingCart-Checkbox"
                   checked={chooseAll}
-                  onChange={() => {
-                    let temp = !chooseAll;
-                    if (temp === false) {
-                      setChooseAll(temp);
-                      setSumPrice(0);
-                    } else {
-                      setChooseAll(temp);
-                      let s = 0;
-                      for (let i = 0; i < manageItem.length; ++i) {
-                        s +=
-                          manageItem[i].numOfProductsInCart *
-                          (1 - manageItem[i].sale / 100) *
-                          manageItem[i].price;
-                      }
-                      setSumPrice(s);
-                    }
-                    let arrTemp = Array(item.length).fill(temp);
-                    setListC([...arrTemp]);
+                  onClick={() => {
+                    let temp = [];
+                    for (let i = 0; i < stateSelect.length; ++i)
+                      if (chooseAll) temp.push(false);
+                      else temp.push(true);
+                    setStateSelect(temp);
                   }}
                 />
                 <span>Chọn tất cả</span>
@@ -324,9 +251,37 @@ const ShoppingCart = () => {
               <div>
                 <div>
                   <span>Tổng thanh toán: </span>
-                  <span className="ShoppingCart-Sum-Price">{sumPrice}đ</span>
+                  <span className="ShoppingCart-Sum-Price">
+                    {sumPrice.toLocaleString()}đ
+                  </span>
                 </div>
-                <button className="ShoppingCart-ButtonBuy">Mua ngay</button>
+                <button
+                  className="ShoppingCart-ButtonBuy"
+                  onClick={() => {
+                    const productList = [];
+                    for (let i = 0; i < stateSelect.length; ++i) {
+                      if (stateSelect[i])
+                        productList.push({
+                          productId: data[i].productId,
+                          amount: data[i].amount,
+                          name: data[i].name,
+                          img: data[i].img,
+                          price:
+                            (data[i].price *
+                              (100 - data[i].sale) *
+                              data[i].amount) /
+                            100,
+                        });
+                    }
+                    sessionStorage.setItem(
+                      "productList",
+                      JSON.stringify(productList)
+                    );
+                    navigate("/payment");
+                  }}
+                >
+                  Mua ngay
+                </button>
               </div>
             </div>
           </div>
@@ -335,7 +290,7 @@ const ShoppingCart = () => {
           <h3>Sản phẩm khác</h3>
           <div className="ShoppingCart_display">
             {product.map((item, index) => {
-              if (index < 12)
+              if (index < 4)
                 return (
                   <CardProductDetail
                     key={item.id}
