@@ -6,11 +6,14 @@ import ProductDetailReview from "../../components/ProductDetailReview";
 import ProductDetailStar from "../../components/ProductReviewStar";
 import { getProductDetailById } from "../../apis/productDetailApi";
 import "./ProductDetail.css";
+import { addCart } from "../../apis/cartApi";
 function ProductDetail() {
   const { productId } = useParams();
   const [status, setStatus] = useState(0);
   const [num, setNum] = useState(1);
   const [product, setProduct] = useState("");
+
+  const [addCartSuccess, setAddCartSuccess] = useState(2);
 
   const navigate = useNavigate();
 
@@ -264,7 +267,23 @@ function ProductDetail() {
                   </div>
                 </div>
                 <div className="productDetail-description-two-buy">
-                  <button className="productDetail-description-two-buy-b1">
+                  <button
+                    className={`productDetail-description-two-buy-b1 ${
+                      addCartSuccess === 1
+                        ? "add-cart-success"
+                        : addCartSuccess === 3
+                        ? "add-cart-fail"
+                        : ""
+                    }`}
+                    onClick={async () => {
+                      //Fail
+                      // setAddCartSuccess(3);
+                      //Success
+                      await addCart({ productId, amount: num });
+                      setAddCartSuccess(1);
+                      setTimeout(() => setAddCartSuccess(2), 2000);
+                    }}
+                  >
                     <Icon icon="clarity:shopping-cart-line" width="42" />
                     &nbsp; Thêm vào giỏ hàng
                   </button>
@@ -492,7 +511,23 @@ function ProductDetail() {
                   </div>
                 </div>
                 <div className="productDetail-description-two-buy">
-                  <button className="productDetail-description-two-buy-b1">
+                  <button
+                    className={`productDetail-description-two-buy-b1 ${
+                      addCartSuccess === 1
+                        ? "add-cart-success"
+                        : addCartSuccess === 3
+                        ? "add-cart-fail"
+                        : ""
+                    }`}
+                    onClick={async () => {
+                      //Fail
+                      // setAddCartSuccess(3);
+                      //Success
+                      await addCart({ productId, amount: num });
+                      setAddCartSuccess(1);
+                      setTimeout(() => setAddCartSuccess(2), 2000);
+                    }}
+                  >
                     <Icon icon="clarity:shopping-cart-line" width="42" />
                     &nbsp; Thêm vào giỏ hàng
                   </button>
