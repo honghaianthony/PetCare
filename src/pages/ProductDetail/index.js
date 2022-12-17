@@ -276,9 +276,6 @@ function ProductDetail() {
                         : ""
                     }`}
                     onClick={async () => {
-                      //Fail
-                      // setAddCartSuccess(3);
-                      //Success
                       await addCart({ productId, amount: num });
                       setAddCartSuccess(1);
                       setTimeout(() => setAddCartSuccess(2), 2000);
