@@ -1,91 +1,85 @@
-.App.first-layout .Service__Care__container{
-    padding:15px 10px;
+.App.first-layout .Service__Care__container {
+    padding: 15px 10px;
 }
-.App.first-layout .Service__Care__container__detail{
+.App.first-layout .Service__Care__container__detail {
     max-width: 1280px;
     margin: 0 auto;
-    border:1px solid #DE135C;
-    padding:20px;
+    border: 1px solid #de135c;
+    padding: 20px;
     border-radius: 5px;
     font-size: 20px;
     font-family: "Nunito", sans-serif;
 }
-.App.first-layout .Service__Care__container__detail{
-    display:flex;
-    width:100%;
+.App.first-layout .Service__Care__container__detail {
+    display: flex;
+    width: 100%;
 }
-.App.second-layout .Service__Care__container{
-    display:none;
+.App.second-layout .Service__Care__container {
+    display: none;
 }
-.App.second-layout .Service__Care__container__detail{
-    display:none;
-
+.App.second-layout .Service__Care__container__detail {
+    display: none;
 }
-.Service__Care__container__left{
-    width:70%;
+.Service__Care__container__left {
+    width: 70%;
     margin-right: 20px;
 }
-.Service__Care__container__right{
-    width:30%;
+.Service__Care__container__right {
+    width: 30%;
 }
-.Care_service{
+.Care_service {
     border-radius: 5px;
 }
-.underline__service__care{
-    border-bottom: 2px solid #DE135C;
-    width:100%;
+.underline__service__care {
+    border-bottom: 2px solid #de135c;
+    width: 100%;
     margin-bottom: 10px;
 }
-@media screen and (max-width: 1024px){
-    .App.first-layout .Service__Care__container__detail{
+@media screen and (max-width: 1024px) {
+    .App.first-layout .Service__Care__container__detail {
         flex-direction: column;
     }
-    .Service__Care__container__detail p{
+    .Service__Care__container__detail p {
         font-size: 24px;
         margin-bottom: 10px;
     }
-    .Service__Care__container__left{
+    .Service__Care__container__left {
         width: 100%;
         margin-bottom: 10px;
     }
-    .Service__Care__container__right{
-        width:100%;
+    .Service__Care__container__right {
+        width: 100%;
         text-align: center;
-
     }
-    .Service__Care__content__text{
+    .Service__Care__content__text {
         font-size: 26px;
     }
-    .Care_service{
-        /* height: 400px;
-    width: 100%; */
-    width: 400px;
-    height: 300px;
+    .Care_service {
+        width: 400px;
+        height: 300px;
     }
 }
-@media screen and (max-width: 600px){
-    .Service__Care__content__text{
+@media screen and (max-width: 600px) {
+    .Service__Care__content__text {
         font-size: 20px;
     }
-    .Service__Care__container__detail p{
+    .Service__Care__container__detail p {
         font-size: 16px;
-     
     }
-    .Care_service{
+    .Care_service {
         width: 300px;
         height: 250px;
     }
 }
-@media screen and (max-width: 480px){
-    .Service__Care__content__text{
+@media screen and (max-width: 480px) {
+    .Service__Care__content__text {
         font-size: 16px;
-
     }
-    .Service__Care__container__detail p{
+    .Service__Care__container__detail p {
         font-size: 14px;
     }
-    .Care_service{
+    .Care_service {
         width: 250px;
-     height: 200px;
+        height: 200px;
     }
 }

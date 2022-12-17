@@ -1,15 +1,12 @@
-.MenuProductLayout2_container{
+.MenuProductLayout2_container {
     display: flex;
-    /* align-items: center;
-     */
     flex-direction: column;
     background-color: transparent;
-  font-family: "Nunito", sans-serif;
-
+    font-family: "Nunito", sans-serif;
 }
-.Menu_item_content_product_second{
-    width:100%;
-    border:none;
+.Menu_item_content_product_second {
+    width: 100%;
+    border: none;
     transition: all 0.5s;
     text-align: start;
     align-items: center;
@@ -18,76 +15,76 @@
     cursor: pointer;
     margin-top: 10px;
     font-size: 20px;
-  }
-
-.Menu_item_content_product_second:hover{
-    font-weight: bold;
-    color: #193A6A;
-
 }
-.active_menu_product2{
+
+.Menu_item_content_product_second:hover {
     font-weight: bold;
-    color: #193A6A;
-    /* border-left: 5px solid #193A6A; */
-    /* position: relative; */
-    /* border-left: 5px solid #193A6A; */
+    color: #193a6a;
+}
+.active_menu_product2 {
+    font-weight: bold;
+    color: #193a6a;
     position: relative;
     transition: 0.5s;
 }
-.active_menu_product2::after{
+.active_menu_product2::after {
     content: "";
     position: absolute;
-    background-color: #193A6A;
+    background-color: #193a6a;
     transition: 0.3s;
-    height:35px;
-    left:0;
-    width:5px;
+    height: 35px;
+    left: 0;
+    width: 5px;
     transition: 0.5s;
-    top:0;
+    top: 0;
 }
 
-.active_MenuContentTab{
-    display:block;
+.active_MenuContentTab {
+    display: block;
 }
 
 .Menu_item_content_product_second {
-    padding:0;
+    padding: 0;
     padding-left: 8px;
     position: relative;
 }
 
-.Menu_item_content_product_second span{
+.Menu_item_content_product_second span {
     padding-left: 5px;
 }
 
-.icon_menu_product_second{
+.icon_menu_product_second {
     font-size: 32px;
     margin-right: 5px;
 }
-@media screen and (max-width: 1024px){
-    .Menu_item_content_product_second{
+@media screen and (max-width: 1024px) {
+    .Menu_item_content_product_second {
         margin-top: 15px;
         font-size: 30px;
     }
-    .header_menu_product_second{
+    .header_menu_product_second {
         font-size: 30px;
     }
-    #rate2, #price2, #numOfProductsSold2{
+    #rate2,
+    #price2,
+    #numOfProductsSold2 {
         font-size: 30px;
         margin-top: 15px;
     }
     option.option_sort {
         font-size: 24px;
     }
-    .Sort_product_item_left_second p{
+    .Sort_product_item_left_second p {
         font-size: 30px;
     }
 }
-@media screen and (max-width: 600px){
-    .Sort_product_item_container_{
+@media screen and (max-width: 600px) {
+    .Sort_product_item_container_ {
         width: 33.33%;
     }
-    #rate2, #price2, #numOfProductsSold2 {
+    #rate2,
+    #price2,
+    #numOfProductsSold2 {
         font-size: 16px;
         margin-top: 15px;
         width: 100%;

@@ -1,4 +1,3 @@
-/* layout 1 */
 .App.first-layout .service__banner_container {
     background: url("../../../public/assets/images/Service/Banner_service.jpg");
     background-repeat: no-repeat;
@@ -12,17 +11,17 @@
     max-width: 1280px;
     margin: 0 auto;
     font-family: "Nunito", sans-serif;
-    /* overflow: hidden; */
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.App.first-layout .service__banner_container_second{
-    display:none;
+.App.first-layout .service__banner_container_second {
+    display: none;
 }
-.App.first-layout .service__banner_container_detail_second{
-    display:none;
+.App.first-layout .service__banner_container_detail_second {
+    display: none;
 }
 .App.first-layout .service__banner_container h1 {
     margin: 0;
@@ -31,19 +30,15 @@
     color: #2132ce;
     text-shadow: 0px 20px 8px #ccc;
 }
-/* layout 1 */
 
-/* layout 2 */
-.App.second-layout .service__banner_container{
-    display:none;
+.App.second-layout .service__banner_container {
+    display: none;
 }
 .App.second-layout .service__banner_container_detail_ {
     display: none;
 }
-/* .App.second-layout .service__banner_container h1 {
-    display: none;
-} */
-.App.second-layout .service__banner_container_second{
+
+.App.second-layout .service__banner_container_second {
     background: url("../../../public/assets/images/Service/banner_service_2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -52,22 +47,22 @@
     margin-top: 129px;
 }
 
-.App.second-layout .service__banner_container_detail_second{
+.App.second-layout .service__banner_container_detail_second {
     height: 500px;
     max-width: 1280px;
     margin: 0 auto;
     font-family: "Nunito", sans-serif;
     display: flex;
     align-items: center;
-    /* flex-direction: column; */
+
     justify-content: space-between;
     width: 100%;
 }
-.App.second-layout .service__banner_container_detail_second_left{
-    width:50%;
+.App.second-layout .service__banner_container_detail_second_left {
+    width: 50%;
 }
-.App.second-layout .service__banner_container_detail_second_left_top h1{
-    color: #193A6A;
+.App.second-layout .service__banner_container_detail_second_left_top h1 {
+    color: #193a6a;
     font-weight: 800;
     font-size: 80px;
     margin: 0;
@@ -76,17 +71,16 @@
     position: relative;
     height: 60px;
     border-radius: 50px;
-    background-color: #193A6A;
+    background-color: #193a6a;
     padding-left: 75px;
     display: flex;
     align-items: center;
     margin-bottom: 10px;
 }
-.App.second-layout .service__banner_container_detail_second_left_middle h2{
-    color:#fff;
+.App.second-layout .service__banner_container_detail_second_left_middle h2 {
+    color: #fff;
     margin: 0;
-    font-size:36px;
-
+    font-size: 36px;
 }
 .App.second-layout .service__banner_container_detail_second_left_middle_img {
     position: absolute;
@@ -95,110 +89,107 @@
     width: 100px;
     height: 100px;
 }
-.App.second-layout .service__banner_container_detail_second_left_bottom_button{
+.App.second-layout .service__banner_container_detail_second_left_bottom_button {
     border-radius: 10px;
     border: none;
-    background-color: #124C5F;
+    background-color: #124c5f;
     color: #fff;
-    padding:5px;
+    padding: 5px;
     cursor: pointer;
 }
-.App.second-layout .service__banner_container_detail_second_left_bottom_button:hover{
+.App.second-layout
+    .service__banner_container_detail_second_left_bottom_button:hover {
     opacity: 0.6;
 }
-.App.second-layout .service__banner_container_detail_second_right{
-    width:30%;
-
+.App.second-layout .service__banner_container_detail_second_right {
+    width: 30%;
 }
-.App.second-layout .service__banner_container_detail_second_right img{
+.App.second-layout .service__banner_container_detail_second_right img {
     height: 500px;
 }
-/* layout 2 */
+
 @media screen and (max-width: 1024px) {
-    /* layout 1 */
     .App.first-layout .service__banner_container_detail {
         height: 500px;
     }
     .App.first-layout .service__banner_container h1 {
         font-size: 50px;
     }
-    /* layout 1 */
-    /* layout 2 */
-    .App.second-layout .service__banner_container_second{
+
+    .App.second-layout .service__banner_container_second {
         margin-top: 88px;
     }
-    .App.second-layout .service__banner_container_detail_second_left{
+    .App.second-layout .service__banner_container_detail_second_left {
         width: 60%;
     }
-    .App.second-layout .service__banner_container_detail_second_left_middle h2{
+    .App.second-layout .service__banner_container_detail_second_left_middle h2 {
         font-size: 24px;
     }
-    .App.second-layout .service__banner_container_detail_second_left_bottom_button{
+    .App.second-layout
+        .service__banner_container_detail_second_left_bottom_button {
         padding: 10px;
         font-size: 18px;
     }
-    .App.second-layout .service__banner_container_detail_second_right img{
+    .App.second-layout .service__banner_container_detail_second_right img {
         height: 400px;
     }
 }
-@media screen and (max-width: 768px){
-    .App.second-layout .service__banner_container_detail_second_left{
+@media screen and (max-width: 768px) {
+    .App.second-layout .service__banner_container_detail_second_left {
         width: 60%;
     }
-    .App.second-layout .service__banner_container_detail_second_left_middle h2{
+    .App.second-layout .service__banner_container_detail_second_left_middle h2 {
         font-size: 24px;
     }
-    .App.second-layout .service__banner_container_detail_second_right img{
+    .App.second-layout .service__banner_container_detail_second_right img {
         height: 400px;
     }
-    .App.second-layout .service__banner_container_detail_second_left_bottom_button{
+    .App.second-layout
+        .service__banner_container_detail_second_left_bottom_button {
         padding: 10px;
         font-size: 16px;
     }
 }
 @media screen and (max-width: 600px) {
-    /* layout 1 */
-    .App.first-layout .service__banner_container{
+    .App.first-layout .service__banner_container {
         margin-top: 90px;
     }
     .App.first-layout .service__banner_container h1 {
         font-size: 40px;
     }
-    /* layout 1 */
 }
 @media screen and (max-width: 480px) {
-    /* layout 1 */
     .App.first-layout .service__banner_container_detail {
         height: 400px;
     }
     .App.first-layout .service__banner_container h1 {
         font-size: 42px;
     }
-    /* layout 1 */
 
-    /* layout 2 */
-    .App.second-layout .service__banner_container_detail_second_left{
+    .App.second-layout .service__banner_container_detail_second_left {
         width: 100%;
     }
-    .App.second-layout .service__banner_container_detail_second_right{
+    .App.second-layout .service__banner_container_detail_second_right {
         display: none;
     }
-    .App.second-layout .service__banner_container_detail_second_left_top h1{
+    .App.second-layout .service__banner_container_detail_second_left_top h1 {
         font-size: 70px;
     }
-    .App.second-layout .service__banner_container_detail_second_left_middle h2{
+    .App.second-layout .service__banner_container_detail_second_left_middle h2 {
         font-size: 20px;
     }
-    .App.second-layout .service__banner_container_detail_second_left_middle{
+    .App.second-layout .service__banner_container_detail_second_left_middle {
         height: 40px;
         padding-left: 60px;
         margin-bottom: 20px;
     }
-    .App.second-layout .service__banner_container_detail_second_left_middle_img{
+    .App.second-layout
+        .service__banner_container_detail_second_left_middle_img {
         width: 80px;
-        height:80px;
+        height: 80px;
     }
-    .App.second-layout .service__banner_container_detail_second_left_bottom_button{
+    .App.second-layout
+        .service__banner_container_detail_second_left_bottom_button {
         padding: 15px;
         font-size: 18px;
     }

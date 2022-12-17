@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./Doughnut.css";
+
 import Chart from "chart.js/auto";
 
 function Doughnut() {

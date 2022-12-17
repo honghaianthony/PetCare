@@ -1,199 +1,181 @@
 .App.first-layout .service__choice__container {
-  padding: 15px 10px;
+    padding: 15px 10px;
 }
 .App.first-layout .service__choice__container__detail {
-  margin: 0 auto;
-  max-width: 1280px;
-  border: 1px solid #de135c;
-  padding: 20px;
-  border-radius: 5px;
-  font-family: "Nunito", sans-serif;
+    margin: 0 auto;
+    max-width: 1280px;
+    border: 1px solid #de135c;
+    padding: 20px;
+    border-radius: 5px;
+    font-family: "Nunito", sans-serif;
 }
 .App.second-layout .service__choice__container_second {
-  padding: 15px 10px;
+    padding: 15px 10px;
 }
 .App.second-layout .service__choice__container__detail_second {
-  margin: 0 auto;
-  max-width: 1280px;
-  /* border:1px solid #DE135C; */
-  /* padding: 20px; */
-  border-radius: 5px;
-  font-family: "Nunito", sans-serif;
+    margin: 0 auto;
+    max-width: 1280px;
+
+    border-radius: 5px;
+    font-family: "Nunito", sans-serif;
 }
 
 .App.first-layout .service__choice__container_second {
-  display: none;
+    display: none;
 }
 .App.first-layout .service__choice__container__detail_second {
-  display: none;
+    display: none;
 }
 .App.second-layout .service__choice__container {
-  display: none;
+    display: none;
 }
 .App.second-layout .service__choice__container__detail {
-  display: none;
+    display: none;
 }
-/* layout 1 */
+
 .underline__service__choice {
-  border-bottom: 2px solid #de135c;
-  margin-bottom: 10px;
+    border-bottom: 2px solid #de135c;
+    margin-bottom: 10px;
 }
 .service_choice_content_container {
-  display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr; */
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-column-gap: 20px;
-  width: 100%;
-  margin-top: 5px;
-  text-align: center;
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-column-gap: 20px;
+    width: 100%;
+    margin-top: 5px;
+    text-align: center;
 }
 .service_choice_content {
-  /* --number_column:3;
-    width:calc(100% / var(--number_column) ); */
-  padding: 5px;
-  background-color: #043fd9;
-  color: #fff;
-  padding: 15px;
-  border-radius: 5px;
-  display: inline-block;
-  margin-top: 5px;
-  /* justify-content: center;
-    flex-direction: column;
-    align-items: center; */
+    padding: 5px;
+    background-color: #043fd9;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 5px;
 }
 .icon__service {
-  font-size: 70px;
+    font-size: 70px;
 }
 .text__choice__service {
-  font-size: 18px;
+    font-size: 18px;
 }
-/* layout 1 */
 
-/* layout 2 */
 .App.second-layout .service__choice__container__detail_second > h3 {
-  text-align: center;
-  color: #193a6a;
-  font-weight: 800;
-  font-size: 40px;
+    text-align: center;
+    color: #193a6a;
+    font-weight: 800;
+    font-size: 40px;
 }
 .App.second-layout .service__choice__content_2 {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-column-gap: 20px;
-  width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-column-gap: 20px;
+    width: 100%;
 }
 .App.second-layout .service__choice__content_item_2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #193A6A;
-  padding: 30px 30px;
-  border-radius: 20px;
-  height: 300px;
-  box-shadow: 1px 3.5px 7.3px 0.7px rgba(25, 58, 106, .4);;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #193a6a;
+    padding: 30px 30px;
+    border-radius: 20px;
+    height: 300px;
+    box-shadow: 1px 3.5px 7.3px 0.7px rgba(25, 58, 106, 0.4);
 }
 .App.second-layout .service__choice__content_item_2 img {
-  width: 100px;
-  height: 100px;
-  border-radius: 20px;
-  margin-bottom: 5px;
-}
-.App.second-layout .service__choice__content_item_2 h3 {
-  font-size: 30px;
-  color: #193a6a;
-  font-weight: 800;
-}
-.App.second-layout .service__choice__content_item_button_2 {
-  background-color: #124c5f;
-  padding: 5px 15px;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 20px;
-  border:none;
-}
-.App.second-layout .service__choice__content_item_button_2:hover {
-  opacity: 0.7;
-}
-/* 
-.App.second-layout
-.App.second-layout
-.App.second-layout */
-/* layout 2 */
-@media screen and (max-width: 1024px) {
-  /* layout 1 */
-  .App.first-layout .service_choice_content_container {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    grid-row-gap: 20px;
-  }
-  .App.first-layout .service_choice_content {
-    display: flex;
-    align-items: center;
-  }
-  .App.first-layout .icon__service {
-    font-size: 50px;
-    width: 15%;
-  }
-  .App.first-layout .text__header__choice {
-    font-size: 26px;
-  }
-  .App.first-layout p.text__choice__service {
-    /* width:80%; */
-    font-size: 24px;
-    text-align: left;
-  }
-  /* layout 1 */
-
-  /* layout 2 */
-  .App.second-layout .service__choice__content_2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-row-gap: 20px;
-  }
-  .App.second-layout .service__choice__content_item_button_2{
-    padding: 10px 20px;
-  }
-  /* layout 2 */
-}
-@media screen and (max-width: 600px) {
-  .App.first-layout .text__header__choice {
-    font-size: 20px;
-  }
-  .App.first-layout .icon__service {
-    font-size: 40px;
-  }
-  .App.first-layout p.text__choice__service {
-    font-size: 18px;
-  }
-  /* layout 2 */
-  .App.second-layout .service__choice__container__detail_second>h3{
-    font-size: 32px;
-  }
-  .App.second-layout .service__choice__content_2 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    grid-row-gap: 20px;
-  }
-  .App.second-layout .service__choice__content_item_button_2{
-    padding: 10px 20px;
-  }
-  .App.second-layout .service__choice__content_item_2 h3{
-    font-size: 20px;
-  }
-  .App.second-layout .service__choice__content_item_2 img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 20px;
     margin-bottom: 5px;
-  }
-  /* layout 2 */
+}
+.App.second-layout .service__choice__content_item_2 h3 {
+    font-size: 30px;
+    color: #193a6a;
+    font-weight: 800;
+}
+.App.second-layout .service__choice__content_item_button_2 {
+    background-color: #124c5f;
+    padding: 5px 15px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+}
+.App.second-layout .service__choice__content_item_button_2:hover {
+    opacity: 0.7;
+}
+
+@media screen and (max-width: 1024px) {
+    .App.first-layout .service_choice_content_container {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        grid-row-gap: 20px;
+    }
+    .App.first-layout .service_choice_content {
+        display: flex;
+        align-items: center;
+    }
+    .App.first-layout .icon__service {
+        font-size: 50px;
+        width: 15%;
+    }
+    .App.first-layout .text__header__choice {
+        font-size: 26px;
+    }
+    .App.first-layout p.text__choice__service {
+        font-size: 24px;
+        text-align: left;
+    }
+
+    .App.second-layout .service__choice__content_2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-row-gap: 20px;
+    }
+    .App.second-layout .service__choice__content_item_button_2 {
+        padding: 10px 20px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .App.first-layout .text__header__choice {
+        font-size: 20px;
+    }
+    .App.first-layout .icon__service {
+        font-size: 40px;
+    }
+    .App.first-layout p.text__choice__service {
+        font-size: 18px;
+    }
+
+    .App.second-layout .service__choice__container__detail_second > h3 {
+        font-size: 32px;
+    }
+    .App.second-layout .service__choice__content_2 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        grid-row-gap: 20px;
+    }
+    .App.second-layout .service__choice__content_item_button_2 {
+        padding: 10px 20px;
+    }
+    .App.second-layout .service__choice__content_item_2 h3 {
+        font-size: 20px;
+    }
+    .App.second-layout .service__choice__content_item_2 img {
+        width: 120px;
+        height: 120px;
+        border-radius: 20px;
+        margin-bottom: 5px;
+    }
 }
 @media screen and (max-width: 480px) {
-  .App.first-layout .text__header__choice {
-    font-size: 16px;
-  }
-  .App.first-layout .icon__service {
-    font-size: 30px;
-  }
-  .App.first-layout p.text__choice__service {
-    font-size: 14px;
-  }
+    .App.first-layout .text__header__choice {
+        font-size: 16px;
+    }
+    .App.first-layout .icon__service {
+        font-size: 30px;
+    }
+    .App.first-layout p.text__choice__service {
+        font-size: 14px;
+    }
 }

@@ -171,7 +171,6 @@
     font-family: Nunito;
 }
 
-/* Second layout */
 .App.second-layout .footer-link {
     display: flex;
     flex-direction: column;
