@@ -11,17 +11,17 @@ function HomeLayout({ children }) {
                     <AuthNavbar />
                     <div className="auth-container-detail">
                         <img
-                            src="/assets/images/auth/paw.png"
+                            src="/assets/images/auth/Paw.png"
                             alt="Paw"
                             className="auth-paw-1"
                         />
                         <img
-                            src="/assets/images/auth/paw-1.png"
+                            src="/assets/images/auth/Paw-1.png"
                             alt="Paw"
                             className="auth-paw-2"
                         />
                         <img
-                            src="/assets/images/auth/paw-2.png"
+                            src="/assets/images/auth/Paw-2.png"
                             alt="Paw"
                             className="auth-paw-3"
                         />
