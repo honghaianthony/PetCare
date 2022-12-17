@@ -7,6 +7,7 @@ import "./Payment.css";
 import { createOrder } from "../../apis/orderApi";
 import Modal from "../../components/Modal";
 import { useForm } from "react-hook-form";
+import { deleteCart } from "../../apis/cartApi";
 
 function Payment() {
   const {
@@ -218,16 +219,16 @@ function Payment() {
                 <div className="Payment-Content-Product-Summary">
                   <p>
                     <span>Tổng tiền sản phẩm:</span>
-                    <span>{sum}</span>
+                    <span>{sum.toLocaleString()}</span>
                   </p>
                   <p>
                     <span>Phí vận chuyển:</span>
-                    <span>{shippingFee === 0 ? <>Free</> : <>32.000đ</>}</span>
+                    <span>{shippingFee === 0 ? <>Free</> : <>32,000đ</>}</span>
                   </p>
                   <div>
                     <span>Tổng thanh toán:</span>
                     <span className="Payment-Content-Product-Summary-Price">
-                      {sum + shippingFee}
+                      {(sum + shippingFee).toLocaleString()}đ
                     </span>
                   </div>
                 </div>
@@ -240,6 +241,11 @@ function Payment() {
                 return await createOrder(info);
               }}
               onConfirm={async () => {
+                sessionStorage.clear();
+                if (productList[0]._id) {
+                  for (let i = 0; i < productList.length; ++i)
+                    await deleteCart(productList[i]._id);
+                }
                 navigate("/history");
               }}
               onCancel={() => {
