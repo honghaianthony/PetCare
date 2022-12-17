@@ -37,7 +37,7 @@ const CardProductDetail2 = (props) => {
             {props.sale === 0 ? (
               <p className="Price_of_card_product_container_second">
                 <span className="Price_of_card_product_second">
-                  {props.price.toLocaleString()}
+                  {(props.price * 1).toLocaleString()}
                   <sup>đ</sup>
                 </span>
               </p>

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { postLogin, postGoogleLogin } from "../../apis/authApi";
 import { toast } from "react-toastify";
 import { login } from "../../redux/user.slice.js";
-import GoogleLogin from "react-google-login";
+import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 import { gapi } from "gapi-script";
 
 function AuthLogin() {
@@ -66,16 +66,18 @@ function AuthLogin() {
                                         <h6>Đăng nhập bằng</h6>
                                     </div>
                                     <div className="auth-login-another-button">
-                                        <GoogleLogin
+                                        <GoogleOAuthProvider
                                             clientId={
                                                 process.env
                                                     .REACT_APP_GOOGLE_CLIENT_ID
                                             }
-                                            buttonText="Đăng nhập với Google"
-                                            onSuccess={handleGoogleLogin}
-                                            onFailure={handleGoogleLogin}
-                                            cookiePolicy={"single_host_origin"}
-                                        />
+                                        >
+                                            <GoogleLogin
+                                                buttonText="Đăng nhập với Google"
+                                                onSuccess={handleGoogleLogin}
+                                                onError={handleGoogleLogin}
+                                            />
+                                        </GoogleOAuthProvider>
                                     </div>
                                     <hr />
                                 </div>
@@ -203,16 +205,18 @@ function AuthLogin() {
                                     </div>
                                 </div>
                                 <div className="auth-login-content-right">
-                                    <GoogleLogin
+                                    <GoogleOAuthProvider
                                         clientId={
                                             process.env
                                                 .REACT_APP_GOOGLE_CLIENT_ID
                                         }
-                                        buttonText="Đăng nhập với Google"
-                                        onSuccess={handleGoogleLogin}
-                                        onFailure={handleGoogleLogin}
-                                        cookiePolicy={"single_host_origin"}
-                                    />
+                                    >
+                                        <GoogleLogin
+                                            buttonText="Đăng nhập với Google"
+                                            onSuccess={handleGoogleLogin}
+                                            onError={handleGoogleLogin}
+                                        />
+                                    </GoogleOAuthProvider>
                                 </div>
                             </div>
                         </div>
