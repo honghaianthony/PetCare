@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./GalleryMain.css";
 import ReactPlayer from "react-player";
-import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
+import Lightbox from "react-18-image-lightbox";
+import "react-18-image-lightbox/style.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Scrollbar, A11y } from "swiper";
 import "swiper/css";
