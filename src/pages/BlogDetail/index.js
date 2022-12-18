@@ -8,6 +8,7 @@ import AuthorBlog from "../../components/AuthorBlog";
 import HighlightBlog from "../../components/HighlightBlog";
 import BlogTrending from "../../components/BlogTrending";
 import { getBlogById } from "../../apis/blogApi";
+import SEO from "../../components/SEO";
 
 function BlogDetail() {
     const { blogId } = useParams();
@@ -25,6 +26,12 @@ function BlogDetail() {
         <MainLayout>
             {blogData ? (
                 <div className="blog-detail-container">
+                    <SEO
+                        title={blogData.title}
+                        description="Website cung cấp dịch vụ chăm sóc thú cưng"
+                        name="PetCare"
+                        type="article"
+                    />
                     <div className="blog-detail-container-detail">
                         <div className="blog-detail-link">
                             <p>

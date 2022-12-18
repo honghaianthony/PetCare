@@ -67,84 +67,149 @@ const trendingBlog = [
     },
 ];
 
-
 function BlogTrending() {
-const [dataBlog, setDataBlog] = useState([]);
-useEffect(() => {
-    async function getBlogDetail() {
-        const blog = await getAllBlogs();
-        setDataBlog(blog);
+    const [dataBlog, setDataBlog] = useState([]);
+    useEffect(() => {
+        async function getBlogDetail() {
+            const blog = await getAllBlogs();
+            setDataBlog(blog);
+        }
+        getBlogDetail();
+    }, []);
+    const navigate = useNavigate();
+    const handleGoTo = (title, id) => {
+        console.log("hello", id);
+        // if(id===dataBlog._id)
+        navigate("/blog/" + ChangeToSlug(title) + "." + id + ".html");
+    };
+    let takeSixBlog = [1, 2, 3, 4, 5, 6];
+
+    function ChangeToSlug(str) {
+        // Chuyển hết sang chữ thường
+        str = str.toLowerCase();
+
+        // xóa dấu
+        str = str.replace(/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/g, "a");
+        str = str.replace(/(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)/g, "e");
+        str = str.replace(/(ì|í|ị|ỉ|ĩ)/g, "i");
+        str = str.replace(/(ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ)/g, "o");
+        str = str.replace(/(ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ)/g, "u");
+        str = str.replace(/(ỳ|ý|ỵ|ỷ|ỹ)/g, "y");
+        str = str.replace(/(đ)/g, "d");
+
+        // Xóa ký tự đặc biệt
+        str = str.replace(/([^0-9a-z-\s])/g, "");
+
+        // Xóa khoảng trắng thay bằng ký tự -
+        str = str.replace(/(\s+)/g, "-");
+
+        // xóa phần dự - ở đầu
+        str = str.replace(/^-+/g, "");
+
+        // xóa phần dư - ở cuối
+        str = str.replace(/-+$/g, "");
+
+        // return
+        return str;
     }
-    getBlogDetail();
-}, []);
-const navigate = useNavigate();
-const handleGoTo=(id)=>{
-    console.log("hello",id)
-    // if(id===dataBlog._id)
-    navigate(`/blog/${id}`);
-}
-let takeSixBlog = [1, 2, 3,4 ,5 ,6 ]
-    return (<>
-        {dataBlog.length > 0 ? (
-        <div className="blog-trending-container">
-            <div className="blog-trending-title">
-                <h2>Xu hướng</h2>
-                <hr />
-            </div>
-            <div className="blog-trending-content">
-                <div className="blog-trending-article-swiper">
-                    <Swiper
-                        // install Swiper modules
-                        modules={[Navigation, Scrollbar, A11y]}
-                        spaceBetween={30}
-                        slidesPerView={3}
-                        navigation
-                        onSwiper={(swiper) => console.log(swiper)}
-                        onSlideChange={() => console.log("slide change")}
-                        breakpoints={{
-                            1: {
-                                slidesPerView: 1,
-                            },
-                            768: {
-                                slidesPerView: 2,
-                            },
-                            1024: {
-                                slidesPerView: 3,
-                            },
-                        }}
-                    >
-                        {takeSixBlog.map((item, index) => {
-                            return (
-                                dataBlog[item]&&(
-                                <SwiperSlide key={index}>
-                                    <div
-                                     className="blog-trending-article-detail"
-                                    //  to={`/blog/${dataBlog[item]._id}`}
-                                    onClick={()=>handleGoTo(dataBlog[item]._id)}
-                                    >
-                                        <img
-                                            src={dataBlog[item].coverImage}
-                                            alt="Article banner"
-                                        />
-                                        <h5>{dataBlog[item].title}</h5>
-                                        <p>{dataBlog[item].content}</p>
-                                        <hr />
-                                        <div className="blog-trending-article-detail-author">
-                                            <p>
-                                                Tác giả: 
-                                                {dataBlog[item].user.firstName} {dataBlog[item].user.lastName}
-                                            </p>
-                                            <span>{dataBlog[item].createdAt.slice(0,10)}</span>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>)
-                            );
-                        })}
-                    </Swiper>
+    return (
+        <>
+            {dataBlog.length > 0 ? (
+                <div className="blog-trending-container">
+                    <div className="blog-trending-title">
+                        <h2>Xu hướng</h2>
+                        <hr />
+                    </div>
+                    <div className="blog-trending-content">
+                        <div className="blog-trending-article-swiper">
+                            <Swiper
+                                // install Swiper modules
+                                modules={[Navigation, Scrollbar, A11y]}
+                                spaceBetween={30}
+                                slidesPerView={3}
+                                navigation
+                                onSwiper={(swiper) => console.log(swiper)}
+                                onSlideChange={() =>
+                                    console.log("slide change")
+                                }
+                                breakpoints={{
+                                    1: {
+                                        slidesPerView: 1,
+                                    },
+                                    768: {
+                                        slidesPerView: 2,
+                                    },
+                                    1024: {
+                                        slidesPerView: 3,
+                                    },
+                                }}
+                            >
+                                {takeSixBlog.map((item, index) => {
+                                    return (
+                                        dataBlog[item] && (
+                                            <SwiperSlide key={index}>
+                                                <div
+                                                    className="blog-trending-article-detail"
+                                                    //  to={`/blog/${dataBlog[item]._id}`}
+                                                    onClick={() =>
+                                                        handleGoTo(
+                                                            dataBlog[item]
+                                                                .title,
+                                                            dataBlog[item]._id
+                                                        )
+                                                    }
+                                                >
+                                                    <img
+                                                        src={
+                                                            dataBlog[item]
+                                                                .coverImage
+                                                        }
+                                                        alt="Article banner"
+                                                    />
+                                                    <h5>
+                                                        {dataBlog[item].title}
+                                                    </h5>
+                                                    <p>
+                                                        {dataBlog[item].content}
+                                                    </p>
+                                                    <hr />
+                                                    <div className="blog-trending-article-detail-author">
+                                                        <p>
+                                                            Tác giả:
+                                                            {
+                                                                dataBlog[item]
+                                                                    .user
+                                                                    .firstName
+                                                            }{" "}
+                                                            {
+                                                                dataBlog[item]
+                                                                    .user
+                                                                    .lastName
+                                                            }
+                                                        </p>
+                                                        <span>
+                                                            {dataBlog[
+                                                                item
+                                                            ].createdAt.slice(
+                                                                0,
+                                                                10
+                                                            )}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </SwiperSlide>
+                                        )
+                                    );
+                                })}
+                            </Swiper>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>):(<h2>loading</h2>)}
-        </>);
+            ) : (
+                <h2>loading</h2>
+            )}
+        </>
+    );
 }
 
 export default BlogTrending;
