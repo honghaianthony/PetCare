@@ -19,16 +19,16 @@
   border-radius: 3px;
   margin-bottom: 10px;
 }
-.HistoryItem-Status1 {
+.HistoryItem-Status0 {
   background-color: #ffc700;
+}
+.HistoryItem-Status1 {
+  background-color: #198f17;
 }
 .HistoryItem-Status2 {
   background-color: #ff7a00;
 }
 .HistoryItem-Status3 {
-  background-color: #198f17;
-}
-.HistoryItem-Status4 {
   background-color: #ff0000;
 }
 .HistoryItem-Product-Detail {
