@@ -5,7 +5,7 @@ function HistoryItem(props) {
   return (
     <div className="HistoryItem">
       <div className="HistoryItem-Status">
-        <span className={"HistoryItem-Status" + props.statusId}>
+        <span className={"HistoryItem-Status" + props.status}>
           {props.statusName}
         </span>
       </div>
@@ -19,7 +19,7 @@ function HistoryItem(props) {
               <div className="HistoryItem-Product-Detail-Infor">
                 <p>{item.name}</p>
                 <p className="HistoryItem-Product-Detail-Infor-p">
-                  <span>x{item.num}</span>
+                  <span>x{item.amount}</span>
                   <span>{item.price}</span>
                 </p>
               </div>
