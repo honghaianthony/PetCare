@@ -1,23 +1,23 @@
- .BlogBanner_container{
+.BlogBanner_container {
     background: url("../../../public/assets/images/blog/list-of-cute-cat-names.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     padding: 0 10px;
-    margin-top: 129px;
+    margin-top: 100px;
     position: relative;
 }
-.BlogBanner_container_overlay{
+.BlogBanner_container_overlay {
     position: absolute;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
     position: absolute;
-    background-color: rgba(0,0,0,.93);
-    opacity: .65;
+    background-color: rgba(0, 0, 0, 0.93);
+    opacity: 0.65;
 }
- .BlogBanner_container_detail{
+.BlogBanner_container_detail {
     height: 500px;
     max-width: 1280px;
     margin: 0 auto;
@@ -29,43 +29,43 @@
     width: 100%;
     position: relative;
 }
-.BlogBanner_container_detail h2{
+.BlogBanner_container_detail h2 {
     color: #fff;
     font-size: 60px;
     width: 100%;
     text-align: center;
     margin: 0;
 }
-.BlogBanner_container_detail h3{
+.BlogBanner_container_detail h3 {
     color: #fff;
     font-size: 40px;
     width: 100%;
     text-align: center;
     margin: 0;
 }
-@media screen and (max-width: 1024px){
-    .BlogBanner_container_detail{
-        height:400px;
+@media screen and (max-width: 1024px) {
+    .BlogBanner_container_detail {
+        height: 400px;
     }
-    .BlogBanner_container_detail h2{
+    .BlogBanner_container_detail h2 {
         font-size: 40px;
     }
-    .BlogBanner_container_detail h3{
+    .BlogBanner_container_detail h3 {
         font-size: 30px;
         width: 70%;
     }
-    .BlogBanner_container{
+    .BlogBanner_container {
         margin-top: 90px;
     }
 }
-@media screen and (max-width: 600px){
-    .BlogBanner_container_detail{
-        height:400px;
+@media screen and (max-width: 600px) {
+    .BlogBanner_container_detail {
+        height: 400px;
     }
-    .BlogBanner_container_detail h2{
+    .BlogBanner_container_detail h2 {
         font-size: 24px;
     }
-    .BlogBanner_container_detail h3{
+    .BlogBanner_container_detail h3 {
         font-size: 18px;
         width: 70%;
     }
