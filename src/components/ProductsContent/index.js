@@ -163,19 +163,19 @@ const ProductsContent = () => {
     const handleClickTab = (idtab) => {
         setActiveProduct2(idtab);
     };
-    // React.useEffect(() => {
-    //   if (activeProduct2 === "Tất cả sản phẩm") {
-    //     const filteredData = productList;
-    //     const sorted = filteredData.sort(sortFunctions[sort]);
-    //     setProduct2(sorted);
-    //   } else {
-    //     const filteredData = productList.filter((item) =>
-    //       activeProduct2.includes(item.category)
-    //     );
-    //     const sorted = filteredData.sort(sortFunctions[sort]);
-    //     setProduct2(sorted);
-    //   }
-    // }, [activeProduct2, sort]);
+    React.useEffect(() => {
+        if (activeProduct2 === "Tất cả sản phẩm") {
+            const filteredData = products;
+            const sorted = filteredData.sort(sortFunctions[sort]);
+            setProduct2(sorted);
+        } else {
+            const filteredData = products.filter((item) =>
+                activeProduct2.includes(item.category.label)
+            );
+            const sorted = filteredData.sort(sortFunctions[sort]);
+            setProduct2(sorted);
+        }
+    }, [activeProduct2, sort]);
 
     // srollToTop
     const [showTopBtn, setShowTopBtn] = useState(false);
