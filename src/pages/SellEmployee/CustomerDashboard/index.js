@@ -133,10 +133,7 @@ const CustomerDashboard = () => {
                                                             }}
                                                         >
                                                             {item.role === 1
-                                                                ? "Người dùng"
-                                                                : item.role ===
-                                                                  2
-                                                                ? "Admin"
+                                                                ? "Khách hàng"
                                                                 : "Khác"}
                                                         </span>
                                                     </td>
