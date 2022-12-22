@@ -133,10 +133,19 @@ const UserDashboard = () => {
                                                             }}
                                                         >
                                                             {item.role === 1
-                                                                ? "Người dùng"
+                                                                ? "Khách hàng"
                                                                 : item.role ===
                                                                   2
                                                                 ? "Admin"
+                                                                : item.role ===
+                                                                  3
+                                                                ? "Nhân viên bán hàng"
+                                                                : item.role ===
+                                                                  4
+                                                                ? "Nhân viên giao hàng"
+                                                                : item.role ===
+                                                                  5
+                                                                ? "Nhân viên thu ngân"
                                                                 : "Khác"}
                                                         </span>
                                                     </td>
