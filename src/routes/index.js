@@ -17,6 +17,12 @@ import {
     ManagerHistoryOrder,
     History,
     Page404,
+    ManagerHistoryOrder3,
+    ManagerProduct3,
+    ManagerUser3,
+    ManagerHistoryOrder4,
+    ManagerHistoryOrder5,
+    ManagerProduct5,
 } from "../pages";
 import { Service } from "../pages";
 import { About } from "../pages";
@@ -121,6 +127,60 @@ export default function App() {
                         path="/admin/order"
                         element={<ManagerHistoryOrder />}
                     ></Route>
+                </Route>
+                <Route
+                    exact
+                    path="/sellemployee/order"
+                    element={<PrivateRoute />}
+                >
+                    <Route
+                        exact
+                        path="/sellemployee/order"
+                        element={<ManagerHistoryOrder3 />}
+                    ></Route>
+                </Route>
+                <Route
+                    exact
+                    path="/sellemployee/user"
+                    element={<PrivateRoute />}
+                >
+                    <Route
+                        exact
+                        path="/sellemployee/user"
+                        element={<ManagerUser3 />}
+                    ></Route>
+                </Route>
+                <Route
+                    exact
+                    path="/sellemployee/product"
+                    element={<PrivateRoute />}
+                >
+                    <Route
+                        exact
+                        path="/sellemployee/product"
+                        element={<ManagerProduct3 />}
+                    />
+                </Route>
+                <Route exact path="/shipper/order" element={<PrivateRoute />}>
+                    <Route
+                        exact
+                        path="/shipper/order"
+                        element={<ManagerHistoryOrder4 />}
+                    ></Route>
+                </Route>
+                <Route exact path="/cashier/order" element={<PrivateRoute />}>
+                    <Route
+                        exact
+                        path="/cashier/order"
+                        element={<ManagerHistoryOrder5 />}
+                    ></Route>
+                </Route>
+                <Route exact path="/cashier/product" element={<PrivateRoute />}>
+                    <Route
+                        exact
+                        path="/cashier/product"
+                        element={<ManagerProduct5 />}
+                    />
                 </Route>
                 <Route path="*" element={<Page404 />} />
             </Routes>

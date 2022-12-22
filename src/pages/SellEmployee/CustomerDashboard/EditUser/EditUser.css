@@ -1,0 +1,118 @@
+textarea {
+  resize: none;
+}
+.user-form-container {
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+}
+.user-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+.user-form > div {
+  padding: 0 30px;
+  margin-bottom: 20px;
+}
+.user-form input,
+.user-form select,
+.user-form textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgb(201, 201, 201);
+  padding: 8px 8px;
+}
+.user-form input:focus,
+.user-form textarea:focus {
+  border: 1px solid rgb(3, 38, 238);
+}
+.user-form .button-group input {
+  border: none;
+}
+.user-form > .user-name {
+  flex-basis: 66.66%;
+}
+.user-form > .user-tag {
+  flex-basis: 33.33%;
+}
+.user-form > .user-price,
+.user-form > .user-discount,
+.user-form > .user-amount {
+  flex-basis: calc(100% / 3);
+}
+.user-form > .user-depot,
+.user-form > .user-address,
+.user-form > .user-description,
+.user-form > .user-instruction {
+  flex-basis: 100%;
+}
+.user-form label {
+  display: block;
+}
+.user-form > .button-group > input {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  font-weight: 500;
+}
+.user-form > .button-group > input:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.user-form label {
+  color: #2b3674;
+  font-weight: 500;
+}
+.edit-user-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10010;
+  width: 100vw;
+  height: 100vh;
+}
+.edit-user-container .layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.3;
+}
+.edit-user-container {
+  margin-top: 0;
+}
+
+.edit-user-form-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 10vh auto;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 5px;
+}
+.edit-user-form-container .button-group input {
+  width: fit-content;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.edit-user-form-container .button-group .cancel-edit {
+  background-color: gray;
+  color: white;
+  margin-left: 8px;
+}
+
+@media only screen and (max-width: 768px) {
+  .user-form > .user-name,
+  .user-form > .user-tag,
+  .user-form > .user-price,
+  .user-form > .user-discount,
+  .user-form > .user-amount,
+  .user-form > .user-depot,
+  .user-form > .user-address,
+  .user-form > .user-description,
+  .user-form > .user-instruction {
+    flex-basis: 100%;
+  }
+}
