@@ -23,6 +23,7 @@ import {
     ManagerHistoryOrder4,
     ManagerHistoryOrder5,
     ManagerProduct5,
+    Customer,
 } from "../pages";
 import { Service } from "../pages";
 import { About } from "../pages";
@@ -50,6 +51,7 @@ export default function App() {
                 <Route exact path="/test-modal" element={<Modal />}></Route>
                 <Route exact path="/" element={<Home />}></Route>
                 <Route exact path="/about" element={<About />}></Route>
+                <Route exact path="/customer" element={<Customer />}></Route>
                 <Route exact path="/service" element={<Service />}></Route>
                 <Route exact path="/login" element={<Login />}></Route>
                 <Route exact path="/register" element={<Register />}></Route>

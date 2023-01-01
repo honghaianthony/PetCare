@@ -1,0 +1,64 @@
+.App.first-layout .Customer_banner_container {
+    background-image: url(../../../public/assets/images/Customer/—Pngtree—pet-grooming-cartoon-childlike-yellow_1072260.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 0 10px;
+    margin-top: 100px;
+    position: relative;
+}
+.App.first-layout .Customer_banner_container_detail {
+    height: 450px;
+    max-width: 1280px;
+    margin: 0 auto;
+    font-family: "Nunito", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+.App.second-layout .Customer_banner_container_second {
+    background-image: url(../../../public/assets/images/Customer/—Pngtree—taobao-tmall-e-commerce-cartoon-cat_1051638.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 0 10px;
+    margin-top: 100px;
+    position: relative;
+}
+.App.second-layout .Customer_banner_container_detail_second {
+    height: 450px;
+    max-width: 1280px;
+    margin: 0 auto;
+    font-family: "Nunito", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+.App.first-layout .Customer_banner_container_second{
+    display:none;
+}
+.App.second-layout .Customer_banner_container{
+    display:none;
+}
+@media screen and (max-width: 1024px) {
+    .App.first-layout .Customer_banner_container_detail {
+        height: 400px;
+    }
+    .App.second-layout .Customer_banner_container_detail_second {
+        height: 400px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .App.first-layout .Customer_banner_container_detail {
+        height: 200px;
+    }
+    .App.second-layout .Customer_banner_container_detail_second {
+        height: 200px;
+    }
+}

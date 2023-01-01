@@ -154,6 +154,8 @@ function Footer() {
                                 </Link>
                                 <Link to="/hiring">Tuyển dụng</Link>
                                 <Link to="/gallery">Hình ảnh & Video</Link>
+                                <Link to="/customer">Hình ảnh khách hàng</Link>
+
                             </div>
                         </div>
                     </div>
@@ -226,6 +228,8 @@ function Footer() {
                             <Link to="/policy">Điều khoản & Chính sách</Link>
                             <Link to="/hiring">Tuyển dụng</Link>
                             <Link to="/gallery">Hình ảnh & Video</Link>
+                            <Link to="/customer">Hình ảnh khách hàng</Link>
+
                         </div>
                     </div>
                 </div>
