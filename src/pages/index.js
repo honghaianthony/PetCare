@@ -26,3 +26,5 @@ export { default as ManagerUser3 } from "./SellEmployee/ManagerUser";
 export { default as ManagerHistoryOrder4 } from "./Shipper/ManagerHistoryOrder";
 export { default as ManagerHistoryOrder5 } from "./CashierEmployee/ManagerHistoryOrder";
 export { default as ManagerProduct5 } from "./CashierEmployee/ManagerProduct";
+export { default as Customer } from "./Customer";
+

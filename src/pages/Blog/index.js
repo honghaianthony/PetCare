@@ -24,11 +24,11 @@ const Blog = () => {
         }
         getBlogDetail();
     }, []);
-    console.log(dataBlog);
+    // console.log(dataBlog);
     const ref = useRef(null);
     const a = document.querySelector(".blog_container_second_common");
     const b = document.querySelector(".blog_news_container");
-    console.log(b);
+    // console.log(b);
     const OutstandingBlog = {
         blogId: 1,
         blogTitle: "Những lưu ý quan trọng khi nuôi chó Husky",

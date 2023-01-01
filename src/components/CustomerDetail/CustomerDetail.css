@@ -1,0 +1,90 @@
+.App.first-layout .CustomerDetail_container {
+    padding: 15px 10px;
+}
+.App.second-layout .CustomerDetail_container_second {
+    padding: 15px 10px;
+}
+.App.first-layout .CustomerDetail_container_second{
+    display:none;
+}
+.App.second-layout .CustomerDetail_container{
+    display:none;
+}
+.App.first-layout .CustomerDetail_container_detail {
+    margin: 0 auto;
+    max-width: 1280px;
+    font-family: "Nunito", sans-serif;
+    width: 100%;
+}
+.App.second-layout .CustomerDetail_container_detail_second {
+    margin: 0 auto;
+    max-width: 1280px;
+    font-family: "Nunito", sans-serif;
+    width: 100%;
+}
+.App.first-layout .CustomerDetail_container_second{
+    display: none;
+}
+.App.second-layout .CustomerDetail_container{
+    display: none;
+}
+.App.first-layout .Header_customer_container{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+.App.second-layout .Header_customer_container_second{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+.App.first-layout .List_customer_container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+.App.second-layout .List_customer_container_second{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.App.first-layout .List_customer_container >img{
+    max-width: 100%;
+    border-radius: 20px;
+}
+.App.second-layout .List_customer_container_second >img{
+    max-width: 100%;
+    border-radius: 20px;
+}
+@media screen and (max-width: 600px) {
+    .App.first-layout .Header_customer_container h2{
+        text-align: center;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    .App.second-layout .Header_customer_container_second h2{
+        text-align: center;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    .App.first-layout .List_customer_container {
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+    .App.second-layout .List_customer_container_second {
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+    .App.first-layout .List_customer_container >img{
+        max-width: 100%;
+        border-radius: 20px;
+        height: 250px;
+        margin: 0 auto;
+    }
+    .App.second-layout .List_customer_container_second >img{
+        max-width: 100%;
+        border-radius: 20px;
+        height: 250px;
+        margin: 0 auto;
+    }
+}
