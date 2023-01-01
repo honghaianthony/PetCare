@@ -1,0 +1,24 @@
+ .customer_container {
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 126px;
+}
+/* .App.second-layout .customer_container_second {
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 126px;
+} */
+.customer_container_detail {
+    padding: 0 10px;
+    font-family: "Nunito", sans-serif;
+}
+/* .App.second-layout .customer_container_detail_second {
+    padding: 0 10px;
+    font-family: "Nunito", sans-serif;
+} */
+/* .App.first-layout .customer_container_second{
+    display:none;
+}
+.App.second-layout .customer_container{
+    display:none;
+} */
