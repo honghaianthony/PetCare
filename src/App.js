@@ -3,6 +3,7 @@ import "./App.css";
 import Router from "./routes";
 import { Icon } from "@iconify/react";
 import { HelmetProvider } from "react-helmet-async";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 function App() {
     const [toogle, setToogle] = useState(() => {
@@ -16,7 +17,7 @@ function App() {
     });
     const [isLoading, setIsLoading] = useState(true);
     const handleLoading = () => {
-        setTimeout(() => setIsLoading(false), 3000);
+        setTimeout(() => setIsLoading(false), 1500);
     };
     useEffect(() => {
         window.addEventListener("load", handleLoading);
@@ -32,8 +33,11 @@ function App() {
                     localStorage.setItem("theme", !toogle);
                 }}
             />
+
             <HelmetProvider>
-                <Router />
+                <SkeletonTheme>
+                    <Router />
+                </SkeletonTheme>
             </HelmetProvider>
         </div>
     ) : (
