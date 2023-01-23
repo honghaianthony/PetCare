@@ -10,10 +10,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { getAllCategories } from "../../apis/categoryApi";
 import { getAllProducts } from "../../apis/productApi";
 import CardProductDetail2 from "../CardProductDetail/index2";
+import ProductSkeleton from "../CardSkeleton/ProductSkeleton";
 const ProductsContent = () => {
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
     const [renderedProducts, setRenderedProducts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         async function getProducts() {
             const resCategories = await getAllCategories();
@@ -22,9 +24,11 @@ const ProductsContent = () => {
             setProducts(resProducts);
             setRenderedProducts(resProducts);
             setProduct2(resProducts);
+            setIsLoading(false);
         }
         getProducts();
     }, []);
+
     const productList = [
         {
             id: 1,
@@ -194,9 +198,10 @@ const ProductsContent = () => {
             behavior: "smooth",
         });
     };
+
     return (
         <>
-            {categories.length > 0 && products.length > 0 ? (
+            {products.length > 0 ? (
                 <section className="ProductsContent__container">
                     <div className="ProductsContent__container_detail">
                         <div className="ProductsContent_menu_container">
@@ -402,7 +407,9 @@ const ProductsContent = () => {
                     )}
                 </section>
             ) : (
-                <div></div>
+                <div>
+                    {isLoading && <ProductSkeleton cards={products.length} />}
+                </div>
             )}
 
             <section className="ProductsContent__container_second">
@@ -519,7 +526,9 @@ const ProductsContent = () => {
                                 </AnimatePresence>
                             </motion.div>
                         ) : (
-                            <h2 className="no_products">Tạm hết hàng</h2>
+                            <div className="CardProductDetail_display">
+                                {isLoading && <ProductSkeleton cards={6} />}
+                            </div>
                         )}
                     </div>
                 </div>
