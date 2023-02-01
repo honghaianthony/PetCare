@@ -4,10 +4,13 @@
 
 Here is my javascript source code with my team for PetCare. There are two following templates:
 
+-   **Template 1**
 <p align="center">
-    * **Template 1**
     <img src="demo/template1.png" width="800"/>
-    * **Template 2**
+</p>
+
+-   **Template 2**
+<p align="center">
     <img src="demo/template2.png" width="800"/>
 </p>
 
