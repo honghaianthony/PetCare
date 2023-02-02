@@ -24,6 +24,7 @@
     margin-bottom: 2rem;
     padding-left: 10px;
     padding-right: 10px;
+    font-size: 1.1rem;
 }
 
 .App.second-layout .footer-container-second {
@@ -32,6 +33,7 @@
     margin-bottom: 2rem;
     padding-left: 10px;
     padding-right: 10px;
+    font-size: 1.1rem;
 }
 
 .App.first-layout .footer-container-items {
@@ -59,7 +61,7 @@
 
 .App.first-layout .footer-slogan span {
     font-family: Roboto Flex;
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.25rem;
     color: #000;
 }
@@ -241,11 +243,11 @@
 
 .App.second-layout .footer-communication-phone {
     display: flex;
+    align-items: center;
 }
 
 .App.second-layout .footer-communication-icon {
     margin-right: 1rem;
-    font-size: 24px;
     color: #000;
 }
 
