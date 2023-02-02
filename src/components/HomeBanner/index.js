@@ -30,7 +30,7 @@ function HomeBanner() {
                 <div className="home-banner-main-second">
                     <div className="home-banner-left">
                         <img
-                            src="/assets/images/home/corgi-bg.png"
+                            src="/assets/images/home/dogHat.png"
                             alt="PetCare banner"
                         />
                     </div>
@@ -47,7 +47,7 @@ function HomeBanner() {
                     </div>
                     <div className="home-banner-right">
                         <img
-                            src="/assets/images/home/cat-bg-new.png"
+                            src="/assets/images/home/catBallNew.png"
                             alt="PetCare banner"
                         />
                     </div>
